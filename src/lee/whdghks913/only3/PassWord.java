@@ -38,6 +38,13 @@ public class PassWord extends Activity {
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				// TODO Auto-generated method stub
 				if(s.toString().equals(answer)){
+					/**
+					 * 2.0 업데이트
+					 * 비밀번호 오류 수정
+					 */
+					Intent i = new Intent(PassWord.this, MainActivity.class);
+					i.putExtra("PassWord_Enable", true);
+					startActivity(i);
 					finish();
 				}
 			}
@@ -61,46 +68,46 @@ public class PassWord extends Activity {
         	/**
         	 * 뒤로가기 키를 누르면 홈화면으로 이동합니다
         	 */
-        	Intent i = new Intent();
-			i.setAction(Intent.ACTION_MAIN);
-			i.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS |
-					Intent.FLAG_ACTIVITY_FORWARD_RESULT |
-					Intent.FLAG_ACTIVITY_NEW_TASK |
-					Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP |
-					Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED );
-			i.addCategory(Intent.CATEGORY_HOME);
-			startActivity(i);
+//        	Intent i = new Intent();
+//			i.setAction(Intent.ACTION_MAIN);
+//			i.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS |
+//					Intent.FLAG_ACTIVITY_FORWARD_RESULT |
+//					Intent.FLAG_ACTIVITY_NEW_TASK |
+//					Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP |
+//					Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED );
+//			i.addCategory(Intent.CATEGORY_HOME);
+//			startActivity(i);
 			
 //        	/**
 //        	 * 어플을 Kill해버리면 서비스까지 종료되더군요
 //        	 * 뒤로가기 키를 정지해 버렸습니다
 //        	 */
-//        	/**
-//        	 * 뒤로가기 키를 눌러 MainActivity로 넘어가는 편법을 예방합니다
-//        	 */
-//        	moveTaskToBack(true);
-//        	finish();
-//        	android.os.Process.killProcess(android.os.Process.myPid());
-//        	return true;
-        	return false;
+        	/**
+        	 * 뒤로가기 키를 눌러 MainActivity로 넘어가는 편법을 예방합니다
+        	 */
+        	moveTaskToBack(true);
+        	finish();
+        	android.os.Process.killProcess(android.os.Process.myPid());
+        	return true;
+//        	return false;
         }
         return super.onKeyDown(keyCode, event);
     }
 	
-	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-		System.gc();
-		finish();
-	}
-
-	@Override
-	protected void onStop() {
-		// TODO Auto-generated method stub
-		super.onStop();
-		System.gc();
-		finish();
-	}
+//	@Override
+//	protected void onPause() {
+//		// TODO Auto-generated method stub
+//		super.onPause();
+//		System.gc();
+//		finish();
+//	}
+//
+//	@Override
+//	protected void onStop() {
+//		// TODO Auto-generated method stub
+//		super.onStop();
+//		System.gc();
+//		finish();
+//	}
 
 }

@@ -9,6 +9,7 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -18,8 +19,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 @SuppressLint("DefaultLocale")
@@ -138,8 +141,10 @@ public class MainActivity extends Activity {
 			}
 		}
 		
-		if(setting.getBoolean("password_enable", false))
-			startActivity(new Intent(this, PassWord.class));
+		boolean unlocked_password = getIntent().getBooleanExtra("PassWord_Enable", false);
+		if(!unlocked_password)
+			if(setting.getBoolean("password_enable", false))
+				startActivity(new Intent(this, PassWord.class));
 		
 		start_Btn = (Button) findViewById(R.id.start_Btn);
 
@@ -222,17 +227,15 @@ public class MainActivity extends Activity {
 	}
 	
 	public void delete(View v){
+		/**
+		 * 2.0 업데이트
+		 * 비밀번호가 있으면 비번을 쳐야 삭제 가능
+		 */
 		if(!isServiceRunningCheck("lee.whdghks913.only3.AndroidService")){
-			if (devicePolicyManager.isAdminActive(adminComponent)){
-				devicePolicyManager.removeActiveAdmin(adminComponent);
-			}
-			/**
-			 * 1.5업데이트
-			 * 어플을 바로 삭제할수 있는 기능 추가
-			 */
-			Uri uri = Uri.fromParts("package", "lee.whdghks913.only3", null);    
-			Intent it = new Intent(Intent.ACTION_DELETE, uri);    
-			startActivity(it);
+			if(setting.getBoolean("password_enable", false))
+				Del_check();
+			else
+				intent_Del();
 		}else{
 			/**
 			 * 1.5업데이트
@@ -240,6 +243,47 @@ public class MainActivity extends Activity {
 			 */
 			Toast.makeText(this, R.string.Not_Install, Toast.LENGTH_SHORT).show();
 		}
+	}
+	
+	public void intent_Del(){
+		if (devicePolicyManager.isAdminActive(adminComponent)){
+			devicePolicyManager.removeActiveAdmin(adminComponent);
+		}
+		/**
+		 * 1.5업데이트
+		 * 어플을 바로 삭제할수 있는 기능 추가
+		 */
+		Uri uri = Uri.fromParts("package", "lee.whdghks913.only3", null);    
+		Intent it = new Intent(Intent.ACTION_DELETE, uri);    
+		startActivity(it);
+	}
+	
+	public void Del_check(){
+		LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		final View view = inflater.inflate(R.layout.activity_pass_word_make, null);
+		
+		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+		alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+		    @Override
+		    public void onClick(DialogInterface dialog, int which) {
+		    	String Inputpassword = ((EditText) view.findViewById(R.id.password_edittext)).getText().toString();
+		    	if(Inputpassword.equals(setting.getString("password", ""))){
+//					return true;
+		    		intent_Del();
+				}
+		        dialog.dismiss();
+		    }
+		});
+		alert.setNegativeButton(R.string.exit, new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+			}
+		});
+		alert.setView(view);
+		alert.show();
+//		return false;
 	}
 	
 	@Override
@@ -251,7 +295,7 @@ public class MainActivity extends Activity {
 				System.gc();
 				moveTaskToBack(true);
 				finish();
-//				android.os.Process.killProcess(android.os.Process.myPid());
+				android.os.Process.killProcess(android.os.Process.myPid());
 			}
 			return true;
 		}
