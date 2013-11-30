@@ -1,5 +1,15 @@
 package lee.whdghks913.only3;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
@@ -8,10 +18,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -35,6 +47,12 @@ public class Setting extends Activity {
 	 */
 	CheckBox password, vibrate, clear_icon;
 	
+	/**
+	 * 1.8 업데이트
+	 * 백업, 복원 지원
+	 */
+	CheckBox preference_backup;
+	
 	TextView madeby;
 	
 	@Override
@@ -51,6 +69,10 @@ public class Setting extends Activity {
 		password = (CheckBox) findViewById(R.id.password);
 		vibrate = (CheckBox) findViewById(R.id.vibrate);
 		clear_icon = (CheckBox) findViewById(R.id.clear_icon_noti);
+		
+		preference_backup = (CheckBox) findViewById(R.id.preference_backup);
+		
+		BackupCheck();
 		
 		Five_Seekbar = (SeekBar) findViewById(R.id.Five_Seekbar);
 		Five_Text = (TextView) findViewById(R.id.Five_Text);
@@ -74,7 +96,6 @@ public class Setting extends Activity {
 			password.setChecked(true);
 		if(setting.getBoolean("notification_clear", false))
 			clear_icon.setChecked(true);
-		
 		if(isServiceRunningCheck())
 			clear_icon.setEnabled(false);
 		
@@ -161,6 +182,63 @@ public class Setting extends Activity {
 				}else{
 					setting_Edit.remove("notification_clear").commit();
 				}
+			}
+		});
+		
+		/**
+		 * 1.8 업데이트
+		 * 백업, 복원 지원
+		 */
+		preference_backup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				
+				preference_backup.setChecked(!isChecked);
+				
+				AlertDialog.Builder alert = new AlertDialog.Builder(Setting.this);
+				alert.setTitle(R.string.preference_backup_restore);
+				alert.setPositiveButton(R.string.preference_backup, new DialogInterface.OnClickListener() {
+				    @Override
+				    public void onClick(DialogInterface dialog, int which) {
+				    	String sdcard = Environment.getExternalStorageDirectory().toString() + "/only3/";
+				    	
+				    	File folder =new File(sdcard);
+				    	if(!folder.exists())
+				    		folder.mkdirs();
+				    	
+				    	if(saveSharedPreferencesToFile(new File(sdcard + "package_All_count.backup"), "package_All_count")
+				    			&& saveSharedPreferencesToFile(new File(sdcard + "package_count.backup"), "package_count")
+				    			&& saveSharedPreferencesToFile(new File(sdcard + "package_list.backup"), "package_list")
+				    			&& saveSharedPreferencesToFile(new File(sdcard + "setting.backup"), "setting")){
+				    		Toast.makeText(Setting.this, R.string.preference_backup_complete, Toast.LENGTH_LONG).show();
+				    	}else
+				    		Toast.makeText(Setting.this, R.string.preference_fail, Toast.LENGTH_LONG).show();
+				    	dialog.dismiss();
+				    }
+				});
+				alert.setNegativeButton(R.string.preference_restore, new DialogInterface.OnClickListener() {
+				    @Override
+				    public void onClick(DialogInterface dialog, int which) {
+				    	String sdcard = Environment.getExternalStorageDirectory().toString() + "/only3/";
+				    	
+				    	if(!new File(sdcard).exists()){
+				    		Toast.makeText(Setting.this, R.string.preference_not_file, Toast.LENGTH_LONG).show();
+				    		return;
+				    	}
+				    	
+				    	if(loadSharedPreferencesFromFile(new File(sdcard + "package_All_count.backup"), "package_All_count")
+				    			&& loadSharedPreferencesFromFile(new File(sdcard + "package_count.backup"), "package_count")
+				    			&& loadSharedPreferencesFromFile(new File(sdcard + "package_list.backup"), "package_list")
+				    			&& loadSharedPreferencesFromFile(new File(sdcard + "setting.backup"), "setting")){
+				    		Toast.makeText(Setting.this, R.string.preference_restore_complete, Toast.LENGTH_LONG).show();
+				    	}else
+				    		Toast.makeText(Setting.this, R.string.preference_fail, Toast.LENGTH_LONG).show();
+				    	dialog.dismiss();
+				    }
+				});
+				alert.show();
+//				}
 			}
 		});
 		
@@ -255,5 +333,100 @@ public class Setting extends Activity {
     	        return true;
     	return false;
     }
+	
+	
+	/**
+	 * 1.8업데이트
+	 * 백업/복원 지원
+	 */
+	/**
+	 * 테스트중인 기능!!!!!!!!
+	 * http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card
+	 */
+	private boolean saveSharedPreferencesToFile(File dst, String prefName) {
+	    boolean res = false;
+	    ObjectOutputStream output = null;
+	    try {
+	        output = new ObjectOutputStream(new FileOutputStream(dst));
+	        SharedPreferences pref = 
+	                            getSharedPreferences(prefName, MODE_PRIVATE);
+	        output.writeObject(pref.getAll());
+
+	        res = true;
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }finally {
+	        try {
+	            if (output != null) {
+	                output.flush();
+	                output.close();
+	            }
+	        } catch (IOException ex) {
+	            ex.printStackTrace();
+	        }
+	    }
+	    return res;
+	}
+
+	@SuppressWarnings({ "unchecked" })
+	private boolean loadSharedPreferencesFromFile(File src, String prefName) {
+	    boolean res = false;
+	    ObjectInputStream input = null;
+	    try {
+	        input = new ObjectInputStream(new FileInputStream(src));
+	            Editor prefEdit = getSharedPreferences(prefName, MODE_PRIVATE).edit();
+	            prefEdit.clear();
+	            Map<String, ?> entries = (Map<String, ?>) input.readObject();
+	            for (Entry<String, ?> entry : entries.entrySet()) {
+	                Object v = entry.getValue();
+	                String key = entry.getKey();
+
+	                if (v instanceof Boolean)
+	                    prefEdit.putBoolean(key, ((Boolean) v).booleanValue());
+	                else if (v instanceof Float)
+	                    prefEdit.putFloat(key, ((Float) v).floatValue());
+	                else if (v instanceof Integer)
+	                    prefEdit.putInt(key, ((Integer) v).intValue());
+	                else if (v instanceof Long)
+	                    prefEdit.putLong(key, ((Long) v).longValue());
+	                else if (v instanceof String)
+	                    prefEdit.putString(key, ((String) v));
+	            }
+	            prefEdit.commit();
+	        res = true;         
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    } catch (ClassNotFoundException e) {
+	        e.printStackTrace();
+	    }finally {
+	        try {
+	            if (input != null) {
+	                input.close();
+	            }
+	        } catch (IOException ex) {
+	            ex.printStackTrace();
+	        }
+	    }
+	    return res;
+	}
+	
+	public boolean BackupCheck(){
+		String sdcard = Environment.getExternalStorageDirectory().toString() + "/only3/";
+		File all_count =new File(sdcard + "package_All_count.backup");
+		File count =new File(sdcard + "package_count.backup");
+		File package_list =new File(sdcard + "package_list.backup");
+		File setting =new File(sdcard + "setting.backup");
+		
+		if(all_count.exists() && count.exists() && package_list.exists() && setting.exists()){
+			preference_backup.setChecked(true);
+			return true;
+		}
+		return false;
+	}
+	
 	
 }

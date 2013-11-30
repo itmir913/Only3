@@ -79,6 +79,12 @@
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
 \n
+\n[1.8] : 2013-11-24
+\n-백업, 복원 지원
+\n
+\n[1.7] : 2013-11-24
+\n-카운트 초기화 오류 픽스
+\n
 \n[1.6] : 2013-11-23
 \n-진행중 투명 아이콘 기능 추가
 \n
@@ -110,5 +116,12 @@
     <string name="show_user_app">사용자 어플</string>
     <string name="back_to_kill">한번더 눌러 종료합니다</string>
     <string name="clear_icon_noti">투명 상단바 아이콘</string>
+    <string name="preference_backup_restore">백업 <![CDATA[&]]> 복원</string>
+    <string name="preference_backup">백업</string>
+    <string name="preference_restore">복원</string>
+    <string name="preference_backup_complete">백업 완료!</string>
+    <string name="preference_restore_complete">복원 완료!</string>
+    <string name="preference_fail">작업 실패</string>
+    <string name="preference_not_file">파일이 없습니다</string>
 
 </resources>

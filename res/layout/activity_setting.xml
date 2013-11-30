@@ -79,6 +79,14 @@
         android:layout_below="@+id/vibrate"
         android:layout_marginTop="5dp"
         android:text="@string/clear_icon_noti" />
+    
+    <CheckBox
+        android:id="@+id/preference_backup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clear_icon_noti"
+        android:layout_marginTop="5dp"
+        android:text="@string/preference_backup_restore" />
 
     <TextView
         android:id="@+id/madeby"

@@ -78,6 +78,12 @@ Do you want to cancel?</string>
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
 \n
+\n[1.8] : 2013-11-24
+\n-Backup and Restore
+\n
+\n[1.7] : 2013-11-24
+\n-Count Clear Error Fix
+\n
 \n[1.6] : 2013-11-23
 \n-Add transparent notification icon function
 \n
@@ -109,5 +115,12 @@ Do you want to cancel?</string>
     <string name="show_user_app">User App</string>
     <string name="back_to_kill">Press again to exit</string>
     <string name="clear_icon_noti">Transparent notification icon</string>
+    <string name="preference_backup_restore">Backup <![CDATA[&]]> Restore</string>
+    <string name="preference_backup">Backup</string>
+    <string name="preference_restore">Restore</string>
+    <string name="preference_backup_complete">Backup Complete!</string>
+    <string name="preference_restore_complete">Restore Complete!</string>
+    <string name="preference_fail">Task Fail</string>
+    <string name="preference_not_file">There are no files</string>
 
 </resources>
