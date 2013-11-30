@@ -121,31 +121,45 @@ public class AndroidService extends Service {
 		Runnable task = new Runnable(){
 			@Override
 			public void run(){
-				int num=0;
+//				int num=0;
 				while(isService){
+					/**
+					 * 1.9 업데이트
+					 * 코드 위치 변경 - 화면이 꺼져도 딜레이를 갖도록 설정
+					 */
+					if(setting.getInt("delay", 2)*1000==0)
+						try { Thread.sleep(1000); } catch (InterruptedException e) {e.printStackTrace();}
+					else
+						try { Thread.sleep(setting.getInt("delay", 2)*1000); } catch (InterruptedException e) {e.printStackTrace();}
+					
 					/**
 					 * 1.5업데이트
 					 * 파워 매니저를 이용하여 화면이 켜졌을때만 작동하도록 설정
 					 */
 					if(mPm.isScreenOn()){
-						int Sleep = setting.getInt("delay", 2)*1000;
-						if(Sleep==0)
-							try { Thread.sleep(1000); } catch (InterruptedException e) {e.printStackTrace();}
-						else
-							try { Thread.sleep(Sleep); } catch (InterruptedException e) {e.printStackTrace();}
+//						int Sleep = setting.getInt("delay", 2)*1000;
+//						if(setting.getInt("delay", 2)*1000==0)
+//							try { Thread.sleep(1000); } catch (InterruptedException e) {e.printStackTrace();}
+//						else
+//							try { Thread.sleep(setting.getInt("delay", 2)*1000); } catch (InterruptedException e) {e.printStackTrace();}
 						Top_Activity();
 					}else{
-						if(num<2){
+//						if(num<2){
 							if(setting.getInt("Notification", 5)!=0)
 								if( ! isRunningApp){
 									am.cancel(sender);
 									isRunningApp = ! isRunningApp;
+									/**
+									 * 1.9 업데이트
+									 * 화면이 꺼지면 last package 초기화
+									 */
+									last_packageName = "";
 									setting_Editor.remove("FIVE_MINUTE").commit();
 									Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
 								}
-							num++;
-							System.gc();
-						}
+//							num++;
+//							System.gc();
+//						}
 					}
 				}
 			}
