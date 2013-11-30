@@ -18,6 +18,14 @@ public class BroadCast extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
+		
+		/**
+		 * 1.7 업데이트
+		 * setting을 지정하지 않아서 브로드캐스트 리시버에서 강제종료 되는 오류 수정
+		 */
+		setting = context.getSharedPreferences("setting", 0);
+		setting_Editor = setting.edit();
+		
 		if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
 	        /**
 	         * 1.5업데이트
@@ -35,8 +43,8 @@ public class BroadCast extends BroadcastReceiver {
 	        }
 //			alarm(context);
 			
-        }else if(Intent.ACTION_DATE_CHANGED.equals(intent.getAction())){
-        	DATE_CHANGE(context);
+//        }else if(Intent.ACTION_DATE_CHANGED.equals(intent.getAction())){
+//        	DATE_CHANGE(context);
         	
         }else if("ACTION_DATE_CHANGE".equals(intent.getAction())){
 //        	Log.d("브로드캐스트", "설정한 24시간 알람이 작동하였습니다");
@@ -44,14 +52,14 @@ public class BroadCast extends BroadcastReceiver {
         	
         }else if("ACTION_FALSE_THE_STOP".equals(intent.getAction())){
 //        	Log.d("브로드캐스트", "작동한지 10분이 경과되었습니다");
-        	setting = context.getSharedPreferences("setting", 0);
-    		setting_Editor = setting.edit();
+//        	setting = context.getSharedPreferences("setting", 0);
+//    		setting_Editor = setting.edit();
     		
     		setting_Editor.putBoolean("Ten_minutes", false).commit();
     		
         }else if("ACTION_FIVE_MINUTE".equals(intent.getAction())){
-        	setting = context.getSharedPreferences("setting", 0);
-        	setting_Editor = setting.edit();
+//        	setting = context.getSharedPreferences("setting", 0);
+//        	setting_Editor = setting.edit();
         	
         	int FIVE_COUNT = setting.getInt("FIVE_MINUTE", 0) + setting.getInt("Notification", 5);
         	setting_Editor.putInt("FIVE_MINUTE", FIVE_COUNT).commit();
