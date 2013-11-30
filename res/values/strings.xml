@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Only3</string>
+    <string name="action_settings">Settings</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="list">App\nList</string>
+    <string name="already_start">Service already Started!!</string>
+    <string name="MainText_1">Smart habit you are using a smart phone,\nOnly3!</string>
+    <string name="ok">OK</string>
+    <string name="exit">Exit</string>
+    <string name="add">Add</string>
+    <string name="del">Delete</string>
+    <string name="Enter_packagename_0">Enter the package name own</string>
+    <string name="Enter_packagename_1">Enter The PackageName and Count</string>
+    <string name="Not_installed_Package">Package Not installed</string>
+    <string name="Alert_Message">Select the Button you want</string>
+    <string name="notification_title">Only3 Service Running</string>
+    <string name="notification_message">Touch, To Check the Count</string>
+    <string name="count_added">Count was increased : %1$d/%2$d</string>
+    <string name="count_much_added">Count has been exceeded!!! : %1$d/%2$d</string>
+    <string name="abort_1">One day\nthe count has been exceeded</string>
+    <string name="count_clean_title">Count has been initialized</string>
+    <string name="count_clean_message">A new day began!</string>
+    <string name="Enter_count">Please Enter The Count</string>
+    <string name="Enter_count_message">Do you want to set the number of times to use the application?</string>
+    <string name="blank">You have not entered nothing</string>
+    <string name="count_is_zero">Count is Zero, Not applied</string>
+    <string name="count_add">Count has been registered</string>
+    <string name="now_count">Now: %1$d, All: %2$d</string>
+    <string name="count_edit">Count Edit</string>
+    <string name="count_fixed">Count has been fixed</string>
+    <string name="count_250">You can set up to 250 count</string>
+    <string name="setting">Settings</string>
+    <string name="delay">App Check Delay : %1$d Second</string>
+    <string name="madeby">Only3, Version : %1$s
+\nCopyright <![CDATA[©]]> 2013 whdghks913
+\nAll rights reserved</string>
+    <string name="password">Set PassWord</string>
+    <string name="enter_password">Enter the your Password, Please</string>
+    <string name="enter_password_ok">Password has been registered</string>
+    <string name="welcome_1">The Only3 applications can help your smart life!!
+\n\nIntuitive UI, fast operation..
+\nNow, I will start the world smart!</string>
+    <string name="welcome_2">This Icon is AppList!
+\nYou can set the count!
+\nand We can set up to 250 count</string>
+    <string name="welcome_3">This Icon is Setting Button!
+\nYou can see the Delay setting, Password etc
+\nPlease set a password so that someone can not unlock</string>
+    <string name="welcome_4">Do you know how to clear the app?
+\n\n
+Applications that obtain Administrator permission, you can not delete in the usual way
+\nPlease click the main screen, click the [Delete] button to delete
+\n\n
+Delete the application, Service must be turned off</string>
+    <string name="next">Only3 Start!</string>
+    <string name="count_add_Alert">Maybe, It is dangerous to set system Applications</string>
+    <string name="device_admin">Only3 Applications to work smoothly must have administrator privileges
+\n\nThis application that was developed by a student is pure, korean country
+\nQuestions, please mail to whdghks913@naver.com
+\n\nIf you set an administrator, The app is not deleted in the usual way
+\nin order to delete, please use the Remove button in the application</string>
+    <string name="device_admin_disabled">Administrator privileges are turned off</string>
+    <string name="device_admin_disabled_warring">If you disable the permission of this application
+\nOnly three applications Can not prevent the delete,
+\nFunction does not work
+\n\n
+Do you want to cancel?</string>
+    <string name="ten">Does not after 10 minutes
+\nAfter 10 minutes, the end can be</string>
+    <string name="five_minute">It was after %1$d minutes from using the application</string>
+    <string name="five_minute_setting_TextView">After running the application, the notification every %1$d minutes</string>
+    <string name="five_minute_setting_TextView_not">You do not notice when the application is run</string>
+    <string name="me_app">This app can not be selected</string>
+    <string name="Not_Install">Service is Running, Not uninstall</string>
+    <string name="change_log">[Info]
+\nApplications that obtain Administrator permission, you can not delete in the usual way
+\nPlease click the main screen, click the [Delete] button to delete
+\n
+\n[1.5] : 2013-11-22
+\n-Known bug fixes
+\n-Sources and memory optimization
+\n-Add vibration settings
+\n-In hdpi devices such as Nexus S, Fix inconsistent layout
+\n-kitkat (version 4.4) support
+\n
+\n[1.3] : 2013-10-23
+\n-10 minutes after boot error fix
+\n
+\n[1.2] : 2013-10-22
+\n-Check Only3 application to prevent the counter
+\n
+\n[1.1] : 2013-10-22
+\n-In order to prevent the deletion, administrator privileges acquisition
+\n-Notification every (setting) minutes (add vibration permission)
+\n-Fix initialization error counters every day
+\n-After 10 minutes, you can stop service
+\n-Source optimization
+\n
+\n[1.0] : 2013-10-21
+\n-Applications Release</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="show_all_app">All App</string>
+    <string name="show_system_app">System App</string>
+    <string name="show_user_app">User App</string>
+    <string name="back_to_kill">Press again to exit</string>
+
+</resources>

@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/all_app"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="@string/show_all_app"/>
+    
+    <item
+        android:id="@+id/system_app"
+        android:orderInCategory="2"
+        android:showAsAction="ifRoom"
+        android:title="@string/show_system_app"/>
+    
+    <item
+        android:id="@+id/user_app"
+        android:orderInCategory="3"
+        android:showAsAction="ifRoom"
+        android:title="@string/show_user_app"/>
+
+</menu>

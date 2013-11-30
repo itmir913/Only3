@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">세번만</string>
+    <string name="action_settings">Settings</string>
+    <string name="start">시작</string>
+    <string name="stop">종료</string>
+    <string name="list">목록</string>
+    <string name="already_start">서비스가 이미 시작되었습니다!!</string>
+    <string name="MainText_1">스마트폰을 사용하는 똑똑한 습관, 세번만!</string>
+    <string name="ok">확인</string>
+    <string name="exit">취소</string>
+    <string name="add">추가</string>
+    <string name="del">제거</string>
+    <string name="Enter_packagename_0">직접 패키지 이름 입력</string>
+    <string name="Enter_packagename_1">패키지 이름과 카운트를 입력하세요</string>
+    <string name="Not_installed_Package">패키지가 설치되지 않았습니다</string>
+    <string name="Alert_Message">원하는 버튼을 선택하세요</string>
+    <string name="notification_title">세번만 어플이 동작중입니다</string>
+    <string name="notification_message">카운트를 확인하려면 터치하세요</string>
+    <string name="count_added">카운트가 증가하였습니다 : %1$d/%2$d</string>
+    <string name="count_much_added">카운트를 초과했습니다!!! : %1$d/%2$d</string>
+    <string name="abort_1">일일 카운트가\n초과되었습니다</string>
+    <string name="count_clean_title">카운트가 초기화되었습니다</string>
+    <string name="count_clean_message">새로운 하루가 시작되었습니다!</string>
+    <string name="Enter_count">카운트를 입력해 주세요!</string>
+    <string name="Enter_count_message">하루에 어플을 사용할 횟수를 설정하시겠습니까?</string>
+    <string name="blank">아무것도 입력되지 않았습니다</string>
+    <string name="count_is_zero">카운트가 0입니다, 적용되지 않았습니다</string>
+    <string name="count_add">카운트가 등록되었습니다</string>
+    <string name="now_count">현재: %1$d, 전체: %2$d</string>
+    <string name="count_edit">카운트 수정</string>
+    <string name="count_fixed">카운트가 수정되었습니다</string>
+    <string name="count_250">카운트는 250까지만 설정할수 있습니다</string>
+    <string name="setting">설정</string>
+    <string name="delay">어플 체크 딜레이 : %1$d초</string>
+    <string name="madeby">세번만 , Version : %1$s
+\nCopyright <![CDATA[©]]> 2013 whdghks913
+\nAll rights reserved</string>
+    <string name="password">비밀번호 설정</string>
+    <string name="enter_password">비밀번호를 입력해 주세요</string>
+    <string name="enter_password_ok">비밀번호가 설정되었습니다</string>
+    <string name="welcome_1">세번만 어플은 당신의 스마트 생활을 도와줍니다!!
+\n\n직관적인 UI, 빠른 동작..
+\n이제, 당신의 스마트한 세상이 시작됩니다!</string>
+    <string name="welcome_2">이 아이콘은 어플 목록입니다
+\n이 아이콘을 눌러 당신은 카운트를 설정할수 있습니다
+\n카운트는 250까지 설정이 가능합니다</string>
+    <string name="welcome_3">이 아이콘은 설정 아이콘 입니다
+\n감시 딜레이, 비밀번호 등이 있습니다
+\n누군가가 잠금을 해제 할 수 없도록 암호를 설정하세요</string>
+    <string name="welcome_4">어플을 지우는 방법을 아십니까?
+\n\n
+관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
+\n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
+\n\n
+어플 삭제는 서비스가 꺼져있을때만 가능합니다</string>
+    <string name="next">세번만 어플 시작!</string>
+    <string name="count_add_Alert">시스탬 어플을 지정하는것은 위험할수 있습니다</string>
+    <string name="device_admin">세번만 어플이 원활하게 동작하기 위해서는
+\n관리자 권한이 필요합니다!
+\n\n이 어플은 학생이 개발한 순수 우리나라 어플입니다
+\n문의 사항은 whdghks913@naver.com으로 메일 주세요
+\n\n관리자 권한을 설정하면 일반 방법으로 삭제되지 않습니다
+\n삭제를 하기 위해서는, 어플내 제거 버튼을 사용해 주세요</string>
+    <string name="device_admin_disabled">관리자 권한이 해제되었습니다</string>
+    <string name="device_admin_disabled_warring">이 어플의 권한을 해제하면
+\n세번만 어플의 삭제를 막을수 없으며,
+\n기능이 작동하지 않습니다
+\n\n
+정말로 해제하겠습니까?</string>
+    <string name="ten">아직 10분이 경과되지 않았습니다
+\n10분 경과후, 종료가 가능합니다</string>
+    <string name="five_minute">어플을 사용한지 %1$d분이 지났습니다</string>
+    <string name="five_minute_setting_TextView">어플을 실행한후, %1$d분마다 알려줍니다</string>
+    <string name="five_minute_setting_TextView_not">어플을 실행해도, 알리지 않습니다</string>
+    <string name="me_app">이 어플은 선택할수 없습니다</string>
+    <string name="Not_Install">서비스가 실행중입니다, 제거할수 없습니다</string>
+    <string name="change_log">[안내]
+\n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
+\n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
+\n
+\n[1.5] : 2013-11-22
+\n-알려진 버그 수정
+\n-소스와 메모리 최적화
+\n-진동 설정 추가
+\n-넥서스S와 같은 hdpi기종에서 레이아웃 오류 수정
+\n-킷켓(4.4) 지원
+\n
+\n[1.3] : 2013-10-23
+\n-부팅후 서비스를 종료할때 10분이 지났음에도 불구하고 지나지 않았다고 하는 문제 해결
+\n
+\n[1.2] : 2013-10-22
+\n-세번만 어플의 카운트 지정을 방지합니다
+\n
+\n[1.1] : 2013-10-22
+\n-관리자 권한을 얻어 임의 삭제 방지
+\n-지정된 시간마다 알림을 띄워 사용 시간을 인지할수 있도록 합니다(진동 권한 추가)
+\n-하루마다 카운터가 초기화 되지 않는 오류 수정
+\n-서비스를 실행한후 10분이 지나야만 종료가 가능하게 수정
+\n-소스 최적화
+\n
+\n[1.0] : 2013-10-21
+\n-어플 출시</string>
+    <string name="vibrate">진동</string>
+    <string name="show_all_app">모든 어플</string>
+    <string name="show_system_app">시스탬 어플</string>
+    <string name="show_user_app">사용자 어플</string>
+    <string name="back_to_kill">한번더 눌러 종료합니다</string>
+
+</resources>

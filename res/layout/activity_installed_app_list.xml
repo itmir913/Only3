@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Installed_AppList"
+    android:orientation="vertical" >
+    
+    <ListView
+        android:id="@+id/AppList"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+    <View
+        android:id="@+id/View"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10sp"
+        android:background="#FFFFFFFF" />
+    
+    <ListView
+        android:id="@+id/AppList_Settinged"
+        android:layout_weight="2"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
