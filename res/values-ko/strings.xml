@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">세번만</string>
-    <string name="action_settings">Settings</string>
     <string name="start">시작</string>
     <string name="stop">종료</string>
     <string name="list">목록</string>
@@ -80,6 +79,9 @@
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
 \n
+\n[1.6] : 2013-11-23
+\n-진행중 투명 아이콘 기능 추가
+\n
 \n[1.5] : 2013-11-22
 \n-알려진 버그 수정
 \n-소스와 메모리 최적화
@@ -107,5 +109,6 @@
     <string name="show_system_app">시스탬 어플</string>
     <string name="show_user_app">사용자 어플</string>
     <string name="back_to_kill">한번더 눌러 종료합니다</string>
+    <string name="clear_icon_noti">투명 상단바 아이콘</string>
 
 </resources>

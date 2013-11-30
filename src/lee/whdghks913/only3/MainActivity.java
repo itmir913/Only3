@@ -16,6 +16,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -56,7 +57,14 @@ public class MainActivity extends Activity {
 	DevicePolicyManager devicePolicyManager;
 	ComponentName adminComponent;
 	
-	int kill=0;
+	/**
+	 * 1.6 업데이트
+	 * 
+	 * debug_10minute란 10분을 기다려야 하는 귀찮음을 해제하기 위해
+	 * 개발자가 추가한 코드입니다
+	 * 이 int값이 5이상되면 10분이 지난것으로 판단하도록 하는 코드가 설정되어 있습니다
+	 */
+	int kill=0, debug_10minute=0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -148,6 +156,20 @@ public class MainActivity extends Activity {
 		if(isServiceRunningCheck("lee.whdghks913.only3.AndroidService")){
 			if(setting.getBoolean("Ten_minutes", true)){
 				Toast.makeText(this, R.string.ten, Toast.LENGTH_SHORT).show();
+				/**
+				 * 1.6 업데이트
+				 * 
+				 * 10분을 기다려야 하는 귀차니즘을 극복하기 위해 만든 기능으로
+				 * 제한시간(1초)안에 6번의 버튼터치를 하면 풀리게 되어 있습니다
+				 */
+				++debug_10minute;
+				if(debug_10minute>=5){
+					Intent intent_10minute = new Intent(this, BroadCast.class);
+					intent_10minute.setAction("ACTION_FALSE_THE_STOP");
+					sendBroadcast(intent_10minute);
+				}
+				debug_10M();
+				Log.d("디버그 카운트", "카운트 : "+debug_10minute);
 			}else{
 				setting_Editor.putBoolean("Service", false).commit();
 				
@@ -234,6 +256,26 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
+	}
+	
+	/**
+	 * 1.6 업데이트 (임시)
+	 * 
+	 * 1초를 기다려 주는 역할을 합니다
+	 * 1초내 5번 이상의 터치가 들어왔을경우 10분이 경과한 것으로 판단합니다
+	 * 1초가 초과되면 카운터를 초기화 합니다
+	 */
+	public void debug_10M(){
+		Runnable task = new Runnable(){
+			public void run(){
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {}
+				debug_10minute=0;
+			}
+		};
+		Thread thread = new Thread(task);
+		thread.start();
 	}
 	
 	/**

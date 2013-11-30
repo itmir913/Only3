@@ -60,7 +60,6 @@
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Five_Seekbar"
         android:layout_below="@+id/Five_Seekbar"
         android:layout_marginTop="20dp"
         android:text="@string/password" />
@@ -70,15 +69,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
+        android:layout_marginTop="5dp"
         android:text="@string/vibrate" />
     
+    <CheckBox
+        android:id="@+id/clear_icon_noti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vibrate"
+        android:layout_marginTop="5dp"
+        android:text="@string/clear_icon_noti" />
+
     <TextView
         android:id="@+id/madeby"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:text="@string/madeby" />
 

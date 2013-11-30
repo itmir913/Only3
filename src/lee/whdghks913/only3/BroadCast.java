@@ -98,9 +98,14 @@ public class BroadCast extends BroadcastReceiver {
 		package_count_Editor.commit();
 		
 		NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+		Notification noti;
 		
-		Notification noti = new Notification(R.drawable.ic_launcher,
-				context.getString(R.string.count_clean_title), System.currentTimeMillis());
+		if(setting.getBoolean("notification_clear", false))
+			noti = new Notification(R.drawable.clear_icon,
+					context.getString(R.string.count_clean_title), System.currentTimeMillis());
+		else
+			noti = new Notification(R.drawable.ic_launcher,
+					context.getString(R.string.count_clean_title), System.currentTimeMillis());
 		
 		//알림 소리를 한번만 내도록
 //		noti.flags = Notification.FLAG_ONLY_ALERT_ONCE;
@@ -147,8 +152,13 @@ public class BroadCast extends BroadcastReceiver {
 	public void Five_count(Context context, int count){
 		NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 		
-		Notification noti = new Notification(R.drawable.ic_launcher,
-				String.format(context.getString(R.string.five_minute), count), System.currentTimeMillis());
+		Notification noti;
+		if(setting.getBoolean("notification_clear", false))
+			noti = new Notification(R.drawable.clear_icon,
+					String.format(context.getString(R.string.five_minute), count), System.currentTimeMillis());
+		else
+			noti = new Notification(R.drawable.ic_launcher,
+					String.format(context.getString(R.string.five_minute), count), System.currentTimeMillis());
 		
 		//알림 소리를 한번만 내도록
 //		noti.flags = Notification.FLAG_ONLY_ALERT_ONCE;

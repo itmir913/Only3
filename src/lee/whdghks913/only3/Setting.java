@@ -1,7 +1,9 @@
 package lee.whdghks913.only3;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -27,7 +29,11 @@ public class Setting extends Activity {
 	
 	SeekBar delay, Five_Seekbar;
 	TextView delay_text, Five_Text;
-	CheckBox password, vibrate;
+	/**
+	 * 1.6 업데이트
+	 * 상단바 알림 아이콘 투명 기능 지원
+	 */
+	CheckBox password, vibrate, clear_icon;
 	
 	TextView madeby;
 	
@@ -44,6 +50,7 @@ public class Setting extends Activity {
 		
 		password = (CheckBox) findViewById(R.id.password);
 		vibrate = (CheckBox) findViewById(R.id.vibrate);
+		clear_icon = (CheckBox) findViewById(R.id.clear_icon_noti);
 		
 		Five_Seekbar = (SeekBar) findViewById(R.id.Five_Seekbar);
 		Five_Text = (TextView) findViewById(R.id.Five_Text);
@@ -65,6 +72,11 @@ public class Setting extends Activity {
 		
 		if(setting.getBoolean("password_enable", false))
 			password.setChecked(true);
+		if(setting.getBoolean("notification_clear", false))
+			clear_icon.setChecked(true);
+		
+		if(isServiceRunningCheck())
+			clear_icon.setEnabled(false);
 		
 		delay.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			@Override
@@ -136,6 +148,19 @@ public class Setting extends Activity {
 					setting_Edit.putBoolean("vibrate", true).commit();
 				else
 					setting_Edit.remove("vibrate").commit();
+			}
+		});
+		
+		clear_icon.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// TODO Auto-generated method stub
+				if(isChecked){
+					setting_Edit.putBoolean("notification_clear", true).commit();
+				}else{
+					setting_Edit.remove("notification_clear").commit();
+				}
 			}
 		});
 		
@@ -222,5 +247,13 @@ public class Setting extends Activity {
 		System.gc();
 		finish();
 	}
+	
+	boolean isServiceRunningCheck() {
+    	ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
+    	for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE))
+    	    if ("lee.whdghks913.only3.AndroidService".equals(service.service.getClassName()))
+    	        return true;
+    	return false;
+    }
 	
 }

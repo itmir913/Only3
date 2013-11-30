@@ -82,7 +82,11 @@ public class AndroidService extends Service {
 		
 		// 서비스를 포그라운드 상태로 만들어 안드로이드에 의해 꺼지지않는 상태로 만듭니다
 		PendingIntent pendingIndent = PendingIntent.getActivity(this, 1, new Intent(this, MainActivity.class), 0);
-		Notification noti = new Notification(R.drawable.ic_launcher, getString(R.string.app_name), System.currentTimeMillis());
+		Notification noti;
+		if(setting.getBoolean("notification_clear", false))
+			noti = new Notification(R.drawable.clear_icon, getString(R.string.app_name), System.currentTimeMillis());
+		else
+			noti = new Notification(R.drawable.ic_launcher, getString(R.string.app_name), System.currentTimeMillis());
 		noti.setLatestEventInfo(this, getString(R.string.notification_title), getString(R.string.notification_message), pendingIndent);
 		noti.flags = noti.flags|Notification.FLAG_ONGOING_EVENT;
 		startForeground(1000, noti);
@@ -256,10 +260,18 @@ public class AndroidService extends Service {
 		Notification noti;
 		
 		if(isToomany)
-			noti = new Notification(R.drawable.ic_launcher,
-					String.format( getString(R.string.count_much_added), Count, All_Count ), System.currentTimeMillis());
+			if(setting.getBoolean("notification_clear", false))
+				noti = new Notification(R.drawable.clear_icon,
+						String.format( getString(R.string.count_much_added), Count, All_Count ), System.currentTimeMillis());
+			else
+				noti = new Notification(R.drawable.ic_launcher,
+						String.format( getString(R.string.count_much_added), Count, All_Count ), System.currentTimeMillis());
 		else
-			noti = new Notification(R.drawable.ic_launcher,
+			if(setting.getBoolean("notification_clear", false))
+				noti = new Notification(R.drawable.clear_icon,
+						String.format( getString(R.string.count_added), Count, All_Count ), System.currentTimeMillis());
+			else
+				noti = new Notification(R.drawable.ic_launcher,
 					String.format( getString(R.string.count_added), Count, All_Count ), System.currentTimeMillis());
 		
 	      //알림 소리를 한번만 내도록
