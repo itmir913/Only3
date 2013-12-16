@@ -5,16 +5,11 @@
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="list">App\nList</string>
-    <string name="already_start">Service already Started!!</string>
     <string name="MainText_1">Smart habit you are using a smart phone,\nOnly3!</string>
     <string name="ok">OK</string>
     <string name="exit">Exit</string>
     <string name="add">Add</string>
     <string name="del">Delete</string>
-    <string name="Enter_packagename_0">Enter the package name own</string>
-    <string name="Enter_packagename_1">Enter The PackageName and Count</string>
-    <string name="Not_installed_Package">Package Not installed</string>
-    <string name="Alert_Message">Select the Button you want</string>
     <string name="notification_title">Only3 Service Running</string>
     <string name="notification_message">Touch, To Check the Count</string>
     <string name="count_added">Count was increased : %1$d/%2$d</string>
@@ -55,7 +50,7 @@ Applications that obtain Administrator permission, you can not delete in the usu
 \n\n
 Delete the application, Service must be turned off</string>
     <string name="next">Only3 Start!</string>
-    <string name="count_add_Alert">Maybe, It is dangerous to set system Applications</string>
+    <!-- <string name="count_add_Alert">Maybe, It is dangerous to set system Applications</string> -->
     <string name="device_admin">Only3 Applications to work smoothly must have administrator privileges
 \n\nThis application that was developed by a student is pure, korean country
 \nQuestions, please mail to whdghks913@naver.com
@@ -77,6 +72,10 @@ Do you want to cancel?</string>
     <string name="change_log">[Info]
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
+\n
+\n[2.1] : 2013-12-16
+\n-Some bug fix
+\n-Memory optimization
 \n
 \n[2.0] : 2013-11-27
 \n-Password Error Fix

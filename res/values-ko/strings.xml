@@ -5,16 +5,11 @@
     <string name="start">시작</string>
     <string name="stop">종료</string>
     <string name="list">목록</string>
-    <string name="already_start">서비스가 이미 시작되었습니다!!</string>
     <string name="MainText_1">스마트폰을 사용하는 똑똑한 습관, 세번만!</string>
     <string name="ok">확인</string>
     <string name="exit">취소</string>
     <string name="add">추가</string>
     <string name="del">제거</string>
-    <string name="Enter_packagename_0">직접 패키지 이름 입력</string>
-    <string name="Enter_packagename_1">패키지 이름과 카운트를 입력하세요</string>
-    <string name="Not_installed_Package">패키지가 설치되지 않았습니다</string>
-    <string name="Alert_Message">원하는 버튼을 선택하세요</string>
     <string name="notification_title">세번만 어플이 동작중입니다</string>
     <string name="notification_message">카운트를 확인하려면 터치하세요</string>
     <string name="count_added">카운트가 증가하였습니다 : %1$d/%2$d</string>
@@ -39,7 +34,7 @@
     <string name="password">비밀번호 설정</string>
     <string name="enter_password">비밀번호를 입력해 주세요</string>
     <string name="enter_password_ok">비밀번호가 설정되었습니다</string>
-    <string name="welcome_1">세번만 어플은 당신의 스마트 생활을 도와줍니다!!
+    <string name="welcome_1">세번만 어플이 당신의 스마트 생활을 도와드리겠습니다!!!
 \n\n직관적인 UI, 빠른 동작..
 \n이제, 당신의 스마트한 세상이 시작됩니다!</string>
     <string name="welcome_2">이 아이콘은 어플 목록입니다
@@ -55,7 +50,7 @@
 \n\n
 어플 삭제는 서비스가 꺼져있을때만 가능합니다</string>
     <string name="next">세번만 어플 시작!</string>
-    <string name="count_add_Alert">시스탬 어플을 지정하는것은 위험할수 있습니다</string>
+    <!-- <string name="count_add_Alert">시스탬 어플을 지정하는것은 위험할수 있습니다</string> -->
     <string name="device_admin">세번만 어플이 원활하게 동작하기 위해서는
 \n관리자 권한이 필요합니다!
 \n\n이 어플은 학생이 개발한 순수 우리나라 어플입니다
@@ -78,6 +73,10 @@
     <string name="change_log">[안내]
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
+\n
+\n[2.1] : 2013-12-16
+\n-일부 버그 수정
+\n-메모리 최적화
 \n
 \n[2.0] : 2013-11-27
 \n-비밀번호 오류 수정

@@ -68,7 +68,7 @@ public class AndroidService extends Service {
 		 */
 		final PowerManager mPm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		
-		actvityManager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
+		actvityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 		am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 		
 		package_count = getSharedPreferences("package_count", 0);
