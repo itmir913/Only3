@@ -30,6 +30,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -55,6 +57,9 @@ public class Setting extends Activity {
 	
 	TextView madeby;
 	
+	RadioButton All, toast, Notifi;
+	RadioGroup alertType;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -71,6 +76,20 @@ public class Setting extends Activity {
 		clear_icon = (CheckBox) findViewById(R.id.clear_icon_noti);
 		
 		preference_backup = (CheckBox) findViewById(R.id.preference_backup);
+		
+		alertType = (RadioGroup) findViewById(R.id.alertType);
+		All = (RadioButton) findViewById(R.id.All);
+		toast = (RadioButton) findViewById(R.id.Toast);
+		Notifi = (RadioButton) findViewById(R.id.Notifi);
+		
+		if(setting.getInt("NotifiType", 0)==0)
+			Notifi.setChecked(true);
+		else if(setting.getInt("NotifiType", 0)==1)
+			toast.setChecked(true);
+		else if(setting.getInt("NotifiType", 0)==2)
+			All.setChecked(true);
+		
+		alertType.setOnCheckedChangeListener(new RadioGroupListener());
 		
 		BackupCheck();
 		
@@ -419,5 +438,16 @@ public class Setting extends Activity {
 		return false;
 	}
 	
+	public class RadioGroupListener implements android.widget.RadioGroup.OnCheckedChangeListener {
+		@Override
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			if(checkedId==R.id.All)
+				setting_Edit.putInt("NotifiType", 2).commit();
+			if(checkedId==R.id.Toast)
+				setting_Edit.putInt("NotifiType", 1).commit();
+			if(checkedId==R.id.Notifi)
+				setting_Edit.putInt("NotifiType", 0).commit();
+		}
+	}
 	
 }

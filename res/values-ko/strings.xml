@@ -25,7 +25,7 @@
     <string name="now_count">현재: %1$d, 전체: %2$d</string>
     <string name="count_edit">카운트 수정</string>
     <string name="count_fixed">카운트가 수정되었습니다</string>
-    <string name="count_250">카운트는 250까지만 설정할수 있습니다</string>
+    <string name="count_250">카운트는 3~250까지 설정할수 있습니다</string>
     <string name="count_not_fix_total" >카운트가 초과되었기 때문에 카운트를 수정할수 없습니다</string>
     <string name="count_not_fix_ten" >10분이 지나지 않아서 카운트를 수정할수 없습니다</string>
     <string name="count_launcher" >이 어플은 홈화면을 담당하는 런처 어플입니다
@@ -146,5 +146,10 @@
 	<string name="loading" >로딩중</string>
 	<string name="menu_all" >전체 어플</string>
 	<string name="menu_download" >다운로드한 어플</string>
+	<string name="alertType_Text" >[알림 타입]</string>
+	<string name="alertType_all" >토스트 알림 <![CDATA[&]]> 상단바 알림</string>
+	<string name="alertType_toast" >토스트 알림</string>
+	<string name="alertType_notifi" >상단바 알림</string>
+	<string name="appSetting_Text" >[어플 세부 설정]</string>
 
 </resources>

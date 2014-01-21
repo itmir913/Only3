@@ -25,7 +25,7 @@
     <string name="now_count">Now: %1$d, All: %2$d</string>
     <string name="count_edit">Count Edit</string>
     <string name="count_fixed">Count has been fixed</string>
-    <string name="count_250">You can set up to 250 count</string>
+    <string name="count_250">Count can be set 3~250</string>
     <string name="count_not_fix_total" >Since the count is exceeded, you can not change the count</string>
     <string name="count_not_fix_ten" >Does not after 10 minutes, you can not change the count</string>
     <string name="count_launcher" >This App is Home Launcher
@@ -145,6 +145,10 @@ Do you want to cancel?</string>
 	<string name="loading" >Loading</string>
 	<string name="menu_all" >All App</string>
 	<string name="menu_download" >Download App</string>
-	
+	<string name="alertType_Text" >[Notification Type]</string>
+	<string name="alertType_all" >Toast <![CDATA[&]]> Notification</string>
+	<string name="alertType_toast" >Toast</string>
+	<string name="alertType_notifi" >Notification</string>
+	<string name="appSetting_Text" >[App Advanced Setting]</string>
 
 </resources>

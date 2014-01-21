@@ -1,7 +1,7 @@
 package lee.whdghks913.only3;
 
 import java.util.Calendar;
-import java.util.Iterator;
+import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
@@ -11,6 +11,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +19,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.PowerManager;
+import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class AndroidService extends Service {
@@ -89,10 +91,16 @@ public class AndroidService extends Service {
 							Intent.FLAG_ACTIVITY_CLEAR_TOP |
 							Intent.FLAG_ACTIVITY_SINGLE_TOP );
 					startActivity(intent);
-					
-					showNotify(true);
+					//getString(R.string.count_much_added), Count, All_Count
+					if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
+						showNotify(true);
+					if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
+						showToast(true);
 				}else{
-					showNotify(false);
+					if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
+						showNotify(false);
+					if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
+						showToast(false);
 				}
 			}
 		};
@@ -144,57 +152,62 @@ public class AndroidService extends Service {
 		return null;
 	}
 	
-	public void Top_Activity(){
-		for(Iterator<RunningTaskInfo> iterator = actvityManager.getRunningTasks(1).iterator(); iterator.hasNext(); ){
-			String pkgName = iterator.next().topActivity.getPackageName();
-			
-			if(pkgName.equals("lee.whdghks913.only3")){
-				System.gc();
-				return;
-			}
-			
-			if(!pkgName.equals(package_list.getString(pkgName, "")) && last_packageName.equals(pkgName)){
-				System.gc();
-				return;
-			}
-			
-			All_Count = package_All_count.getInt(pkgName, 0);
-			Count = package_count.getInt(pkgName, 0);
-			
-			if (pkgName.equals(package_list.getString(pkgName, "")) && Count > All_Count){
-				handler.sendEmptyMessage(0);
-				return;
-			}else if( pkgName.equals(package_list.getString(pkgName, "")) && !last_packageName.equals(pkgName) ) {
-				++Count;
-				package_count_Editor.putInt(pkgName, Count).commit();
-				handler.sendEmptyMessage(0);
-			}
-			
-			if( ! last_packageName.equals(pkgName) ){
-				last_packageName = pkgName;
-				/**
-				 * 1.1 업데이트 : 5분마다 알림을 띄우는 코드 추가
-				 */
-				if(setting.getInt("Notification", 5)!=0)
-					if( ! isRunningApp){
-						am.cancel(sender);
-						isRunningApp = ! isRunningApp;
-						setting_Editor.remove("FIVE_MINUTE").commit();
-//						Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
-					}
-			}else if(pkgName.equals(package_list.getString(pkgName, ""))){
-				if(setting.getInt("Notification", 5)!=0)
-					if(isRunningApp){
-						alarm();
-//						Log.d(setting.getInt("Notification", 5)+"분 체크", "시작");
-					}
-			}
+	protected void Top_Activity(){
+//		for(Iterator<RunningTaskInfo> iterator = actvityManager.getRunningTasks(1).iterator(); iterator.hasNext(); ){
+//		String pkgName = iterator.next().topActivity.getPackageName();
+//	}
+		
+		List<RunningTaskInfo>taskInfos = actvityManager.getRunningTasks(1); 
+		ComponentName topActivity= taskInfos.get(0).topActivity;
+//		String className = topActivity.getClassName();
+		String pkgName = topActivity.getPackageName();
+		
+		if(pkgName.equals("lee.whdghks913.only3")){
+			System.gc();
+			return;
+		}
+		
+		if(!pkgName.equals(package_list.getString(pkgName, "")) && last_packageName.equals(pkgName)){
+			System.gc();
+			return;
+		}
+		
+		All_Count = package_All_count.getInt(pkgName, 0);
+		Count = package_count.getInt(pkgName, 0);
+		
+		if (pkgName.equals(package_list.getString(pkgName, "")) && Count > All_Count){
+			handler.sendEmptyMessage(0);
+			return;
+		}else if( pkgName.equals(package_list.getString(pkgName, "")) && !last_packageName.equals(pkgName) ) {
+			++Count;
+			package_count_Editor.putInt(pkgName, Count).commit();
+			handler.sendEmptyMessage(0);
+		}
+		
+		if( ! last_packageName.equals(pkgName) ){
+			last_packageName = pkgName;
+			/**
+			 * 1.1 업데이트 : 5분마다 알림을 띄우는 코드 추가
+			 */
+			if(setting.getInt("Notification", 5)!=0)
+				if( ! isRunningApp){
+					am.cancel(sender);
+					isRunningApp = ! isRunningApp;
+					setting_Editor.remove("FIVE_MINUTE").commit();
+//					Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
+				}
+		}else if(pkgName.equals(package_list.getString(pkgName, ""))){
+			if(setting.getInt("Notification", 5)!=0)
+				if(isRunningApp){
+					alarm();
+//					Log.d(setting.getInt("Notification", 5)+"분 체크", "시작");
+				}
 		}
 		System.gc();
 	}
 	
 	@SuppressWarnings("deprecation")
-	private void showNotify(boolean isToomany) {
+	protected void showNotify(boolean isToomany) {
 		NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 		Notification noti;
 		
@@ -224,6 +237,16 @@ public class AndroidService extends Service {
 	      nm.cancel(0);
 	}
 	
+	protected void showToast(boolean isToomany) {
+		String toastText;
+		if(isToomany)
+			toastText = String.format( getString(R.string.count_much_added), Count, All_Count );
+		else
+			toastText = String.format( getString(R.string.count_added), Count, All_Count );
+		
+		Toast.makeText(this, toastText, Toast.LENGTH_LONG).show();
+	}
+	
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
@@ -246,14 +269,14 @@ public class AndroidService extends Service {
 		restartService();
 	}
 	
-	public void restartService(){
+	protected void restartService(){
 		if(setting.getBoolean("Service", false)){
 			Intent intent = new Intent(this, BroadCast.class);
 			sendBroadcast(intent);
 		}
 	}
 	
-	public void alarm(){
+	protected void alarm(){
 	    /**
 		 * 알람 매니저를 위한 코드
 		 */
