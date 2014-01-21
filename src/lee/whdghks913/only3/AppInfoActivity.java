@@ -405,7 +405,7 @@ public class AppInfoActivity extends Activity {
 		    		if(count==0){
 		    			Toast.makeText(AppInfoActivity.this, R.string.count_is_zero, Toast.LENGTH_SHORT).show();
 		    			return;
-		    		}else if(count>250){
+		    		}else if(count>250 || count<3){
 		    			Toast.makeText(AppInfoActivity.this, R.string.count_250, Toast.LENGTH_SHORT).show();
 		    			return;
 		    		}else{
@@ -503,7 +503,7 @@ public class AppInfoActivity extends Activity {
 		    		int count = Integer.valueOf(count_String);
 		    		if(count==0){
 		    			Toast.makeText(AppInfoActivity.this, R.string.count_is_zero, Toast.LENGTH_SHORT).show();
-		    		}else if(count>250){
+		    		}else if(count>250 || count<3){
 		    			Toast.makeText(AppInfoActivity.this, R.string.count_250, Toast.LENGTH_SHORT).show();
 		    			return;
 		    		}else{
