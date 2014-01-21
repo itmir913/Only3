@@ -28,6 +28,8 @@
     <string name="count_250">You can set up to 250 count</string>
     <string name="count_not_fix_total" >Since the count is exceeded, you can not change the count</string>
     <string name="count_not_fix_ten" >Does not after 10 minutes, you can not change the count</string>
+    <string name="count_launcher" >This App is Home Launcher
+\nPlease be careful when you set up the count</string>
     <string name="setting">Settings</string>
     <string name="delay">App Check Delay : %1$d Second</string>
     <string name="madeby">Only3, Version : %1$s
@@ -74,6 +76,9 @@ Do you want to cancel?</string>
     <string name="change_log">[Info]
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
+\n
+\n[2.5] : 2014-01-21
+\n-When you select the launcher app, display a warning
 \n
 \n[2.4] : 2014-01-21
 \n-vibration setting bug fix

@@ -10,9 +10,11 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -374,6 +376,17 @@ public class AppInfoActivity extends Activity {
 			return;
 		}
 		
+		/**
+		 * 2.5 Update
+		 */
+		String[] home = getHomeLauncher();
+		for(int i=0 ; i<home.length ; i++ ){
+			if(home[i].equals(packageName)){
+				Toast.makeText(this, R.string.count_launcher, Toast.LENGTH_SHORT).show();
+				break;
+			}
+		}
+		
 		((TextView) inflater_view.findViewById(R.id.AppName)).setText( appName );
 		((TextView) inflater_view.findViewById(R.id.PackageName)).setText( packageName );
 		
@@ -525,5 +538,21 @@ public class AppInfoActivity extends Activity {
 		super.onStop();
 		System.gc();
 		finish();
+	}
+	
+	private String[] getHomeLauncher(){
+		String[] homes;
+		PackageManager pm =  getPackageManager();
+		Intent homeIntent = new Intent(Intent.ACTION_MAIN); // Action 값이 ACTION_MAIN
+		homeIntent.addCategory(Intent.CATEGORY_HOME); // Category 값이 CATEGORY_HOME
+		
+		//위 Intent의 조건을 만족시켜 주는 ResolveInfo 리스트를 구한다.
+		List<ResolveInfo> homeApps = pm.queryIntentActivities(homeIntent, PackageManager.GET_ACTIVITIES);
+		homes = new String[homeApps.size()];
+		for(int i=0; i<homeApps.size(); i++){
+			ResolveInfo info = homeApps.get(i); //구해진 ResolveInfo 를 통해서 PackageName을 가져온다.
+			homes[i] = info.activityInfo.packageName; 
+		}
+		return homes;
 	}
 }

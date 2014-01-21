@@ -28,6 +28,8 @@
     <string name="count_250">카운트는 250까지만 설정할수 있습니다</string>
     <string name="count_not_fix_total" >카운트가 초과되었기 때문에 카운트를 수정할수 없습니다</string>
     <string name="count_not_fix_ten" >10분이 지나지 않아서 카운트를 수정할수 없습니다</string>
+    <string name="count_launcher" >이 어플은 홈화면을 담당하는 런처 어플입니다
+\n카운트를 설정하실때 주의하세요</string>
     <string name="setting">설정</string>
     <string name="delay">어플 체크 딜레이 : %1$d초</string>
     <string name="madeby">세번만 , Version : %1$s
@@ -75,6 +77,9 @@
     <string name="change_log">[안내]
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
+\n
+\n[2.5] : 2014-01-21
+\n-런처 어플 선택시 경고 알림 표시
 \n
 \n[2.4] : 2014-01-21
 \n-진동 설정 버그 수정
