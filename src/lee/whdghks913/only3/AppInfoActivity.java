@@ -6,7 +6,9 @@ import java.util.List;
 
 import lee.whdghks913.only3.AppInfo.AppFilter;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -443,10 +445,11 @@ public class AppInfoActivity extends Activity {
 			return;
 		}
 		
-		if(setting.getBoolean("Ten_minutes", true)){
-			Toast.makeText(AppInfoActivity.this, R.string.count_not_fix_ten, Toast.LENGTH_SHORT).show();
-			return;
-		}
+		if(isServiceRunningCheck("lee.whdghks913.only3.AndroidService"))
+			if(setting.getBoolean("Ten_minutes", true)){
+				Toast.makeText(AppInfoActivity.this, R.string.count_not_fix_ten, Toast.LENGTH_SHORT).show();
+				return;
+			}
 		
 		inflater_view = inflater.inflate(R.layout.remove_package, null);
 		
@@ -555,4 +558,11 @@ public class AppInfoActivity extends Activity {
 		}
 		return homes;
 	}
+	
+	public boolean isServiceRunningCheck(String service_Name){
+    	for (RunningServiceInfo service : ((ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE)).getRunningServices(Integer.MAX_VALUE))
+    	    if (service_Name.equals(service.service.getClassName()))
+    	        return true;
+    	return false;
+    }
 }
