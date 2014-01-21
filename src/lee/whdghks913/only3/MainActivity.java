@@ -107,8 +107,10 @@ public class MainActivity extends Activity {
 		
 		boolean unlocked_password = getIntent().getBooleanExtra("PassWord_Enable", false);
 		if(!unlocked_password)
-			if(setting.getBoolean("password_enable", false))
+			if(setting.getBoolean("password_enable", false)){
 				startActivity(new Intent(this, PassWord.class));
+				finish();
+			}
 		
 		start_Btn = (Button) findViewById(R.id.start_Btn);
 

@@ -26,6 +26,8 @@
     <string name="count_edit">카운트 수정</string>
     <string name="count_fixed">카운트가 수정되었습니다</string>
     <string name="count_250">카운트는 250까지만 설정할수 있습니다</string>
+    <string name="count_not_fix_total" >카운트가 초과되었기 때문에 카운트를 수정할수 없습니다</string>
+    <string name="count_not_fix_ten" >10분이 지나지 않아서 카운트를 수정할수 없습니다</string>
     <string name="setting">설정</string>
     <string name="delay">어플 체크 딜레이 : %1$d초</string>
     <string name="madeby">세번만 , Version : %1$s
@@ -69,11 +71,15 @@
     <string name="five_minute_setting_TextView">어플을 실행한후, %1$d분마다 알려줍니다</string>
     <string name="five_minute_setting_TextView_not">어플을 실행해도, 알리지 않습니다</string>
     <string name="me_app">이 어플은 선택할수 없습니다</string>
-    <string name="warning_app">이 어플을 지정할경우 위험할수 있습니다</string>
     <string name="Not_Install">서비스가 실행중입니다, 제거할수 없습니다</string>
     <string name="change_log">[안내]
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
+\n
+\n[2.3] : 2014-01-21
+\n-10분동안 카운트 변경 제한
+\n-카운트 초과 어플의 전체 카운트 변경 제한
+\n-카운트 초과 어플의 배경색 변경
 \n
 \n[2.2] :2014-01-21
 \n-어플 선택 리스트 UI 변경

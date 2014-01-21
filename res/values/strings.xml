@@ -26,6 +26,8 @@
     <string name="count_edit">Count Edit</string>
     <string name="count_fixed">Count has been fixed</string>
     <string name="count_250">You can set up to 250 count</string>
+    <string name="count_not_fix_total" >Since the count is exceeded, you can not change the count</string>
+    <string name="count_not_fix_ten" >Does not after 10 minutes, you can not change the count</string>
     <string name="setting">Settings</string>
     <string name="delay">App Check Delay : %1$d Second</string>
     <string name="madeby">Only3, Version : %1$s
@@ -68,13 +70,17 @@ Do you want to cancel?</string>
     <string name="five_minute_setting_TextView">After running the application, the notification every %1$d minutes</string>
     <string name="five_minute_setting_TextView_not">You do not notice when the application is run</string>
     <string name="me_app">This app can not be selected</string>
-    <string name="warning_app">Select the application , Can be dangerous</string>
     <string name="Not_Install">Service is Running, Not uninstall</string>
     <string name="change_log">[Info]
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
 \n
-\n[2.2] :2014-01-21
+\n[2.3] : 2014-01-21
+\n-Limit of count change for 10 minutes
+\n-Limit of change of the count of Exceeded count app
+\n-change the background color of Exceeded count app
+\n
+\n[2.2] : 2014-01-21
 \n-App List UI Change
 \n
 \n[2.1] : 2013-12-16
@@ -131,5 +137,6 @@ Do you want to cancel?</string>
 	<string name="loading" >Loading</string>
 	<string name="menu_all" >All App</string>
 	<string name="menu_download" >Download App</string>
+	
 
 </resources>

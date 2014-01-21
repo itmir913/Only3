@@ -220,7 +220,7 @@ public class AndroidService extends Service {
 	      noti.setLatestEventInfo(AndroidService.this, getString(R.string.count_added),
 	    		  getString(R.string.count_added), pendingI);
 	      nm.notify(0, noti);
-//	      nm.cancel(0);
+	      nm.cancel(0);
 	}
 	
 	@Override

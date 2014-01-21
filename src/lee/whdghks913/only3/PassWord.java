@@ -82,9 +82,9 @@ public class PassWord extends Activity {
         	/**
         	 * 뒤로가기 키를 눌러 MainActivity로 넘어가는 편법을 예방합니다
         	 */
-        	moveTaskToBack(true);
+//        	moveTaskToBack(true);
         	finish();
-        	android.os.Process.killProcess(android.os.Process.myPid());
+//        	android.os.Process.killProcess(android.os.Process.myPid());
         	return true;
         }
         return super.onKeyDown(keyCode, event);

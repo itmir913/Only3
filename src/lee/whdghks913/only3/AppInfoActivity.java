@@ -31,6 +31,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * 2.2 업데이트
+ */
 public class AppInfoActivity extends Activity {
 	// 메뉴 KEY
 	private final int MENU_DOWNLOAD = 0;
@@ -43,7 +46,7 @@ public class AppInfoActivity extends Activity {
 	private ListView mListView = null;
 	private ListAdapter mAdapter = null;
 	
-	SharedPreferences package_All_count, package_list, package_count;
+	SharedPreferences package_All_count, package_list, package_count, setting;
 	SharedPreferences.Editor package_list_Edit, package_All_count_Edit, package_count_Editor;
 	
 	View inflater_view;
@@ -62,6 +65,8 @@ public class AppInfoActivity extends Activity {
 		package_All_count_Edit = package_All_count.edit();
 		package_count = getSharedPreferences("package_count", 0);
 		package_count_Editor = package_count.edit();
+		
+		setting = getSharedPreferences("setting", 0);
 		
 		inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		
@@ -211,11 +216,20 @@ public class AppInfoActivity extends Activity {
 				holder.Count_TextView = (TextView) convertView
 						.findViewById(R.id.Count_TextView);
 				
-				holder.mLayout.setBackgroundResource(R.color.Background);
-				holder.mCountLayout.setVisibility(View.VISIBLE);
+				/**
+				 * 2.3 Update
+				 */
+				int now = package_count.getInt(data.mAppPackge, 0);
+				int all = package_All_count.getInt(data.mAppPackge, 0);
 				
+				if(all<=now)
+					holder.mLayout.setBackgroundResource(R.color.TotalCount);
+				else
+					holder.mLayout.setBackgroundResource(R.color.Background);
+				
+				holder.mCountLayout.setVisibility(View.VISIBLE);
 				holder.Count_TextView.setText( String.format(getString(R.string.now_count),
-						package_count.getInt(data.mAppPackge, 0), package_All_count.getInt(data.mAppPackge, 0)) );
+						now, all ));
 			}
 			
 			return convertView;
@@ -405,12 +419,28 @@ public class AppInfoActivity extends Activity {
 		appName = ((TextView) v.findViewById(R.id.app_name)).getText().toString();
 		packageName = ((TextView) v.findViewById(R.id.app_package)).getText().toString();
 		
+		/**
+		 * 2.3 Update
+		 */
+		int now = package_count.getInt(packageName, 0);
+		int all = package_All_count.getInt(packageName, 0);
+		
+		if(all<=now){
+			Toast.makeText(AppInfoActivity.this, R.string.count_not_fix_total, Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		if(setting.getBoolean("Ten_minutes", true)){
+			Toast.makeText(AppInfoActivity.this, R.string.count_not_fix_ten, Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
 		inflater_view = inflater.inflate(R.layout.remove_package, null);
 		
 		((TextView) inflater_view.findViewById(R.id.AppName)).setText( appName );
 		((TextView) inflater_view.findViewById(R.id.PackageName)).setText( packageName );
 		((TextView) inflater_view.findViewById(R.id.Count_Status)).setText( String.format(getString(R.string.now_count),
-				package_count.getInt(packageName, 0), package_All_count.getInt(packageName, 0)) );
+				now, all ));
 		
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setPositiveButton(R.string.del, new DialogInterface.OnClickListener() {
