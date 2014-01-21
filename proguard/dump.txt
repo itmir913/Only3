@@ -50613,8 +50613,8 @@ _____________________________________________________________________
 Interfaces (count = 0):
 
 Constant Pool (count = 31):
-  + Integer [2131099687]
   + Integer [2131099688]
+  + Integer [2131099689]
   + Class [android/app/admin/DeviceAdminReceiver]
   + Class [android/content/Context]
   + Class [android/widget/Toast]
@@ -50665,7 +50665,7 @@ Methods (count = 3):
     + Code attribute instructions (code length = 11, locals = 3, stack = 3):
       [0] aload_1 v1
       [1] ldc #1
-        + Integer [2131099687]
+        + Integer [2131099688]
       [3] iconst_0
       [4] invokestatic #9
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -50681,7 +50681,7 @@ Methods (count = 3):
     + Code attribute instructions (code length = 7, locals = 3, stack = 2):
       [0] aload_1 v1
       [1] ldc #2
-        + Integer [2131099688]
+        + Integer [2131099689]
       [3] invokevirtual #8
         + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
       [6] areturn
@@ -52913,7 +52913,7 @@ _____________________________________________________________________
 
 Interfaces (count = 0):
 
-Constant Pool (count = 345):
+Constant Pool (count = 394):
   + Integer [0]
   + Integer [1]
   + Integer [2130903041]
@@ -52926,9 +52926,10 @@ Constant Pool (count = 345):
   + Integer [2131099670]
   + Integer [2131099673]
   + Integer [2131099674]
-  + Integer [2131099693]
-  + Integer [2131099707]
+  + Integer [2131099675]
+  + Integer [2131099694]
   + Integer [2131099708]
+  + Integer [2131099709]
   + Integer [2131296256]
   + Integer [2131296257]
   + Integer [2131296280]
@@ -52938,15 +52939,22 @@ Constant Pool (count = 345):
   + Integer [2131296287]
   + Integer [2131296290]
   + String [Ten_minutes]
+  + String [android.intent.action.MAIN]
+  + String [android.intent.category.HOME]
   + String [layout_inflater]
   + String [lee.whdghks913.only3]
   + String [package_All_count]
   + String [package_count]
   + String [package_list]
   + String [setting]
+  + Class [[Ljava/lang/String;]
   + Class [android/app/Activity]
   + Class [android/app/AlertDialog$Builder]
+  + Class [android/content/Intent]
   + Class [android/content/SharedPreferences]
+  + Class [android/content/pm/ActivityInfo]
+  + Class [android/content/pm/PackageManager]
+  + Class [android/content/pm/ResolveInfo]
   + Class [android/view/LayoutInflater]
   + Class [android/view/Menu]
   + Class [android/view/MenuItem]
@@ -52962,6 +52970,7 @@ Constant Pool (count = 345):
   + Class [java/lang/String]
   + Class [java/lang/System]
   + Class [java/lang/Void]
+  + Class [java/util/List]
   + Class [lee/whdghks913/only3/AppInfoActivity]
   + Class [lee/whdghks913/only3/g]
   + Class [lee/whdghks913/only3/h]
@@ -52971,6 +52980,8 @@ Constant Pool (count = 345):
   + Class [lee/whdghks913/only3/l]
   + Class [lee/whdghks913/only3/m]
   + Class [lee/whdghks913/only3/n]
+  + Fieldref [android/content/pm/ActivityInfo.packageName Ljava/lang/String;]
+  + Fieldref [android/content/pm/ResolveInfo.activityInfo Landroid/content/pm/ActivityInfo;]
   + Fieldref [lee/whdghks913/only3/AppInfoActivity.a Landroid/content/SharedPreferences;]
   + Fieldref [lee/whdghks913/only3/AppInfoActivity.b Landroid/content/SharedPreferences;]
   + Fieldref [lee/whdghks913/only3/AppInfoActivity.c Landroid/content/SharedPreferences;]
@@ -53000,6 +53011,9 @@ Constant Pool (count = 345):
   + Methodref [android/app/AlertDialog$Builder.setPositiveButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
   + Methodref [android/app/AlertDialog$Builder.setView (Landroid/view/View;)Landroid/app/AlertDialog$Builder;]
   + Methodref [android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;]
+  + Methodref [android/content/Intent.<init> (Ljava/lang/String;)V]
+  + Methodref [android/content/Intent.addCategory (Ljava/lang/String;)Landroid/content/Intent;]
+  + Methodref [android/content/pm/PackageManager.queryIntentActivities (Landroid/content/Intent;I)Ljava/util/List;]
   + Methodref [android/view/LayoutInflater.inflate (ILandroid/view/ViewGroup;)Landroid/view/View;]
   + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
   + Methodref [android/view/View.getParent ()Landroid/view/ViewParent;]
@@ -53020,8 +53034,10 @@ Constant Pool (count = 345):
   + Methodref [java/lang/System.gc ()V]
   + Methodref [lee/whdghks913/only3/AppInfoActivity.a (Z)V]
   + Methodref [lee/whdghks913/only3/AppInfoActivity.b ()V]
+  + Methodref [lee/whdghks913/only3/AppInfoActivity.c ()[Ljava/lang/String;]
   + Methodref [lee/whdghks913/only3/AppInfoActivity.findViewById (I)Landroid/view/View;]
   + Methodref [lee/whdghks913/only3/AppInfoActivity.finish ()V]
+  + Methodref [lee/whdghks913/only3/AppInfoActivity.getPackageManager ()Landroid/content/pm/PackageManager;]
   + Methodref [lee/whdghks913/only3/AppInfoActivity.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
   + Methodref [lee/whdghks913/only3/AppInfoActivity.getString (I)Ljava/lang/String;]
   + Methodref [lee/whdghks913/only3/AppInfoActivity.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
@@ -53043,16 +53059,22 @@ Constant Pool (count = 345):
   + InterfaceMethodref [android/view/MenuItem.getItemId ()I]
   + InterfaceMethodref [android/view/MenuItem.setVisible (Z)Landroid/view/MenuItem;]
   + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
+  + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+  + InterfaceMethodref [java/util/List.size ()I]
   + NameAndType [<init> ()V]
   + NameAndType [<init> (Landroid/content/Context;)V]
+  + NameAndType [<init> (Ljava/lang/String;)V]
   + NameAndType [<init> (Llee/whdghks913/only3/AppInfoActivity;)V]
   + NameAndType [<init> (Llee/whdghks913/only3/AppInfoActivity;Landroid/content/Context;)V]
   + NameAndType [<init> (Llee/whdghks913/only3/AppInfoActivity;Llee/whdghks913/only3/m;)V]
   + NameAndType [a (Z)V]
   + NameAndType [a Landroid/content/SharedPreferences;]
+  + NameAndType [activityInfo Landroid/content/pm/ActivityInfo;]
   + NameAndType [add (IIII)Landroid/view/MenuItem;]
+  + NameAndType [addCategory (Ljava/lang/String;)Landroid/content/Intent;]
   + NameAndType [b ()V]
   + NameAndType [b Landroid/content/SharedPreferences;]
+  + NameAndType [c ()[Ljava/lang/String;]
   + NameAndType [c Landroid/content/SharedPreferences;]
   + NameAndType [d Landroid/content/SharedPreferences;]
   + NameAndType [e Landroid/content/SharedPreferences$Editor;]
@@ -53066,9 +53088,11 @@ Constant Pool (count = 345):
   + NameAndType [format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
   + NameAndType [g Landroid/content/SharedPreferences$Editor;]
   + NameAndType [gc ()V]
+  + NameAndType [get (I)Ljava/lang/Object;]
   + NameAndType [getBoolean (Ljava/lang/String;Z)Z]
   + NameAndType [getInt (Ljava/lang/String;I)I]
   + NameAndType [getItemId ()I]
+  + NameAndType [getPackageManager ()Landroid/content/pm/PackageManager;]
   + NameAndType [getParent ()Landroid/view/ViewParent;]
   + NameAndType [getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
   + NameAndType [getString (I)Ljava/lang/String;]
@@ -53089,7 +53113,9 @@ Constant Pool (count = 345):
   + NameAndType [onResume ()V]
   + NameAndType [onStop ()V]
   + NameAndType [p Landroid/view/View;]
+  + NameAndType [packageName Ljava/lang/String;]
   + NameAndType [q Landroid/widget/ListView;]
+  + NameAndType [queryIntentActivities (Landroid/content/Intent;I)Ljava/util/List;]
   + NameAndType [r Llee/whdghks913/only3/n;]
   + NameAndType [removeView (Landroid/view/View;)V]
   + NameAndType [setAdapter (Landroid/widget/ListAdapter;)V]
@@ -53105,18 +53131,22 @@ Constant Pool (count = 345):
   + NameAndType [setVisible (Z)Landroid/view/MenuItem;]
   + NameAndType [show ()Landroid/app/AlertDialog;]
   + NameAndType [show ()V]
+  + NameAndType [size ()I]
   + NameAndType [toString ()Ljava/lang/String;]
   + NameAndType [valueOf (I)Ljava/lang/Integer;]
   + Utf8 [()I]
   + Utf8 [()Landroid/app/AlertDialog;]
   + Utf8 [()Landroid/content/SharedPreferences$Editor;]
+  + Utf8 [()Landroid/content/pm/PackageManager;]
   + Utf8 [()Landroid/view/ViewParent;]
   + Utf8 [()Ljava/lang/CharSequence;]
   + Utf8 [()Ljava/lang/String;]
   + Utf8 [()V]
+  + Utf8 [()[Ljava/lang/String;]
   + Utf8 [(I)Landroid/view/MenuItem;]
   + Utf8 [(I)Landroid/view/View;]
   + Utf8 [(I)Ljava/lang/Integer;]
+  + Utf8 [(I)Ljava/lang/Object;]
   + Utf8 [(I)Ljava/lang/String;]
   + Utf8 [(I)V]
   + Utf8 [(IIII)Landroid/view/MenuItem;]
@@ -53124,6 +53154,7 @@ Constant Pool (count = 345):
   + Utf8 [(ILandroid/view/ViewGroup;)Landroid/view/View;]
   + Utf8 [(Landroid/content/Context;)V]
   + Utf8 [(Landroid/content/Context;II)Landroid/widget/Toast;]
+  + Utf8 [(Landroid/content/Intent;I)Ljava/util/List;]
   + Utf8 [(Landroid/os/Bundle;)V]
   + Utf8 [(Landroid/view/Menu;)Z]
   + Utf8 [(Landroid/view/MenuItem;)Z]
@@ -53134,7 +53165,9 @@ Constant Pool (count = 345):
   + Utf8 [(Landroid/widget/ListAdapter;)V]
   + Utf8 [(Ljava/lang/CharSequence;)V]
   + Utf8 [(Ljava/lang/Object;)Z]
+  + Utf8 [(Ljava/lang/String;)Landroid/content/Intent;]
   + Utf8 [(Ljava/lang/String;)Ljava/lang/Object;]
+  + Utf8 [(Ljava/lang/String;)V]
   + Utf8 [(Ljava/lang/String;I)I]
   + Utf8 [(Ljava/lang/String;I)Landroid/content/SharedPreferences;]
   + Utf8 [(Ljava/lang/String;Z)Z]
@@ -53157,6 +53190,7 @@ Constant Pool (count = 345):
   + Utf8 [I]
   + Utf8 [Landroid/content/SharedPreferences$Editor;]
   + Utf8 [Landroid/content/SharedPreferences;]
+  + Utf8 [Landroid/content/pm/ActivityInfo;]
   + Utf8 [Landroid/content/pm/PackageManager;]
   + Utf8 [Landroid/view/LayoutInflater;]
   + Utf8 [Landroid/view/View;]
@@ -53165,11 +53199,20 @@ Constant Pool (count = 345):
   + Utf8 [Llee/whdghks913/only3/n;]
   + Utf8 [StackMapTable]
   + Utf8 [Ten_minutes]
+  + Utf8 [[Ljava/lang/String;]
   + Utf8 [a]
+  + Utf8 [activityInfo]
   + Utf8 [add]
+  + Utf8 [addCategory]
+  + Utf8 [android.intent.action.MAIN]
+  + Utf8 [android.intent.category.HOME]
   + Utf8 [android/app/Activity]
   + Utf8 [android/app/AlertDialog$Builder]
+  + Utf8 [android/content/Intent]
   + Utf8 [android/content/SharedPreferences]
+  + Utf8 [android/content/pm/ActivityInfo]
+  + Utf8 [android/content/pm/PackageManager]
+  + Utf8 [android/content/pm/ResolveInfo]
   + Utf8 [android/view/LayoutInflater]
   + Utf8 [android/view/Menu]
   + Utf8 [android/view/MenuItem]
@@ -53193,9 +53236,11 @@ Constant Pool (count = 345):
   + Utf8 [format]
   + Utf8 [g]
   + Utf8 [gc]
+  + Utf8 [get]
   + Utf8 [getBoolean]
   + Utf8 [getInt]
   + Utf8 [getItemId]
+  + Utf8 [getPackageManager]
   + Utf8 [getParent]
   + Utf8 [getSharedPreferences]
   + Utf8 [getString]
@@ -53211,6 +53256,7 @@ Constant Pool (count = 345):
   + Utf8 [java/lang/String]
   + Utf8 [java/lang/System]
   + Utf8 [java/lang/Void]
+  + Utf8 [java/util/List]
   + Utf8 [k]
   + Utf8 [l]
   + Utf8 [layout_inflater]
@@ -53236,10 +53282,12 @@ Constant Pool (count = 345):
   + Utf8 [onResume]
   + Utf8 [onStop]
   + Utf8 [p]
+  + Utf8 [packageName]
   + Utf8 [package_All_count]
   + Utf8 [package_count]
   + Utf8 [package_list]
   + Utf8 [q]
+  + Utf8 [queryIntentActivities]
   + Utf8 [r]
   + Utf8 [removeView]
   + Utf8 [remove_Alert]
@@ -53256,6 +53304,7 @@ Constant Pool (count = 345):
   + Utf8 [setVisible]
   + Utf8 [setting]
   + Utf8 [show]
+  + Utf8 [size]
   + Utf8 [toString]
   + Utf8 [valueOf]
 
@@ -53321,34 +53370,34 @@ Fields (count = 18):
     Access flags: 0x0
       = java.lang.String k
 
-Methods (count = 20):
+Methods (count = 21):
   - Method:       <init>()V
     Access flags: 0x1
       = public AppInfoActivity()
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 30, locals = 1, stack = 2):
       [0] aload_0 v0
-      [1] invokespecial #76
+      [1] invokespecial #87
         + Methodref [android/app/Activity.<init> ()V]
       [4] aload_0 v0
       [5] iconst_0
-      [6] putfield #69
+      [6] putfield #80
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.l I]
       [9] aload_0 v0
       [10] iconst_1
-      [11] putfield #70
+      [11] putfield #81
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.m I]
       [14] aload_0 v0
       [15] iconst_0
-      [16] putfield #71
+      [16] putfield #82
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.n I]
       [19] aload_0 v0
       [20] aconst_null
-      [21] putfield #74
+      [21] putfield #85
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.q Landroid/widget/ListView;]
       [24] aload_0 v0
       [25] aconst_null
-      [26] putfield #75
+      [26] putfield #86
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.r Llee/whdghks913/only3/n;]
       [29] return
       Code attribute exceptions (count = 0):
@@ -53360,140 +53409,140 @@ Methods (count = 20):
     + Code attribute instructions (code length = 185, locals = 2, stack = 5):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] invokespecial #77
+      [2] invokespecial #88
         + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
       [5] aload_0 v0
       [6] ldc #3
         + Integer [2130903041]
-      [8] invokevirtual #112
+      [8] invokevirtual #128
         + Methodref [lee/whdghks913/only3/AppInfoActivity.setContentView (I)V]
       [11] aload_0 v0
       [12] aload_0 v0
-      [13] ldc #29
+      [13] ldc #32
         + String [package_list]
       [15] iconst_0
-      [16] invokevirtual #109
+      [16] invokevirtual #125
         + Methodref [lee/whdghks913/only3/AppInfoActivity.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [19] putfield #59
+      [19] putfield #70
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.b Landroid/content/SharedPreferences;]
       [22] aload_0 v0
       [23] aload_0 v0
-      [24] getfield #59
+      [24] getfield #70
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.b Landroid/content/SharedPreferences;]
-      [27] invokeinterface #122
+      [27] invokeinterface #138
         + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
-      [32] putfield #62
+      [32] putfield #73
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.e Landroid/content/SharedPreferences$Editor;]
       [35] aload_0 v0
       [36] aload_0 v0
-      [37] ldc #27
+      [37] ldc #30
         + String [package_All_count]
       [39] iconst_0
-      [40] invokevirtual #109
+      [40] invokevirtual #125
         + Methodref [lee/whdghks913/only3/AppInfoActivity.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [43] putfield #58
+      [43] putfield #69
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.a Landroid/content/SharedPreferences;]
       [46] aload_0 v0
       [47] aload_0 v0
-      [48] getfield #58
+      [48] getfield #69
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.a Landroid/content/SharedPreferences;]
-      [51] invokeinterface #122
+      [51] invokeinterface #138
         + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
-      [56] putfield #63
+      [56] putfield #74
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.f Landroid/content/SharedPreferences$Editor;]
       [59] aload_0 v0
       [60] aload_0 v0
-      [61] ldc #28
+      [61] ldc #31
         + String [package_count]
       [63] iconst_0
-      [64] invokevirtual #109
+      [64] invokevirtual #125
         + Methodref [lee/whdghks913/only3/AppInfoActivity.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [67] putfield #60
+      [67] putfield #71
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.c Landroid/content/SharedPreferences;]
       [70] aload_0 v0
       [71] aload_0 v0
-      [72] getfield #60
+      [72] getfield #71
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.c Landroid/content/SharedPreferences;]
-      [75] invokeinterface #122
+      [75] invokeinterface #138
         + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
-      [80] putfield #64
+      [80] putfield #75
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.g Landroid/content/SharedPreferences$Editor;]
       [83] aload_0 v0
       [84] aload_0 v0
-      [85] ldc #30
+      [85] ldc #33
         + String [setting]
       [87] iconst_0
-      [88] invokevirtual #109
+      [88] invokevirtual #125
         + Methodref [lee/whdghks913/only3/AppInfoActivity.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [91] putfield #61
+      [91] putfield #72
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.d Landroid/content/SharedPreferences;]
       [94] aload_0 v0
       [95] aload_0 v0
-      [96] ldc #25
+      [96] ldc #28
         + String [layout_inflater]
-      [98] invokevirtual #111
+      [98] invokevirtual #127
         + Methodref [lee/whdghks913/only3/AppInfoActivity.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-      [101] checkcast #34
+      [101] checkcast #42
         + Class [android/view/LayoutInflater]
-      [104] putfield #66
+      [104] putfield #77
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.i Landroid/view/LayoutInflater;]
       [107] aload_0 v0
       [108] aload_0 v0
-      [109] ldc #17
+      [109] ldc #18
         + Integer [2131296257]
-      [111] invokevirtual #107
+      [111] invokevirtual #122
         + Methodref [lee/whdghks913/only3/AppInfoActivity.findViewById (I)Landroid/view/View;]
-      [114] putfield #73
+      [114] putfield #84
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.p Landroid/view/View;]
       [117] aload_0 v0
       [118] aload_0 v0
-      [119] ldc #16
+      [119] ldc #17
         + Integer [2131296256]
-      [121] invokevirtual #107
+      [121] invokevirtual #122
         + Methodref [lee/whdghks913/only3/AppInfoActivity.findViewById (I)Landroid/view/View;]
-      [124] checkcast #40
+      [124] checkcast #48
         + Class [android/widget/ListView]
-      [127] putfield #74
+      [127] putfield #85
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.q Landroid/widget/ListView;]
       [130] aload_0 v0
-      [131] new #57
+      [131] new #66
         + Class [lee/whdghks913/only3/n]
       [134] dup
       [135] aload_0 v0
       [136] aload_0 v0
-      [137] invokespecial #121
+      [137] invokespecial #137
         + Methodref [lee/whdghks913/only3/n.<init> (Llee/whdghks913/only3/AppInfoActivity;Landroid/content/Context;)V]
-      [140] putfield #75
+      [140] putfield #86
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.r Llee/whdghks913/only3/n;]
       [143] aload_0 v0
-      [144] getfield #74
+      [144] getfield #85
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.q Landroid/widget/ListView;]
       [147] aload_0 v0
-      [148] getfield #75
+      [148] getfield #86
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.r Llee/whdghks913/only3/n;]
-      [151] invokevirtual #93
+      [151] invokevirtual #107
         + Methodref [android/widget/ListView.setAdapter (Landroid/widget/ListAdapter;)V]
       [154] aload_0 v0
-      [155] getfield #74
+      [155] getfield #85
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.q Landroid/widget/ListView;]
-      [158] new #50
+      [158] new #59
         + Class [lee/whdghks913/only3/g]
       [161] dup
       [162] aload_0 v0
-      [163] invokespecial #113
+      [163] invokespecial #129
         + Methodref [lee/whdghks913/only3/g.<init> (Llee/whdghks913/only3/AppInfoActivity;)V]
-      [166] invokevirtual #94
+      [166] invokevirtual #108
         + Methodref [android/widget/ListView.setOnItemClickListener (Landroid/widget/AdapterView$OnItemClickListener;)V]
       [169] aload_0 v0
-      [170] getfield #74
+      [170] getfield #85
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.q Landroid/widget/ListView;]
-      [173] new #51
+      [173] new #60
         + Class [lee/whdghks913/only3/h]
       [176] dup
       [177] aload_0 v0
-      [178] invokespecial #114
+      [178] invokespecial #130
         + Methodref [lee/whdghks913/only3/h.<init> (Llee/whdghks913/only3/AppInfoActivity;)V]
-      [181] invokevirtual #95
+      [181] invokevirtual #109
         + Methodref [android/widget/ListView.setOnItemLongClickListener (Landroid/widget/AdapterView$OnItemLongClickListener;)V]
       [184] return
       Code attribute exceptions (count = 0):
@@ -53504,10 +53553,10 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 9, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #79
+      [1] invokespecial #90
         + Methodref [android/app/Activity.onResume ()V]
       [4] aload_0 v0
-      [5] invokespecial #106
+      [5] invokespecial #120
         + Methodref [lee/whdghks913/only3/AppInfoActivity.b ()V]
       [8] return
       Code attribute exceptions (count = 0):
@@ -53517,17 +53566,17 @@ Methods (count = 20):
       = private void b()
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 18, locals = 1, stack = 4):
-      [0] new #56
+      [0] new #65
         + Class [lee/whdghks913/only3/m]
       [3] dup
       [4] aload_0 v0
       [5] aconst_null
-      [6] invokespecial #119
+      [6] invokespecial #135
         + Methodref [lee/whdghks913/only3/m.<init> (Llee/whdghks913/only3/AppInfoActivity;Llee/whdghks913/only3/m;)V]
       [9] iconst_0
-      [10] anewarray #48
+      [10] anewarray #56
         + Class [java/lang/Void]
-      [13] invokevirtual #120
+      [13] invokevirtual #136
         + Methodref [lee/whdghks913/only3/m.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
       [16] pop
       [17] return
@@ -53541,29 +53590,29 @@ Methods (count = 20):
       [0] iload_1 v1
       [1] ifeq +23 (target=24)
       [4] aload_0 v0
-      [5] getfield #73
+      [5] getfield #84
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.p Landroid/view/View;]
       [8] iconst_0
-      [9] invokevirtual #90
+      [9] invokevirtual #104
         + Methodref [android/view/View.setVisibility (I)V]
       [12] aload_0 v0
-      [13] getfield #74
+      [13] getfield #85
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.q Landroid/widget/ListView;]
       [16] bipush 8
-      [18] invokevirtual #96
+      [18] invokevirtual #110
         + Methodref [android/widget/ListView.setVisibility (I)V]
       [21] goto +20 (target=41)
       [24] aload_0 v0
-      [25] getfield #74
+      [25] getfield #85
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.q Landroid/widget/ListView;]
       [28] iconst_0
-      [29] invokevirtual #96
+      [29] invokevirtual #110
         + Methodref [android/widget/ListView.setVisibility (I)V]
       [32] aload_0 v0
-      [33] getfield #73
+      [33] getfield #84
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.p Landroid/view/View;]
       [36] bipush 8
-      [38] invokevirtual #90
+      [38] invokevirtual #104
         + Methodref [android/view/View.setVisibility (I)V]
       [41] return
       Code attribute exceptions (count = 0):
@@ -53580,18 +53629,18 @@ Methods (count = 20):
       [1] iconst_0
       [2] iconst_0
       [3] iconst_1
-      [4] ldc #15
-        + Integer [2131099708]
-      [6] invokeinterface #125
+      [4] ldc #16
+        + Integer [2131099709]
+      [6] invokeinterface #141
         + InterfaceMethodref [android/view/Menu.add (IIII)Landroid/view/MenuItem;]
       [11] pop
       [12] aload_1 v1
       [13] iconst_0
       [14] iconst_1
       [15] iconst_2
-      [16] ldc #14
-        + Integer [2131099707]
-      [18] invokeinterface #125
+      [16] ldc #15
+        + Integer [2131099708]
+      [18] invokeinterface #141
         + InterfaceMethodref [android/view/Menu.add (IIII)Landroid/view/MenuItem;]
       [23] pop
       [24] iconst_1
@@ -53604,62 +53653,62 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 107, locals = 2, stack = 2):
       [0] aload_0 v0
-      [1] getfield #71
+      [1] getfield #82
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.n I]
       [4] ifne +34 (target=38)
       [7] aload_1 v1
       [8] iconst_0
-      [9] invokeinterface #126
+      [9] invokeinterface #142
         + InterfaceMethodref [android/view/Menu.findItem (I)Landroid/view/MenuItem;]
       [14] iconst_0
-      [15] invokeinterface #128
+      [15] invokeinterface #144
         + InterfaceMethodref [android/view/MenuItem.setVisible (Z)Landroid/view/MenuItem;]
       [20] pop
       [21] aload_1 v1
       [22] iconst_1
-      [23] invokeinterface #126
+      [23] invokeinterface #142
         + InterfaceMethodref [android/view/Menu.findItem (I)Landroid/view/MenuItem;]
       [28] iconst_1
-      [29] invokeinterface #128
+      [29] invokeinterface #144
         + InterfaceMethodref [android/view/MenuItem.setVisible (Z)Landroid/view/MenuItem;]
       [34] pop
       [35] goto +70 (target=105)
       [38] aload_0 v0
-      [39] getfield #71
+      [39] getfield #82
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.n I]
       [42] iconst_1
       [43] ificmpne +34 (target=77)
       [46] aload_1 v1
       [47] iconst_0
-      [48] invokeinterface #126
+      [48] invokeinterface #142
         + InterfaceMethodref [android/view/Menu.findItem (I)Landroid/view/MenuItem;]
       [53] iconst_1
-      [54] invokeinterface #128
+      [54] invokeinterface #144
         + InterfaceMethodref [android/view/MenuItem.setVisible (Z)Landroid/view/MenuItem;]
       [59] pop
       [60] aload_1 v1
       [61] iconst_1
-      [62] invokeinterface #126
+      [62] invokeinterface #142
         + InterfaceMethodref [android/view/Menu.findItem (I)Landroid/view/MenuItem;]
       [67] iconst_0
-      [68] invokeinterface #128
+      [68] invokeinterface #144
         + InterfaceMethodref [android/view/MenuItem.setVisible (Z)Landroid/view/MenuItem;]
       [73] pop
       [74] goto +31 (target=105)
       [77] aload_1 v1
       [78] iconst_0
-      [79] invokeinterface #126
+      [79] invokeinterface #142
         + InterfaceMethodref [android/view/Menu.findItem (I)Landroid/view/MenuItem;]
       [84] iconst_1
-      [85] invokeinterface #128
+      [85] invokeinterface #144
         + InterfaceMethodref [android/view/MenuItem.setVisible (Z)Landroid/view/MenuItem;]
       [90] pop
       [91] aload_1 v1
       [92] iconst_1
-      [93] invokeinterface #126
+      [93] invokeinterface #142
         + InterfaceMethodref [android/view/Menu.findItem (I)Landroid/view/MenuItem;]
       [98] iconst_1
-      [99] invokeinterface #128
+      [99] invokeinterface #144
         + InterfaceMethodref [android/view/MenuItem.setVisible (Z)Landroid/view/MenuItem;]
       [104] pop
       [105] iconst_1
@@ -53676,20 +53725,20 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 28, locals = 2, stack = 2):
       [0] aload_1 v1
-      [1] invokeinterface #127
+      [1] invokeinterface #143
         + InterfaceMethodref [android/view/MenuItem.getItemId ()I]
       [6] ifne +11 (target=17)
       [9] aload_0 v0
       [10] iconst_0
-      [11] putfield #71
+      [11] putfield #82
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.n I]
       [14] goto +8 (target=22)
       [17] aload_0 v0
       [18] iconst_1
-      [19] putfield #71
+      [19] putfield #82
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.n I]
       [22] aload_0 v0
-      [23] invokespecial #106
+      [23] invokespecial #120
         + Methodref [lee/whdghks913/only3/AppInfoActivity.b ()V]
       [26] iconst_1
       [27] ireturn
@@ -53702,133 +53751,167 @@ Methods (count = 20):
     Access flags: 0x1
       = public void Add_Alert(android.view.View)
     Class member attributes (count = 1):
-    + Code attribute instructions (code length = 164, locals = 3, stack = 5):
+    + Code attribute instructions (code length = 209, locals = 4, stack = 5):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] ldc #21
+      [2] ldc #22
         + Integer [2131296286]
-      [4] invokevirtual #88
+      [4] invokevirtual #102
         + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [7] checkcast #41
+      [7] checkcast #49
         + Class [android/widget/TextView]
-      [10] invokevirtual #97
+      [10] invokevirtual #111
         + Methodref [android/widget/TextView.getText ()Ljava/lang/CharSequence;]
-      [13] invokeinterface #129
+      [13] invokeinterface #145
         + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
-      [18] putfield #67
+      [18] putfield #78
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.j Ljava/lang/String;]
       [21] aload_0 v0
       [22] aload_1 v1
-      [23] ldc #22
+      [23] ldc #23
         + Integer [2131296287]
-      [25] invokevirtual #88
+      [25] invokevirtual #102
         + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [28] checkcast #41
+      [28] checkcast #49
         + Class [android/widget/TextView]
-      [31] invokevirtual #97
+      [31] invokevirtual #111
         + Methodref [android/widget/TextView.getText ()Ljava/lang/CharSequence;]
-      [34] invokeinterface #129
+      [34] invokeinterface #145
         + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
-      [39] putfield #68
+      [39] putfield #79
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.k Ljava/lang/String;]
       [42] aload_0 v0
       [43] aload_0 v0
-      [44] getfield #66
+      [44] getfield #77
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.i Landroid/view/LayoutInflater;]
       [47] ldc #4
         + Integer [2130903047]
       [49] aconst_null
-      [50] invokevirtual #87
+      [50] invokevirtual #101
         + Methodref [android/view/LayoutInflater.inflate (ILandroid/view/ViewGroup;)Landroid/view/View;]
-      [53] putfield #65
+      [53] putfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
       [56] aload_0 v0
-      [57] getfield #68
+      [57] getfield #79
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.k Ljava/lang/String;]
-      [60] ldc #26
+      [60] ldc #29
         + String [lee.whdghks913.only3]
-      [62] invokevirtual #102
+      [62] invokevirtual #116
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
       [65] ifeq +14 (target=79)
       [68] aload_0 v0
-      [69] ldc #13
-        + Integer [2131099693]
+      [69] ldc #14
+        + Integer [2131099694]
       [71] iconst_0
-      [72] invokestatic #99
+      [72] invokestatic #113
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
-      [75] invokevirtual #100
+      [75] invokevirtual #114
         + Methodref [android/widget/Toast.show ()V]
       [78] return
       [79] aload_0 v0
-      [80] getfield #65
-        + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [83] ldc #18
-        + Integer [2131296280]
-      [85] invokevirtual #88
-        + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [88] checkcast #41
-        + Class [android/widget/TextView]
-      [91] aload_0 v0
-      [92] getfield #67
-        + Fieldref [lee/whdghks913/only3/AppInfoActivity.j Ljava/lang/String;]
-      [95] invokevirtual #98
-        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
-      [98] aload_0 v0
-      [99] getfield #65
-        + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [102] ldc #19
-        + Integer [2131296281]
-      [104] invokevirtual #88
-        + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [107] checkcast #41
-        + Class [android/widget/TextView]
-      [110] aload_0 v0
-      [111] getfield #68
+      [80] invokespecial #121
+        + Methodref [lee/whdghks913/only3/AppInfoActivity.c ()[Ljava/lang/String;]
+      [83] astore_2 v2
+      [84] iconst_0
+      [85] istore_3 v3
+      [86] goto +32 (target=118)
+      [89] aload_2 v2
+      [90] iload_3 v3
+      [91] aaload
+      [92] aload_0 v0
+      [93] getfield #79
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.k Ljava/lang/String;]
-      [114] invokevirtual #98
-        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
-      [117] new #32
-        + Class [android/app/AlertDialog$Builder]
-      [120] dup
-      [121] aload_0 v0
-      [122] invokespecial #81
-        + Methodref [android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V]
-      [125] astore_2 v2
-      [126] aload_2 v2
-      [127] ldc #6
-        + Integer [2131099653]
-      [129] new #52
-        + Class [lee/whdghks913/only3/i]
-      [132] dup
-      [133] aload_0 v0
-      [134] invokespecial #115
-        + Methodref [lee/whdghks913/only3/i.<init> (Llee/whdghks913/only3/AppInfoActivity;)V]
-      [137] invokevirtual #84
-        + Methodref [android/app/AlertDialog$Builder.setPositiveButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
-      [140] pop
-      [141] aload_2 v2
-      [142] ldc #7
-        + Integer [2131099654]
-      [144] aconst_null
-      [145] invokevirtual #82
-        + Methodref [android/app/AlertDialog$Builder.setNegativeButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
-      [148] pop
-      [149] aload_2 v2
-      [150] aload_0 v0
-      [151] getfield #65
+      [96] invokevirtual #116
+        + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
+      [99] ifeq +16 (target=115)
+      [102] aload_0 v0
+      [103] ldc #13
+        + Integer [2131099675]
+      [105] iconst_0
+      [106] invokestatic #113
+        + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
+      [109] invokevirtual #114
+        + Methodref [android/widget/Toast.show ()V]
+      [112] goto +12 (target=124)
+      [115] iinc v3, 1
+      [118] iload_3 v3
+      [119] aload_2 v2
+      [120] arraylength
+      [121] ificmplt -32 (target=89)
+      [124] aload_0 v0
+      [125] getfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [154] invokevirtual #85
+      [128] ldc #19
+        + Integer [2131296280]
+      [130] invokevirtual #102
+        + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
+      [133] checkcast #49
+        + Class [android/widget/TextView]
+      [136] aload_0 v0
+      [137] getfield #78
+        + Fieldref [lee/whdghks913/only3/AppInfoActivity.j Ljava/lang/String;]
+      [140] invokevirtual #112
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [143] aload_0 v0
+      [144] getfield #76
+        + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
+      [147] ldc #20
+        + Integer [2131296281]
+      [149] invokevirtual #102
+        + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
+      [152] checkcast #49
+        + Class [android/widget/TextView]
+      [155] aload_0 v0
+      [156] getfield #79
+        + Fieldref [lee/whdghks913/only3/AppInfoActivity.k Ljava/lang/String;]
+      [159] invokevirtual #112
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [162] new #36
+        + Class [android/app/AlertDialog$Builder]
+      [165] dup
+      [166] aload_0 v0
+      [167] invokespecial #92
+        + Methodref [android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V]
+      [170] astore_3 v3
+      [171] aload_3 v3
+      [172] ldc #6
+        + Integer [2131099653]
+      [174] new #61
+        + Class [lee/whdghks913/only3/i]
+      [177] dup
+      [178] aload_0 v0
+      [179] invokespecial #131
+        + Methodref [lee/whdghks913/only3/i.<init> (Llee/whdghks913/only3/AppInfoActivity;)V]
+      [182] invokevirtual #95
+        + Methodref [android/app/AlertDialog$Builder.setPositiveButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+      [185] pop
+      [186] aload_3 v3
+      [187] ldc #7
+        + Integer [2131099654]
+      [189] aconst_null
+      [190] invokevirtual #93
+        + Methodref [android/app/AlertDialog$Builder.setNegativeButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
+      [193] pop
+      [194] aload_3 v3
+      [195] aload_0 v0
+      [196] getfield #76
+        + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
+      [199] invokevirtual #96
         + Methodref [android/app/AlertDialog$Builder.setView (Landroid/view/View;)Landroid/app/AlertDialog$Builder;]
-      [157] pop
-      [158] aload_2 v2
-      [159] invokevirtual #86
+      [202] pop
+      [203] aload_3 v3
+      [204] invokevirtual #97
         + Methodref [android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;]
-      [162] pop
-      [163] return
+      [207] pop
+      [208] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 1):
-      + Stack map table attribute (count = 1):
+      + Stack map table attribute (count = 5):
         - [79] Var: ..., Stack: (empty)
+        - [89] Var: ...[a:[Ljava/lang/String;][i], Stack: (empty)
+        - [115] Var: ..., Stack: (empty)
+        - [118] Var: ..., Stack: (empty)
+        - [124] Var: -1, Stack: (empty)
   + Method:       remove_Alert(Landroid/view/View;)V
     Access flags: 0x1
       = public void remove_Alert(android.view.View)
@@ -53836,50 +53919,50 @@ Methods (count = 20):
     + Code attribute instructions (code length = 276, locals = 5, stack = 6):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] ldc #21
+      [2] ldc #22
         + Integer [2131296286]
-      [4] invokevirtual #88
+      [4] invokevirtual #102
         + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [7] checkcast #41
+      [7] checkcast #49
         + Class [android/widget/TextView]
-      [10] invokevirtual #97
+      [10] invokevirtual #111
         + Methodref [android/widget/TextView.getText ()Ljava/lang/CharSequence;]
-      [13] invokeinterface #129
+      [13] invokeinterface #145
         + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
-      [18] putfield #67
+      [18] putfield #78
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.j Ljava/lang/String;]
       [21] aload_0 v0
       [22] aload_1 v1
-      [23] ldc #22
+      [23] ldc #23
         + Integer [2131296287]
-      [25] invokevirtual #88
+      [25] invokevirtual #102
         + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [28] checkcast #41
+      [28] checkcast #49
         + Class [android/widget/TextView]
-      [31] invokevirtual #97
+      [31] invokevirtual #111
         + Methodref [android/widget/TextView.getText ()Ljava/lang/CharSequence;]
-      [34] invokeinterface #129
+      [34] invokeinterface #145
         + InterfaceMethodref [java/lang/CharSequence.toString ()Ljava/lang/String;]
-      [39] putfield #68
+      [39] putfield #79
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.k Ljava/lang/String;]
       [42] aload_0 v0
-      [43] getfield #60
+      [43] getfield #71
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.c Landroid/content/SharedPreferences;]
       [46] aload_0 v0
-      [47] getfield #68
+      [47] getfield #79
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.k Ljava/lang/String;]
       [50] iconst_0
-      [51] invokeinterface #124
+      [51] invokeinterface #140
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
       [56] istore_2 v2
       [57] aload_0 v0
-      [58] getfield #58
+      [58] getfield #69
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.a Landroid/content/SharedPreferences;]
       [61] aload_0 v0
-      [62] getfield #68
+      [62] getfield #79
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.k Ljava/lang/String;]
       [65] iconst_0
-      [66] invokeinterface #124
+      [66] invokeinterface #140
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
       [71] istore_3 v3
       [72] iload_3 v3
@@ -53889,148 +53972,148 @@ Methods (count = 20):
       [78] ldc #11
         + Integer [2131099673]
       [80] iconst_0
-      [81] invokestatic #99
+      [81] invokestatic #113
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
-      [84] invokevirtual #100
+      [84] invokevirtual #114
         + Methodref [android/widget/Toast.show ()V]
       [87] return
       [88] aload_0 v0
-      [89] getfield #61
+      [89] getfield #72
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.d Landroid/content/SharedPreferences;]
-      [92] ldc #24
+      [92] ldc #25
         + String [Ten_minutes]
       [94] iconst_1
-      [95] invokeinterface #123
+      [95] invokeinterface #139
         + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
       [100] ifeq +14 (target=114)
       [103] aload_0 v0
       [104] ldc #12
         + Integer [2131099674]
       [106] iconst_0
-      [107] invokestatic #99
+      [107] invokestatic #113
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
-      [110] invokevirtual #100
+      [110] invokevirtual #114
         + Methodref [android/widget/Toast.show ()V]
       [113] return
       [114] aload_0 v0
       [115] aload_0 v0
-      [116] getfield #66
+      [116] getfield #77
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.i Landroid/view/LayoutInflater;]
       [119] ldc #5
         + Integer [2130903049]
       [121] aconst_null
-      [122] invokevirtual #87
+      [122] invokevirtual #101
         + Methodref [android/view/LayoutInflater.inflate (ILandroid/view/ViewGroup;)Landroid/view/View;]
-      [125] putfield #65
+      [125] putfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
       [128] aload_0 v0
-      [129] getfield #65
+      [129] getfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [132] ldc #18
+      [132] ldc #19
         + Integer [2131296280]
-      [134] invokevirtual #88
+      [134] invokevirtual #102
         + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [137] checkcast #41
+      [137] checkcast #49
         + Class [android/widget/TextView]
       [140] aload_0 v0
-      [141] getfield #67
+      [141] getfield #78
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.j Ljava/lang/String;]
-      [144] invokevirtual #98
+      [144] invokevirtual #112
         + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [147] aload_0 v0
-      [148] getfield #65
+      [148] getfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [151] ldc #19
+      [151] ldc #20
         + Integer [2131296281]
-      [153] invokevirtual #88
+      [153] invokevirtual #102
         + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [156] checkcast #41
+      [156] checkcast #49
         + Class [android/widget/TextView]
       [159] aload_0 v0
-      [160] getfield #68
+      [160] getfield #79
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.k Ljava/lang/String;]
-      [163] invokevirtual #98
+      [163] invokevirtual #112
         + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [166] aload_0 v0
-      [167] getfield #65
+      [167] getfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [170] ldc #23
+      [170] ldc #24
         + Integer [2131296290]
-      [172] invokevirtual #88
+      [172] invokevirtual #102
         + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [175] checkcast #41
+      [175] checkcast #49
         + Class [android/widget/TextView]
       [178] aload_0 v0
       [179] ldc #9
         + Integer [2131099669]
-      [181] invokevirtual #110
+      [181] invokevirtual #126
         + Methodref [lee/whdghks913/only3/AppInfoActivity.getString (I)Ljava/lang/String;]
       [184] iconst_2
-      [185] anewarray #45
+      [185] anewarray #53
         + Class [java/lang/Object]
       [188] dup
       [189] iconst_0
       [190] iload_2 v2
-      [191] invokestatic #101
+      [191] invokestatic #115
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [194] aastore
       [195] dup
       [196] iconst_1
       [197] iload_3 v3
-      [198] invokestatic #101
+      [198] invokestatic #115
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [201] aastore
-      [202] invokestatic #103
+      [202] invokestatic #117
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [205] invokevirtual #98
+      [205] invokevirtual #112
         + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
-      [208] new #32
+      [208] new #36
         + Class [android/app/AlertDialog$Builder]
       [211] dup
       [212] aload_0 v0
-      [213] invokespecial #81
+      [213] invokespecial #92
         + Methodref [android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V]
       [216] astore v4
       [218] aload v4
       [220] ldc #8
         + Integer [2131099656]
-      [222] new #53
+      [222] new #62
         + Class [lee/whdghks913/only3/j]
       [225] dup
       [226] aload_0 v0
-      [227] invokespecial #116
+      [227] invokespecial #132
         + Methodref [lee/whdghks913/only3/j.<init> (Llee/whdghks913/only3/AppInfoActivity;)V]
-      [230] invokevirtual #84
+      [230] invokevirtual #95
         + Methodref [android/app/AlertDialog$Builder.setPositiveButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
       [233] pop
       [234] aload v4
       [236] ldc #10
         + Integer [2131099670]
-      [238] new #54
+      [238] new #63
         + Class [lee/whdghks913/only3/k]
       [241] dup
       [242] aload_0 v0
-      [243] invokespecial #117
+      [243] invokespecial #133
         + Methodref [lee/whdghks913/only3/k.<init> (Llee/whdghks913/only3/AppInfoActivity;)V]
-      [246] invokevirtual #83
+      [246] invokevirtual #94
         + Methodref [android/app/AlertDialog$Builder.setNeutralButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
       [249] pop
       [250] aload v4
       [252] ldc #7
         + Integer [2131099654]
       [254] aconst_null
-      [255] invokevirtual #82
+      [255] invokevirtual #93
         + Methodref [android/app/AlertDialog$Builder.setNegativeButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
       [258] pop
       [259] aload v4
       [261] aload_0 v0
-      [262] getfield #65
+      [262] getfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [265] invokevirtual #85
+      [265] invokevirtual #96
         + Methodref [android/app/AlertDialog$Builder.setView (Landroid/view/View;)Landroid/app/AlertDialog$Builder;]
       [268] pop
       [269] aload v4
-      [271] invokevirtual #86
+      [271] invokevirtual #97
         + Methodref [android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;]
       [274] pop
       [275] return
@@ -54045,52 +54128,52 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 63, locals = 2, stack = 5):
       [0] aload_0 v0
-      [1] getfield #65
+      [1] getfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [4] ldc #20
+      [4] ldc #21
         + Integer [2131296283]
-      [6] invokevirtual #88
+      [6] invokevirtual #102
         + Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [9] checkcast #39
+      [9] checkcast #47
         + Class [android/widget/EditText]
       [12] iconst_0
-      [13] invokevirtual #92
+      [13] invokevirtual #106
         + Methodref [android/widget/EditText.setVisibility (I)V]
-      [16] new #32
+      [16] new #36
         + Class [android/app/AlertDialog$Builder]
       [19] dup
       [20] aload_0 v0
-      [21] invokespecial #81
+      [21] invokespecial #92
         + Methodref [android/app/AlertDialog$Builder.<init> (Landroid/content/Context;)V]
       [24] astore_1 v1
       [25] aload_1 v1
       [26] ldc #6
         + Integer [2131099653]
-      [28] new #55
+      [28] new #64
         + Class [lee/whdghks913/only3/l]
       [31] dup
       [32] aload_0 v0
-      [33] invokespecial #118
+      [33] invokespecial #134
         + Methodref [lee/whdghks913/only3/l.<init> (Llee/whdghks913/only3/AppInfoActivity;)V]
-      [36] invokevirtual #84
+      [36] invokevirtual #95
         + Methodref [android/app/AlertDialog$Builder.setPositiveButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
       [39] pop
       [40] aload_1 v1
       [41] ldc #7
         + Integer [2131099654]
       [43] aconst_null
-      [44] invokevirtual #82
+      [44] invokevirtual #93
         + Methodref [android/app/AlertDialog$Builder.setNegativeButton (ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;]
       [47] pop
       [48] aload_1 v1
       [49] aload_0 v0
-      [50] getfield #65
+      [50] getfield #76
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.h Landroid/view/View;]
-      [53] invokevirtual #85
+      [53] invokevirtual #96
         + Methodref [android/app/AlertDialog$Builder.setView (Landroid/view/View;)Landroid/app/AlertDialog$Builder;]
       [56] pop
       [57] aload_1 v1
-      [58] invokevirtual #86
+      [58] invokevirtual #97
         + Methodref [android/app/AlertDialog$Builder.show ()Landroid/app/AlertDialog;]
       [61] pop
       [62] return
@@ -54104,14 +54187,14 @@ Methods (count = 20):
       [0] aload_1 v1
       [1] astore_2 v2
       [2] aload_2 v2
-      [3] invokevirtual #89
+      [3] invokevirtual #103
         + Methodref [android/view/View.getParent ()Landroid/view/ViewParent;]
-      [6] checkcast #38
+      [6] checkcast #46
         + Class [android/view/ViewGroup]
       [9] astore_3 v3
       [10] aload_3 v3
       [11] aload_1 v1
-      [12] invokevirtual #91
+      [12] invokevirtual #105
         + Methodref [android/view/ViewGroup.removeView (Landroid/view/View;)V]
       [15] return
       Code attribute exceptions (count = 0):
@@ -54122,12 +54205,12 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 12, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #78
+      [1] invokespecial #89
         + Methodref [android/app/Activity.onPause ()V]
-      [4] invokestatic #104
+      [4] invokestatic #118
         + Methodref [java/lang/System.gc ()V]
       [7] aload_0 v0
-      [8] invokevirtual #108
+      [8] invokevirtual #123
         + Methodref [lee/whdghks913/only3/AppInfoActivity.finish ()V]
       [11] return
       Code attribute exceptions (count = 0):
@@ -54138,16 +54221,82 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 12, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #80
+      [1] invokespecial #91
         + Methodref [android/app/Activity.onStop ()V]
-      [4] invokestatic #104
+      [4] invokestatic #118
         + Methodref [java/lang/System.gc ()V]
       [7] aload_0 v0
-      [8] invokevirtual #108
+      [8] invokevirtual #123
         + Methodref [lee/whdghks913/only3/AppInfoActivity.finish ()V]
       [11] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
+  + Method:       c()[Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String[] c()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 90, locals = 7, stack = 3):
+      [0] aload_0 v0
+      [1] invokevirtual #124
+        + Methodref [lee/whdghks913/only3/AppInfoActivity.getPackageManager ()Landroid/content/pm/PackageManager;]
+      [4] astore_2 v2
+      [5] new #37
+        + Class [android/content/Intent]
+      [8] dup
+      [9] ldc #26
+        + String [android.intent.action.MAIN]
+      [11] invokespecial #98
+        + Methodref [android/content/Intent.<init> (Ljava/lang/String;)V]
+      [14] astore_3 v3
+      [15] aload_3 v3
+      [16] ldc #27
+        + String [android.intent.category.HOME]
+      [18] invokevirtual #99
+        + Methodref [android/content/Intent.addCategory (Ljava/lang/String;)Landroid/content/Intent;]
+      [21] pop
+      [22] aload_2 v2
+      [23] aload_3 v3
+      [24] iconst_1
+      [25] invokevirtual #100
+        + Methodref [android/content/pm/PackageManager.queryIntentActivities (Landroid/content/Intent;I)Ljava/util/List;]
+      [28] astore v4
+      [30] aload v4
+      [32] invokeinterface #147
+        + InterfaceMethodref [java/util/List.size ()I]
+      [37] anewarray #54
+        + Class [java/lang/String]
+      [40] astore_1 v1
+      [41] iconst_0
+      [42] istore v5
+      [44] goto +32 (target=76)
+      [47] aload v4
+      [49] iload v5
+      [51] invokeinterface #146
+        + InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
+      [56] checkcast #41
+        + Class [android/content/pm/ResolveInfo]
+      [59] astore v6
+      [61] aload_1 v1
+      [62] iload v5
+      [64] aload v6
+      [66] getfield #68
+        + Fieldref [android/content/pm/ResolveInfo.activityInfo Landroid/content/pm/ActivityInfo;]
+      [69] getfield #67
+        + Fieldref [android/content/pm/ActivityInfo.packageName Ljava/lang/String;]
+      [72] aastore
+      [73] iinc v5, 1
+      [76] iload v5
+      [78] aload v4
+      [80] invokeinterface #147
+        + InterfaceMethodref [java/util/List.size ()I]
+      [85] ificmplt -38 (target=47)
+      [88] aload_1 v1
+      [89] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 2):
+        - [47] Var: [a:lee/whdghks913/only3/AppInfoActivity][a:[Ljava/lang/String;][a:android/content/pm/PackageManager][a:android/content/Intent][a:java/util/List][i], Stack: 
+        - [76] Var: ..., Stack: (empty)
   + Method:       a(Llee/whdghks913/only3/AppInfoActivity;Landroid/content/pm/PackageManager;)V
     Access flags: 0x1008
       = static synthetic void a(lee.whdghks913.only3.AppInfoActivity,android.content.pm.PackageManager)
@@ -54155,7 +54304,7 @@ Methods (count = 20):
     + Code attribute instructions (code length = 6, locals = 2, stack = 2):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] putfield #72
+      [2] putfield #83
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.o Landroid/content/pm/PackageManager;]
       [5] return
       Code attribute exceptions (count = 0):
@@ -54166,7 +54315,7 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] getfield #72
+      [1] getfield #83
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.o Landroid/content/pm/PackageManager;]
       [4] areturn
       Code attribute exceptions (count = 0):
@@ -54177,7 +54326,7 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] getfield #71
+      [1] getfield #82
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.n I]
       [4] ireturn
       Code attribute exceptions (count = 0):
@@ -54189,7 +54338,7 @@ Methods (count = 20):
     + Code attribute instructions (code length = 6, locals = 2, stack = 2):
       [0] aload_0 v0
       [1] iload_1 v1
-      [2] invokespecial #105
+      [2] invokespecial #119
         + Methodref [lee/whdghks913/only3/AppInfoActivity.a (Z)V]
       [5] return
       Code attribute exceptions (count = 0):
@@ -54200,7 +54349,7 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] getfield #75
+      [1] getfield #86
         + Fieldref [lee/whdghks913/only3/AppInfoActivity.r Llee/whdghks913/only3/n;]
       [4] areturn
       Code attribute exceptions (count = 0):
@@ -54211,7 +54360,7 @@ Methods (count = 20):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #106
+      [1] invokespecial #120
         + Methodref [lee/whdghks913/only3/AppInfoActivity.b ()V]
       [4] return
       Code attribute exceptions (count = 0):
@@ -56279,7 +56428,7 @@ Constant Pool (count = 219):
   + Integer [2130837505]
   + Integer [2131099662]
   + Integer [2131099663]
-  + Integer [2131099690]
+  + Integer [2131099691]
   + String [ACTION_DATE_CHANGE]
   + String [ACTION_FALSE_THE_STOP]
   + String [ACTION_FIVE_MINUTE]
@@ -56914,7 +57063,7 @@ Methods (count = 4):
         + Integer [2130837504]
       [31] aload_1 v1
       [32] ldc #6
-        + Integer [2131099690]
+        + Integer [2131099691]
       [34] invokevirtual #62
         + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
       [37] iconst_1
@@ -56941,7 +57090,7 @@ Methods (count = 4):
         + Integer [2130837505]
       [68] aload_1 v1
       [69] ldc #6
-        + Integer [2131099690]
+        + Integer [2131099691]
       [71] invokevirtual #62
         + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
       [74] iconst_1
@@ -56990,7 +57139,7 @@ Methods (count = 4):
       [135] aload_1 v1
       [136] aload_1 v1
       [137] ldc #6
-        + Integer [2131099690]
+        + Integer [2131099691]
       [139] invokevirtual #62
         + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
       [142] iconst_1
@@ -57006,7 +57155,7 @@ Methods (count = 4):
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
       [156] aload_1 v1
       [157] ldc #6
-        + Integer [2131099690]
+        + Integer [2131099691]
       [159] invokevirtual #62
         + Methodref [android/content/Context.getString (I)Ljava/lang/String;]
       [162] iconst_1
@@ -57056,11 +57205,11 @@ Constant Pool (count = 364):
   + Integer [2131099650]
   + Integer [2131099653]
   + Integer [2131099654]
-  + Integer [2131099686]
-  + Integer [2131099689]
-  + Integer [2131099694]
+  + Integer [2131099687]
+  + Integer [2131099690]
   + Integer [2131099695]
-  + Integer [2131099697]
+  + Integer [2131099696]
+  + Integer [2131099698]
   + Integer [2131296258]
   + Integer [2147483647]
   + String [PassWord_Enable]
@@ -57566,7 +57715,7 @@ Methods (count = 12):
         + String [android.app.extra.ADD_EXPLANATION]
       [154] aload_0 v0
       [155] ldc #9
-        + Integer [2131099686]
+        + Integer [2131099687]
       [157] invokevirtual #116
         + Methodref [lee/whdghks913/only3/MainActivity.getString (I)Ljava/lang/String;]
       [160] invokevirtual #92
@@ -57625,7 +57774,7 @@ Methods (count = 12):
       [237] pop
       [238] aload v5
       [240] ldc #12
-        + Integer [2131099695]
+        + Integer [2131099696]
       [242] invokevirtual #78
         + Methodref [android/app/AlertDialog$Builder.setMessage (I)Landroid/app/AlertDialog$Builder;]
       [245] pop
@@ -57726,7 +57875,7 @@ Methods (count = 12):
       [21] ifeq +16 (target=37)
       [24] aload_0 v0
       [25] ldc #10
-        + Integer [2131099689]
+        + Integer [2131099690]
       [27] iconst_0
       [28] invokestatic #100
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -57803,7 +57952,7 @@ Methods (count = 12):
         + String [android.app.extra.ADD_EXPLANATION]
       [130] aload_0 v0
       [131] ldc #9
-        + Integer [2131099686]
+        + Integer [2131099687]
       [133] invokevirtual #116
         + Methodref [lee/whdghks913/only3/MainActivity.getString (I)Ljava/lang/String;]
       [136] invokevirtual #92
@@ -58031,7 +58180,7 @@ Methods (count = 12):
       [35] goto +13 (target=48)
       [38] aload_0 v0
       [39] ldc #11
-        + Integer [2131099694]
+        + Integer [2131099695]
       [41] iconst_0
       [42] invokestatic #100
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -58191,7 +58340,7 @@ Methods (count = 12):
       [38] invokevirtual #111
         + Methodref [lee/whdghks913/only3/MainActivity.getBaseContext ()Landroid/content/Context;]
       [41] ldc #13
-        + Integer [2131099697]
+        + Integer [2131099698]
       [43] iconst_0
       [44] invokestatic #100
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -59413,10 +59562,10 @@ Interfaces (count = 0):
 
 Constant Pool (count = 421):
   + Integer [2130903045]
-  + Integer [2131099676]
   + Integer [2131099677]
-  + Integer [2131099691]
+  + Integer [2131099678]
   + Integer [2131099692]
+  + Integer [2131099693]
   + Integer [2131296266]
   + Integer [2131296267]
   + Integer [2131296268]
@@ -60012,7 +60161,7 @@ Methods (count = 11):
         + Fieldref [lee/whdghks913/only3/Setting.e Landroid/widget/TextView;]
       [168] aload_0 v0
       [169] ldc #2
-        + Integer [2131099676]
+        + Integer [2131099677]
       [171] invokevirtual #137
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [174] iconst_1
@@ -60047,7 +60196,7 @@ Methods (count = 11):
         + Fieldref [lee/whdghks913/only3/Setting.e Landroid/widget/TextView;]
       [217] aload_0 v0
       [218] ldc #2
-        + Integer [2131099676]
+        + Integer [2131099677]
       [220] invokevirtual #137
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [223] iconst_1
@@ -60078,7 +60227,7 @@ Methods (count = 11):
       [258] getfield #78
         + Fieldref [lee/whdghks913/only3/Setting.f Landroid/widget/TextView;]
       [261] ldc #5
-        + Integer [2131099692]
+        + Integer [2131099693]
       [263] invokevirtual #98
         + Methodref [android/widget/TextView.setText (I)V]
       [266] goto +8 (target=274)
@@ -60234,7 +60383,7 @@ Methods (count = 11):
         + Fieldref [lee/whdghks913/only3/Setting.k Landroid/widget/TextView;]
       [485] aload_0 v0
       [486] ldc #3
-        + Integer [2131099677]
+        + Integer [2131099678]
       [488] invokevirtual #137
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [491] iconst_1
@@ -60324,7 +60473,7 @@ Methods (count = 11):
         + Fieldref [lee/whdghks913/only3/Setting.f Landroid/widget/TextView;]
       [77] aload_0 v0
       [78] ldc #4
-        + Integer [2131099691]
+        + Integer [2131099692]
       [80] invokevirtual #137
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [83] iconst_1
@@ -61006,7 +61155,7 @@ Interfaces (count = 1):
   + Class [android/widget/SeekBar$OnSeekBarChangeListener]
 
 Constant Pool (count = 67):
-  + Integer [2131099676]
+  + Integer [2131099677]
   + String [delay]
   + Class [android/content/SharedPreferences$Editor]
   + Class [android/widget/SeekBar$OnSeekBarChangeListener]
@@ -61124,7 +61273,7 @@ Methods (count = 4):
       [8] getfield #13
         + Fieldref [lee/whdghks913/only3/t.a Llee/whdghks913/only3/Setting;]
       [11] ldc #1
-        + Integer [2131099676]
+        + Integer [2131099677]
       [13] invokevirtual #18
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [16] iconst_1
@@ -61402,7 +61551,7 @@ Interfaces (count = 1):
 
 Constant Pool (count = 105):
   + Integer [2131099666]
-  + Integer [2131099680]
+  + Integer [2131099681]
   + Integer [2131296265]
   + String []
   + String [password]
@@ -61616,7 +61765,7 @@ Methods (count = 2):
       [110] invokestatic #31
         + Methodref [lee/whdghks913/only3/u.a (Llee/whdghks913/only3/u;)Llee/whdghks913/only3/Setting;]
       [113] ldc #2
-        + Integer [2131099680]
+        + Integer [2131099681]
       [115] iconst_0
       [116] invokestatic #27
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -61978,9 +62127,9 @@ Interfaces (count = 1):
   + Class [android/widget/CompoundButton$OnCheckedChangeListener]
 
 Constant Pool (count = 66):
-  + Integer [2131099699]
   + Integer [2131099700]
   + Integer [2131099701]
+  + Integer [2131099702]
   + Class [android/app/AlertDialog$Builder]
   + Class [android/widget/CheckBox]
   + Class [android/widget/CompoundButton]
@@ -62093,13 +62242,13 @@ Methods (count = 3):
       [30] astore_3 v3
       [31] aload_3 v3
       [32] ldc #1
-        + Integer [2131099699]
+        + Integer [2131099700]
       [34] invokevirtual #18
         + Methodref [android/app/AlertDialog$Builder.setTitle (I)Landroid/app/AlertDialog$Builder;]
       [37] pop
       [38] aload_3 v3
       [39] ldc #2
-        + Integer [2131099700]
+        + Integer [2131099701]
       [41] new #10
         + Class [lee/whdghks913/only3/aa]
       [44] dup
@@ -62111,7 +62260,7 @@ Methods (count = 3):
       [52] pop
       [53] aload_3 v3
       [54] ldc #3
-        + Integer [2131099701]
+        + Integer [2131099702]
       [56] new #11
         + Class [lee/whdghks913/only3/ab]
       [59] dup
@@ -62157,8 +62306,8 @@ Interfaces (count = 1):
   + Class [android/content/DialogInterface$OnClickListener]
 
 Constant Pool (count = 100):
-  + Integer [2131099702]
-  + Integer [2131099704]
+  + Integer [2131099703]
+  + Integer [2131099705]
   + String [/only3/]
   + String [package_All_count]
   + String [package_All_count.backup]
@@ -62438,7 +62587,7 @@ Methods (count = 2):
       [217] invokestatic #37
         + Methodref [lee/whdghks913/only3/z.a (Llee/whdghks913/only3/z;)Llee/whdghks913/only3/Setting;]
       [220] ldc #1
-        + Integer [2131099702]
+        + Integer [2131099703]
       [222] iconst_1
       [223] invokestatic #25
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -62451,7 +62600,7 @@ Methods (count = 2):
       [236] invokestatic #37
         + Methodref [lee/whdghks913/only3/z.a (Llee/whdghks913/only3/z;)Llee/whdghks913/only3/Setting;]
       [239] ldc #2
-        + Integer [2131099704]
+        + Integer [2131099705]
       [241] iconst_1
       [242] invokestatic #25
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -62482,9 +62631,9 @@ Interfaces (count = 1):
   + Class [android/content/DialogInterface$OnClickListener]
 
 Constant Pool (count = 99):
-  + Integer [2131099703]
   + Integer [2131099704]
   + Integer [2131099705]
+  + Integer [2131099706]
   + String [/only3/]
   + String [package_All_count]
   + String [package_All_count.backup]
@@ -62640,7 +62789,7 @@ Methods (count = 2):
       [43] invokestatic #37
         + Methodref [lee/whdghks913/only3/z.a (Llee/whdghks913/only3/z;)Llee/whdghks913/only3/Setting;]
       [46] ldc #3
-        + Integer [2131099705]
+        + Integer [2131099706]
       [48] iconst_1
       [49] invokestatic #26
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -62769,7 +62918,7 @@ Methods (count = 2):
       [224] invokestatic #37
         + Methodref [lee/whdghks913/only3/z.a (Llee/whdghks913/only3/z;)Llee/whdghks913/only3/Setting;]
       [227] ldc #1
-        + Integer [2131099703]
+        + Integer [2131099704]
       [229] iconst_1
       [230] invokestatic #26
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -62782,7 +62931,7 @@ Methods (count = 2):
       [243] invokestatic #37
         + Methodref [lee/whdghks913/only3/z.a (Llee/whdghks913/only3/z;)Llee/whdghks913/only3/Setting;]
       [246] ldc #2
-        + Integer [2131099704]
+        + Integer [2131099705]
       [248] iconst_1
       [249] invokestatic #26
         + Methodref [android/widget/Toast.makeText (Landroid/content/Context;II)Landroid/widget/Toast;]
@@ -62813,8 +62962,8 @@ Interfaces (count = 1):
   + Class [android/widget/SeekBar$OnSeekBarChangeListener]
 
 Constant Pool (count = 72):
-  + Integer [2131099691]
   + Integer [2131099692]
+  + Integer [2131099693]
   + String [Notification]
   + Class [android/content/SharedPreferences$Editor]
   + Class [android/widget/SeekBar$OnSeekBarChangeListener]
@@ -62977,7 +63126,7 @@ Methods (count = 4):
       [90] getfield #13
         + Fieldref [lee/whdghks913/only3/Setting.f Landroid/widget/TextView;]
       [93] ldc #2
-        + Integer [2131099692]
+        + Integer [2131099693]
       [95] invokevirtual #15
         + Methodref [android/widget/TextView.setText (I)V]
       [98] goto +37 (target=135)
@@ -62990,7 +63139,7 @@ Methods (count = 4):
       [109] getfield #14
         + Fieldref [lee/whdghks913/only3/ac.a Llee/whdghks913/only3/Setting;]
       [112] ldc #1
-        + Integer [2131099691]
+        + Integer [2131099692]
       [114] invokevirtual #20
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [117] iconst_1

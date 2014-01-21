@@ -1344,6 +1344,7 @@ lee.whdghks913.only3.AppInfoActivity -> lee.whdghks913.only3.AppInfoActivity:
     void removeView(android.view.View) -> removeView
     void onPause() -> onPause
     void onStop() -> onStop
+    java.lang.String[] getHomeLauncher() -> c
     void access$0(lee.whdghks913.only3.AppInfoActivity,android.content.pm.PackageManager) -> a
     android.content.pm.PackageManager access$1(lee.whdghks913.only3.AppInfoActivity) -> a
     int access$2(lee.whdghks913.only3.AppInfoActivity) -> b

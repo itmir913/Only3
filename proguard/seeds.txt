@@ -163,6 +163,7 @@ lee.whdghks913.only3.R$string: int count_clean_title
 lee.whdghks913.only3.R$string: int count_edit
 lee.whdghks913.only3.R$string: int count_fixed
 lee.whdghks913.only3.R$string: int count_is_zero
+lee.whdghks913.only3.R$string: int count_launcher
 lee.whdghks913.only3.R$string: int count_much_added
 lee.whdghks913.only3.R$string: int count_not_fix_ten
 lee.whdghks913.only3.R$string: int count_not_fix_total
