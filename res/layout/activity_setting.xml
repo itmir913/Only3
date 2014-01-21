@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,94 +7,149 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Setting" >
-
-    <TextView
-        android:id="@+id/MainText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="@string/setting"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/delay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/MainText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/delay" />
-
-    <SeekBar
-        android:id="@+id/delay_seekbar"
+    tools:context=".Setting">
+    
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="4"
-        android:layout_below="@+id/delay"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
-
-    <TextView
-        android:id="@+id/Five_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/delay_seekbar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="@string/five_minute_setting_TextView" />
-
-    <SeekBar
-        android:id="@+id/Five_Seekbar"
-        android:max="6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Five_Text"
-        android:layout_marginTop="10dp" />
-
-    <CheckBox
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Five_Seekbar"
-        android:layout_marginTop="20dp"
-        android:text="@string/password" />
+        android:orientation="vertical" >
+        
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+            <TextView
+                android:id="@+id/MainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/setting"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+            <TextView
+                android:id="@+id/delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MainText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="@string/delay" />
+        
+            <SeekBar
+                android:id="@+id/delay_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="4"
+                android:layout_below="@+id/delay"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+        
+            <TextView
+                android:id="@+id/Five_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/delay_seekbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/five_minute_setting_TextView" />
+        
+            <SeekBar
+                android:id="@+id/Five_Seekbar"
+                android:max="6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/Five_Text"
+                android:layout_marginTop="10dp" />
+            
+            <TextView
+                android:id="@+id/alertType_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Five_Seekbar"
+                android:layout_marginTop="20dp" 
+                android:textSize="20sp"
+                android:text="@string/alertType_Text" />
+        
+            <RadioGroup
+                android:id="@+id/alertType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/alertType_Text"
+                android:layout_marginTop="10dp" >
+                
+                <RadioButton
+                    android:id="@+id/All"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alertType_all" />
+                
+                <RadioButton
+                    android:id="@+id/Toast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alertType_toast" />
+                
+                <RadioButton
+                    android:id="@+id/Notifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alertType_notifi" />
+                
+            </RadioGroup>
+            
+            <TextView
+                android:id="@+id/appSetting_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/alertType"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:text="@string/appSetting_Text" />
+            
+            <CheckBox
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appSetting_Text"
+                android:layout_marginTop="10dp"
+                android:text="@string/password" />
+            
+            <CheckBox
+                android:id="@+id/vibrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/password"
+                android:layout_marginTop="5dp"
+                android:text="@string/vibrate" />
+ 
+            <CheckBox
+                android:id="@+id/clear_icon_noti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vibrate"
+                android:layout_marginTop="5dp"
+                android:text="@string/clear_icon_noti" />
     
-    <CheckBox
-        android:id="@+id/vibrate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:layout_marginTop="5dp"
-        android:text="@string/vibrate" />
-    
-    <CheckBox
-        android:id="@+id/clear_icon_noti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/vibrate"
-        android:layout_marginTop="5dp"
-        android:text="@string/clear_icon_noti" />
-    
-    <CheckBox
-        android:id="@+id/preference_backup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/clear_icon_noti"
-        android:layout_marginTop="5dp"
-        android:text="@string/preference_backup_restore" />
-
-    <TextView
-        android:id="@+id/madeby"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="@string/madeby" />
-
-</RelativeLayout>
+            <CheckBox
+                android:id="@+id/preference_backup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/clear_icon_noti"
+                android:layout_marginTop="5dp"
+                android:text="@string/preference_backup_restore" />
+        </RelativeLayout>
+        
+        <TextView
+            android:id="@+id/madeby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="45dp"
+            android:layout_gravity="center"
+            android:text="@string/madeby" />
+    </LinearLayout>
+</ScrollView>

@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="@string/enter_password"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
     
     <EditText
         android:id="@+id/password_edittext"
