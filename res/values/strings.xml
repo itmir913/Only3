@@ -75,6 +75,9 @@ Do you want to cancel?</string>
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
 \n
+\n[2.4] : 2014-01-21
+\n-vibration setting bug fix
+\n
 \n[2.3] : 2014-01-21
 \n-Limit of count change for 10 minutes
 \n-Limit of change of the count of Exceeded count app

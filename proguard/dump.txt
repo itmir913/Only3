@@ -50700,7 +50700,7 @@ _____________________________________________________________________
 
 Interfaces (count = 0):
 
-Constant Pool (count = 375):
+Constant Pool (count = 350):
   + Integer [268435456]
   + Integer [2130837504]
   + Integer [2130837505]
@@ -50724,9 +50724,6 @@ Constant Pool (count = 375):
   + String [package_list]
   + String [power]
   + String [setting]
-  + String [분 체크]
-  + String [시작]
-  + String [종료]
   + Class [android/app/ActivityManager]
   + Class [android/app/ActivityManager$RunningTaskInfo]
   + Class [android/app/AlarmManager]
@@ -50740,12 +50737,10 @@ Constant Pool (count = 375):
   + Class [android/content/SharedPreferences$Editor]
   + Class [android/os/Handler]
   + Class [android/os/PowerManager]
-  + Class [android/util/Log]
   + Class [java/lang/Boolean]
   + Class [java/lang/Integer]
   + Class [java/lang/Object]
   + Class [java/lang/String]
-  + Class [java/lang/StringBuilder]
   + Class [java/lang/System]
   + Class [java/lang/Thread]
   + Class [java/util/Calendar]
@@ -50792,16 +50787,11 @@ Constant Pool (count = 375):
   + Methodref [android/content/Intent.addFlags (I)Landroid/content/Intent;]
   + Methodref [android/content/Intent.setAction (Ljava/lang/String;)Landroid/content/Intent;]
   + Methodref [android/os/Handler.sendEmptyMessage (I)Z]
-  + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
   + Methodref [java/lang/Boolean.booleanValue ()Z]
   + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
   + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
   + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
   + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-  + Methodref [java/lang/String.valueOf (I)Ljava/lang/String;]
-  + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
   + Methodref [java/lang/System.currentTimeMillis ()J]
   + Methodref [java/lang/System.gc ()V]
   + Methodref [java/lang/Thread.<init> (Ljava/lang/Runnable;)V]
@@ -50835,13 +50825,11 @@ Constant Pool (count = 375):
   + NameAndType [<init> (ILjava/lang/CharSequence;J)V]
   + NameAndType [<init> (Landroid/content/Context;Ljava/lang/Class;)V]
   + NameAndType [<init> (Ljava/lang/Runnable;)V]
-  + NameAndType [<init> (Ljava/lang/String;)V]
   + NameAndType [<init> (Llee/whdghks913/only3/AndroidService;)V]
   + NameAndType [<init> (Llee/whdghks913/only3/AndroidService;Landroid/os/PowerManager;)V]
   + NameAndType [a (Z)V]
   + NameAndType [a Landroid/content/SharedPreferences;]
   + NameAndType [addFlags (I)Landroid/content/Intent;]
-  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
   + NameAndType [b ()V]
   + NameAndType [b Landroid/content/SharedPreferences;]
   + NameAndType [booleanValue ()Z]
@@ -50851,7 +50839,6 @@ Constant Pool (count = 375):
   + NameAndType [cancel (Landroid/app/PendingIntent;)V]
   + NameAndType [commit ()Z]
   + NameAndType [currentTimeMillis ()J]
-  + NameAndType [d (Ljava/lang/String;Ljava/lang/String;)I]
   + NameAndType [d Landroid/content/SharedPreferences;]
   + NameAndType [e Landroid/content/SharedPreferences$Editor;]
   + NameAndType [edit ()Landroid/content/SharedPreferences$Editor;]
@@ -50901,10 +50888,8 @@ Constant Pool (count = 375):
   + NameAndType [start ()V]
   + NameAndType [startForeground (ILandroid/app/Notification;)V]
   + NameAndType [stopForeground (Z)V]
-  + NameAndType [toString ()Ljava/lang/String;]
   + NameAndType [topActivity Landroid/content/ComponentName;]
   + NameAndType [valueOf (I)Ljava/lang/Integer;]
-  + NameAndType [valueOf (I)Ljava/lang/String;]
   + NameAndType [valueOf (Z)Ljava/lang/Boolean;]
   + Utf8 []
   + Utf8 [()J]
@@ -50937,12 +50922,9 @@ Constant Pool (count = 375):
   + Utf8 [(Ljava/lang/String;)Landroid/content/Intent;]
   + Utf8 [(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
   + Utf8 [(Ljava/lang/String;)Ljava/lang/Object;]
-  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  + Utf8 [(Ljava/lang/String;)V]
   + Utf8 [(Ljava/lang/String;I)I]
   + Utf8 [(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
   + Utf8 [(Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)I]
   + Utf8 [(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
   + Utf8 [(Ljava/lang/String;Z)Z]
   + Utf8 [(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
@@ -50988,8 +50970,6 @@ Constant Pool (count = 375):
   + Utf8 [android/content/SharedPreferences$Editor]
   + Utf8 [android/os/Handler]
   + Utf8 [android/os/PowerManager]
-  + Utf8 [android/util/Log]
-  + Utf8 [append]
   + Utf8 [b]
   + Utf8 [booleanValue]
   + Utf8 [c]
@@ -51026,7 +51006,6 @@ Constant Pool (count = 375):
   + Utf8 [java/lang/Integer]
   + Utf8 [java/lang/Object]
   + Utf8 [java/lang/String]
-  + Utf8 [java/lang/StringBuilder]
   + Utf8 [java/lang/System]
   + Utf8 [java/lang/Thread]
   + Utf8 [java/util/Calendar]
@@ -51068,13 +51047,9 @@ Constant Pool (count = 375):
   + Utf8 [start]
   + Utf8 [startForeground]
   + Utf8 [stopForeground]
-  + Utf8 [toString]
   + Utf8 [topActivity]
   + Utf8 [value]
   + Utf8 [valueOf]
-  + Utf8 [분 체크]
-  + Utf8 [시작]
-  + Utf8 [종료]
 
 Fields (count = 15):
   + Field:        a Landroid/content/SharedPreferences;
@@ -51130,32 +51105,32 @@ Methods (count = 11):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 37, locals = 1, stack = 2):
       [0] aload_0 v0
-      [1] invokespecial #82
+      [1] invokespecial #77
         + Methodref [android/app/Service.<init> ()V]
       [4] aload_0 v0
       [5] ldc #9
         + String []
-      [7] putfield #65
+      [7] putfield #60
         + Fieldref [lee/whdghks913/only3/AndroidService.h Ljava/lang/String;]
       [10] aload_0 v0
       [11] iconst_0
-      [12] putfield #67
+      [12] putfield #62
         + Fieldref [lee/whdghks913/only3/AndroidService.j I]
       [15] aload_0 v0
       [16] iconst_0
-      [17] putfield #68
+      [17] putfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
       [20] aload_0 v0
       [21] iconst_1
-      [22] invokestatic #94
+      [22] invokestatic #88
         + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
-      [25] putfield #69
+      [25] putfield #64
         + Fieldref [lee/whdghks913/only3/AndroidService.l Ljava/lang/Boolean;]
       [28] aload_0 v0
       [29] iconst_1
-      [30] invokestatic #94
+      [30] invokestatic #88
         + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
-      [33] putfield #70
+      [33] putfield #65
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
       [36] return
       Code attribute exceptions (count = 0):
@@ -51166,112 +51141,112 @@ Methods (count = 11):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 259, locals = 6, stack = 6):
       [0] aload_0 v0
-      [1] invokespecial #83
+      [1] invokespecial #78
         + Methodref [android/app/Service.onCreate ()V]
       [4] aload_0 v0
       [5] ldc #22
         + String [power]
-      [7] invokevirtual #115
+      [7] invokevirtual #105
         + Methodref [lee/whdghks913/only3/AndroidService.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-      [10] checkcast #39
+      [10] checkcast #36
         + Class [android/os/PowerManager]
       [13] astore_1 v1
       [14] aload_0 v0
       [15] aload_0 v0
       [16] ldc #14
         + String [activity]
-      [18] invokevirtual #115
+      [18] invokevirtual #105
         + Methodref [lee/whdghks913/only3/AndroidService.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-      [21] checkcast #27
+      [21] checkcast #24
         + Class [android/app/ActivityManager]
-      [24] putfield #66
+      [24] putfield #61
         + Fieldref [lee/whdghks913/only3/AndroidService.i Landroid/app/ActivityManager;]
       [27] aload_0 v0
       [28] aload_0 v0
       [29] ldc #15
         + String [alarm]
-      [31] invokevirtual #115
+      [31] invokevirtual #105
         + Methodref [lee/whdghks913/only3/AndroidService.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-      [34] checkcast #29
+      [34] checkcast #26
         + Class [android/app/AlarmManager]
-      [37] putfield #71
+      [37] putfield #66
         + Fieldref [lee/whdghks913/only3/AndroidService.n Landroid/app/AlarmManager;]
       [40] aload_0 v0
       [41] aload_0 v0
       [42] ldc #20
         + String [package_count]
       [44] iconst_0
-      [45] invokevirtual #113
+      [45] invokevirtual #103
         + Methodref [lee/whdghks913/only3/AndroidService.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [48] putfield #59
+      [48] putfield #54
         + Fieldref [lee/whdghks913/only3/AndroidService.b Landroid/content/SharedPreferences;]
       [51] aload_0 v0
       [52] aload_0 v0
-      [53] getfield #59
+      [53] getfield #54
         + Fieldref [lee/whdghks913/only3/AndroidService.b Landroid/content/SharedPreferences;]
-      [56] invokeinterface #121
+      [56] invokeinterface #111
         + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
-      [61] putfield #62
+      [61] putfield #57
         + Fieldref [lee/whdghks913/only3/AndroidService.e Landroid/content/SharedPreferences$Editor;]
       [64] aload_0 v0
       [65] aload_0 v0
       [66] ldc #21
         + String [package_list]
       [68] iconst_0
-      [69] invokevirtual #113
+      [69] invokevirtual #103
         + Methodref [lee/whdghks913/only3/AndroidService.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [72] putfield #60
+      [72] putfield #55
         + Fieldref [lee/whdghks913/only3/AndroidService.c Landroid/content/SharedPreferences;]
       [75] aload_0 v0
       [76] aload_0 v0
       [77] ldc #19
         + String [package_All_count]
       [79] iconst_0
-      [80] invokevirtual #113
+      [80] invokevirtual #103
         + Methodref [lee/whdghks913/only3/AndroidService.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [83] putfield #58
+      [83] putfield #53
         + Fieldref [lee/whdghks913/only3/AndroidService.a Landroid/content/SharedPreferences;]
       [86] aload_0 v0
       [87] aload_0 v0
       [88] ldc #23
         + String [setting]
       [90] iconst_0
-      [91] invokevirtual #113
+      [91] invokevirtual #103
         + Methodref [lee/whdghks913/only3/AndroidService.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [94] putfield #61
+      [94] putfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [97] aload_0 v0
       [98] aload_0 v0
-      [99] getfield #61
+      [99] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
-      [102] invokeinterface #121
+      [102] invokeinterface #111
         + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
-      [107] putfield #63
+      [107] putfield #58
         + Fieldref [lee/whdghks913/only3/AndroidService.f Landroid/content/SharedPreferences$Editor;]
       [110] aload_0 v0
       [111] iconst_1
-      [112] new #35
+      [112] new #32
         + Class [android/content/Intent]
       [115] dup
       [116] aload_0 v0
-      [117] ldc #53
+      [117] ldc #48
         + Class [lee/whdghks913/only3/MainActivity]
-      [119] invokespecial #88
+      [119] invokespecial #83
         + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
       [122] iconst_0
-      [123] invokestatic #80
+      [123] invokestatic #75
         + Methodref [android/app/PendingIntent.getActivity (Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;]
       [126] astore_2 v2
       [127] aload_0 v0
-      [128] getfield #61
+      [128] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [131] ldc #18
         + String [notification_clear]
       [133] iconst_0
-      [134] invokeinterface #122
+      [134] invokeinterface #112
         + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
       [139] ifeq +25 (target=164)
-      [142] new #30
+      [142] new #27
         + Class [android/app/Notification]
       [145] dup
       [146] ldc #2
@@ -51279,15 +51254,15 @@ Methods (count = 11):
       [148] aload_0 v0
       [149] ldc #4
         + Integer [2131099648]
-      [151] invokevirtual #114
+      [151] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
-      [154] invokestatic #102
+      [154] invokestatic #92
         + Methodref [java/lang/System.currentTimeMillis ()J]
-      [157] invokespecial #76
+      [157] invokespecial #71
         + Methodref [android/app/Notification.<init> (ILjava/lang/CharSequence;J)V]
       [160] astore_3 v3
       [161] goto +22 (target=183)
-      [164] new #30
+      [164] new #27
         + Class [android/app/Notification]
       [167] dup
       [168] ldc #3
@@ -51295,11 +51270,11 @@ Methods (count = 11):
       [170] aload_0 v0
       [171] ldc #4
         + Integer [2131099648]
-      [173] invokevirtual #114
+      [173] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
-      [176] invokestatic #102
+      [176] invokestatic #92
         + Methodref [java/lang/System.currentTimeMillis ()J]
-      [179] invokespecial #76
+      [179] invokespecial #71
         + Methodref [android/app/Notification.<init> (ILjava/lang/CharSequence;J)V]
       [182] astore_3 v3
       [183] aload_3 v3
@@ -51307,55 +51282,55 @@ Methods (count = 11):
       [185] aload_0 v0
       [186] ldc #5
         + Integer [2131099657]
-      [188] invokevirtual #114
+      [188] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
       [191] aload_0 v0
       [192] ldc #6
         + Integer [2131099658]
-      [194] invokevirtual #114
+      [194] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
       [197] aload_2 v2
-      [198] invokevirtual #77
+      [198] invokevirtual #72
         + Methodref [android/app/Notification.setLatestEventInfo (Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V]
       [201] aload_3 v3
       [202] aload_3 v3
-      [203] getfield #57
+      [203] getfield #52
         + Fieldref [android/app/Notification.flags I]
       [206] iconst_2
       [207] ior
-      [208] putfield #57
+      [208] putfield #52
         + Fieldref [android/app/Notification.flags I]
       [211] aload_0 v0
       [212] sipush 1000
       [215] aload_3 v3
-      [216] invokevirtual #117
+      [216] invokevirtual #107
         + Methodref [lee/whdghks913/only3/AndroidService.startForeground (ILandroid/app/Notification;)V]
       [219] aload_0 v0
-      [220] new #54
+      [220] new #49
         + Class [lee/whdghks913/only3/a]
       [223] dup
       [224] aload_0 v0
-      [225] invokespecial #119
+      [225] invokespecial #109
         + Methodref [lee/whdghks913/only3/a.<init> (Llee/whdghks913/only3/AndroidService;)V]
-      [228] putfield #64
+      [228] putfield #59
         + Fieldref [lee/whdghks913/only3/AndroidService.g Landroid/os/Handler;]
-      [231] new #55
+      [231] new #50
         + Class [lee/whdghks913/only3/b]
       [234] dup
       [235] aload_0 v0
       [236] aload_1 v1
-      [237] invokespecial #120
+      [237] invokespecial #110
         + Methodref [lee/whdghks913/only3/b.<init> (Llee/whdghks913/only3/AndroidService;Landroid/os/PowerManager;)V]
       [240] astore v4
-      [242] new #47
+      [242] new #42
         + Class [java/lang/Thread]
       [245] dup
       [246] aload v4
-      [248] invokespecial #104
+      [248] invokespecial #94
         + Methodref [java/lang/Thread.<init> (Ljava/lang/Runnable;)V]
       [251] astore v5
       [253] aload v5
-      [255] invokevirtual #105
+      [255] invokevirtual #95
         + Methodref [java/lang/Thread.start ()V]
       [258] return
       Code attribute exceptions (count = 0):
@@ -51376,299 +51351,247 @@ Methods (count = 11):
     Access flags: 0x1
       = public void a()
     Class member attributes (count = 1):
-    + Code attribute instructions (code length = 446, locals = 3, stack = 5):
+    + Code attribute instructions (code length = 374, locals = 3, stack = 4):
       [0] aload_0 v0
-      [1] getfield #66
+      [1] getfield #61
         + Fieldref [lee/whdghks913/only3/AndroidService.i Landroid/app/ActivityManager;]
       [4] iconst_1
-      [5] invokevirtual #73
+      [5] invokevirtual #68
         + Methodref [android/app/ActivityManager.getRunningTasks (I)Ljava/util/List;]
-      [8] invokeinterface #130
+      [8] invokeinterface #120
         + InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
       [13] astore_1 v1
-      [14] goto +419 (target=433)
+      [14] goto +347 (target=361)
       [17] aload_1 v1
-      [18] invokeinterface #129
+      [18] invokeinterface #119
         + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
-      [23] checkcast #28
+      [23] checkcast #25
         + Class [android/app/ActivityManager$RunningTaskInfo]
-      [26] getfield #56
+      [26] getfield #51
         + Fieldref [android/app/ActivityManager$RunningTaskInfo.topActivity Landroid/content/ComponentName;]
-      [29] invokevirtual #87
+      [29] invokevirtual #82
         + Methodref [android/content/ComponentName.getPackageName ()Ljava/lang/String;]
       [32] astore_2 v2
       [33] aload_2 v2
       [34] ldc #16
         + String [lee.whdghks913.only3]
-      [36] invokevirtual #96
+      [36] invokevirtual #90
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
       [39] ifeq +7 (target=46)
-      [42] invokestatic #103
+      [42] invokestatic #93
         + Methodref [java/lang/System.gc ()V]
       [45] return
       [46] aload_2 v2
       [47] aload_0 v0
-      [48] getfield #60
+      [48] getfield #55
         + Fieldref [lee/whdghks913/only3/AndroidService.c Landroid/content/SharedPreferences;]
       [51] aload_2 v2
       [52] ldc #9
         + String []
-      [54] invokeinterface #124
+      [54] invokeinterface #114
         + InterfaceMethodref [android/content/SharedPreferences.getString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
-      [59] invokevirtual #96
+      [59] invokevirtual #90
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
       [62] ifne +18 (target=80)
       [65] aload_0 v0
-      [66] getfield #65
+      [66] getfield #60
         + Fieldref [lee/whdghks913/only3/AndroidService.h Ljava/lang/String;]
       [69] aload_2 v2
-      [70] invokevirtual #96
+      [70] invokevirtual #90
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
       [73] ifeq +7 (target=80)
-      [76] invokestatic #103
+      [76] invokestatic #93
         + Methodref [java/lang/System.gc ()V]
       [79] return
       [80] aload_0 v0
       [81] aload_0 v0
-      [82] getfield #58
+      [82] getfield #53
         + Fieldref [lee/whdghks913/only3/AndroidService.a Landroid/content/SharedPreferences;]
       [85] aload_2 v2
       [86] iconst_0
-      [87] invokeinterface #123
+      [87] invokeinterface #113
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
-      [92] putfield #67
+      [92] putfield #62
         + Fieldref [lee/whdghks913/only3/AndroidService.j I]
       [95] aload_0 v0
       [96] aload_0 v0
-      [97] getfield #59
+      [97] getfield #54
         + Fieldref [lee/whdghks913/only3/AndroidService.b Landroid/content/SharedPreferences;]
       [100] aload_2 v2
       [101] iconst_0
-      [102] invokeinterface #123
+      [102] invokeinterface #113
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
-      [107] putfield #68
+      [107] putfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
       [110] aload_2 v2
       [111] aload_0 v0
-      [112] getfield #60
+      [112] getfield #55
         + Fieldref [lee/whdghks913/only3/AndroidService.c Landroid/content/SharedPreferences;]
       [115] aload_2 v2
       [116] ldc #9
         + String []
-      [118] invokeinterface #124
+      [118] invokeinterface #114
         + InterfaceMethodref [android/content/SharedPreferences.getString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
-      [123] invokevirtual #96
+      [123] invokevirtual #90
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
       [126] ifeq +24 (target=150)
       [129] aload_0 v0
-      [130] getfield #68
+      [130] getfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
       [133] aload_0 v0
-      [134] getfield #67
+      [134] getfield #62
         + Fieldref [lee/whdghks913/only3/AndroidService.j I]
       [137] ificmple +13 (target=150)
       [140] aload_0 v0
-      [141] getfield #64
+      [141] getfield #59
         + Fieldref [lee/whdghks913/only3/AndroidService.g Landroid/os/Handler;]
       [144] iconst_0
-      [145] invokevirtual #91
+      [145] invokevirtual #86
         + Methodref [android/os/Handler.sendEmptyMessage (I)Z]
       [148] pop
       [149] return
       [150] aload_2 v2
       [151] aload_0 v0
-      [152] getfield #60
+      [152] getfield #55
         + Fieldref [lee/whdghks913/only3/AndroidService.c Landroid/content/SharedPreferences;]
       [155] aload_2 v2
       [156] ldc #9
         + String []
-      [158] invokeinterface #124
+      [158] invokeinterface #114
         + InterfaceMethodref [android/content/SharedPreferences.getString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
-      [163] invokevirtual #96
+      [163] invokevirtual #90
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
       [166] ifeq +53 (target=219)
       [169] aload_0 v0
-      [170] getfield #65
+      [170] getfield #60
         + Fieldref [lee/whdghks913/only3/AndroidService.h Ljava/lang/String;]
       [173] aload_2 v2
-      [174] invokevirtual #96
+      [174] invokevirtual #90
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
       [177] ifne +42 (target=219)
       [180] aload_0 v0
       [181] dup
-      [182] getfield #68
+      [182] getfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
       [185] iconst_1
       [186] iadd
-      [187] putfield #68
+      [187] putfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
       [190] aload_0 v0
-      [191] getfield #62
+      [191] getfield #57
         + Fieldref [lee/whdghks913/only3/AndroidService.e Landroid/content/SharedPreferences$Editor;]
       [194] aload_2 v2
       [195] aload_0 v0
-      [196] getfield #68
+      [196] getfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
-      [199] invokeinterface #126
+      [199] invokeinterface #116
         + InterfaceMethodref [android/content/SharedPreferences$Editor.putInt (Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
-      [204] invokeinterface #125
+      [204] invokeinterface #115
         + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
       [209] pop
       [210] aload_0 v0
-      [211] getfield #64
+      [211] getfield #59
         + Fieldref [lee/whdghks913/only3/AndroidService.g Landroid/os/Handler;]
       [214] iconst_0
-      [215] invokevirtual #91
+      [215] invokevirtual #86
         + Methodref [android/os/Handler.sendEmptyMessage (I)Z]
       [218] pop
       [219] aload_0 v0
-      [220] getfield #65
+      [220] getfield #60
         + Fieldref [lee/whdghks913/only3/AndroidService.h Ljava/lang/String;]
       [223] aload_2 v2
-      [224] invokevirtual #96
+      [224] invokevirtual #90
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
-      [227] ifne +122 (target=349)
+      [227] ifne +86 (target=313)
       [230] aload_0 v0
       [231] aload_2 v2
-      [232] putfield #65
+      [232] putfield #60
         + Fieldref [lee/whdghks913/only3/AndroidService.h Ljava/lang/String;]
       [235] aload_0 v0
-      [236] getfield #61
+      [236] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [239] ldc #12
         + String [Notification]
       [241] iconst_5
-      [242] invokeinterface #123
+      [242] invokeinterface #113
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
-      [247] ifeq +186 (target=433)
+      [247] ifeq +114 (target=361)
       [250] aload_0 v0
-      [251] getfield #70
+      [251] getfield #65
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
-      [254] invokevirtual #93
+      [254] invokevirtual #87
         + Methodref [java/lang/Boolean.booleanValue ()Z]
-      [257] ifne +176 (target=433)
+      [257] ifne +104 (target=361)
       [260] aload_0 v0
-      [261] getfield #71
+      [261] getfield #66
         + Fieldref [lee/whdghks913/only3/AndroidService.n Landroid/app/AlarmManager;]
       [264] aload_0 v0
-      [265] getfield #72
+      [265] getfield #67
         + Fieldref [lee/whdghks913/only3/AndroidService.o Landroid/app/PendingIntent;]
-      [268] invokevirtual #74
+      [268] invokevirtual #69
         + Methodref [android/app/AlarmManager.cancel (Landroid/app/PendingIntent;)V]
       [271] aload_0 v0
       [272] aload_0 v0
-      [273] getfield #70
+      [273] getfield #65
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
-      [276] invokevirtual #93
+      [276] invokevirtual #87
         + Methodref [java/lang/Boolean.booleanValue ()Z]
       [279] ifeq +7 (target=286)
       [282] iconst_0
       [283] goto +4 (target=287)
       [286] iconst_1
-      [287] invokestatic #94
+      [287] invokestatic #88
         + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
-      [290] putfield #70
+      [290] putfield #65
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
       [293] aload_0 v0
-      [294] getfield #63
+      [294] getfield #58
         + Fieldref [lee/whdghks913/only3/AndroidService.f Landroid/content/SharedPreferences$Editor;]
       [297] ldc #11
         + String [FIVE_MINUTE]
-      [299] invokeinterface #127
+      [299] invokeinterface #117
         + InterfaceMethodref [android/content/SharedPreferences$Editor.remove (Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
-      [304] invokeinterface #125
+      [304] invokeinterface #115
         + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
       [309] pop
-      [310] new #45
-        + Class [java/lang/StringBuilder]
-      [313] dup
+      [310] goto +51 (target=361)
+      [313] aload_2 v2
       [314] aload_0 v0
-      [315] getfield #61
-        + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
-      [318] ldc #12
-        + String [Notification]
-      [320] iconst_5
-      [321] invokeinterface #123
-        + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
-      [326] invokestatic #98
-        + Methodref [java/lang/String.valueOf (I)Ljava/lang/String;]
-      [329] invokespecial #99
-        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [332] ldc #24
-        + String [분 체크]
-      [334] invokevirtual #100
-        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [337] invokevirtual #101
-        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [340] ldc #26
-        + String [종료]
-      [342] invokestatic #92
-        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
-      [345] pop
-      [346] goto +87 (target=433)
-      [349] aload_2 v2
-      [350] aload_0 v0
-      [351] getfield #60
+      [315] getfield #55
         + Fieldref [lee/whdghks913/only3/AndroidService.c Landroid/content/SharedPreferences;]
-      [354] aload_2 v2
-      [355] ldc #9
+      [318] aload_2 v2
+      [319] ldc #9
         + String []
-      [357] invokeinterface #124
+      [321] invokeinterface #114
         + InterfaceMethodref [android/content/SharedPreferences.getString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;]
-      [362] invokevirtual #96
+      [326] invokevirtual #90
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
-      [365] ifeq +68 (target=433)
-      [368] aload_0 v0
-      [369] getfield #61
+      [329] ifeq +32 (target=361)
+      [332] aload_0 v0
+      [333] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
-      [372] ldc #12
+      [336] ldc #12
         + String [Notification]
-      [374] iconst_5
-      [375] invokeinterface #123
+      [338] iconst_5
+      [339] invokeinterface #113
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
-      [380] ifeq +53 (target=433)
-      [383] aload_0 v0
-      [384] getfield #70
+      [344] ifeq +17 (target=361)
+      [347] aload_0 v0
+      [348] getfield #65
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
-      [387] invokevirtual #93
+      [351] invokevirtual #87
         + Methodref [java/lang/Boolean.booleanValue ()Z]
-      [390] ifeq +43 (target=433)
-      [393] aload_0 v0
-      [394] invokevirtual #112
+      [354] ifeq +7 (target=361)
+      [357] aload_0 v0
+      [358] invokevirtual #102
         + Methodref [lee/whdghks913/only3/AndroidService.c ()V]
-      [397] new #45
-        + Class [java/lang/StringBuilder]
-      [400] dup
-      [401] aload_0 v0
-      [402] getfield #61
-        + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
-      [405] ldc #12
-        + String [Notification]
-      [407] iconst_5
-      [408] invokeinterface #123
-        + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
-      [413] invokestatic #98
-        + Methodref [java/lang/String.valueOf (I)Ljava/lang/String;]
-      [416] invokespecial #99
-        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [419] ldc #24
-        + String [분 체크]
-      [421] invokevirtual #100
-        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [424] invokevirtual #101
-        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [427] ldc #25
-        + String [시작]
-      [429] invokestatic #92
-        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
-      [432] pop
-      [433] aload_1 v1
-      [434] invokeinterface #128
+      [361] aload_1 v1
+      [362] invokeinterface #118
         + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
-      [439] ifne -422 (target=17)
-      [442] invokestatic #103
+      [367] ifne -350 (target=17)
+      [370] invokestatic #93
         + Methodref [java/lang/System.gc ()V]
-      [445] return
+      [373] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 1):
       + Stack map table attribute (count = 10):
@@ -51679,9 +51602,9 @@ Methods (count = 11):
         - [219] Var: ..., Stack: (empty)
         - [286] Var: ..., Stack: [a:lee/whdghks913/only3/AndroidService]
         - [287] Var: [a:lee/whdghks913/only3/AndroidService][a:java/util/Iterator][a:java/lang/String], Stack: [a:lee/whdghks913/only3/AndroidService][i]
-        - [346] Var: ..., Stack: (empty)
-        - [349] Var: ..., Stack: (empty)
-        - [433] Var: -1, Stack: (empty)
+        - [310] Var: ..., Stack: (empty)
+        - [313] Var: ..., Stack: (empty)
+        - [361] Var: -1, Stack: (empty)
   + Method:       a(Z)V
     Access flags: 0x2
       = private void a(boolean)
@@ -51690,23 +51613,23 @@ Methods (count = 11):
       [0] aload_0 v0
       [1] ldc #17
         + String [notification]
-      [3] invokevirtual #115
+      [3] invokevirtual #105
         + Methodref [lee/whdghks913/only3/AndroidService.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-      [6] checkcast #31
+      [6] checkcast #28
         + Class [android/app/NotificationManager]
       [9] astore_2 v2
       [10] iload_1 v1
       [11] ifeq +116 (target=127)
       [14] aload_0 v0
-      [15] getfield #61
+      [15] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [18] ldc #18
         + String [notification_clear]
       [20] iconst_0
-      [21] invokeinterface #122
+      [21] invokeinterface #112
         + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
       [26] ifeq +52 (target=78)
-      [29] new #30
+      [29] new #27
         + Class [android/app/Notification]
       [32] dup
       [33] ldc #2
@@ -51714,36 +51637,36 @@ Methods (count = 11):
       [35] aload_0 v0
       [36] ldc #8
         + Integer [2131099660]
-      [38] invokevirtual #114
+      [38] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
       [41] iconst_2
-      [42] anewarray #43
+      [42] anewarray #39
         + Class [java/lang/Object]
       [45] dup
       [46] iconst_0
       [47] aload_0 v0
-      [48] getfield #68
+      [48] getfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
-      [51] invokestatic #95
+      [51] invokestatic #89
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [54] aastore
       [55] dup
       [56] iconst_1
       [57] aload_0 v0
-      [58] getfield #67
+      [58] getfield #62
         + Fieldref [lee/whdghks913/only3/AndroidService.j I]
-      [61] invokestatic #95
+      [61] invokestatic #89
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [64] aastore
-      [65] invokestatic #97
+      [65] invokestatic #91
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [68] invokestatic #102
+      [68] invokestatic #92
         + Methodref [java/lang/System.currentTimeMillis ()J]
-      [71] invokespecial #76
+      [71] invokespecial #71
         + Methodref [android/app/Notification.<init> (ILjava/lang/CharSequence;J)V]
       [74] astore_3 v3
       [75] goto +162 (target=237)
-      [78] new #30
+      [78] new #27
         + Class [android/app/Notification]
       [81] dup
       [82] ldc #3
@@ -51751,45 +51674,45 @@ Methods (count = 11):
       [84] aload_0 v0
       [85] ldc #8
         + Integer [2131099660]
-      [87] invokevirtual #114
+      [87] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
       [90] iconst_2
-      [91] anewarray #43
+      [91] anewarray #39
         + Class [java/lang/Object]
       [94] dup
       [95] iconst_0
       [96] aload_0 v0
-      [97] getfield #68
+      [97] getfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
-      [100] invokestatic #95
+      [100] invokestatic #89
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [103] aastore
       [104] dup
       [105] iconst_1
       [106] aload_0 v0
-      [107] getfield #67
+      [107] getfield #62
         + Fieldref [lee/whdghks913/only3/AndroidService.j I]
-      [110] invokestatic #95
+      [110] invokestatic #89
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [113] aastore
-      [114] invokestatic #97
+      [114] invokestatic #91
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [117] invokestatic #102
+      [117] invokestatic #92
         + Methodref [java/lang/System.currentTimeMillis ()J]
-      [120] invokespecial #76
+      [120] invokespecial #71
         + Methodref [android/app/Notification.<init> (ILjava/lang/CharSequence;J)V]
       [123] astore_3 v3
       [124] goto +113 (target=237)
       [127] aload_0 v0
-      [128] getfield #61
+      [128] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [131] ldc #18
         + String [notification_clear]
       [133] iconst_0
-      [134] invokeinterface #122
+      [134] invokeinterface #112
         + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
       [139] ifeq +52 (target=191)
-      [142] new #30
+      [142] new #27
         + Class [android/app/Notification]
       [145] dup
       [146] ldc #2
@@ -51797,36 +51720,36 @@ Methods (count = 11):
       [148] aload_0 v0
       [149] ldc #7
         + Integer [2131099659]
-      [151] invokevirtual #114
+      [151] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
       [154] iconst_2
-      [155] anewarray #43
+      [155] anewarray #39
         + Class [java/lang/Object]
       [158] dup
       [159] iconst_0
       [160] aload_0 v0
-      [161] getfield #68
+      [161] getfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
-      [164] invokestatic #95
+      [164] invokestatic #89
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [167] aastore
       [168] dup
       [169] iconst_1
       [170] aload_0 v0
-      [171] getfield #67
+      [171] getfield #62
         + Fieldref [lee/whdghks913/only3/AndroidService.j I]
-      [174] invokestatic #95
+      [174] invokestatic #89
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [177] aastore
-      [178] invokestatic #97
+      [178] invokestatic #91
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [181] invokestatic #102
+      [181] invokestatic #92
         + Methodref [java/lang/System.currentTimeMillis ()J]
-      [184] invokespecial #76
+      [184] invokespecial #71
         + Methodref [android/app/Notification.<init> (ILjava/lang/CharSequence;J)V]
       [187] astore_3 v3
       [188] goto +49 (target=237)
-      [191] new #30
+      [191] new #27
         + Class [android/app/Notification]
       [194] dup
       [195] ldc #3
@@ -51834,62 +51757,62 @@ Methods (count = 11):
       [197] aload_0 v0
       [198] ldc #7
         + Integer [2131099659]
-      [200] invokevirtual #114
+      [200] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
       [203] iconst_2
-      [204] anewarray #43
+      [204] anewarray #39
         + Class [java/lang/Object]
       [207] dup
       [208] iconst_0
       [209] aload_0 v0
-      [210] getfield #68
+      [210] getfield #63
         + Fieldref [lee/whdghks913/only3/AndroidService.k I]
-      [213] invokestatic #95
+      [213] invokestatic #89
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [216] aastore
       [217] dup
       [218] iconst_1
       [219] aload_0 v0
-      [220] getfield #67
+      [220] getfield #62
         + Fieldref [lee/whdghks913/only3/AndroidService.j I]
-      [223] invokestatic #95
+      [223] invokestatic #89
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [226] aastore
-      [227] invokestatic #97
+      [227] invokestatic #91
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [230] invokestatic #102
+      [230] invokestatic #92
         + Methodref [java/lang/System.currentTimeMillis ()J]
-      [233] invokespecial #76
+      [233] invokespecial #71
         + Methodref [android/app/Notification.<init> (ILjava/lang/CharSequence;J)V]
       [236] astore_3 v3
       [237] aload_3 v3
       [238] bipush 8
-      [240] putfield #57
+      [240] putfield #52
         + Fieldref [android/app/Notification.flags I]
       [243] aload_3 v3
       [244] bipush 16
-      [246] putfield #57
+      [246] putfield #52
         + Fieldref [android/app/Notification.flags I]
-      [249] new #35
+      [249] new #32
         + Class [android/content/Intent]
       [252] dup
       [253] aload_0 v0
-      [254] ldc #53
+      [254] ldc #48
         + Class [lee/whdghks913/only3/MainActivity]
-      [256] invokespecial #88
+      [256] invokespecial #83
         + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
       [259] astore v4
       [261] aload v4
       [263] ldc #1
         + Integer [268435456]
-      [265] invokevirtual #89
+      [265] invokevirtual #84
         + Methodref [android/content/Intent.addFlags (I)Landroid/content/Intent;]
       [268] pop
       [269] aload_0 v0
       [270] iconst_0
       [271] aload v4
       [273] iconst_0
-      [274] invokestatic #80
+      [274] invokestatic #75
         + Methodref [android/app/PendingIntent.getActivity (Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;]
       [277] astore v5
       [279] aload_3 v3
@@ -51897,24 +51820,24 @@ Methods (count = 11):
       [281] aload_0 v0
       [282] ldc #7
         + Integer [2131099659]
-      [284] invokevirtual #114
+      [284] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
       [287] aload_0 v0
       [288] ldc #7
         + Integer [2131099659]
-      [290] invokevirtual #114
+      [290] invokevirtual #104
         + Methodref [lee/whdghks913/only3/AndroidService.getString (I)Ljava/lang/String;]
       [293] aload v5
-      [295] invokevirtual #77
+      [295] invokevirtual #72
         + Methodref [android/app/Notification.setLatestEventInfo (Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V]
       [298] aload_2 v2
       [299] iconst_0
       [300] aload_3 v3
-      [301] invokevirtual #79
+      [301] invokevirtual #74
         + Methodref [android/app/NotificationManager.notify (ILandroid/app/Notification;)V]
       [304] aload_2 v2
       [305] iconst_0
-      [306] invokevirtual #78
+      [306] invokevirtual #73
         + Methodref [android/app/NotificationManager.cancel (I)V]
       [309] return
       Code attribute exceptions (count = 0):
@@ -51931,22 +51854,22 @@ Methods (count = 11):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 25, locals = 1, stack = 2):
       [0] aload_0 v0
-      [1] invokespecial #84
+      [1] invokespecial #79
         + Methodref [android/app/Service.onDestroy ()V]
       [4] aload_0 v0
-      [5] invokevirtual #111
+      [5] invokevirtual #101
         + Methodref [lee/whdghks913/only3/AndroidService.b ()V]
       [8] aload_0 v0
       [9] iconst_0
-      [10] invokestatic #94
+      [10] invokestatic #88
         + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
-      [13] putfield #69
+      [13] putfield #64
         + Fieldref [lee/whdghks913/only3/AndroidService.l Ljava/lang/Boolean;]
-      [16] invokestatic #103
+      [16] invokestatic #93
         + Methodref [java/lang/System.gc ()V]
       [19] aload_0 v0
       [20] iconst_1
-      [21] invokevirtual #118
+      [21] invokevirtual #108
         + Methodref [lee/whdghks913/only3/AndroidService.stopForeground (Z)V]
       [24] return
       Code attribute exceptions (count = 0):
@@ -51957,10 +51880,10 @@ Methods (count = 11):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 9, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #85
+      [1] invokespecial #80
         + Methodref [android/app/Service.onLowMemory ()V]
       [4] aload_0 v0
-      [5] invokevirtual #111
+      [5] invokevirtual #101
         + Methodref [lee/whdghks913/only3/AndroidService.b ()V]
       [8] return
       Code attribute exceptions (count = 0):
@@ -51972,10 +51895,10 @@ Methods (count = 11):
     + Code attribute instructions (code length = 10, locals = 2, stack = 2):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] invokespecial #86
+      [2] invokespecial #81
         + Methodref [android/app/Service.onTaskRemoved (Landroid/content/Intent;)V]
       [5] aload_0 v0
-      [6] invokevirtual #111
+      [6] invokevirtual #101
         + Methodref [lee/whdghks913/only3/AndroidService.b ()V]
       [9] return
       Code attribute exceptions (count = 0):
@@ -51986,26 +51909,26 @@ Methods (count = 11):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 32, locals = 2, stack = 4):
       [0] aload_0 v0
-      [1] getfield #61
+      [1] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [4] ldc #13
         + String [Service]
       [6] iconst_0
-      [7] invokeinterface #122
+      [7] invokeinterface #112
         + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
       [12] ifeq +19 (target=31)
-      [15] new #35
+      [15] new #32
         + Class [android/content/Intent]
       [18] dup
       [19] aload_0 v0
-      [20] ldc #52
+      [20] ldc #47
         + Class [lee/whdghks913/only3/BroadCast]
-      [22] invokespecial #88
+      [22] invokespecial #83
         + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
       [25] astore_1 v1
       [26] aload_0 v0
       [27] aload_1 v1
-      [28] invokevirtual #116
+      [28] invokevirtual #106
         + Methodref [lee/whdghks913/only3/AndroidService.sendBroadcast (Landroid/content/Intent;)V]
       [31] return
       Code attribute exceptions (count = 0):
@@ -52017,47 +51940,47 @@ Methods (count = 11):
       = public void c()
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 154, locals = 8, stack = 9):
-      [0] new #35
+      [0] new #32
         + Class [android/content/Intent]
       [3] dup
       [4] aload_0 v0
-      [5] ldc #52
+      [5] ldc #47
         + Class [lee/whdghks913/only3/BroadCast]
-      [7] invokespecial #88
+      [7] invokespecial #83
         + Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
       [10] astore_1 v1
       [11] aload_1 v1
       [12] ldc #10
         + String [ACTION_FIVE_MINUTE]
-      [14] invokevirtual #90
+      [14] invokevirtual #85
         + Methodref [android/content/Intent.setAction (Ljava/lang/String;)Landroid/content/Intent;]
       [17] pop
-      [18] invokestatic #107
+      [18] invokestatic #97
         + Methodref [java/util/Calendar.getInstance ()Ljava/util/Calendar;]
       [21] astore_2 v2
       [22] aload_2 v2
       [23] iconst_1
-      [24] invokevirtual #106
+      [24] invokevirtual #96
         + Methodref [java/util/Calendar.get (I)I]
       [27] istore_3 v3
       [28] aload_2 v2
       [29] iconst_2
-      [30] invokevirtual #106
+      [30] invokevirtual #96
         + Methodref [java/util/Calendar.get (I)I]
       [33] istore v4
       [35] aload_2 v2
       [36] iconst_5
-      [37] invokevirtual #106
+      [37] invokevirtual #96
         + Methodref [java/util/Calendar.get (I)I]
       [40] istore v5
       [42] aload_2 v2
       [43] bipush 11
-      [45] invokevirtual #106
+      [45] invokevirtual #96
         + Methodref [java/util/Calendar.get (I)I]
       [48] istore v6
       [50] aload_2 v2
       [51] bipush 12
-      [53] invokevirtual #106
+      [53] invokevirtual #96
         + Methodref [java/util/Calendar.get (I)I]
       [56] istore v7
       [58] aload_0 v0
@@ -52065,9 +51988,9 @@ Methods (count = 11):
       [60] iconst_0
       [61] aload_1 v1
       [62] iconst_0
-      [63] invokestatic #81
+      [63] invokestatic #76
         + Methodref [android/app/PendingIntent.getBroadcast (Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;]
-      [66] putfield #72
+      [66] putfield #67
         + Fieldref [lee/whdghks913/only3/AndroidService.o Landroid/app/PendingIntent;]
       [69] aload_2 v2
       [70] iload_3 v3
@@ -52076,30 +51999,30 @@ Methods (count = 11):
       [75] iload v6
       [77] iload v7
       [79] aload_0 v0
-      [80] getfield #61
+      [80] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [83] ldc #12
         + String [Notification]
       [85] iconst_5
-      [86] invokeinterface #123
+      [86] invokeinterface #113
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
       [91] iadd
-      [92] invokevirtual #109
+      [92] invokevirtual #99
         + Methodref [java/util/Calendar.set (IIIII)V]
       [95] aload_0 v0
-      [96] getfield #71
+      [96] getfield #66
         + Fieldref [lee/whdghks913/only3/AndroidService.n Landroid/app/AlarmManager;]
       [99] iconst_0
       [100] aload_2 v2
-      [101] invokevirtual #108
+      [101] invokevirtual #98
         + Methodref [java/util/Calendar.getTimeInMillis ()J]
       [104] aload_0 v0
-      [105] getfield #61
+      [105] getfield #56
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [108] ldc #12
         + String [Notification]
       [110] iconst_5
-      [111] invokeinterface #123
+      [111] invokeinterface #113
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
       [116] bipush 60
       [118] imul
@@ -52107,23 +52030,23 @@ Methods (count = 11):
       [122] imul
       [123] i2l
       [124] aload_0 v0
-      [125] getfield #72
+      [125] getfield #67
         + Fieldref [lee/whdghks913/only3/AndroidService.o Landroid/app/PendingIntent;]
-      [128] invokevirtual #75
+      [128] invokevirtual #70
         + Methodref [android/app/AlarmManager.setRepeating (IJJLandroid/app/PendingIntent;)V]
       [131] aload_0 v0
       [132] aload_0 v0
-      [133] getfield #70
+      [133] getfield #65
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
-      [136] invokevirtual #93
+      [136] invokevirtual #87
         + Methodref [java/lang/Boolean.booleanValue ()Z]
       [139] ifeq +7 (target=146)
       [142] iconst_0
       [143] goto +4 (target=147)
       [146] iconst_1
-      [147] invokestatic #94
+      [147] invokestatic #88
         + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
-      [150] putfield #70
+      [150] putfield #65
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
       [153] return
       Code attribute exceptions (count = 0):
@@ -52138,7 +52061,7 @@ Methods (count = 11):
     + Code attribute instructions (code length = 6, locals = 2, stack = 2):
       [0] aload_0 v0
       [1] iload_1 v1
-      [2] invokespecial #110
+      [2] invokespecial #100
         + Methodref [lee/whdghks913/only3/AndroidService.a (Z)V]
       [5] return
       Code attribute exceptions (count = 0):
@@ -52344,24 +52267,19 @@ _____________________________________________________________________
 Interfaces (count = 1):
   + Class [java/lang/Runnable]
 
-Constant Pool (count = 138):
+Constant Pool (count = 111):
   + String []
   + String [FIVE_MINUTE]
   + String [Notification]
   + String [delay]
-  + String [분 체크]
-  + String [종료]
   + Class [android/app/AlarmManager]
   + Class [android/content/SharedPreferences]
   + Class [android/content/SharedPreferences$Editor]
   + Class [android/os/PowerManager]
-  + Class [android/util/Log]
   + Class [java/lang/Boolean]
   + Class [java/lang/InterruptedException]
   + Class [java/lang/Object]
   + Class [java/lang/Runnable]
-  + Class [java/lang/String]
-  + Class [java/lang/StringBuilder]
   + Class [java/lang/Thread]
   + Class [lee/whdghks913/only3/AndroidService]
   + Class [lee/whdghks913/only3/b]
@@ -52377,30 +52295,22 @@ Constant Pool (count = 138):
   + Fieldref [lee/whdghks913/only3/b.b Landroid/os/PowerManager;]
   + Methodref [android/app/AlarmManager.cancel (Landroid/app/PendingIntent;)V]
   + Methodref [android/os/PowerManager.isScreenOn ()Z]
-  + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
   + Methodref [java/lang/Boolean.booleanValue ()Z]
   + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
   + Methodref [java/lang/InterruptedException.printStackTrace ()V]
   + Methodref [java/lang/Object.<init> ()V]
-  + Methodref [java/lang/String.valueOf (I)Ljava/lang/String;]
-  + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
   + Methodref [java/lang/Thread.sleep (J)V]
   + Methodref [lee/whdghks913/only3/AndroidService.a ()V]
   + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
   + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
   + InterfaceMethodref [android/content/SharedPreferences$Editor.remove (Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
   + NameAndType [<init> ()V]
-  + NameAndType [<init> (Ljava/lang/String;)V]
   + NameAndType [a ()V]
   + NameAndType [a Llee/whdghks913/only3/AndroidService;]
-  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
   + NameAndType [b Landroid/os/PowerManager;]
   + NameAndType [booleanValue ()Z]
   + NameAndType [cancel (Landroid/app/PendingIntent;)V]
   + NameAndType [commit ()Z]
-  + NameAndType [d (Ljava/lang/String;Ljava/lang/String;)I]
   + NameAndType [d Landroid/content/SharedPreferences;]
   + NameAndType [f Landroid/content/SharedPreferences$Editor;]
   + NameAndType [getInt (Ljava/lang/String;I)I]
@@ -52413,21 +52323,14 @@ Constant Pool (count = 138):
   + NameAndType [printStackTrace ()V]
   + NameAndType [remove (Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
   + NameAndType [sleep (J)V]
-  + NameAndType [toString ()Ljava/lang/String;]
-  + NameAndType [valueOf (I)Ljava/lang/String;]
   + NameAndType [valueOf (Z)Ljava/lang/Boolean;]
   + Utf8 []
-  + Utf8 [()Ljava/lang/String;]
   + Utf8 [()V]
   + Utf8 [()Z]
-  + Utf8 [(I)Ljava/lang/String;]
   + Utf8 [(J)V]
   + Utf8 [(Landroid/app/PendingIntent;)V]
   + Utf8 [(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
-  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  + Utf8 [(Ljava/lang/String;)V]
   + Utf8 [(Ljava/lang/String;I)I]
-  + Utf8 [(Ljava/lang/String;Ljava/lang/String;)I]
   + Utf8 [(Llee/whdghks913/only3/AndroidService;Landroid/os/PowerManager;)V]
   + Utf8 [(Z)Ljava/lang/Boolean;]
   + Utf8 [<init>]
@@ -52448,8 +52351,6 @@ Constant Pool (count = 138):
   + Utf8 [android/content/SharedPreferences]
   + Utf8 [android/content/SharedPreferences$Editor]
   + Utf8 [android/os/PowerManager]
-  + Utf8 [android/util/Log]
-  + Utf8 [append]
   + Utf8 [b]
   + Utf8 [booleanValue]
   + Utf8 [cancel]
@@ -52464,8 +52365,6 @@ Constant Pool (count = 138):
   + Utf8 [java/lang/InterruptedException]
   + Utf8 [java/lang/Object]
   + Utf8 [java/lang/Runnable]
-  + Utf8 [java/lang/String]
-  + Utf8 [java/lang/StringBuilder]
   + Utf8 [java/lang/Thread]
   + Utf8 [l]
   + Utf8 [lee/whdghks913/only3/AndroidService]
@@ -52477,10 +52376,7 @@ Constant Pool (count = 138):
   + Utf8 [remove]
   + Utf8 [run]
   + Utf8 [sleep]
-  + Utf8 [toString]
   + Utf8 [valueOf]
-  + Utf8 [분 체크]
-  + Utf8 [종료]
 
 Fields (count = 2):
   + Field:        a Llee/whdghks913/only3/AndroidService;
@@ -52498,14 +52394,14 @@ Methods (count = 2):
     + Code attribute instructions (code length = 15, locals = 3, stack = 2):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] putfield #30
+      [2] putfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
       [5] aload_0 v0
       [6] aload_2 v2
-      [7] putfield #31
+      [7] putfield #26
         + Fieldref [lee/whdghks913/only3/b.b Landroid/os/PowerManager;]
       [10] aload_0 v0
-      [11] invokespecial #38
+      [11] invokespecial #32
         + Methodref [java/lang/Object.<init> ()V]
       [14] return
       Code attribute exceptions (count = 0):
@@ -52514,168 +52410,140 @@ Methods (count = 2):
     Access flags: 0x1
       = public void run()
     Class member attributes (count = 1):
-    + Code attribute instructions (code length = 251, locals = 2, stack = 5):
-      [0] goto +237 (target=237)
+    + Code attribute instructions (code length = 212, locals = 2, stack = 3):
+      [0] goto +198 (target=198)
       [3] aload_0 v0
-      [4] getfield #30
+      [4] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [7] getfield #23
+      [7] getfield #18
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [10] ldc #4
         + String [delay]
       [12] iconst_2
-      [13] invokeinterface #45
+      [13] invokeinterface #35
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
       [18] sipush 1000
       [21] imul
       [22] ifne +20 (target=42)
-      [25] ldc2_w #21
+      [25] ldc2_w #16
         + Long [1000]
-      [28] invokestatic #43
+      [28] invokestatic #33
         + Methodref [java/lang/Thread.sleep (J)V]
       [31] goto +42 (target=73)
       [34] astore_1 v1
       [35] aload_1 v1
-      [36] invokevirtual #37
+      [36] invokevirtual #31
         + Methodref [java/lang/InterruptedException.printStackTrace ()V]
       [39] goto +34 (target=73)
       [42] aload_0 v0
-      [43] getfield #30
+      [43] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [46] getfield #23
+      [46] getfield #18
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [49] ldc #4
         + String [delay]
       [51] iconst_2
-      [52] invokeinterface #45
+      [52] invokeinterface #35
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
       [57] sipush 1000
       [60] imul
       [61] i2l
-      [62] invokestatic #43
+      [62] invokestatic #33
         + Methodref [java/lang/Thread.sleep (J)V]
       [65] goto +8 (target=73)
       [68] astore_1 v1
       [69] aload_1 v1
-      [70] invokevirtual #37
+      [70] invokevirtual #31
         + Methodref [java/lang/InterruptedException.printStackTrace ()V]
       [73] aload_0 v0
-      [74] getfield #31
+      [74] getfield #26
         + Fieldref [lee/whdghks913/only3/b.b Landroid/os/PowerManager;]
-      [77] invokevirtual #33
+      [77] invokevirtual #28
         + Methodref [android/os/PowerManager.isScreenOn ()Z]
       [80] ifeq +13 (target=93)
       [83] aload_0 v0
-      [84] getfield #30
+      [84] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [87] invokevirtual #44
+      [87] invokevirtual #34
         + Methodref [lee/whdghks913/only3/AndroidService.a ()V]
-      [90] goto +147 (target=237)
+      [90] goto +108 (target=198)
       [93] aload_0 v0
-      [94] getfield #30
+      [94] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [97] getfield #23
+      [97] getfield #18
         + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
       [100] ldc #3
         + String [Notification]
       [102] iconst_5
-      [103] invokeinterface #45
+      [103] invokeinterface #35
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
-      [108] ifeq +129 (target=237)
+      [108] ifeq +90 (target=198)
       [111] aload_0 v0
-      [112] getfield #30
+      [112] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [115] getfield #27
+      [115] getfield #22
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
-      [118] invokevirtual #35
+      [118] invokevirtual #29
         + Methodref [java/lang/Boolean.booleanValue ()Z]
-      [121] ifne +116 (target=237)
+      [121] ifne +77 (target=198)
       [124] aload_0 v0
-      [125] getfield #30
+      [125] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [128] getfield #28
+      [128] getfield #23
         + Fieldref [lee/whdghks913/only3/AndroidService.n Landroid/app/AlarmManager;]
       [131] aload_0 v0
-      [132] getfield #30
+      [132] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [135] getfield #29
+      [135] getfield #24
         + Fieldref [lee/whdghks913/only3/AndroidService.o Landroid/app/PendingIntent;]
-      [138] invokevirtual #32
+      [138] invokevirtual #27
         + Methodref [android/app/AlarmManager.cancel (Landroid/app/PendingIntent;)V]
       [141] aload_0 v0
-      [142] getfield #30
+      [142] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
       [145] aload_0 v0
-      [146] getfield #30
+      [146] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [149] getfield #27
+      [149] getfield #22
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
-      [152] invokevirtual #35
+      [152] invokevirtual #29
         + Methodref [java/lang/Boolean.booleanValue ()Z]
       [155] ifeq +7 (target=162)
       [158] iconst_0
       [159] goto +4 (target=163)
       [162] iconst_1
-      [163] invokestatic #36
+      [163] invokestatic #30
         + Methodref [java/lang/Boolean.valueOf (Z)Ljava/lang/Boolean;]
-      [166] putfield #27
+      [166] putfield #22
         + Fieldref [lee/whdghks913/only3/AndroidService.m Ljava/lang/Boolean;]
       [169] aload_0 v0
-      [170] getfield #30
+      [170] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
       [173] ldc #1
         + String []
-      [175] putfield #25
+      [175] putfield #20
         + Fieldref [lee/whdghks913/only3/AndroidService.h Ljava/lang/String;]
       [178] aload_0 v0
-      [179] getfield #30
+      [179] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [182] getfield #24
+      [182] getfield #19
         + Fieldref [lee/whdghks913/only3/AndroidService.f Landroid/content/SharedPreferences$Editor;]
       [185] ldc #2
         + String [FIVE_MINUTE]
-      [187] invokeinterface #47
+      [187] invokeinterface #37
         + InterfaceMethodref [android/content/SharedPreferences$Editor.remove (Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
-      [192] invokeinterface #46
+      [192] invokeinterface #36
         + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
       [197] pop
-      [198] new #17
-        + Class [java/lang/StringBuilder]
-      [201] dup
-      [202] aload_0 v0
-      [203] getfield #30
+      [198] aload_0 v0
+      [199] getfield #25
         + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [206] getfield #23
-        + Fieldref [lee/whdghks913/only3/AndroidService.d Landroid/content/SharedPreferences;]
-      [209] ldc #3
-        + String [Notification]
-      [211] iconst_5
-      [212] invokeinterface #45
-        + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
-      [217] invokestatic #39
-        + Methodref [java/lang/String.valueOf (I)Ljava/lang/String;]
-      [220] invokespecial #40
-        + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [223] ldc #5
-        + String [분 체크]
-      [225] invokevirtual #41
-        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [228] invokevirtual #42
-        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [231] ldc #6
-        + String [종료]
-      [233] invokestatic #34
-        + Methodref [android/util/Log.d (Ljava/lang/String;Ljava/lang/String;)I]
-      [236] pop
-      [237] aload_0 v0
-      [238] getfield #30
-        + Fieldref [lee/whdghks913/only3/b.a Llee/whdghks913/only3/AndroidService;]
-      [241] getfield #26
+      [202] getfield #21
         + Fieldref [lee/whdghks913/only3/AndroidService.l Ljava/lang/Boolean;]
-      [244] invokevirtual #35
+      [205] invokevirtual #29
         + Methodref [java/lang/Boolean.booleanValue ()Z]
-      [247] ifne -244 (target=3)
-      [250] return
+      [208] ifne -205 (target=3)
+      [211] return
       Code attribute exceptions (count = 2):
       - ExceptionInfo (25 -> 31: 34):
       + Class [java/lang/InterruptedException]
@@ -52692,7 +52560,7 @@ Methods (count = 2):
         - [93] Var: ..., Stack: (empty)
         - [162] Var: ..., Stack: [a:lee/whdghks913/only3/AndroidService]
         - [163] Var: [a:lee/whdghks913/only3/b], Stack: [a:lee/whdghks913/only3/AndroidService][i]
-        - [237] Var: ..., Stack: (empty)
+        - [198] Var: ..., Stack: (empty)
 
 Class file attributes (count = 0):
 
@@ -59543,7 +59411,7 @@ _____________________________________________________________________
 
 Interfaces (count = 0):
 
-Constant Pool (count = 419):
+Constant Pool (count = 421):
   + Integer [2130903045]
   + Integer [2131099676]
   + Integer [2131099677]
@@ -59571,6 +59439,7 @@ Constant Pool (count = 419):
   + String [password_enable]
   + String [setting]
   + String [setting.backup]
+  + String [vibrate]
   + Class [android/app/Activity]
   + Class [android/app/ActivityManager]
   + Class [android/app/ActivityManager$RunningServiceInfo]
@@ -59961,6 +59830,7 @@ Constant Pool (count = 419):
   + Utf8 [toString]
   + Utf8 [valueOf]
   + Utf8 [versionName]
+  + Utf8 [vibrate]
   + Utf8 [writeObject]
 
 Fields (count = 11):
@@ -60005,7 +59875,7 @@ Methods (count = 11):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #83
+      [1] invokespecial #84
         + Methodref [android/app/Activity.<init> ()V]
       [4] return
       Code attribute exceptions (count = 0):
@@ -60014,377 +59884,393 @@ Methods (count = 11):
     Access flags: 0x4
       = protected void onCreate(android.os.Bundle)
     Class member attributes (count = 1):
-    + Code attribute instructions (code length = 497, locals = 6, stack = 6):
+    + Code attribute instructions (code length = 520, locals = 6, stack = 6):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] invokespecial #84
+      [2] invokespecial #85
         + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
       [5] aload_0 v0
       [6] ldc #1
         + Integer [2130903045]
-      [8] invokevirtual #138
+      [8] invokevirtual #139
         + Methodref [lee/whdghks913/only3/Setting.setContentView (I)V]
       [11] aload_0 v0
       [12] aload_0 v0
       [13] ldc #26
         + String [setting]
       [15] iconst_0
-      [16] invokevirtual #135
+      [16] invokevirtual #136
         + Methodref [lee/whdghks913/only3/Setting.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [19] putfield #72
+      [19] putfield #73
         + Fieldref [lee/whdghks913/only3/Setting.a Landroid/content/SharedPreferences;]
       [22] aload_0 v0
       [23] aload_0 v0
-      [24] getfield #72
+      [24] getfield #73
         + Fieldref [lee/whdghks913/only3/Setting.a Landroid/content/SharedPreferences;]
-      [27] invokeinterface #145
+      [27] invokeinterface #146
         + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
-      [32] putfield #73
+      [32] putfield #74
         + Fieldref [lee/whdghks913/only3/Setting.b Landroid/content/SharedPreferences$Editor;]
       [35] aload_0 v0
       [36] aload_0 v0
       [37] ldc #7
         + Integer [2131296267]
-      [39] invokevirtual #131
+      [39] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [42] checkcast #39
+      [42] checkcast #40
         + Class [android/widget/SeekBar]
-      [45] putfield #74
+      [45] putfield #75
         + Fieldref [lee/whdghks913/only3/Setting.c Landroid/widget/SeekBar;]
       [48] aload_0 v0
       [49] aload_0 v0
       [50] ldc #6
         + Integer [2131296266]
-      [52] invokevirtual #131
+      [52] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [55] checkcast #40
+      [55] checkcast #41
         + Class [android/widget/TextView]
-      [58] putfield #76
+      [58] putfield #77
         + Fieldref [lee/whdghks913/only3/Setting.e Landroid/widget/TextView;]
       [61] aload_0 v0
       [62] aload_0 v0
       [63] ldc #10
         + Integer [2131296270]
-      [65] invokevirtual #131
+      [65] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [68] checkcast #38
+      [68] checkcast #39
         + Class [android/widget/CheckBox]
-      [71] putfield #78
+      [71] putfield #79
         + Fieldref [lee/whdghks913/only3/Setting.g Landroid/widget/CheckBox;]
       [74] aload_0 v0
       [75] aload_0 v0
       [76] ldc #11
         + Integer [2131296271]
-      [78] invokevirtual #131
+      [78] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [81] checkcast #38
+      [81] checkcast #39
         + Class [android/widget/CheckBox]
-      [84] putfield #79
+      [84] putfield #80
         + Fieldref [lee/whdghks913/only3/Setting.h Landroid/widget/CheckBox;]
       [87] aload_0 v0
       [88] aload_0 v0
       [89] ldc #12
         + Integer [2131296272]
-      [91] invokevirtual #131
+      [91] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [94] checkcast #38
+      [94] checkcast #39
         + Class [android/widget/CheckBox]
-      [97] putfield #80
+      [97] putfield #81
         + Fieldref [lee/whdghks913/only3/Setting.i Landroid/widget/CheckBox;]
       [100] aload_0 v0
       [101] aload_0 v0
       [102] ldc #13
         + Integer [2131296273]
-      [104] invokevirtual #131
+      [104] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [107] checkcast #38
+      [107] checkcast #39
         + Class [android/widget/CheckBox]
-      [110] putfield #81
+      [110] putfield #82
         + Fieldref [lee/whdghks913/only3/Setting.j Landroid/widget/CheckBox;]
       [113] aload_0 v0
-      [114] invokevirtual #129
+      [114] invokevirtual #130
         + Methodref [lee/whdghks913/only3/Setting.b ()Z]
       [117] pop
       [118] aload_0 v0
       [119] aload_0 v0
       [120] ldc #9
         + Integer [2131296269]
-      [122] invokevirtual #131
+      [122] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [125] checkcast #39
+      [125] checkcast #40
         + Class [android/widget/SeekBar]
-      [128] putfield #75
+      [128] putfield #76
         + Fieldref [lee/whdghks913/only3/Setting.d Landroid/widget/SeekBar;]
       [131] aload_0 v0
       [132] aload_0 v0
       [133] ldc #8
         + Integer [2131296268]
-      [135] invokevirtual #131
+      [135] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [138] checkcast #40
+      [138] checkcast #41
         + Class [android/widget/TextView]
-      [141] putfield #77
+      [141] putfield #78
         + Fieldref [lee/whdghks913/only3/Setting.f Landroid/widget/TextView;]
       [144] aload_0 v0
-      [145] getfield #72
+      [145] getfield #73
         + Fieldref [lee/whdghks913/only3/Setting.a Landroid/content/SharedPreferences;]
       [148] ldc #19
         + String [delay]
       [150] bipush 10
-      [152] invokeinterface #148
+      [152] invokeinterface #149
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
       [157] istore_2 v2
       [158] iload_2 v2
       [159] bipush 10
       [161] ificmpeq +44 (target=205)
       [164] aload_0 v0
-      [165] getfield #76
+      [165] getfield #77
         + Fieldref [lee/whdghks913/only3/Setting.e Landroid/widget/TextView;]
       [168] aload_0 v0
       [169] ldc #2
         + Integer [2131099676]
-      [171] invokevirtual #136
+      [171] invokevirtual #137
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [174] iconst_1
-      [175] anewarray #53
+      [175] anewarray #54
         + Class [java/lang/Object]
       [178] dup
       [179] iconst_0
       [180] iload_2 v2
       [181] iinc v2, -1
-      [184] invokestatic #117
+      [184] invokestatic #118
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [187] aastore
-      [188] invokestatic #120
+      [188] invokestatic #121
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [191] invokevirtual #98
+      [191] invokevirtual #99
         + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [194] aload_0 v0
-      [195] getfield #74
+      [195] getfield #75
         + Fieldref [lee/whdghks913/only3/Setting.c Landroid/widget/SeekBar;]
       [198] iload_2 v2
-      [199] invokevirtual #96
+      [199] invokevirtual #97
         + Methodref [android/widget/SeekBar.setProgress (I)V]
       [202] goto +38 (target=240)
       [205] aload_0 v0
-      [206] getfield #74
+      [206] getfield #75
         + Fieldref [lee/whdghks913/only3/Setting.c Landroid/widget/SeekBar;]
       [209] iconst_1
-      [210] invokevirtual #96
+      [210] invokevirtual #97
         + Methodref [android/widget/SeekBar.setProgress (I)V]
       [213] aload_0 v0
-      [214] getfield #76
+      [214] getfield #77
         + Fieldref [lee/whdghks913/only3/Setting.e Landroid/widget/TextView;]
       [217] aload_0 v0
       [218] ldc #2
         + Integer [2131099676]
-      [220] invokevirtual #136
+      [220] invokevirtual #137
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [223] iconst_1
-      [224] anewarray #53
+      [224] anewarray #54
         + Class [java/lang/Object]
       [227] dup
       [228] iconst_0
       [229] iconst_2
-      [230] invokestatic #117
+      [230] invokestatic #118
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [233] aastore
-      [234] invokestatic #120
+      [234] invokestatic #121
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [237] invokevirtual #98
+      [237] invokevirtual #99
         + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [240] aload_0 v0
-      [241] getfield #72
+      [241] getfield #73
         + Fieldref [lee/whdghks913/only3/Setting.a Landroid/content/SharedPreferences;]
       [244] ldc #17
         + String [Notification]
       [246] iconst_5
-      [247] invokeinterface #148
+      [247] invokeinterface #149
         + InterfaceMethodref [android/content/SharedPreferences.getInt (Ljava/lang/String;I)I]
       [252] istore_3 v3
       [253] iload_3 v3
       [254] ifne +15 (target=269)
       [257] aload_0 v0
-      [258] getfield #77
+      [258] getfield #78
         + Fieldref [lee/whdghks913/only3/Setting.f Landroid/widget/TextView;]
       [261] ldc #5
         + Integer [2131099692]
-      [263] invokevirtual #97
+      [263] invokevirtual #98
         + Methodref [android/widget/TextView.setText (I)V]
       [266] goto +8 (target=274)
       [269] aload_0 v0
       [270] iload_3 v3
-      [271] invokevirtual #127
+      [271] invokevirtual #128
         + Methodref [lee/whdghks913/only3/Setting.a (I)V]
       [274] aload_0 v0
-      [275] getfield #72
+      [275] getfield #73
         + Fieldref [lee/whdghks913/only3/Setting.a Landroid/content/SharedPreferences;]
       [278] ldc #25
         + String [password_enable]
       [280] iconst_0
-      [281] invokeinterface #147
+      [281] invokeinterface #148
         + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
       [286] ifeq +11 (target=297)
       [289] aload_0 v0
-      [290] getfield #78
+      [290] getfield #79
         + Fieldref [lee/whdghks913/only3/Setting.g Landroid/widget/CheckBox;]
       [293] iconst_1
-      [294] invokevirtual #92
+      [294] invokevirtual #93
         + Methodref [android/widget/CheckBox.setChecked (Z)V]
       [297] aload_0 v0
-      [298] getfield #72
+      [298] getfield #73
         + Fieldref [lee/whdghks913/only3/Setting.a Landroid/content/SharedPreferences;]
       [301] ldc #21
         + String [notification_clear]
       [303] iconst_0
-      [304] invokeinterface #147
+      [304] invokeinterface #148
         + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
       [309] ifeq +11 (target=320)
       [312] aload_0 v0
-      [313] getfield #80
+      [313] getfield #81
         + Fieldref [lee/whdghks913/only3/Setting.i Landroid/widget/CheckBox;]
       [316] iconst_1
-      [317] invokevirtual #92
+      [317] invokevirtual #93
         + Methodref [android/widget/CheckBox.setChecked (Z)V]
       [320] aload_0 v0
-      [321] invokevirtual #126
-        + Methodref [lee/whdghks913/only3/Setting.a ()Z]
-      [324] ifeq +11 (target=335)
-      [327] aload_0 v0
-      [328] getfield #80
-        + Fieldref [lee/whdghks913/only3/Setting.i Landroid/widget/CheckBox;]
-      [331] iconst_0
-      [332] invokevirtual #93
-        + Methodref [android/widget/CheckBox.setEnabled (Z)V]
+      [321] getfield #73
+        + Fieldref [lee/whdghks913/only3/Setting.a Landroid/content/SharedPreferences;]
+      [324] ldc #28
+        + String [vibrate]
+      [326] iconst_0
+      [327] invokeinterface #148
+        + InterfaceMethodref [android/content/SharedPreferences.getBoolean (Ljava/lang/String;Z)Z]
+      [332] ifeq +11 (target=343)
       [335] aload_0 v0
-      [336] getfield #74
-        + Fieldref [lee/whdghks913/only3/Setting.c Landroid/widget/SeekBar;]
-      [339] new #65
-        + Class [lee/whdghks913/only3/t]
-      [342] dup
-      [343] aload_0 v0
-      [344] invokespecial #140
-        + Methodref [lee/whdghks913/only3/t.<init> (Llee/whdghks913/only3/Setting;)V]
-      [347] invokevirtual #95
-        + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
-      [350] aload_0 v0
-      [351] getfield #78
-        + Fieldref [lee/whdghks913/only3/Setting.g Landroid/widget/CheckBox;]
-      [354] new #66
-        + Class [lee/whdghks913/only3/u]
-      [357] dup
-      [358] aload_0 v0
-      [359] invokespecial #141
-        + Methodref [lee/whdghks913/only3/u.<init> (Llee/whdghks913/only3/Setting;)V]
-      [362] invokevirtual #94
-        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
-      [365] aload_0 v0
-      [366] getfield #79
+      [336] getfield #80
         + Fieldref [lee/whdghks913/only3/Setting.h Landroid/widget/CheckBox;]
-      [369] new #67
-        + Class [lee/whdghks913/only3/x]
-      [372] dup
-      [373] aload_0 v0
-      [374] invokespecial #142
-        + Methodref [lee/whdghks913/only3/x.<init> (Llee/whdghks913/only3/Setting;)V]
-      [377] invokevirtual #94
-        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
-      [380] aload_0 v0
-      [381] getfield #80
+      [339] iconst_1
+      [340] invokevirtual #93
+        + Methodref [android/widget/CheckBox.setChecked (Z)V]
+      [343] aload_0 v0
+      [344] invokevirtual #127
+        + Methodref [lee/whdghks913/only3/Setting.a ()Z]
+      [347] ifeq +11 (target=358)
+      [350] aload_0 v0
+      [351] getfield #81
         + Fieldref [lee/whdghks913/only3/Setting.i Landroid/widget/CheckBox;]
-      [384] new #68
-        + Class [lee/whdghks913/only3/y]
-      [387] dup
-      [388] aload_0 v0
-      [389] invokespecial #143
-        + Methodref [lee/whdghks913/only3/y.<init> (Llee/whdghks913/only3/Setting;)V]
-      [392] invokevirtual #94
-        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
-      [395] aload_0 v0
-      [396] getfield #81
-        + Fieldref [lee/whdghks913/only3/Setting.j Landroid/widget/CheckBox;]
-      [399] new #69
-        + Class [lee/whdghks913/only3/z]
-      [402] dup
-      [403] aload_0 v0
-      [404] invokespecial #144
-        + Methodref [lee/whdghks913/only3/z.<init> (Llee/whdghks913/only3/Setting;)V]
-      [407] invokevirtual #94
-        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
-      [410] aload_0 v0
-      [411] getfield #75
-        + Fieldref [lee/whdghks913/only3/Setting.d Landroid/widget/SeekBar;]
-      [414] new #64
-        + Class [lee/whdghks913/only3/ac]
-      [417] dup
-      [418] aload_0 v0
-      [419] invokespecial #139
-        + Methodref [lee/whdghks913/only3/ac.<init> (Llee/whdghks913/only3/Setting;)V]
-      [422] invokevirtual #95
+      [354] iconst_0
+      [355] invokevirtual #94
+        + Methodref [android/widget/CheckBox.setEnabled (Z)V]
+      [358] aload_0 v0
+      [359] getfield #75
+        + Fieldref [lee/whdghks913/only3/Setting.c Landroid/widget/SeekBar;]
+      [362] new #66
+        + Class [lee/whdghks913/only3/t]
+      [365] dup
+      [366] aload_0 v0
+      [367] invokespecial #141
+        + Methodref [lee/whdghks913/only3/t.<init> (Llee/whdghks913/only3/Setting;)V]
+      [370] invokevirtual #96
         + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
-      [425] aload_0 v0
+      [373] aload_0 v0
+      [374] getfield #79
+        + Fieldref [lee/whdghks913/only3/Setting.g Landroid/widget/CheckBox;]
+      [377] new #67
+        + Class [lee/whdghks913/only3/u]
+      [380] dup
+      [381] aload_0 v0
+      [382] invokespecial #142
+        + Methodref [lee/whdghks913/only3/u.<init> (Llee/whdghks913/only3/Setting;)V]
+      [385] invokevirtual #95
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [388] aload_0 v0
+      [389] getfield #80
+        + Fieldref [lee/whdghks913/only3/Setting.h Landroid/widget/CheckBox;]
+      [392] new #68
+        + Class [lee/whdghks913/only3/x]
+      [395] dup
+      [396] aload_0 v0
+      [397] invokespecial #143
+        + Methodref [lee/whdghks913/only3/x.<init> (Llee/whdghks913/only3/Setting;)V]
+      [400] invokevirtual #95
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [403] aload_0 v0
+      [404] getfield #81
+        + Fieldref [lee/whdghks913/only3/Setting.i Landroid/widget/CheckBox;]
+      [407] new #69
+        + Class [lee/whdghks913/only3/y]
+      [410] dup
+      [411] aload_0 v0
+      [412] invokespecial #144
+        + Methodref [lee/whdghks913/only3/y.<init> (Llee/whdghks913/only3/Setting;)V]
+      [415] invokevirtual #95
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [418] aload_0 v0
+      [419] getfield #82
+        + Fieldref [lee/whdghks913/only3/Setting.j Landroid/widget/CheckBox;]
+      [422] new #70
+        + Class [lee/whdghks913/only3/z]
+      [425] dup
       [426] aload_0 v0
-      [427] ldc #14
+      [427] invokespecial #145
+        + Methodref [lee/whdghks913/only3/z.<init> (Llee/whdghks913/only3/Setting;)V]
+      [430] invokevirtual #95
+        + Methodref [android/widget/CheckBox.setOnCheckedChangeListener (Landroid/widget/CompoundButton$OnCheckedChangeListener;)V]
+      [433] aload_0 v0
+      [434] getfield #76
+        + Fieldref [lee/whdghks913/only3/Setting.d Landroid/widget/SeekBar;]
+      [437] new #65
+        + Class [lee/whdghks913/only3/ac]
+      [440] dup
+      [441] aload_0 v0
+      [442] invokespecial #140
+        + Methodref [lee/whdghks913/only3/ac.<init> (Llee/whdghks913/only3/Setting;)V]
+      [445] invokevirtual #96
+        + Methodref [android/widget/SeekBar.setOnSeekBarChangeListener (Landroid/widget/SeekBar$OnSeekBarChangeListener;)V]
+      [448] aload_0 v0
+      [449] aload_0 v0
+      [450] ldc #14
         + Integer [2131296274]
-      [429] invokevirtual #131
+      [452] invokevirtual #132
         + Methodref [lee/whdghks913/only3/Setting.findViewById (I)Landroid/view/View;]
-      [432] checkcast #40
+      [455] checkcast #41
         + Class [android/widget/TextView]
-      [435] putfield #82
+      [458] putfield #83
         + Fieldref [lee/whdghks913/only3/Setting.k Landroid/widget/TextView;]
-      [438] aload_0 v0
-      [439] invokevirtual #133
+      [461] aload_0 v0
+      [462] invokevirtual #134
         + Methodref [lee/whdghks913/only3/Setting.getPackageManager ()Landroid/content/pm/PackageManager;]
-      [442] astore v4
-      [444] aload v4
-      [446] aload_0 v0
-      [447] invokevirtual #134
+      [465] astore v4
+      [467] aload v4
+      [469] aload_0 v0
+      [470] invokevirtual #135
         + Methodref [lee/whdghks913/only3/Setting.getPackageName ()Ljava/lang/String;]
-      [450] sipush 128
-      [453] invokevirtual #89
+      [473] sipush 128
+      [476] invokevirtual #90
         + Methodref [android/content/pm/PackageManager.getPackageInfo (Ljava/lang/String;I)Landroid/content/pm/PackageInfo;]
-      [456] astore v5
-      [458] aload_0 v0
-      [459] getfield #82
+      [479] astore v5
+      [481] aload_0 v0
+      [482] getfield #83
         + Fieldref [lee/whdghks913/only3/Setting.k Landroid/widget/TextView;]
-      [462] aload_0 v0
-      [463] ldc #3
+      [485] aload_0 v0
+      [486] ldc #3
         + Integer [2131099677]
-      [465] invokevirtual #136
+      [488] invokevirtual #137
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
-      [468] iconst_1
-      [469] anewarray #53
+      [491] iconst_1
+      [492] anewarray #54
         + Class [java/lang/Object]
-      [472] dup
-      [473] iconst_0
-      [474] aload v5
-      [476] getfield #71
+      [495] dup
+      [496] iconst_0
+      [497] aload v5
+      [499] getfield #72
         + Fieldref [android/content/pm/PackageInfo.versionName Ljava/lang/String;]
-      [479] aastore
-      [480] invokestatic #120
+      [502] aastore
+      [503] invokestatic #121
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [483] invokevirtual #98
+      [506] invokevirtual #99
         + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
-      [486] goto +10 (target=496)
-      [489] astore v4
-      [491] aload v4
-      [493] invokevirtual #90
+      [509] goto +10 (target=519)
+      [512] astore v4
+      [514] aload v4
+      [516] invokevirtual #91
         + Methodref [android/content/pm/PackageManager$NameNotFoundException.printStackTrace ()V]
-      [496] return
+      [519] return
       Code attribute exceptions (count = 1):
-      - ExceptionInfo (438 -> 486: 489):
+      - ExceptionInfo (461 -> 509: 512):
       + Class [android/content/pm/PackageManager$NameNotFoundException]
       Code attribute attributes (attribute count = 1):
-      + Stack map table attribute (count = 9):
+      + Stack map table attribute (count = 10):
         - [205] Var: ...[i], Stack: (empty)
         - [240] Var: ..., Stack: (empty)
         - [269] Var: ...[i], Stack: (empty)
         - [274] Var: ..., Stack: (empty)
         - [297] Var: ..., Stack: (empty)
         - [320] Var: ..., Stack: (empty)
-        - [335] Var: ..., Stack: (empty)
-        - [489] Var: ..., Stack: [a:android/content/pm/PackageManager$NameNotFoundException]
-        - [496] Var: ..., Stack: (empty)
+        - [343] Var: ..., Stack: (empty)
+        - [358] Var: ..., Stack: (empty)
+        - [512] Var: ..., Stack: [a:android/content/pm/PackageManager$NameNotFoundException]
+        - [519] Var: ..., Stack: (empty)
   + Method:       a(I)V
     Access flags: 0x1
       = public void a(int)
@@ -60428,31 +60314,31 @@ Methods (count = 11):
       [62] bipush 6
       [64] istore_2 v2
       [65] aload_0 v0
-      [66] getfield #75
+      [66] getfield #76
         + Fieldref [lee/whdghks913/only3/Setting.d Landroid/widget/SeekBar;]
       [69] iload_2 v2
-      [70] invokevirtual #96
+      [70] invokevirtual #97
         + Methodref [android/widget/SeekBar.setProgress (I)V]
       [73] aload_0 v0
-      [74] getfield #77
+      [74] getfield #78
         + Fieldref [lee/whdghks913/only3/Setting.f Landroid/widget/TextView;]
       [77] aload_0 v0
       [78] ldc #4
         + Integer [2131099691]
-      [80] invokevirtual #136
+      [80] invokevirtual #137
         + Methodref [lee/whdghks913/only3/Setting.getString (I)Ljava/lang/String;]
       [83] iconst_1
-      [84] anewarray #53
+      [84] anewarray #54
         + Class [java/lang/Object]
       [87] dup
       [88] iconst_0
       [89] iload_1 v1
-      [90] invokestatic #117
+      [90] invokestatic #118
         + Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
       [93] aastore
-      [94] invokestatic #120
+      [94] invokestatic #121
         + Methodref [java/lang/String.format (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;]
-      [97] invokevirtual #98
+      [97] invokevirtual #99
         + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [100] return
       Code attribute exceptions (count = 0):
@@ -60470,12 +60356,12 @@ Methods (count = 11):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 12, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #85
+      [1] invokespecial #86
         + Methodref [android/app/Activity.onPause ()V]
-      [4] invokestatic #125
+      [4] invokestatic #126
         + Methodref [java/lang/System.gc ()V]
       [7] aload_0 v0
-      [8] invokevirtual #132
+      [8] invokevirtual #133
         + Methodref [lee/whdghks913/only3/Setting.finish ()V]
       [11] return
       Code attribute exceptions (count = 0):
@@ -60486,12 +60372,12 @@ Methods (count = 11):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 12, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #86
+      [1] invokespecial #87
         + Methodref [android/app/Activity.onStop ()V]
-      [4] invokestatic #125
+      [4] invokestatic #126
         + Methodref [java/lang/System.gc ()V]
       [7] aload_0 v0
-      [8] invokevirtual #132
+      [8] invokevirtual #133
         + Methodref [lee/whdghks913/only3/Setting.finish ()V]
       [11] return
       Code attribute exceptions (count = 0):
@@ -60504,40 +60390,40 @@ Methods (count = 11):
       [0] aload_0 v0
       [1] ldc #18
         + String [activity]
-      [3] invokevirtual #137
+      [3] invokevirtual #138
         + Methodref [lee/whdghks913/only3/Setting.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-      [6] checkcast #29
+      [6] checkcast #30
         + Class [android/app/ActivityManager]
       [9] astore_1 v1
       [10] aload_1 v1
       [11] ldc #15
         + Integer [2147483647]
-      [13] invokevirtual #87
+      [13] invokevirtual #88
         + Methodref [android/app/ActivityManager.getRunningServices (I)Ljava/util/List;]
-      [16] invokeinterface #158
+      [16] invokeinterface #159
         + InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
       [21] astore_3 v3
       [22] goto +30 (target=52)
       [25] aload_3 v3
-      [26] invokeinterface #157
+      [26] invokeinterface #158
         + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
-      [31] checkcast #30
+      [31] checkcast #31
         + Class [android/app/ActivityManager$RunningServiceInfo]
       [34] astore_2 v2
       [35] ldc #20
         + String [lee.whdghks913.only3.AndroidService]
       [37] aload_2 v2
-      [38] getfield #70
+      [38] getfield #71
         + Fieldref [android/app/ActivityManager$RunningServiceInfo.service Landroid/content/ComponentName;]
-      [41] invokevirtual #88
+      [41] invokevirtual #89
         + Methodref [android/content/ComponentName.getClassName ()Ljava/lang/String;]
-      [44] invokevirtual #119
+      [44] invokevirtual #120
         + Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
       [47] ifeq +5 (target=52)
       [50] iconst_1
       [51] ireturn
       [52] aload_3 v3
-      [53] invokeinterface #156
+      [53] invokeinterface #157
         + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
       [58] ifne -33 (target=25)
       [61] iconst_0
@@ -60556,97 +60442,97 @@ Methods (count = 11):
       [1] istore_3 v3
       [2] aconst_null
       [3] astore v4
-      [5] new #47
+      [5] new #48
         + Class [java/io/ObjectOutputStream]
       [8] dup
-      [9] new #44
+      [9] new #45
         + Class [java/io/FileOutputStream]
       [12] dup
       [13] aload_1 v1
-      [14] invokespecial #104
+      [14] invokespecial #105
         + Methodref [java/io/FileOutputStream.<init> (Ljava/io/File;)V]
-      [17] invokespecial #109
+      [17] invokespecial #110
         + Methodref [java/io/ObjectOutputStream.<init> (Ljava/io/OutputStream;)V]
       [20] astore v4
       [22] aload_0 v0
       [23] aload_2 v2
       [24] iconst_0
-      [25] invokevirtual #135
+      [25] invokevirtual #136
         + Methodref [lee/whdghks913/only3/Setting.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
       [28] astore v5
       [30] aload v4
       [32] aload v5
-      [34] invokeinterface #146
+      [34] invokeinterface #147
         + InterfaceMethodref [android/content/SharedPreferences.getAll ()Ljava/util/Map;]
-      [39] invokevirtual #112
+      [39] invokevirtual #113
         + Methodref [java/io/ObjectOutputStream.writeObject (Ljava/lang/Object;)V]
       [42] iconst_1
       [43] istore_3 v3
       [44] goto +103 (target=147)
       [47] astore v5
       [49] aload v5
-      [51] invokevirtual #103
+      [51] invokevirtual #104
         + Methodref [java/io/FileNotFoundException.printStackTrace ()V]
       [54] aload v4
       [56] ifnull +116 (target=172)
       [59] aload v4
-      [61] invokevirtual #111
+      [61] invokevirtual #112
         + Methodref [java/io/ObjectOutputStream.flush ()V]
       [64] aload v4
-      [66] invokevirtual #110
+      [66] invokevirtual #111
         + Methodref [java/io/ObjectOutputStream.close ()V]
       [69] goto +103 (target=172)
       [72] astore v7
       [74] aload v7
-      [76] invokevirtual #105
+      [76] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [79] goto +93 (target=172)
       [82] astore v5
       [84] aload v5
-      [86] invokevirtual #105
+      [86] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [89] aload v4
       [91] ifnull +81 (target=172)
       [94] aload v4
-      [96] invokevirtual #111
+      [96] invokevirtual #112
         + Methodref [java/io/ObjectOutputStream.flush ()V]
       [99] aload v4
-      [101] invokevirtual #110
+      [101] invokevirtual #111
         + Methodref [java/io/ObjectOutputStream.close ()V]
       [104] goto +68 (target=172)
       [107] astore v7
       [109] aload v7
-      [111] invokevirtual #105
+      [111] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [114] goto +58 (target=172)
       [117] astore v6
       [119] aload v4
       [121] ifnull +23 (target=144)
       [124] aload v4
-      [126] invokevirtual #111
+      [126] invokevirtual #112
         + Methodref [java/io/ObjectOutputStream.flush ()V]
       [129] aload v4
-      [131] invokevirtual #110
+      [131] invokevirtual #111
         + Methodref [java/io/ObjectOutputStream.close ()V]
       [134] goto +10 (target=144)
       [137] astore v7
       [139] aload v7
-      [141] invokevirtual #105
+      [141] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [144] aload v6
       [146] athrow
       [147] aload v4
       [149] ifnull +23 (target=172)
       [152] aload v4
-      [154] invokevirtual #111
+      [154] invokevirtual #112
         + Methodref [java/io/ObjectOutputStream.flush ()V]
       [157] aload v4
-      [159] invokevirtual #110
+      [159] invokevirtual #111
         + Methodref [java/io/ObjectOutputStream.close ()V]
       [162] goto +10 (target=172)
       [165] astore v7
       [167] aload v7
-      [169] invokevirtual #105
+      [169] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [172] iload_3 v3
       [173] ireturn
@@ -60692,137 +60578,137 @@ Methods (count = 11):
       [1] istore_3 v3
       [2] aconst_null
       [3] astore v4
-      [5] new #46
+      [5] new #47
         + Class [java/io/ObjectInputStream]
       [8] dup
-      [9] new #42
+      [9] new #43
         + Class [java/io/FileInputStream]
       [12] dup
       [13] aload_1 v1
-      [14] invokespecial #102
+      [14] invokespecial #103
         + Methodref [java/io/FileInputStream.<init> (Ljava/io/File;)V]
-      [17] invokespecial #106
+      [17] invokespecial #107
         + Methodref [java/io/ObjectInputStream.<init> (Ljava/io/InputStream;)V]
       [20] astore v4
       [22] aload_0 v0
       [23] aload_2 v2
       [24] iconst_0
-      [25] invokevirtual #135
+      [25] invokevirtual #136
         + Methodref [lee/whdghks913/only3/Setting.getSharedPreferences (Ljava/lang/String;I)Landroid/content/SharedPreferences;]
-      [28] invokeinterface #145
+      [28] invokeinterface #146
         + InterfaceMethodref [android/content/SharedPreferences.edit ()Landroid/content/SharedPreferences$Editor;]
       [33] astore v5
       [35] aload v5
-      [37] invokeinterface #149
+      [37] invokeinterface #150
         + InterfaceMethodref [android/content/SharedPreferences$Editor.clear ()Landroid/content/SharedPreferences$Editor;]
       [42] pop
       [43] aload v4
-      [45] invokevirtual #108
+      [45] invokevirtual #109
         + Methodref [java/io/ObjectInputStream.readObject ()Ljava/lang/Object;]
-      [48] checkcast #60
+      [48] checkcast #61
         + Class [java/util/Map]
       [51] astore v6
       [53] aload v6
-      [55] invokeinterface #159
+      [55] invokeinterface #160
         + InterfaceMethodref [java/util/Map.entrySet ()Ljava/util/Set;]
-      [60] invokeinterface #162
+      [60] invokeinterface #163
         + InterfaceMethodref [java/util/Set.iterator ()Ljava/util/Iterator;]
       [65] astore v8
       [67] goto +175 (target=242)
       [70] aload v8
-      [72] invokeinterface #157
+      [72] invokeinterface #158
         + InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
-      [77] checkcast #61
+      [77] checkcast #62
         + Class [java/util/Map$Entry]
       [80] astore v7
       [82] aload v7
-      [84] invokeinterface #161
+      [84] invokeinterface #162
         + InterfaceMethodref [java/util/Map$Entry.getValue ()Ljava/lang/Object;]
       [89] astore v9
       [91] aload v7
-      [93] invokeinterface #160
+      [93] invokeinterface #161
         + InterfaceMethodref [java/util/Map$Entry.getKey ()Ljava/lang/Object;]
-      [98] checkcast #54
+      [98] checkcast #55
         + Class [java/lang/String]
       [101] astore v10
       [103] aload v9
-      [105] instanceof #48
+      [105] instanceof #49
         + Class [java/lang/Boolean]
       [108] ifeq +24 (target=132)
       [111] aload v5
       [113] aload v10
       [115] aload v9
-      [117] checkcast #48
+      [117] checkcast #49
         + Class [java/lang/Boolean]
-      [120] invokevirtual #113
+      [120] invokevirtual #114
         + Methodref [java/lang/Boolean.booleanValue ()Z]
-      [123] invokeinterface #151
+      [123] invokeinterface #152
         + InterfaceMethodref [android/content/SharedPreferences$Editor.putBoolean (Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;]
       [128] pop
       [129] goto +113 (target=242)
       [132] aload v9
-      [134] instanceof #50
+      [134] instanceof #51
         + Class [java/lang/Float]
       [137] ifeq +24 (target=161)
       [140] aload v5
       [142] aload v10
       [144] aload v9
-      [146] checkcast #50
+      [146] checkcast #51
         + Class [java/lang/Float]
-      [149] invokevirtual #115
+      [149] invokevirtual #116
         + Methodref [java/lang/Float.floatValue ()F]
-      [152] invokeinterface #152
+      [152] invokeinterface #153
         + InterfaceMethodref [android/content/SharedPreferences$Editor.putFloat (Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;]
       [157] pop
       [158] goto +84 (target=242)
       [161] aload v9
-      [163] instanceof #51
+      [163] instanceof #52
         + Class [java/lang/Integer]
       [166] ifeq +24 (target=190)
       [169] aload v5
       [171] aload v10
       [173] aload v9
-      [175] checkcast #51
+      [175] checkcast #52
         + Class [java/lang/Integer]
-      [178] invokevirtual #116
+      [178] invokevirtual #117
         + Methodref [java/lang/Integer.intValue ()I]
-      [181] invokeinterface #153
+      [181] invokeinterface #154
         + InterfaceMethodref [android/content/SharedPreferences$Editor.putInt (Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;]
       [186] pop
       [187] goto +55 (target=242)
       [190] aload v9
-      [192] instanceof #52
+      [192] instanceof #53
         + Class [java/lang/Long]
       [195] ifeq +24 (target=219)
       [198] aload v5
       [200] aload v10
       [202] aload v9
-      [204] checkcast #52
+      [204] checkcast #53
         + Class [java/lang/Long]
-      [207] invokevirtual #118
+      [207] invokevirtual #119
         + Methodref [java/lang/Long.longValue ()J]
-      [210] invokeinterface #154
+      [210] invokeinterface #155
         + InterfaceMethodref [android/content/SharedPreferences$Editor.putLong (Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;]
       [215] pop
       [216] goto +26 (target=242)
       [219] aload v9
-      [221] instanceof #54
+      [221] instanceof #55
         + Class [java/lang/String]
       [224] ifeq +18 (target=242)
       [227] aload v5
       [229] aload v10
       [231] aload v9
-      [233] checkcast #54
+      [233] checkcast #55
         + Class [java/lang/String]
-      [236] invokeinterface #155
+      [236] invokeinterface #156
         + InterfaceMethodref [android/content/SharedPreferences$Editor.putString (Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;]
       [241] pop
       [242] aload v8
-      [244] invokeinterface #156
+      [244] invokeinterface #157
         + InterfaceMethodref [java/util/Iterator.hasNext ()Z]
       [249] ifne -179 (target=70)
       [252] aload v5
-      [254] invokeinterface #150
+      [254] invokeinterface #151
         + InterfaceMethodref [android/content/SharedPreferences$Editor.commit ()Z]
       [259] pop
       [260] iconst_1
@@ -60830,71 +60716,71 @@ Methods (count = 11):
       [262] goto +118 (target=380)
       [265] astore v5
       [267] aload v5
-      [269] invokevirtual #103
+      [269] invokevirtual #104
         + Methodref [java/io/FileNotFoundException.printStackTrace ()V]
       [272] aload v4
       [274] ifnull +126 (target=400)
       [277] aload v4
-      [279] invokevirtual #107
+      [279] invokevirtual #108
         + Methodref [java/io/ObjectInputStream.close ()V]
       [282] goto +118 (target=400)
       [285] astore v12
       [287] aload v12
-      [289] invokevirtual #105
+      [289] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [292] goto +108 (target=400)
       [295] astore v5
       [297] aload v5
-      [299] invokevirtual #105
+      [299] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [302] aload v4
       [304] ifnull +96 (target=400)
       [307] aload v4
-      [309] invokevirtual #107
+      [309] invokevirtual #108
         + Methodref [java/io/ObjectInputStream.close ()V]
       [312] goto +88 (target=400)
       [315] astore v12
       [317] aload v12
-      [319] invokevirtual #105
+      [319] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [322] goto +78 (target=400)
       [325] astore v5
       [327] aload v5
-      [329] invokevirtual #114
+      [329] invokevirtual #115
         + Methodref [java/lang/ClassNotFoundException.printStackTrace ()V]
       [332] aload v4
       [334] ifnull +66 (target=400)
       [337] aload v4
-      [339] invokevirtual #107
+      [339] invokevirtual #108
         + Methodref [java/io/ObjectInputStream.close ()V]
       [342] goto +58 (target=400)
       [345] astore v12
       [347] aload v12
-      [349] invokevirtual #105
+      [349] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [352] goto +48 (target=400)
       [355] astore v11
       [357] aload v4
       [359] ifnull +18 (target=377)
       [362] aload v4
-      [364] invokevirtual #107
+      [364] invokevirtual #108
         + Methodref [java/io/ObjectInputStream.close ()V]
       [367] goto +10 (target=377)
       [370] astore v12
       [372] aload v12
-      [374] invokevirtual #105
+      [374] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [377] aload v11
       [379] athrow
       [380] aload v4
       [382] ifnull +18 (target=400)
       [385] aload v4
-      [387] invokevirtual #107
+      [387] invokevirtual #108
         + Methodref [java/io/ObjectInputStream.close ()V]
       [390] goto +10 (target=400)
       [393] astore v12
       [395] aload v12
-      [397] invokevirtual #105
+      [397] invokevirtual #106
         + Methodref [java/io/IOException.printStackTrace ()V]
       [400] iload_3 v3
       [401] ireturn
@@ -60951,125 +60837,125 @@ Methods (count = 11):
       = public boolean b()
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 177, locals = 6, stack = 5):
-      [0] new #55
+      [0] new #56
         + Class [java/lang/StringBuilder]
       [3] dup
-      [4] invokestatic #91
+      [4] invokestatic #92
         + Methodref [android/os/Environment.getExternalStorageDirectory ()Ljava/io/File;]
-      [7] invokevirtual #101
+      [7] invokevirtual #102
         + Methodref [java/io/File.toString ()Ljava/lang/String;]
-      [10] invokestatic #121
+      [10] invokestatic #122
         + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-      [13] invokespecial #122
+      [13] invokespecial #123
         + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
       [16] ldc #16
         + String [/only3/]
-      [18] invokevirtual #123
+      [18] invokevirtual #124
         + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [21] invokevirtual #124
+      [21] invokevirtual #125
         + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
       [24] astore_1 v1
-      [25] new #41
+      [25] new #42
         + Class [java/io/File]
       [28] dup
-      [29] new #55
+      [29] new #56
         + Class [java/lang/StringBuilder]
       [32] dup
       [33] aload_1 v1
-      [34] invokestatic #121
+      [34] invokestatic #122
         + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-      [37] invokespecial #122
+      [37] invokespecial #123
         + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
       [40] ldc #22
         + String [package_All_count.backup]
-      [42] invokevirtual #123
+      [42] invokevirtual #124
         + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [45] invokevirtual #124
+      [45] invokevirtual #125
         + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [48] invokespecial #99
+      [48] invokespecial #100
         + Methodref [java/io/File.<init> (Ljava/lang/String;)V]
       [51] astore_2 v2
-      [52] new #41
+      [52] new #42
         + Class [java/io/File]
       [55] dup
-      [56] new #55
+      [56] new #56
         + Class [java/lang/StringBuilder]
       [59] dup
       [60] aload_1 v1
-      [61] invokestatic #121
+      [61] invokestatic #122
         + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-      [64] invokespecial #122
+      [64] invokespecial #123
         + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
       [67] ldc #23
         + String [package_count.backup]
-      [69] invokevirtual #123
+      [69] invokevirtual #124
         + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [72] invokevirtual #124
+      [72] invokevirtual #125
         + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [75] invokespecial #99
+      [75] invokespecial #100
         + Methodref [java/io/File.<init> (Ljava/lang/String;)V]
       [78] astore_3 v3
-      [79] new #41
+      [79] new #42
         + Class [java/io/File]
       [82] dup
-      [83] new #55
+      [83] new #56
         + Class [java/lang/StringBuilder]
       [86] dup
       [87] aload_1 v1
-      [88] invokestatic #121
+      [88] invokestatic #122
         + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-      [91] invokespecial #122
+      [91] invokespecial #123
         + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
       [94] ldc #24
         + String [package_list.backup]
-      [96] invokevirtual #123
+      [96] invokevirtual #124
         + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [99] invokevirtual #124
+      [99] invokevirtual #125
         + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [102] invokespecial #99
+      [102] invokespecial #100
         + Methodref [java/io/File.<init> (Ljava/lang/String;)V]
       [105] astore v4
-      [107] new #41
+      [107] new #42
         + Class [java/io/File]
       [110] dup
-      [111] new #55
+      [111] new #56
         + Class [java/lang/StringBuilder]
       [114] dup
       [115] aload_1 v1
-      [116] invokestatic #121
+      [116] invokestatic #122
         + Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-      [119] invokespecial #122
+      [119] invokespecial #123
         + Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
       [122] ldc #27
         + String [setting.backup]
-      [124] invokevirtual #123
+      [124] invokevirtual #124
         + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [127] invokevirtual #124
+      [127] invokevirtual #125
         + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [130] invokespecial #99
+      [130] invokespecial #100
         + Methodref [java/io/File.<init> (Ljava/lang/String;)V]
       [133] astore v5
       [135] aload_2 v2
-      [136] invokevirtual #100
+      [136] invokevirtual #101
         + Methodref [java/io/File.exists ()Z]
       [139] ifeq +36 (target=175)
       [142] aload_3 v3
-      [143] invokevirtual #100
+      [143] invokevirtual #101
         + Methodref [java/io/File.exists ()Z]
       [146] ifeq +29 (target=175)
       [149] aload v4
-      [151] invokevirtual #100
+      [151] invokevirtual #101
         + Methodref [java/io/File.exists ()Z]
       [154] ifeq +21 (target=175)
       [157] aload v5
-      [159] invokevirtual #100
+      [159] invokevirtual #101
         + Methodref [java/io/File.exists ()Z]
       [162] ifeq +13 (target=175)
       [165] aload_0 v0
-      [166] getfield #81
+      [166] getfield #82
         + Fieldref [lee/whdghks913/only3/Setting.j Landroid/widget/CheckBox;]
       [169] iconst_1
-      [170] invokevirtual #92
+      [170] invokevirtual #93
         + Methodref [android/widget/CheckBox.setChecked (Z)V]
       [173] iconst_1
       [174] ireturn
@@ -61087,7 +60973,7 @@ Methods (count = 11):
       [0] aload_0 v0
       [1] aload_1 v1
       [2] aload_2 v2
-      [3] invokespecial #128
+      [3] invokespecial #129
         + Methodref [lee/whdghks913/only3/Setting.a (Ljava/io/File;Ljava/lang/String;)Z]
       [6] ireturn
       Code attribute exceptions (count = 0):
@@ -61100,7 +60986,7 @@ Methods (count = 11):
       [0] aload_0 v0
       [1] aload_1 v1
       [2] aload_2 v2
-      [3] invokespecial #130
+      [3] invokespecial #131
         + Methodref [lee/whdghks913/only3/Setting.b (Ljava/io/File;Ljava/lang/String;)Z]
       [6] ireturn
       Code attribute exceptions (count = 0):

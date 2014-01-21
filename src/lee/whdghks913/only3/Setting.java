@@ -96,6 +96,8 @@ public class Setting extends Activity {
 			password.setChecked(true);
 		if(setting.getBoolean("notification_clear", false))
 			clear_icon.setChecked(true);
+		if(setting.getBoolean("vibrate", false))
+			vibrate.setChecked(true);
 		if(isServiceRunningCheck())
 			clear_icon.setEnabled(false);
 		
@@ -159,10 +161,12 @@ public class Setting extends Activity {
 		vibrate.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if(isChecked)
+				if(isChecked){
+//					Log.i("Áøµ¿", "¼³Á¤µÊ");
 					setting_Edit.putBoolean("vibrate", true).commit();
-				else
+				}else{
 					setting_Edit.remove("vibrate").commit();
+				}
 			}
 		});
 		

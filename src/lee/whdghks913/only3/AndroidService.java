@@ -18,7 +18,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.PowerManager;
-import android.util.Log;
 
 @SuppressLint("NewApi")
 public class AndroidService extends Service {
@@ -126,7 +125,7 @@ public class AndroidService extends Service {
 								 */
 								last_packageName = "";
 								setting_Editor.remove("FIVE_MINUTE").commit();
-								Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
+//								Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
 							}
 					}
 				}
@@ -179,13 +178,13 @@ public class AndroidService extends Service {
 						am.cancel(sender);
 						isRunningApp = ! isRunningApp;
 						setting_Editor.remove("FIVE_MINUTE").commit();
-						Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
+//						Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
 					}
 			}else if(pkgName.equals(package_list.getString(pkgName, ""))){
 				if(setting.getInt("Notification", 5)!=0)
 					if(isRunningApp){
 						alarm();
-						Log.d(setting.getInt("Notification", 5)+"분 체크", "시작");
+//						Log.d(setting.getInt("Notification", 5)+"분 체크", "시작");
 					}
 			}
 		}
