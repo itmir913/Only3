@@ -69,10 +69,14 @@
     <string name="five_minute_setting_TextView">어플을 실행한후, %1$d분마다 알려줍니다</string>
     <string name="five_minute_setting_TextView_not">어플을 실행해도, 알리지 않습니다</string>
     <string name="me_app">이 어플은 선택할수 없습니다</string>
+    <string name="warning_app">이 어플을 지정할경우 위험할수 있습니다</string>
     <string name="Not_Install">서비스가 실행중입니다, 제거할수 없습니다</string>
     <string name="change_log">[안내]
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
+\n
+\n[2.2] :2014-01-21
+\n-어플 선택 리스트 UI 변경
 \n
 \n[2.1] : 2013-12-16
 \n-일부 버그 수정
@@ -116,9 +120,6 @@
 \n[1.0] : 2013-10-21
 \n-어플 출시</string>
     <string name="vibrate">진동</string>
-    <string name="show_all_app">모든 어플</string>
-    <string name="show_system_app">시스탬 어플</string>
-    <string name="show_user_app">사용자 어플</string>
     <string name="back_to_kill">한번더 눌러 종료합니다</string>
     <string name="clear_icon_noti">투명 상단바 아이콘</string>
     <string name="preference_backup_restore">백업 <![CDATA[&]]> 복원</string>
@@ -128,5 +129,8 @@
     <string name="preference_restore_complete">복원 완료!</string>
     <string name="preference_fail">작업 실패</string>
     <string name="preference_not_file">파일이 없습니다</string>
+	<string name="loading" >로딩중</string>
+	<string name="menu_all" >전체 어플</string>
+	<string name="menu_download" >다운로드한 어플</string>
 
 </resources>
