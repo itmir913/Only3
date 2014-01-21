@@ -14,8 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" >
+        android:layout_centerHorizontal="true" >
 
         <Button
             android:id="@+id/start_Btn"
@@ -39,24 +38,13 @@
             android:textColor="#ffffffff"
             android:textSize="35sp" />
     </RelativeLayout>
-    
-    <TextView
-        android:id="@+id/MainText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_layout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:text="@string/MainText_1" />
 
     <Button
         android:id="@+id/delete_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/MainText"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:background="@drawable/setting"
         android:onClick="delete"
         android:text="@string/del"
@@ -66,9 +54,8 @@
         android:id="@+id/setting_Btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/delete_btn"
-        android:layout_alignBottom="@+id/delete_btn"
-        android:layout_alignRight="@+id/MainText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:background="@drawable/setting"
         android:onClick="settings"
         android:text="@string/setting"
