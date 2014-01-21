@@ -34,6 +34,8 @@ public class AndroidService extends Service {
 	AlarmManager am;
 	PendingIntent sender;
 	
+	PowerManager pm;
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate() {
@@ -43,7 +45,7 @@ public class AndroidService extends Service {
 		 * 1.5업데이트
 		 * 파워 매니저를 이용하여 화면이 켜졌을때만 작동하도록 설정
 		 */
-		final PowerManager mPm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+		pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		
 		actvityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 		am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
@@ -112,7 +114,7 @@ public class AndroidService extends Service {
 					 * 1.5업데이트
 					 * 파워 매니저를 이용하여 화면이 켜졌을때만 작동하도록 설정
 					 */
-					if(mPm.isScreenOn()){
+					if(pm.isScreenOn()){
 						Top_Activity();
 					}else{
 						if(setting.getInt("Notification", 5)!=0)
