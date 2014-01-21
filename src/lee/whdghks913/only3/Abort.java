@@ -43,9 +43,7 @@ public class Abort extends Activity {
 			i.addCategory(Intent.CATEGORY_HOME);
 			startActivity(i);
 			
-//        	moveTaskToBack(true);
         	finish();
-//        	android.os.Process.killProcess(android.os.Process.myPid());
         	return true;
         }
         return super.onKeyDown(keyCode, event);
@@ -53,7 +51,6 @@ public class Abort extends Activity {
 
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
 		super.onPause();
 		System.gc();
 		finish();
@@ -61,7 +58,6 @@ public class Abort extends Activity {
 
 	@Override
 	protected void onStop() {
-		// TODO Auto-generated method stub
 		super.onStop();
 		System.gc();
 		finish();

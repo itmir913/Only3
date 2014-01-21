@@ -102,18 +102,15 @@ public class Setting extends Activity {
 		delay.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
-				// TODO Auto-generated method stub
 			}
 			
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
-				// TODO Auto-generated method stub
 			}
 			
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress,
 					boolean fromUser) {
-				// TODO Auto-generated method stub
 				delay_text.setText(String.format(getString(R.string.delay), ++progress));
 				setting_Edit.putInt("delay", progress).commit();
 			}
@@ -122,7 +119,6 @@ public class Setting extends Activity {
 		password.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				// TODO Auto-generated method stub
 				if(isChecked){
 //					startActivity(new Intent(Setting.this, PassWord_Make.class));
 					LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -147,7 +143,6 @@ public class Setting extends Activity {
 					alert.setNegativeButton(R.string.exit, new OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
 							password.setChecked(false);
 							dialog.dismiss();
 						}
@@ -164,7 +159,6 @@ public class Setting extends Activity {
 		vibrate.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				// TODO Auto-generated method stub
 				if(isChecked)
 					setting_Edit.putBoolean("vibrate", true).commit();
 				else
@@ -176,7 +170,6 @@ public class Setting extends Activity {
 			
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				// TODO Auto-generated method stub
 				if(isChecked){
 					setting_Edit.putBoolean("notification_clear", true).commit();
 				}else{
@@ -245,18 +238,15 @@ public class Setting extends Activity {
 		Five_Seekbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
-				// TODO Auto-generated method stub
 			}
 			
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
-				// TODO Auto-generated method stub
 			}
 			
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress,
 					boolean fromUser) {
-				// TODO Auto-generated method stub
 				int tmp = 0;
 				if(progress==0)
 					tmp=0;
@@ -287,7 +277,6 @@ public class Setting extends Activity {
 			
 			madeby.setText(String.format(getString(R.string.madeby), infor.versionName));
 		} catch (NameNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -312,7 +301,6 @@ public class Setting extends Activity {
 	
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
 		super.onPause();
 		System.gc();
 		finish();
@@ -320,7 +308,6 @@ public class Setting extends Activity {
 
 	@Override
 	protected void onStop() {
-		// TODO Auto-generated method stub
 		super.onStop();
 		System.gc();
 		finish();

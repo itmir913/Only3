@@ -36,7 +36,6 @@ public class PassWord extends Activity {
 		PassWord.addTextChangedListener(new TextWatcher() {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				// TODO Auto-generated method stub
 				if(s.toString().equals(answer)){
 					/**
 					 * 2.0 업데이트
@@ -52,12 +51,10 @@ public class PassWord extends Activity {
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,
 					int after) {
-				// TODO Auto-generated method stub
 			}
 			
 			@Override
 			public void afterTextChanged(Editable s) {
-				// TODO Auto-generated method stub
 			}
 		});
 	}
@@ -89,25 +86,7 @@ public class PassWord extends Activity {
         	finish();
         	android.os.Process.killProcess(android.os.Process.myPid());
         	return true;
-//        	return false;
         }
         return super.onKeyDown(keyCode, event);
     }
-	
-//	@Override
-//	protected void onPause() {
-//		// TODO Auto-generated method stub
-//		super.onPause();
-//		System.gc();
-//		finish();
-//	}
-//
-//	@Override
-//	protected void onStop() {
-//		// TODO Auto-generated method stub
-//		super.onStop();
-//		System.gc();
-//		finish();
-//	}
-
 }

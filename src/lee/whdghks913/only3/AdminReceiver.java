@@ -13,12 +13,6 @@ public class AdminReceiver extends DeviceAdminReceiver {
 	 public void onDisabled(Context context, Intent intent) {
 		 Toast.makeText(context, R.string.device_admin_disabled, Toast.LENGTH_SHORT).show();
 	 }
-	 
-/*	@Override
-	public void onEnabled(Context context, Intent intent) {
-		// TODO Auto-generated method stub
-		super.onEnabled(context, intent);
-	}*/
 	
 	 /**
 	  * 1.5 업데이트
@@ -27,12 +21,6 @@ public class AdminReceiver extends DeviceAdminReceiver {
 	  */
 	@Override
 	public CharSequence onDisableRequested(Context context, Intent intent) {
-		// TODO Auto-generated method stub
-//		return super.onDisableRequested(context, intent);
 		return context.getString(R.string.device_admin_disabled_warring);
 	}
-	 
-	 /**
-	  * http://hns17.tistory.com/114 이사이트를 아주 많이 참조했습니다
-	  */
 }

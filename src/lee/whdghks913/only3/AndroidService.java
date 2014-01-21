@@ -22,41 +22,19 @@ import android.util.Log;
 
 @SuppressLint("NewApi")
 public class AndroidService extends Service {
-	
-	// 설정값 확인을 위해 SharedPreferences을 사용한다
 	SharedPreferences package_All_count, package_count, package_list, setting;
 	SharedPreferences.Editor package_count_Editor, setting_Editor;
 	
-	int All_Count=0, Count=0;
-	
-	/**
-	 * 1.5업데이트
-	 * 일부 객체를 미리 생성하게 하지 않도록 하여 메모리 절약
-	 */
-	// 일정 시간마다 작동을 위해 이 어플에서는 쓰래드를 이용한다 
-//	Thread thread;
 	Handler handler;
-//	String pkgName, last_packageName="";
 	String last_packageName="";
 	ActivityManager actvityManager;
-//	RunningTaskInfo runningTaskInfo;
 	
-	// 쓰래드의 무한반복문을 탈출하기 위한 Boolean값 입니다
+	int All_Count=0, Count=0;
 	Boolean isService=true, isRunningApp=true;
 	
-	/**
-	 * 1.1 업데이트
-	 * 알람 매니저를 이용하여 사용한지 x분마다 알림
-	 */
-	/**
-	 * 1.5업데이트
-	 * 일부 객체를 미리 생성하게 하지 않도록 하여 메모리 절약
-	 */
 	AlarmManager am;
-//	Intent intent;
 	PendingIntent sender;
 	
-	@SuppressLint("CommitPrefEdits")
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate() {
@@ -121,7 +99,6 @@ public class AndroidService extends Service {
 		Runnable task = new Runnable(){
 			@Override
 			public void run(){
-//				int num=0;
 				while(isService){
 					/**
 					 * 1.9 업데이트
@@ -137,29 +114,20 @@ public class AndroidService extends Service {
 					 * 파워 매니저를 이용하여 화면이 켜졌을때만 작동하도록 설정
 					 */
 					if(mPm.isScreenOn()){
-//						int Sleep = setting.getInt("delay", 2)*1000;
-//						if(setting.getInt("delay", 2)*1000==0)
-//							try { Thread.sleep(1000); } catch (InterruptedException e) {e.printStackTrace();}
-//						else
-//							try { Thread.sleep(setting.getInt("delay", 2)*1000); } catch (InterruptedException e) {e.printStackTrace();}
 						Top_Activity();
 					}else{
-//						if(num<2){
-							if(setting.getInt("Notification", 5)!=0)
-								if( ! isRunningApp){
-									am.cancel(sender);
-									isRunningApp = ! isRunningApp;
-									/**
-									 * 1.9 업데이트
-									 * 화면이 꺼지면 last package 초기화
-									 */
-									last_packageName = "";
-									setting_Editor.remove("FIVE_MINUTE").commit();
-									Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
-								}
-//							num++;
-//							System.gc();
-//						}
+						if(setting.getInt("Notification", 5)!=0)
+							if( ! isRunningApp){
+								am.cancel(sender);
+								isRunningApp = ! isRunningApp;
+								/**
+								 * 1.9 업데이트
+								 * 화면이 꺼지면 last package 초기화
+								 */
+								last_packageName = "";
+								setting_Editor.remove("FIVE_MINUTE").commit();
+								Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
+							}
 					}
 				}
 			}
@@ -167,65 +135,24 @@ public class AndroidService extends Service {
 		
 		Thread thread = new Thread(task);
 		thread.start();
-		
-		
-//		// 쓰래드를 시작합니다
-//		thread = new Thread(new Runnable() {
-//			@Override
-//			public void run() {
-//				// TODO Auto-generated method stub
-//				while(isService){
-//					try {
-//						thread.sleep(2000);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					Top_Activity();
-//				}
-//			}});
-//		thread.start();
 	}
 
 	@Override
 	public IBinder onBind(Intent intent) {
-		// TODO Auto-generated method stub
 		
 		return null;
 	}
 	
 	public void Top_Activity(){
-//		List<RunningTaskInfo> taskInfos = actvityManager.getRunningTasks(1);
-//		for(Iterator<RunningTaskInfo> iterator = taskInfos.iterator(); iterator.hasNext(); ){
 		for(Iterator<RunningTaskInfo> iterator = actvityManager.getRunningTasks(1).iterator(); iterator.hasNext(); ){
-			/**
-			 * 1.5업데이트
-			 * 메모리 절약을 위해 주석처리와 코드 간소화
-			 */
-//			RunningTaskInfo runningTaskInfo = (RunningTaskInfo) iterator.next();
-//			String pkgName = runningTaskInfo.topActivity.getPackageName();
-//		    String className = runningTaskInfo.topActivity.getClassName();
 			String pkgName = iterator.next().topActivity.getPackageName();
 			
-//			Log.d("최상단 액티비티", pkgName);
-//			Log.d("last_packageName", last_packageName);
-//			Log.d("카운트 속도", ""+setting.getInt("delay", 2)*1000);
-			
 			if(pkgName.equals("lee.whdghks913.only3")){
-				/**
-				 * 1.5업데이트
-				 * 불필요한 객체를 빨리 지워버릴수 있도록 코드 설정
-				 */
 				System.gc();
 				return;
 			}
 			
-			/**
-			 * 1.5업데이트
-			 * 설정하지 않은 어플에서 불필요한 연산을 하지 않도록 설정하여 메모리 절약
-			 */
 			if(!pkgName.equals(package_list.getString(pkgName, "")) && last_packageName.equals(pkgName)){
-//				Log.d("메모리 낭비 방지 기능 작동", "메모리 낭비를 막기위해 리턴합니다");
 				System.gc();
 				return;
 			}
@@ -240,7 +167,6 @@ public class AndroidService extends Service {
 				++Count;
 				package_count_Editor.putInt(pkgName, Count).commit();
 				handler.sendEmptyMessage(0);
-//				showNotify(pkgName);
 			}
 			
 			if( ! last_packageName.equals(pkgName) ){
@@ -268,8 +194,6 @@ public class AndroidService extends Service {
 	
 	@SuppressWarnings("deprecation")
 	private void showNotify(boolean isToomany) {
-//		package_count_Editor.putInt(pkgName, Count).commit();
-		
 		NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 		Notification noti;
 		
@@ -288,56 +212,35 @@ public class AndroidService extends Service {
 				noti = new Notification(R.drawable.ic_launcher,
 					String.format( getString(R.string.count_added), Count, All_Count ), System.currentTimeMillis());
 		
-	      //알림 소리를 한번만 내도록
 	      noti.flags = Notification.FLAG_ONLY_ALERT_ONCE;
-	      
-	      //확인하면 자동으로 알림이 제거 되도록
 	      noti.flags = Notification.FLAG_AUTO_CANCEL;
-	      
-	      //사용자가 알람을 확인하고 클릭했을때 새로운 액티비티를 시작할 인텐트 객체
 	      Intent intent = new Intent(AndroidService.this, MainActivity.class);
-	      
-	      //새로운 태스크(Task) 상에서 실행되도록(보통은 태스크1에 쌓이지만 태스크2를 만들어서 전혀 다른 실행으로 관리한다)
 	      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-	      
-	      //인텐트 객체를 포장해서 전달할 인텐트 전달자 객체
 	      PendingIntent pendingI = PendingIntent.getActivity(AndroidService.this, 0, intent, 0);
-	      
-	      //상단바를 드래그 했을때 보여질 내용 정의하기
-//	      noti.setLatestEventInfo(AndroidService.this, "제목", "내용", pendingI);
 	      noti.setLatestEventInfo(AndroidService.this, getString(R.string.count_added),
 	    		  getString(R.string.count_added), pendingI);
-	      
-	      //알림창 띄우기(알림이 여러개일수도 있으니 알림을 구별할 상수값, 여러개라면 상수값을 달리 줘야 한다.)
 	      nm.notify(0, noti);
-	      nm.cancel(0);
+//	      nm.cancel(0);
 	}
 	
 	@Override
 	public void onDestroy() {
-		// TODO Auto-generated method stub
 		super.onDestroy();
 		
 		restartService();
-		
-		// 서비스가 삭제되면 무한 반복을 해제합니다
 		isService=false;
-		
 		System.gc();
-		
 		stopForeground(true);
 	}
 
 	@Override
 	public void onLowMemory() {
-		// TODO Auto-generated method stub
 		super.onLowMemory();
 		restartService();
 	}
 
 	@Override
 	public void onTaskRemoved(Intent rootIntent) {
-		// TODO Auto-generated method stub
 		super.onTaskRemoved(rootIntent);
 		restartService();
 	}
