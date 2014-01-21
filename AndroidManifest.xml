@@ -70,7 +70,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="lee.whdghks913.only3.Installed_AppList" />
+        <activity android:name="lee.whdghks913.only3.AppInfoActivity" />
         <activity android:name="lee.whdghks913.only3.Abort" android:excludeFromRecents="true" />
         <activity android:name="lee.whdghks913.only3.Setting" />
         <activity android:name="lee.whdghks913.only3.PassWord" />
