@@ -78,6 +78,12 @@
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
 \n
+\n[2.6] : 2014-01-22
+\n-세번만 어플의 가로모드 완벽지원
+\n-hdpi, mdpi기종에서의 이미지 지원 추가
+\n-토스트 알림 추가
+\n-메모리 최적화
+\n
 \n[2.5] : 2014-01-21
 \n-런처 어플 선택시 경고 알림 표시
 \n
@@ -151,5 +157,6 @@
 	<string name="alertType_toast" >토스트 알림</string>
 	<string name="alertType_notifi" >상단바 알림</string>
 	<string name="appSetting_Text" >[어플 세부 설정]</string>
+	<string name="alertType_Test" >알림이 이렇게 나타납니다</string>
 
 </resources>

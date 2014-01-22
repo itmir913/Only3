@@ -77,6 +77,12 @@ Do you want to cancel?</string>
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
 \n
+\n[2.6] : 2014-01-22
+\n-Full support for landscape mode
+\n-hdpi, mdpi screen support
+\n-Add Toast notification
+\n-Optimization memory
+\n
 \n[2.5] : 2014-01-21
 \n-When you select the launcher app, display a warning
 \n
@@ -150,5 +156,6 @@ Do you want to cancel?</string>
 	<string name="alertType_toast" >Toast</string>
 	<string name="alertType_notifi" >Notification</string>
 	<string name="appSetting_Text" >[App Advanced Setting]</string>
+	<string name="alertType_Test" >Notification will be displayed in this way</string>
 
 </resources>

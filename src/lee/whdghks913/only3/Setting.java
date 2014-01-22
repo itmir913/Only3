@@ -13,10 +13,14 @@ import java.util.Map.Entry;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -311,7 +315,7 @@ public class Setting extends Activity {
 		}
 	}
 	
-	public void five_seekbar(int progress){
+	protected void five_seekbar(int progress){
 		int tmp = 0;
 		if(progress==5)
 			tmp=1;
@@ -343,7 +347,7 @@ public class Setting extends Activity {
 		finish();
 	}
 	
-	boolean isServiceRunningCheck() {
+	protected boolean isServiceRunningCheck() {
     	ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
     	for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE))
     	    if ("lee.whdghks913.only3.AndroidService".equals(service.service.getClassName()))
@@ -357,7 +361,7 @@ public class Setting extends Activity {
 	 * 백업/복원 지원
 	 * http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card
 	 */
-	private boolean saveSharedPreferencesToFile(File dst, String prefName) {
+	protected boolean saveSharedPreferencesToFile(File dst, String prefName) {
 	    boolean res = false;
 	    ObjectOutputStream output = null;
 	    try {
@@ -385,7 +389,7 @@ public class Setting extends Activity {
 	}
 
 	@SuppressWarnings({ "unchecked" })
-	private boolean loadSharedPreferencesFromFile(File src, String prefName) {
+	protected boolean loadSharedPreferencesFromFile(File src, String prefName) {
 	    boolean res = false;
 	    ObjectInputStream input = null;
 	    try {
@@ -428,7 +432,7 @@ public class Setting extends Activity {
 	    return res;
 	}
 	
-	public boolean BackupCheck(){
+	protected boolean BackupCheck(){
 		String sdcard = Environment.getExternalStorageDirectory().toString() + "/only3/";
 		File all_count =new File(sdcard + "package_All_count.backup");
 		File count =new File(sdcard + "package_count.backup");
@@ -442,16 +446,37 @@ public class Setting extends Activity {
 		return false;
 	}
 	
-	public class RadioGroupListener implements android.widget.RadioGroup.OnCheckedChangeListener {
+	protected class RadioGroupListener implements android.widget.RadioGroup.OnCheckedChangeListener {
 		@Override
 		public void onCheckedChanged(RadioGroup group, int checkedId) {
-			if(checkedId==R.id.All)
+			if(checkedId==R.id.All){
 				setting_Edit.putInt("NotifiType", 2).commit();
-			if(checkedId==R.id.Toast)
+				testNotifi();
+				Toast.makeText(Setting.this, R.string.alertType_Test, Toast.LENGTH_SHORT).show();
+			}else if(checkedId==R.id.Toast){
 				setting_Edit.putInt("NotifiType", 1).commit();
-			if(checkedId==R.id.Notifi)
+				Toast.makeText(Setting.this, R.string.alertType_Test, Toast.LENGTH_SHORT).show();
+			}else if(checkedId==R.id.Notifi){
 				setting_Edit.putInt("NotifiType", 0).commit();
+				testNotifi();
+			}
 		}
 	}
 	
+	@SuppressWarnings("deprecation")
+	protected void testNotifi(){
+		NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+		Notification noti = new Notification(R.drawable.ic_launcher,
+				getString(R.string.alertType_Test), System.currentTimeMillis());
+		
+		noti.flags = Notification.FLAG_ONLY_ALERT_ONCE;
+	    noti.flags = Notification.FLAG_AUTO_CANCEL;
+	    Intent intent = new Intent(Setting.this, MainActivity.class);
+	    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	    PendingIntent pendingI = PendingIntent.getActivity(Setting.this, 0, intent, 0);
+	    noti.setLatestEventInfo(Setting.this, getString(R.string.app_name),
+	    		getString(R.string.alertType_Test), pendingI);
+	    nm.notify(0, noti);
+	    nm.cancel(0);
+	}
 }
