@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
@@ -37,6 +38,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+@SuppressLint("CommitPrefEdits")
 public class Setting extends Activity {
 	SharedPreferences setting;
 	SharedPreferences.Editor setting_Edit;
@@ -81,6 +83,11 @@ public class Setting extends Activity {
 		All = (RadioButton) findViewById(R.id.All);
 		toast = (RadioButton) findViewById(R.id.Toast);
 		Notifi = (RadioButton) findViewById(R.id.Notifi);
+	}
+	
+	@Override
+	public void onStart(){
+		super.onStart();
 		
 		if(setting.getInt("NotifiType", 0)==0)
 			Notifi.setChecked(true);
@@ -348,9 +355,6 @@ public class Setting extends Activity {
 	/**
 	 * 1.8업데이트
 	 * 백업/복원 지원
-	 */
-	/**
-	 * 테스트중인 기능!!!!!!!!
 	 * http://stackoverflow.com/questions/10864462/how-can-i-backup-sharedpreferences-to-sd-card
 	 */
 	private boolean saveSharedPreferencesToFile(File dst, String prefName) {

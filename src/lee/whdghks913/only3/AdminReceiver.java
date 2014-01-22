@@ -10,8 +10,8 @@ public class AdminReceiver extends DeviceAdminReceiver {
 	  * 기기관리자가 해제되었을떄 할 작업을 명시해 줍니다
 	  */
 	 @Override
-	 public void onDisabled(Context context, Intent intent) {
-		 Toast.makeText(context, R.string.device_admin_disabled, Toast.LENGTH_SHORT).show();
+	 public void onDisabled(Context mContext, Intent intent) {
+		 Toast.makeText(mContext, R.string.device_admin_disabled, Toast.LENGTH_SHORT).show();
 	 }
 	
 	 /**
@@ -20,7 +20,7 @@ public class AdminReceiver extends DeviceAdminReceiver {
 	  * 정말 취소하시겠습니까?라는 알림을 띄웁니다
 	  */
 	@Override
-	public CharSequence onDisableRequested(Context context, Intent intent) {
-		return context.getString(R.string.device_admin_disabled_warring);
+	public CharSequence onDisableRequested(Context mContext, Intent intent) {
+		return mContext.getString(R.string.device_admin_disabled_warring);
 	}
 }

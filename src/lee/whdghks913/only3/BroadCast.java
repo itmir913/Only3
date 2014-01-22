@@ -39,7 +39,7 @@ public class BroadCast extends BroadcastReceiver {
 	        	mContext.startService(new Intent(mContext, AndroidService.class));
 				mContext.startService(new Intent(mContext, MainService.class));
 	        }
-        }else if("ACTION_Notifi_DATE_CHANGE".equals(intent.getAction())){
+        }else if("ACTION_DATE_CHANGE".equals(intent.getAction())){
         	// TODO 토스트도 추가해야함
         	if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
         		Notifi_DATE_CHANGE(mContext);
@@ -49,6 +49,7 @@ public class BroadCast extends BroadcastReceiver {
 			
         }else if("ACTION_FALSE_THE_STOP".equals(intent.getAction())){
     		setting_Editor.putBoolean("Ten_minutes", false).commit();
+    		
         }else if("ACTION_FIVE_MINUTE".equals(intent.getAction())){
         	int FIVE_COUNT = setting.getInt("FIVE_MINUTE", 0) + setting.getInt("Notification", 5);
         	setting_Editor.putInt("FIVE_MINUTE", FIVE_COUNT).commit();

@@ -21,7 +21,7 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.widget.Toast;
 
-@SuppressLint("NewApi")
+@SuppressLint({ "NewApi", "CommitPrefEdits" })
 public class AndroidService extends Service {
 	SharedPreferences package_All_count, package_count, package_list, setting;
 	SharedPreferences.Editor package_count_Editor, setting_Editor;
@@ -71,6 +71,10 @@ public class AndroidService extends Service {
 		noti.setLatestEventInfo(this, getString(R.string.notification_title), getString(R.string.notification_message), pendingIndent);
 		noti.flags = noti.flags|Notification.FLAG_ONGOING_EVENT;
 		startForeground(1000, noti);
+	}
+	
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
 		
 		handler = new Handler(){
 			@Override
@@ -144,6 +148,8 @@ public class AndroidService extends Service {
 		
 		Thread thread = new Thread(task);
 		thread.start();
+		
+		return START_REDELIVER_INTENT;
 	}
 
 	@Override
@@ -302,5 +308,4 @@ public class AndroidService extends Service {
         
         isRunningApp = ! isRunningApp;
 	}
-
 }

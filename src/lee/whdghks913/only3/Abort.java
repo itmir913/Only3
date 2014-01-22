@@ -7,9 +7,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
+@SuppressLint("InlinedApi")
 public class Abort extends Activity {
 
-	@SuppressLint("InlinedApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
