@@ -232,15 +232,15 @@ public class AndroidService extends Service {
 				noti = new Notification(R.drawable.ic_launcher,
 					String.format( getString(R.string.count_added), Count, All_Count ), System.currentTimeMillis());
 		
-	      noti.flags = Notification.FLAG_ONLY_ALERT_ONCE;
-	      noti.flags = Notification.FLAG_AUTO_CANCEL;
-	      Intent intent = new Intent(AndroidService.this, MainActivity.class);
-	      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-	      PendingIntent pendingI = PendingIntent.getActivity(AndroidService.this, 0, intent, 0);
-	      noti.setLatestEventInfo(AndroidService.this, getString(R.string.count_added),
-	    		  getString(R.string.count_added), pendingI);
-	      nm.notify(0, noti);
-	      nm.cancel(0);
+	    noti.flags = Notification.FLAG_ONLY_ALERT_ONCE;
+	    noti.flags = Notification.FLAG_AUTO_CANCEL;
+	    Intent intent = new Intent(AndroidService.this, MainActivity.class);
+	    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	    PendingIntent pendingI = PendingIntent.getActivity(AndroidService.this, 0, intent, 0);
+	    noti.setLatestEventInfo(AndroidService.this, getString(R.string.count_added),
+	    		getString(R.string.count_added), pendingI);
+	    nm.notify(0, noti);
+	    nm.cancel(0);
 	}
 	
 	protected void showToast(boolean isToomany) {
