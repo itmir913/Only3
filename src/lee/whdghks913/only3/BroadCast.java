@@ -40,7 +40,6 @@ public class BroadCast extends BroadcastReceiver {
 				mContext.startService(new Intent(mContext, MainService.class));
 	        }
         }else if("ACTION_DATE_CHANGE".equals(intent.getAction())){
-        	// TODO 토스트도 추가해야함
         	if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
         		Notifi_DATE_CHANGE(mContext);
 			if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
@@ -66,7 +65,6 @@ public class BroadCast extends BroadcastReceiver {
     			vide.vibrate(pattern, -1);
         	}
         	
-        	// TODO 토스트도 추가해야함
         	if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
         		Notifi_FiveCount(mContext, FIVE_COUNT);
 			if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
