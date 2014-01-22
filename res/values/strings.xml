@@ -58,7 +58,8 @@ Delete the application, Service must be turned off</string>
     <string name="device_admin">Only3 Applications to work smoothly must have administrator privileges
 \n\nThis application that was developed by a student is pure, korean country
 \nQuestions, please mail to whdghks913@naver.com
-\n\nIf you set an administrator, The app is not deleted in the usual way
+\n
+\nIf you set an administrator, The app is not deleted in the usual way
 \nin order to delete, please use the Remove button in the application</string>
     <string name="device_admin_disabled">Administrator privileges are turned off</string>
     <string name="device_admin_disabled_warring">If you disable the permission of this application
@@ -76,6 +77,9 @@ Do you want to cancel?</string>
     <string name="change_log">[Info]
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
+\n
+\n[2.7] : 2014-01-23
+\n-Bug fixes run list of recent
 \n
 \n[2.6] : 2014-01-22
 \n-Full support for landscape mode

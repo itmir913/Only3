@@ -168,7 +168,10 @@ public class AndroidService extends Service {
 //		String className = topActivity.getClassName();
 		String pkgName = topActivity.getPackageName();
 		
-		if(pkgName.equals("lee.whdghks913.only3")){
+		/**
+		 * 2.7 Update : Do not check the SystemUI
+		 */
+		if(pkgName.equals("lee.whdghks913.only3") || pkgName.equals("com.android.systemui")){
 			System.gc();
 			return;
 		}

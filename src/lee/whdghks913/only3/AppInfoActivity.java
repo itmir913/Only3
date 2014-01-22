@@ -371,9 +371,12 @@ public class AppInfoActivity extends Activity {
 		inflater_view = inflater.inflate(R.layout.add_package, null);
 		
 		/**
+		 * 2.7 Update : Do not check the SystemUI
+		 */
+		/**
 		 * 1.2 업데이트 : 세번만 어플은 카운트를 설정할수 없음
 		 */
-		if(packageName.equals("lee.whdghks913.only3")){
+		if(packageName.equals("lee.whdghks913.only3") || packageName.equals("com.android.systemui")){
 			Toast.makeText(this, R.string.me_app, Toast.LENGTH_SHORT).show();
 			return;
 		}
