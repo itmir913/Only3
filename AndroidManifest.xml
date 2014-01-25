@@ -40,6 +40,11 @@
             android:name="lee.whdghks913.only3.CountCheckService"
             android:enabled="true"
             android:label="@string/countcheckservice" />
+        
+        <service
+            android:name="lee.whdghks913.only3.SubService"
+            android:enabled="true"
+            android:label="@string/subservice" />
 
         <receiver
             android:name="lee.whdghks913.only3.BroadCast"

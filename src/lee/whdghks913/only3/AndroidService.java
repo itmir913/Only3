@@ -149,7 +149,7 @@ public class AndroidService extends Service {
 		Thread thread = new Thread(task);
 		thread.start();
 		
-		return START_REDELIVER_INTENT;
+		return super.onStartCommand(intent, flags, startId);
 	}
 
 	@Override
@@ -261,9 +261,6 @@ public class AndroidService extends Service {
 		super.onDestroy();
 		
 		restartService();
-		isService=false;
-		System.gc();
-		stopForeground(true);
 	}
 
 	@Override
@@ -282,6 +279,9 @@ public class AndroidService extends Service {
 		if(setting.getBoolean("Service", false)){
 			Intent intent = new Intent(this, BroadCast.class);
 			sendBroadcast(intent);
+		}else{
+			stopForeground(true);
+			isService=false;
 		}
 	}
 	

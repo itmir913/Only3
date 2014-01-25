@@ -168,5 +168,6 @@ Do you want to cancel?</string>
 	<string name="date_changed_by_user" >Count not clear becaues Date changed by User</string>
 	<string name="androidservice" >Only3 Service</string>
 	<string name="countcheckservice" >Count clear check Service</string>
+	<string name="subservice" >SubService</string>
 
 </resources>

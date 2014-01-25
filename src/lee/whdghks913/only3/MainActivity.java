@@ -132,6 +132,7 @@ public class MainActivity extends Activity {
 				setting_Editor.putBoolean("Service", false).commit();
 				
 				stopService(new Intent(this, AndroidService.class));
+				stopService(new Intent(this, SubService.class));
 				start_Btn_stop();
 			}
 		}else{
@@ -146,6 +147,7 @@ public class MainActivity extends Activity {
 				setting_Editor.putBoolean("Service", true).commit();
 				
 				startService(new Intent(this, AndroidService.class));
+	        	startService(new Intent(this, SubService.class));
 				
 				alarm.setAlarm10M(this);
 				alarm.setAlarmDateChange(this);

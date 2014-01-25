@@ -44,6 +44,7 @@ public class BroadCast extends BroadcastReceiver {
 	        	try { Thread.sleep(10000); } catch (InterruptedException e) {}
 	        	
 	        	mContext.startService(new Intent(mContext, AndroidService.class));
+	        	mContext.startService(new Intent(mContext, SubService.class));
 	        	
 				Alarm alarm = new Alarm(mContext);
 				alarm.setAlarm10M(mContext);
@@ -107,6 +108,7 @@ public class BroadCast extends BroadcastReceiver {
         	
         }else{
         	mContext.startService(new Intent(mContext, AndroidService.class));
+        	mContext.startService(new Intent(mContext, SubService.class));
         }
 		System.gc();
 	}
