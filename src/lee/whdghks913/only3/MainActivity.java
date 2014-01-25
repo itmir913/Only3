@@ -124,6 +124,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void start_btn(View v){
+		Alarm alarm = new Alarm(this);
 		if(isServiceRunningCheck("lee.whdghks913.only3.AndroidService")){
 			if(setting.getBoolean("Ten_minutes", true)){
 				Toast.makeText(this, R.string.ten, Toast.LENGTH_SHORT).show();
@@ -131,7 +132,6 @@ public class MainActivity extends Activity {
 				setting_Editor.putBoolean("Service", false).commit();
 				
 				stopService(new Intent(this, AndroidService.class));
-				stopService(new Intent(this, MainService.class));
 				start_Btn_stop();
 			}
 		}else{
@@ -146,7 +146,10 @@ public class MainActivity extends Activity {
 				setting_Editor.putBoolean("Service", true).commit();
 				
 				startService(new Intent(this, AndroidService.class));
-				startService(new Intent(this, MainService.class));
+				
+				alarm.setAlarm10M(this);
+				alarm.setAlarmDateChange(this);
+				
 				start_Btn_start();
 			}
 		}

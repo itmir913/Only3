@@ -35,9 +35,6 @@
         <service
             android:name="lee.whdghks913.only3.AndroidService"
             android:enabled="true" />
-        <service
-            android:name="lee.whdghks913.only3.MainService"
-            android:enabled="true" />
 
         <receiver
             android:name="lee.whdghks913.only3.BroadCast"

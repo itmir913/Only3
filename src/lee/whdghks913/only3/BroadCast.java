@@ -39,7 +39,10 @@ public class BroadCast extends BroadcastReceiver {
 	        	try { Thread.sleep(10000); } catch (InterruptedException e) {}
 	        	
 	        	mContext.startService(new Intent(mContext, AndroidService.class));
-				mContext.startService(new Intent(mContext, MainService.class));
+	        	
+				Alarm alarm = new Alarm(mContext);
+				alarm.setAlarm10M(mContext);
+				alarm.setAlarmDateChange(mContext);
 	        }
 	        
 	        if(setting.getInt("Clear_day", 0) < Calendar.getInstance().get(Calendar.DAY_OF_MONTH)){
@@ -80,11 +83,6 @@ public class BroadCast extends BroadcastReceiver {
         	
         }else{
         	mContext.startService(new Intent(mContext, AndroidService.class));
-        	/**
-			 * 1.5업데이트
-			 * 서비스를 하나 추가함에 따라 서비스 종료시 MainService도 시작되도록 코드 추가
-			 */
-        	mContext.startService(new Intent(mContext, MainService.class));
         }
 		System.gc();
 	}
