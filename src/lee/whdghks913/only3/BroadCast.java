@@ -20,6 +20,8 @@ public class BroadCast extends BroadcastReceiver {
 	
 	@Override
 	public void onReceive(Context mContext, Intent intent) {
+		String action = intent.getAction();
+		
 		/**
 		 * 1.7 업데이트
 		 * setting을 지정하지 않아서 브로드캐스트 리시버에서 강제종료 되는 오류 수정
@@ -27,7 +29,7 @@ public class BroadCast extends BroadcastReceiver {
 		setting = mContext.getSharedPreferences("setting", 0);
 		setting_Editor = setting.edit();
 		
-		if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())){
+		if (Intent.ACTION_BOOT_COMPLETED.equals(action)){
 	        /**
 	         * 1.5업데이트
 	         * 관리자 권한이 없으면 부팅이 되도 자동으로 실행되지 않도록 코드 설정
@@ -45,22 +47,25 @@ public class BroadCast extends BroadcastReceiver {
 				alarm.setAlarmDateChange(mContext);
 	        }
 	        
+	        /**
+	         * 정각 12시 0분에 폰이 꺼져있고, 부팅시 카운트를 초기화 함
+	         */
 	        if(setting.getInt("Clear_day", 999) < Calendar.getInstance().get(Calendar.DAY_OF_MONTH)){
 	        	if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
 	        		Notifi_DATE_CHANGE(mContext);
 				if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
 					Toast_DATE_CHANGE(mContext);
 	        }
-        }else if("ACTION_DATE_CHANGE".equals(intent.getAction())){
+        }else if("ACTION_DATE_CHANGE".equals(action)){
         	if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
         		Notifi_DATE_CHANGE(mContext);
 			if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
 				Toast_DATE_CHANGE(mContext);
 			
-        }else if("ACTION_FALSE_THE_STOP".equals(intent.getAction())){
+        }else if("ACTION_FALSE_THE_STOP".equals(action)){
     		setting_Editor.putBoolean("Ten_minutes", false).commit();
     		
-        }else if("ACTION_FIVE_MINUTE".equals(intent.getAction())){
+        }else if("ACTION_FIVE_MINUTE".equals(action)){
         	int FIVE_COUNT = setting.getInt("FIVE_MINUTE", 0) + setting.getInt("Notification", 5);
         	setting_Editor.putInt("FIVE_MINUTE", FIVE_COUNT).commit();
         	
