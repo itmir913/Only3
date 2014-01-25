@@ -45,7 +45,7 @@ public class BroadCast extends BroadcastReceiver {
 				alarm.setAlarmDateChange(mContext);
 	        }
 	        
-	        if(setting.getInt("Clear_day", 0) < Calendar.getInstance().get(Calendar.DAY_OF_MONTH)){
+	        if(setting.getInt("Clear_day", 999) < Calendar.getInstance().get(Calendar.DAY_OF_MONTH)){
 	        	if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
 	        		Notifi_DATE_CHANGE(mContext);
 				if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
