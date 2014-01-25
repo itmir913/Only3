@@ -1,5 +1,7 @@
 package lee.whdghks913.only3;
 
+import java.util.Calendar;
+
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -39,12 +41,18 @@ public class BroadCast extends BroadcastReceiver {
 	        	mContext.startService(new Intent(mContext, AndroidService.class));
 				mContext.startService(new Intent(mContext, MainService.class));
 	        }
+	        
+	        if(setting.getInt("Clear_day", 0) < Calendar.getInstance().get(Calendar.DAY_OF_MONTH)){
+	        	if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
+	        		Notifi_DATE_CHANGE(mContext);
+				if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
+					Toast_DATE_CHANGE(mContext);
+	        }
         }else if("ACTION_DATE_CHANGE".equals(intent.getAction())){
         	if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
         		Notifi_DATE_CHANGE(mContext);
 			if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
 				Toast_DATE_CHANGE(mContext);
-        	
 			
         }else if("ACTION_FALSE_THE_STOP".equals(intent.getAction())){
     		setting_Editor.putBoolean("Ten_minutes", false).commit();
@@ -87,6 +95,8 @@ public class BroadCast extends BroadcastReceiver {
 		
 		package_count_Editor.clear();
 		package_count_Editor.commit();
+		
+		setting_Editor.putInt("Clear_day",  Calendar.getInstance().get(Calendar.DAY_OF_MONTH)).commit();;
 	}
 	
 	@SuppressWarnings("deprecation")

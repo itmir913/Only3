@@ -52,7 +52,7 @@ public class MainService extends Service {
 			Intent intent = new Intent(this, BroadCast.class);
 			sendBroadcast(intent);
 		}else{
-			am.cancel(sender_DATE);
+//			am.cancel(sender_DATE);
 			am.cancel(sender_10minute);
 		}
 		
