@@ -45,7 +45,7 @@ public class Alarm {
         int day = calendar.get(Calendar.DAY_OF_MONTH);//오늘날짜
         
         intent_DATE = new Intent(mContext, BroadCast.class);
-		intent_DATE.setAction("ACTION_DATE_CHANGE");
+		intent_DATE.setAction("ACTION_DATE_CHANGE_BY_MIR");
         
         sender_DATE = PendingIntent.getBroadcast(mContext, 0, intent_DATE, 0);
         // 매일 0시 0분(24시간제)에 초기화 되도록 설정합니다

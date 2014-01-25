@@ -165,5 +165,8 @@
 	<string name="alertType_notifi" >상단바 알림</string>
 	<string name="appSetting_Text" >[어플 세부 설정]</string>
 	<string name="alertType_Test" >알림이 이렇게 나타납니다</string>
+	<string name="date_changed_by_user" >사용자에 의해 날짜가 변경되어 카운트가 초기화 되지 않습니다</string>
+	<string name="androidservice" >세번만 서비스</string>
+	<string name="countcheckservice" >카운트 초기화 확인 서비스</string>
 
 </resources>

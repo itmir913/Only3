@@ -33,7 +33,13 @@
 
         <service
             android:name="lee.whdghks913.only3.AndroidService"
-            android:enabled="true" />
+            android:enabled="true"
+            android:label="@string/androidservice" />
+        
+        <service
+            android:name="lee.whdghks913.only3.CountCheckService"
+            android:enabled="true"
+            android:label="@string/countcheckservice" />
 
         <receiver
             android:name="lee.whdghks913.only3.BroadCast"
@@ -41,7 +47,7 @@
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <!-- <action android:name="android.intent.action.DATE_CHANGED" /> -->
+                <action android:name="android.intent.action.DATE_CHANGED" />
                 <!--
                 http://www.masterqna.com/android/576/alarmmanager-
                 %EA%B4%80%EB%A0%A8-%EB%AC%B8%EC%9D%98-%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4
@@ -60,7 +66,6 @@
             <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/device_admin_policies" />
-
             <intent-filter>
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
