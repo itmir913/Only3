@@ -131,8 +131,8 @@ public class MainActivity extends Activity {
 			}else{
 				setting_Editor.putBoolean("Service", false).commit();
 				
-				stopService(new Intent(this, AndroidService.class));
 				stopService(new Intent(this, SubService.class));
+				stopService(new Intent(this, AndroidService.class));
 				start_Btn_stop();
 			}
 		}else{
