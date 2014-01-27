@@ -12,9 +12,11 @@ public class Alarm {
 	
 	Intent intent_DATE;
 	Intent intent_10minute;
+	Intent intent_byUser;
 	
     PendingIntent sender_DATE;
     PendingIntent sender_10minute;
+    PendingIntent sender_byUser;
 	
 	public Alarm(Context mContext){
 		am = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
@@ -61,6 +63,28 @@ public class Alarm {
 	
 	public void cencleAlarmDateChange(){
 		am.cancel(sender_DATE);
+	}
+	
+	public void setRemoveByUser(Context mContext){
+		Calendar calendar = Calendar.getInstance();
+        
+        int year = calendar.get(Calendar.YEAR);//올해
+        int month = calendar.get(Calendar.MONTH);//이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
+        int day = calendar.get(Calendar.DAY_OF_MONTH);//오늘날짜
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);//현재시간
+        int minute = calendar.get(Calendar.MINUTE);//현재분
+        int second = calendar.get(Calendar.SECOND);//현재초
+		
+        intent_byUser = new Intent(mContext, BroadCast.class);
+        intent_byUser.setAction("ACTION_REMOVE_BY_USER");
+		
+        sender_byUser = PendingIntent.getBroadcast(mContext, 0, intent_byUser, 0);
+        calendar.set(year, month ,day, hour, minute, second+30);
+        am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_byUser);
+	}
+	
+	public void cencleRemoveByUser(){
+		am.cancel(sender_byUser);
 	}
 
 }

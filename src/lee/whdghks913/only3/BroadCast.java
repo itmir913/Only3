@@ -64,6 +64,9 @@ public class BroadCast extends BroadcastReceiver {
 //        	Log.d("날짜 변경", "user");
         	setting_Editor.putBoolean("DateChangeByUser", true).commit();
         	
+        	Alarm alarm = new Alarm(mContext);
+        	alarm.setRemoveByUser(mContext);
+        	
         }else if("ACTION_DATE_CHANGE_BY_MIR".equals(action)){
 //        	Log.d("날짜 변경", "mir");
         	mContext.startService(new Intent(mContext, CountCheckService.class));
@@ -81,6 +84,10 @@ public class BroadCast extends BroadcastReceiver {
         		Notifi_DATE_CHANGE(mContext);
 			if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
 				Toast_DATE_CHANGE(mContext);
+        	
+        }else if("ACTION_REMOVE_BY_USER".equals(action)){
+//        	Log.d("날짜 변경", "취소함");
+        	setting_Editor.remove("DateChangeByUser").commit();
         	
         }else if("ACTION_FALSE_THE_STOP".equals(action)){
     		setting_Editor.putBoolean("Ten_minutes", false).commit();
