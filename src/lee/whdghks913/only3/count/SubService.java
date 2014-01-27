@@ -1,5 +1,6 @@
-package lee.whdghks913.only3;
+package lee.whdghks913.only3.count;
 
+import lee.whdghks913.only3.BroadCast;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.Service;
@@ -70,7 +71,7 @@ public class SubService extends Service {
 	
 	public boolean isServiceRunningCheck(){
     	for (RunningServiceInfo service : ((ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE)).getRunningServices(Integer.MAX_VALUE))
-    	    if ("lee.whdghks913.only3.AndroidService".equals(service.service.getClassName()))
+    	    if ("lee.whdghks913.only3.count.AndroidService".equals(service.service.getClassName()))
     	        return true;
     	return false;
     }

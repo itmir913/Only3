@@ -1,5 +1,6 @@
-package lee.whdghks913.only3;
+package lee.whdghks913.only3.count;
 
+import lee.whdghks913.only3.BroadCast;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;

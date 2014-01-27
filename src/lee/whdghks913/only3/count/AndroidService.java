@@ -1,8 +1,11 @@
-package lee.whdghks913.only3;
+package lee.whdghks913.only3.count;
 
 import java.util.Calendar;
 import java.util.List;
 
+import lee.whdghks913.only3.BroadCast;
+import lee.whdghks913.only3.MainActivity;
+import lee.whdghks913.only3.R;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
@@ -93,6 +96,7 @@ public class AndroidService extends Service {
 					Intent intent = new Intent(AndroidService.this, Abort.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
 							Intent.FLAG_ACTIVITY_CLEAR_TOP |
+							Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET |
 							Intent.FLAG_ACTIVITY_SINGLE_TOP );
 					startActivity(intent);
 					//getString(R.string.count_much_added), Count, All_Count

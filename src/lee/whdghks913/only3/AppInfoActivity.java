@@ -376,7 +376,7 @@ public class AppInfoActivity extends Activity {
 		/**
 		 * 1.2 업데이트 : 세번만 어플은 카운트를 설정할수 없음
 		 */
-		if(packageName.equals("lee.whdghks913.only3") || packageName.equals("com.android.systemui")){
+		if(packageName.equals("lee.whdghks913.only3.count") || packageName.equals("com.android.systemui")){
 			Toast.makeText(this, R.string.me_app, Toast.LENGTH_SHORT).show();
 			return;
 		}
@@ -448,7 +448,7 @@ public class AppInfoActivity extends Activity {
 			return;
 		}
 		
-		if(isServiceRunningCheck("lee.whdghks913.only3.AndroidService"))
+		if(isServiceRunningCheck("lee.whdghks913.only3.count.AndroidService"))
 			if(setting.getBoolean("Ten_minutes", true)){
 				Toast.makeText(AppInfoActivity.this, R.string.count_not_fix_ten, Toast.LENGTH_SHORT).show();
 				return;

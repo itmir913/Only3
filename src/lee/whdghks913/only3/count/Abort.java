@@ -1,5 +1,6 @@
-package lee.whdghks913.only3;
+package lee.whdghks913.only3.count;
 
+import lee.whdghks913.only3.R;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;

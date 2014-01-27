@@ -350,7 +350,7 @@ public class Setting extends Activity {
 	protected boolean isServiceRunningCheck() {
     	ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
     	for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE))
-    	    if ("lee.whdghks913.only3.AndroidService".equals(service.service.getClassName()))
+    	    if ("lee.whdghks913.only3.count.AndroidService".equals(service.service.getClassName()))
     	        return true;
     	return false;
     }
