@@ -58,7 +58,7 @@ public class FullLockActivity extends Activity {
 		return super.onKeyDown(keyCode, event);
     }
 	
-	private static class MyHandler extends Handler {
+	private class MyHandler extends Handler {
 		private final WeakReference<FullLockActivity> mActivity;
 
 		public MyHandler(FullLockActivity activity) {

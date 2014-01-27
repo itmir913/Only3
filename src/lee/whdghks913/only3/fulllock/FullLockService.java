@@ -46,9 +46,6 @@ public class FullLockService extends Service {
 		pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		actvityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 
-		if(! full_lock.getBoolean("Enable", false))
-			stopSelf();
-		
 		calendar = Calendar.getInstance();
 		
         int year = full_lock.getInt("Year", 0);
@@ -64,7 +61,7 @@ public class FullLockService extends Service {
         finishTime = calendar.getTimeInMillis();
         remainingSec = ((int)((finishTime - System.currentTimeMillis()) / 1000L));
         
-        if(hour==0 && minute==0)
+        if((hour==0 && minute==0) || (! full_lock.getBoolean("Enable", false)))
 			stopSelf();
         
 		PendingIntent pendingIndent = PendingIntent.getActivity(this, 1, new Intent(this, MainActivity.class), 0);

@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.util.Log;
 
 public class SubService extends Service {
 	Boolean isService=true;
@@ -40,7 +39,7 @@ public class SubService extends Service {
 								e.printStackTrace();
 							}
 							if(setting.getBoolean("Service", false)){
-								Log.d("서브서비스", "서비스 실행함");
+//								Log.d("서브서비스", "서비스 실행함");
 								startService(new Intent(SubService.this, AndroidService.class));
 							}
 						}
