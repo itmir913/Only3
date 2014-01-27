@@ -53,6 +53,9 @@
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
 \n\n
 어플 삭제는 서비스가 꺼져있을때만 가능합니다</string>
+    <string name="welcome_5">이 아이콘은 전체 잠금 아이콘 입니다
+\n당신은 기기 전체를 잠글수 있습니다
+\n만약 집중이 안될경우, 기기 전체를 잠구세요!</string>
     <string name="next">세번만 어플 시작!</string>
     <!-- <string name="count_add_Alert">시스탬 어플을 지정하는것은 위험할수 있습니다</string> -->
     <string name="device_admin">세번만 어플이 원활하게 동작하기 위해서는
@@ -187,7 +190,8 @@
 	<string name="all_lock_select_check" >정말로 휴대폰을 잠그시겠습니까?
 \n잠긴동안 통화/문자를 포함한 어떠한 기능도 할수 없습니다
 \n중요한 일이 있다면 꼭 먼저 하시고 실행하시길 바랍니다
-\n확인 버튼을 누르면 %1$d시간 %2$d분동안 폰을 사용할수 없습니다</string>
+\n
+\n확인 버튼을 누르면 %1$d시간 %2$d분 동안 폰을 사용할수 없습니다</string>
 	<string name="all_lock_select_error" >0시간 0분은 선택할 수 없습니다</string>
 	<string name="all_lock_notifi_message" >기기 잠금 상태</string>
 	<string name="all_lock_show_text1" >스마트폰 잠금이 종료될때 까지</string>

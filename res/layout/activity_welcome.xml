@@ -65,7 +65,7 @@
         android:id="@+id/How_To_Uninstall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50sp"
         android:gravity="center"
@@ -83,6 +83,24 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:text="@string/next" />
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:src="@drawable/all_lock" />
+    
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ImageView01"
+        android:layout_toRightOf="@+id/ImageView01"
+        android:text="@string/welcome_5"
+        android:textSize="18sp" />
 
 </RelativeLayout>
 </ScrollView>
