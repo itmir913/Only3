@@ -37,7 +37,20 @@
             android:onClick="AppList_Btn"
             android:text="@string/list"
             android:textColor="#ffffffff"
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/FullLock_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/start_Btn"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/all_lock"
+            android:onClick="FullLock_Btn"
+            android:text="@string/all_lock"
+            android:textColor="#ffffffff"
             android:textSize="35sp" />
+
     </RelativeLayout>
     
     <TextView

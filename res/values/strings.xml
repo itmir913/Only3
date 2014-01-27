@@ -78,6 +78,9 @@ Do you want to cancel?</string>
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
 \n
+\n[2.9.1] : 2014-01-27
+\n-Some bug Fix
+\n
 \n[2.9] : 2014-01-25
 \n-Count not clear because Date changed by User
 \n
@@ -172,5 +175,21 @@ Do you want to cancel?</string>
 	<string name="androidservice" >Only3 Service</string>
 	<string name="countcheckservice" >Count clear check Service</string>
 	<string name="subservice" >SubService</string>
+	
+	<string name="all_lock" >Full\nLock</string>
+	<string name="all_lock_plan" >Plan to select an executable application</string>
+	<string name="all_lock_alert_title" >Phone Full Lock</string>
+	<string name="all_lock_alert_message" >Please select the time to lock the phone</string>
+	<string name="all_lock_select_check" >Are you sure you want to lock really?
+\nYou also will not be any function , including the call / letter when it is locked
+\nIf you have important, Please select when you have completed all
+\nWhen you press the OK button, you will not be able to use the phone for %1$d:%2$d</string>
+	<string name="all_lock_select_error" >You can not select 0 hours 0 minutes</string>
+	<string name="all_lock_notifi_message" >Device Full Lock</string>
+	<string name="all_lock_show_text0" >Only3 Device Lock</string>
+	<string name="all_lock_show_text1" >-- Remaining time --</string>
+	<string name="all_lock_show_text2" ></string>
+	<string name="all_lock_show_text3" >Please be patient a little more!!</string>
+	<string name="all_lock_show_button" >App\nStart</string>
 
 </resources>

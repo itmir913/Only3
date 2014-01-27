@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="lee.whdghks913.only3"
-    android:versionCode="22"
-    android:versionName="2.9" >
+    android:versionCode="23"
+    android:versionName="2.9.1" >
 
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -32,19 +32,23 @@
         </activity>
 
         <service
-            android:name="lee.whdghks913.only3.AndroidService"
+            android:name="lee.whdghks913.only3.count.AndroidService"
             android:enabled="true"
             android:label="@string/androidservice" />
         
         <service
-            android:name="lee.whdghks913.only3.CountCheckService"
+            android:name="lee.whdghks913.only3.count.CountCheckServiceervice"
             android:enabled="true"
             android:label="@string/countcheckservice" />
         
         <service
-            android:name="lee.whdghks913.only3.SubService"
+            android:name="lee.whdghks913.only3.count.SubService"
             android:enabled="true"
             android:label="@string/subservice" />
+        
+        <service
+            android:name="lee.whdghks913.only3.fulllock.FullLockService"
+            android:enabled="true" />
 
         <receiver
             android:name="lee.whdghks913.only3.BroadCast"
@@ -77,10 +81,11 @@
         </receiver>
 
         <activity android:name="lee.whdghks913.only3.AppInfoActivity" />
-        <activity android:name="lee.whdghks913.only3.Abort" android:excludeFromRecents="true" />
+        <activity android:name="lee.whdghks913.only3.count.Abort" android:excludeFromRecents="true" />
         <activity android:name="lee.whdghks913.only3.Setting" />
         <activity android:name="lee.whdghks913.only3.PassWord" />
         <activity android:name="lee.whdghks913.only3.Welcome" />
+        <activity android:name="lee.whdghks913.only3.fulllock.FullLockActivity" />
     </application>
 
 </manifest>

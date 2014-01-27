@@ -78,6 +78,9 @@
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
 \n
+\n[2.9.1] : 2014-01-27
+\n-일부 버그 수정
+\n
 \n[2.9] : 2014-01-25
 \n-사용자에 의해 날짜변경시 카운트 초기화 제한
 \n
@@ -172,5 +175,20 @@
 	<string name="androidservice" >세번만 서비스</string>
 	<string name="countcheckservice" >카운트 초기화 확인 서비스</string>
 	<string name="subservice" >보조 서비스</string>
+	
+	<string name="all_lock" >전체\n잠금</string>
+	<string name="all_lock_plan" >실행 가능한 어플을 선택할수 있는 업데이트 예정</string>
+	<string name="all_lock_alert_title" >전체 잠금</string>
+	<string name="all_lock_alert_message" >스마트폰을 잠글 시간을 선택하세요</string>
+	<string name="all_lock_select_check" >정말로 휴대폰을 잠그시겠습니까?
+\n잠긴동안 통화/문자를 포함한 어떠한 기능도 할수 없습니다
+\n중요한 일이 있다면 꼭 먼저 하시고 실행하시길 바랍니다
+\n확인 버튼을 누르면 %1$d시간 %2$d분동안 폰을 사용할수 없습니다</string>
+	<string name="all_lock_select_error" >0시간 0분은 선택할 수 없습니다</string>
+	<string name="all_lock_notifi_message" >기기 잠금 상태</string>
+	<string name="all_lock_show_text1" >스마트폰 잠금이 종료될때 까지</string>
+	<string name="all_lock_show_text2" >남았습니다</string>
+	<string name="all_lock_show_text3" >조금만 더 참아요!!</string>
+	<string name="all_lock_show_button" >어플\n실행</string>
 
 </resources>
