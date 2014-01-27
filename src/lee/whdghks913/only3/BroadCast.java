@@ -6,6 +6,8 @@ import lee.whdghks913.only3.count.Alarm;
 import lee.whdghks913.only3.count.AndroidService;
 import lee.whdghks913.only3.count.CountCheckService;
 import lee.whdghks913.only3.count.SubService;
+import lee.whdghks913.only3.fulllock.FullLockActivity;
+import lee.whdghks913.only3.fulllock.FullLockService;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -21,7 +23,7 @@ import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
 public class BroadCast extends BroadcastReceiver {
-	SharedPreferences package_count, setting;
+	SharedPreferences package_count, setting, full_lock;
 	SharedPreferences.Editor package_count_Editor, setting_Editor;
 	
 	@Override
@@ -37,7 +39,15 @@ public class BroadCast extends BroadcastReceiver {
 		setting = mContext.getSharedPreferences("setting", 0);
 		setting_Editor = setting.edit();
 		
+		full_lock = mContext.getSharedPreferences("full_lock", 0);
+		
 		if (Intent.ACTION_BOOT_COMPLETED.equals(action)){
+			if(full_lock.getBoolean("Enable", true)){
+				mContext.startService(new Intent(mContext, FullLockService.class));
+				mContext.startActivity(new Intent(mContext, FullLockActivity.class));
+				return;
+			}
+			
 	        /**
 	         * 1.5업데이트
 	         * 관리자 권한이 없으면 부팅이 되도 자동으로 실행되지 않도록 코드 설정
