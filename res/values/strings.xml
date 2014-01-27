@@ -78,6 +78,11 @@ Do you want to cancel?</string>
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
 \n
+\n[3.0] : 2014-01-27
+\n-The application of the new icon
+\n-Add the lock function of the equipment
+\n-Minor patch
+\n
 \n[2.9.1] : 2014-01-27
 \n-Some bug Fix
 \n
@@ -175,7 +180,6 @@ Do you want to cancel?</string>
 	<string name="androidservice" >Only3 Service</string>
 	<string name="countcheckservice" >Count clear check Service</string>
 	<string name="subservice" >SubService</string>
-	
 	<string name="all_lock" >Full\nLock</string>
 	<string name="all_lock_plan" >Plan to select an executable application</string>
 	<string name="all_lock_alert_title" >Phone Full Lock</string>
