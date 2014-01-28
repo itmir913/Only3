@@ -18,6 +18,29 @@ public class Alarm {
 	
 	public Alarm(Context mContext){
 		am = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+		
+		Intent intent_10minute = new Intent(mContext, BroadCast.class);
+		intent_10minute.setAction("ACTION_FALSE_THE_STOP");
+		
+		sender_10minute = PendingIntent.getBroadcast(mContext, 0, intent_10minute, 0);
+		
+		
+		Intent intent_DATE = new Intent(mContext, BroadCast.class);
+		intent_DATE.setAction("ACTION_DATE_CHANGE_BY_MIR");
+        
+        sender_DATE = PendingIntent.getBroadcast(mContext, 0, intent_DATE, 0);
+        
+        
+        Intent intent_byUser = new Intent(mContext, BroadCast.class);
+        intent_byUser.setAction("ACTION_REMOVE_BY_USER");
+		
+        sender_byUser = PendingIntent.getBroadcast(mContext, 0, intent_byUser, 0);
+        
+        
+        Intent intent_fulllock = new Intent(mContext, BroadCast.class);
+    	intent_fulllock.setAction("ACTION_START_FULL_LOCK");
+    	
+    	sender_fulllock = PendingIntent.getBroadcast(mContext, 0, intent_fulllock, 0);
 	}
 	
 	public void setAlarm10M(Context mContext){
@@ -29,10 +52,6 @@ public class Alarm {
         int hour = calendar.get(Calendar.HOUR_OF_DAY);//현재시간
         int minute = calendar.get(Calendar.MINUTE);//현재분
 		
-        Intent intent_10minute = new Intent(mContext, BroadCast.class);
-		intent_10minute.setAction("ACTION_FALSE_THE_STOP");
-		
-		sender_10minute = PendingIntent.getBroadcast(mContext, 0, intent_10minute, 0);
         calendar.set(year, month ,day, hour, minute+10);
         am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_10minute);
 	}
@@ -44,10 +63,6 @@ public class Alarm {
         int month = calendar.get(Calendar.MONTH);//이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
         int day = calendar.get(Calendar.DAY_OF_MONTH);//오늘날짜
         
-        Intent intent_DATE = new Intent(mContext, BroadCast.class);
-		intent_DATE.setAction("ACTION_DATE_CHANGE_BY_MIR");
-        
-        sender_DATE = PendingIntent.getBroadcast(mContext, 0, intent_DATE, 0);
         // 매일 0시 0분(24시간제)에 초기화 되도록 설정합니다
         calendar.set(year, month ,day+1, 0, 0);
         // 24 * 60 * 60 * 1000 : 하루 (밀리초 단위로, 1000이 1초이다)
@@ -73,10 +88,6 @@ public class Alarm {
         int minute = calendar.get(Calendar.MINUTE);//현재분
         int second = calendar.get(Calendar.SECOND);//현재초
 		
-        Intent intent_byUser = new Intent(mContext, BroadCast.class);
-        intent_byUser.setAction("ACTION_REMOVE_BY_USER");
-		
-        sender_byUser = PendingIntent.getBroadcast(mContext, 0, intent_byUser, 0);
         calendar.set(year, month ,day, hour, minute, second+30);
         am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_byUser);
 	}
@@ -86,12 +97,6 @@ public class Alarm {
 	}
 	
 	public void setFullLockAlarm(Context mContext, long TimeInMillis){
-		Intent intent_fulllock = new Intent(mContext, BroadCast.class);
-    	intent_fulllock.setAction("ACTION_START_FULL_LOCK");
-    	
-    	sender_fulllock = PendingIntent.getBroadcast(mContext, 0, intent_fulllock, 0);
-    	
-    	AlarmManager am = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
     	am.set(AlarmManager.RTC_WAKEUP, TimeInMillis, sender_fulllock);
 	}
 	
