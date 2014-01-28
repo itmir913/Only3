@@ -1,16 +1,21 @@
 package lee.whdghks913.only3;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 import lee.whdghks913.only3.count.Alarm;
 import lee.whdghks913.only3.count.AndroidService;
 import lee.whdghks913.only3.count.SubService;
+import lee.whdghks913.only3.fulllock.BroadCastFullLock;
 import lee.whdghks913.only3.fulllock.FullLockActivity;
 import lee.whdghks913.only3.fulllock.FullLockService;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -23,6 +28,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -196,8 +202,29 @@ public class MainActivity extends Activity {
     }
     
     public void FullLock_Btn(View v){
-        Toast.makeText(this, R.string.all_lock_plan, Toast.LENGTH_LONG).show();
-        
+//    	AlertDialog.Builder alert = new AlertDialog.Builder(this);
+//        alert.setPositiveButton(R.string.all_lock_alarm_btn_1, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//            	ReserveLock();
+//                dialog.dismiss();
+//            }
+//        });
+//        alert.setNeutralButton(R.string.all_lock_alarm_btn_2, new OnClickListener() {
+//			@Override
+//			public void onClick(DialogInterface dialog, int which) {
+//				justNowLock();
+//				dialog.dismiss();
+//			}
+//		});
+//        alert.setNegativeButton(R.string.exit, null);
+//        alert.setMessage(R.string.all_lock_alarm_btn_help);
+//        alert.show();
+    	
+    	justNowLock();
+    }
+    
+    public void justNowLock(){
         LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.full_lock_timeset, null);
         
@@ -226,6 +253,99 @@ public class MainActivity extends Activity {
             }
         });
         alert.setNegativeButton(R.string.exit, null);
+        alert.show();
+    }
+    
+    public void ReserveLock(){
+    	LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.full_lock_reserve_timeset, null);
+        
+        final TimePicker afterTime = (TimePicker) view.findViewById(R.id.afterTime);
+        final TimePicker lockTime = (TimePicker) view.findViewById(R.id.lockTime);
+        lockTime.setIs24HourView(true);
+        lockTime.setCurrentHour(0);
+        lockTime.setCurrentMinute(0);
+        
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setView(view);
+        
+        alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            	
+            	int hour = lockTime.getCurrentHour();
+            	int minute = lockTime.getCurrentMinute();
+            	
+            	if(hour==0 && minute==0){
+            		Toast.makeText(MainActivity.this, R.string.all_lock_select_error, Toast.LENGTH_SHORT).show();
+            		return;
+            	}
+            	
+            	againReserveLock(afterTime, lockTime);
+                dialog.dismiss();
+            }
+        });
+        alert.setNegativeButton(R.string.exit, null);
+        alert.show();
+    }
+    
+    protected void againReserveLock(TimePicker a, TimePicker b){
+    	TimePicker afterTime = a;
+    	TimePicker lockTime = b;
+    	
+    	int hour = afterTime.getCurrentHour();
+    	int minute = afterTime.getCurrentMinute();
+    	
+    	Log.d("hour", ""+hour);
+    	Log.d("minute", ""+minute);
+    	
+    	int amPm;
+    	
+    	if(hour >= 12){
+    		amPm = R.string.pm;
+    	}else{
+    		amPm = R.string.am;
+    	}
+    	
+    	final Calendar calendar = Calendar.getInstance();
+        
+        int year = calendar.get(Calendar.YEAR); //올해
+        int month = calendar.get(Calendar.MONTH); //이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
+        int day = calendar.get(Calendar.DAY_OF_MONTH); //오늘날짜
+		
+        calendar.set(year, month ,day, hour, minute);
+        
+    	String YYYY = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).format(calendar.getTime());
+    	
+    	String HHMM = new SimpleDateFormat("hh:mm", Locale.KOREA).format(calendar.getTime());
+    	
+    	AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            	full_lock_Editor.putInt("Year", calendar.get(Calendar.YEAR));
+            	full_lock_Editor.putInt("Month", calendar.get(Calendar.MONTH));
+            	full_lock_Editor.putInt("Day", calendar.get(Calendar.DAY_OF_MONTH));
+            	full_lock_Editor.putInt("Hour", calendar.get(Calendar.HOUR_OF_DAY));
+            	full_lock_Editor.putInt("Minute", calendar.get(Calendar.MINUTE));
+            	full_lock_Editor.putBoolean("Enable", true).commit();
+            	
+            	Intent intent_fulllock = new Intent(MainActivity.this, BroadCastFullLock.class);
+            	intent_fulllock.setAction("ACTION_START_FULL_LOCK");
+            	
+            	PendingIntent sender_fulllock = PendingIntent.getBroadcast(MainActivity.this, 0, intent_fulllock, 0);
+            	
+            	AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            	am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_fulllock);
+            	
+            	Toast.makeText(MainActivity.this, R.string.all_lock_alarm_finish, Toast.LENGTH_LONG).show();
+            	
+                dialog.dismiss();
+            }
+        });
+        alert.setNegativeButton(R.string.exit, null);
+        alert.setMessage(String.format(getString(R.string.all_lock_select_check_reserve), lockTime.getCurrentHour(), lockTime.getCurrentMinute(),
+        		YYYY, getString(amPm), HHMM));
         alert.show();
     }
     

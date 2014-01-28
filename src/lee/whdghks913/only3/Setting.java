@@ -237,6 +237,7 @@ public class Setting extends Activity {
 				    	if(saveSharedPreferencesToFile(new File(sdcard + "package_All_count.backup"), "package_All_count")
 				    			&& saveSharedPreferencesToFile(new File(sdcard + "package_count.backup"), "package_count")
 				    			&& saveSharedPreferencesToFile(new File(sdcard + "package_list.backup"), "package_list")
+				    			&& saveSharedPreferencesToFile(new File(sdcard + "full_lock_package.backup"), "full_lock_package")
 				    			&& saveSharedPreferencesToFile(new File(sdcard + "setting.backup"), "setting")){
 				    		Toast.makeText(Setting.this, R.string.preference_backup_complete, Toast.LENGTH_LONG).show();
 				    	}else
@@ -257,6 +258,7 @@ public class Setting extends Activity {
 				    	if(loadSharedPreferencesFromFile(new File(sdcard + "package_All_count.backup"), "package_All_count")
 				    			&& loadSharedPreferencesFromFile(new File(sdcard + "package_count.backup"), "package_count")
 				    			&& loadSharedPreferencesFromFile(new File(sdcard + "package_list.backup"), "package_list")
+				    			&& loadSharedPreferencesFromFile(new File(sdcard + "full_lock_package.backup"), "full_lock_package")
 				    			&& loadSharedPreferencesFromFile(new File(sdcard + "setting.backup"), "setting")){
 				    		Toast.makeText(Setting.this, R.string.preference_restore_complete, Toast.LENGTH_LONG).show();
 				    	}else
@@ -437,9 +439,10 @@ public class Setting extends Activity {
 		File all_count =new File(sdcard + "package_All_count.backup");
 		File count =new File(sdcard + "package_count.backup");
 		File package_list =new File(sdcard + "package_list.backup");
+		File full_lock_package =new File(sdcard + "full_lock_package.backup");
 		File setting =new File(sdcard + "setting.backup");
 		
-		if(all_count.exists() && count.exists() && package_list.exists() && setting.exists()){
+		if(all_count.exists() && count.exists() && package_list.exists() && setting.exists() && full_lock_package.exists()){
 			preference_backup.setChecked(true);
 			return true;
 		}

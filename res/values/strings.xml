@@ -184,7 +184,6 @@ Do you want to cancel?</string>
 	<string name="countcheckservice" >Count clear check Service</string>
 	<string name="subservice" >SubService</string>
 	<string name="all_lock" >Full\nLock</string>
-	<string name="all_lock_plan" >Plan to select an executable application</string>
 	<string name="all_lock_alert_title" >Phone Full Lock</string>
 	<string name="all_lock_alert_message" >Please select the time to lock the phone</string>
 	<string name="all_lock_select_check" >Are you sure you want to lock really?
@@ -192,6 +191,12 @@ Do you want to cancel?</string>
 \nIf you have important, Please select when you have completed all
 \n
 \nWhen you press the OK button, you will not be able to use the phone for %1$d:%2$d</string>
+	<string name="all_lock_select_check_reserve" >Are you sure you want to lock really?
+\nYou also will not be any function , including the call / letter when it is locked
+\nIf you have important, Please select when you have completed all
+\n
+\nWhen you press the OK button,
+\nyou will not be able to use the phone for %1$d:%2$d from %3$s %4$s %5$s</string>
 	<string name="all_lock_select_error" >You can not select 0 hours 0 minutes</string>
 	<string name="all_lock_notifi_message" >Device Full Lock</string>
 	<string name="all_lock_show_text0" >Only3 Device Lock</string>
@@ -202,5 +207,13 @@ Do you want to cancel?</string>
 	<string name="all_lock_whitelist_text0" >It is registered in the white list</string>
 	<string name="all_lock_whitelist_text1" >Are you sure you want to whitelist this app?</string>
 	<string name="all_lock_whitelist_text2" >You can set the count, short touch or, \nto set the white list , please long touch</string>
+	<string name="all_lock_alarm_text" >↑ Lock Start Time
+\n↓ Device Lock Time</string>
+	<string name="all_lock_alarm_btn_1" >Reserve lock</string>
+	<string name="all_lock_alarm_btn_2" >Just lock</string>
+	<string name="all_lock_alarm_btn_help" >Please select the type of lock</string>
+	<string name="all_lock_alarm_finish" >Alarm Registered</string>
+	<string name="am" >AM</string>
+	<string name="pm" >PM</string>
 
 </resources>
