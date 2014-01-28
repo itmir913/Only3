@@ -114,6 +114,26 @@ public class AppInfoActivity extends Activity {
 			}
 		});
 		
+		SwipeDismissListViewTouchListener touchListener =
+                new SwipeDismissListViewTouchListener(mListView,
+                new SwipeDismissListViewTouchListener.DismissCallbacks() {
+                    @Override
+                    public boolean canDismiss(int position) {
+                        return true;
+                    }
+
+                    @Override
+                    public void onDismiss(ListView listView, int[] reverseSortedPositions) {
+                        for (int position : reverseSortedPositions) {
+                            mAdapter.remove(position);
+                        }
+                        mAdapter.notifyDataSetChanged();
+                    }
+                });
+		
+		mListView.setOnTouchListener(touchListener);
+        mListView.setOnScrollListener(touchListener.makeScrollListener());
+		
 		Toast.makeText(this, R.string.all_lock_whitelist_text2, Toast.LENGTH_LONG).show();
 	}
 
@@ -192,6 +212,10 @@ public class AppInfoActivity extends Activity {
 		@Override
 		public long getItemId(int id) {
 			return id;
+		}
+		
+		public void remove(int position){ 
+			mListData.remove(position); 
 		}
 
 		@Override
