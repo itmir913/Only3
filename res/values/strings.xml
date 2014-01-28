@@ -199,5 +199,8 @@ Do you want to cancel?</string>
 	<string name="all_lock_show_text2" ></string>
 	<string name="all_lock_show_text3" >Please be patient a little more!!</string>
 	<string name="all_lock_show_button" >App\nStart</string>
+	<string name="all_lock_whitelist_text0" >It is registered in the white list</string>
+	<string name="all_lock_whitelist_text1" >Are you sure you want to whitelist this app?</string>
+	<string name="all_lock_whitelist_text2" >You can set the count, short touch or, \nto set the white list , please long touch</string>
 
 </resources>

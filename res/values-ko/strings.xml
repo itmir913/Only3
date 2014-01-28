@@ -198,5 +198,8 @@
 	<string name="all_lock_show_text2" >남았습니다</string>
 	<string name="all_lock_show_text3" >조금만 더 참아요!!</string>
 	<string name="all_lock_show_button" >어플\n실행</string>
+	<string name="all_lock_whitelist_text0" >화이트 리스트에 등록되어 있습니다</string>
+	<string name="all_lock_whitelist_text1" >이 어플을 화이트 리스트에 등록할까요?</string>
+	<string name="all_lock_whitelist_text2" >카운트를 설정하려면 짧게 터치, 화이트 리스트를 설정하려면 길게 터치하세요</string>
 
 </resources>

@@ -15,6 +15,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.Vibrator;
@@ -28,7 +30,7 @@ public class FullLockService extends Service {
 	
 	Boolean isService=true;
 	
-	SharedPreferences full_lock, setting;
+	SharedPreferences full_lock, setting, full_lock_appList;
     SharedPreferences.Editor full_lock_Editor;
 	
 	ActivityManager actvityManager;
@@ -41,7 +43,9 @@ public class FullLockService extends Service {
 		
 		full_lock = getSharedPreferences("full_lock", 0);
         full_lock_Editor = full_lock.edit();
-		setting = getSharedPreferences("setting", 0);
+        full_lock_appList = getSharedPreferences("full_lock_package", 0);
+        
+        setting = getSharedPreferences("setting", 0);
 		
 		pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		actvityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -78,21 +82,35 @@ public class FullLockService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		
+		if(! full_lock_appList.getString("com.android.phone", "").equals("")){
+			full_lock_appList.edit().putString("com.android.phone", "com.android.phone").commit();
+		}
+		
 		Runnable checkActivity = new Runnable(){
 			@Override
 			public void run(){
+				final String[] home = getHomeLauncher();
+				
+				whileLabel:
 				while(isService && remainingSec>=0){
-					try { Thread.sleep(1000); } catch (InterruptedException e) {e.printStackTrace();}
-					
-					/**
-					 * 1.5업데이트
-					 * 파워 매니저를 이용하여 화면이 켜졌을때만 작동하도록 설정
-					 */
 					if(pm.isScreenOn()){
+						
+						try { Thread.sleep(500); } catch (InterruptedException e) {e.printStackTrace();}
 						List<RunningTaskInfo>taskInfos = actvityManager.getRunningTasks(1); 
 						ComponentName topActivity= taskInfos.get(0).topActivity;
-						String className = topActivity.getClassName();
+						String pkgName = topActivity.getPackageName();
 						
+						if(full_lock_appList.getString(pkgName, "").equals(pkgName)){
+							continue;
+						}
+						
+						for(int i=0 ; i<home.length ; i++ ){
+							if(home[i].equals(pkgName)){
+								continue whileLabel;
+							}
+						}
+						
+						String className = topActivity.getClassName();
 						if(!className.equals("lee.whdghks913.only3.fulllock.FullLockActivity")){
 							Intent i = new Intent();
 							i.setAction(Intent.ACTION_MAIN);
@@ -107,7 +125,6 @@ public class FullLockService extends Service {
 							Intent intent = new Intent(FullLockService.this, FullLockActivity.class);
 							intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
 									Intent.FLAG_ACTIVITY_CLEAR_TOP |
-									Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET |
 									Intent.FLAG_ACTIVITY_SINGLE_TOP );
 							startActivity(intent);
 						}
@@ -186,5 +203,21 @@ public class FullLockService extends Service {
     			vide.vibrate(pattern, -1);
         	}
 		}
+	}
+	
+	private String[] getHomeLauncher(){
+		String[] homes;
+		PackageManager pm =  getPackageManager();
+		Intent homeIntent = new Intent(Intent.ACTION_MAIN); // Action 값이 ACTION_MAIN
+		homeIntent.addCategory(Intent.CATEGORY_HOME); // Category 값이 CATEGORY_HOME
+		
+		//위 Intent의 조건을 만족시켜 주는 ResolveInfo 리스트를 구한다.
+		List<ResolveInfo> homeApps = pm.queryIntentActivities(homeIntent, PackageManager.GET_ACTIVITIES);
+		homes = new String[homeApps.size()];
+		for(int i=0; i<homeApps.size(); i++){
+			ResolveInfo info = homeApps.get(i); //구해진 ResolveInfo 를 통해서 PackageName을 가져온다.
+			homes[i] = info.activityInfo.packageName; 
+		}
+		return homes;
 	}
 }

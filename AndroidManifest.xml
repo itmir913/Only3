@@ -85,7 +85,7 @@
         <activity android:name="lee.whdghks913.only3.Setting" />
         <activity android:name="lee.whdghks913.only3.PassWord" />
         <activity android:name="lee.whdghks913.only3.Welcome" />
-        <activity android:name="lee.whdghks913.only3.fulllock.FullLockActivity" />
+        <activity android:name="lee.whdghks913.only3.fulllock.FullLockActivity" android:excludeFromRecents="true" />
     </application>
 
 </manifest>

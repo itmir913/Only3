@@ -44,7 +44,12 @@ public class BroadCast extends BroadcastReceiver {
 		if (Intent.ACTION_BOOT_COMPLETED.equals(action)){
 			if(full_lock.getBoolean("Enable", true)){
 				mContext.startService(new Intent(mContext, FullLockService.class));
-				mContext.startActivity(new Intent(mContext, FullLockActivity.class));
+				
+				Intent i = new Intent(mContext, FullLockActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+						Intent.FLAG_ACTIVITY_CLEAR_TOP |
+						Intent.FLAG_ACTIVITY_SINGLE_TOP );
+				mContext.startActivity(intent);
 				return;
 			}
 			

@@ -14,16 +14,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/AppName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/AppImage"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="AppName"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
     
     <TextView
         android:id="@+id/PackageName"
@@ -35,24 +25,22 @@
         android:text="PackageName" />
 
     <TextView
-        android:id="@+id/Count_Status"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/PackageName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Count :" />
+        android:text="@string/all_lock_whitelist_text1" />
 
-    <EditText
-        android:id="@+id/Count"
-        android:visibility="gone"
+    <TextView
+        android:id="@+id/AppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Count_Status"
+        android:layout_below="@+id/AppImage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:ems="4"
-        android:hint="Count"
-        android:inputType="number" />
-
+        android:gravity="center"
+        android:text="AppName"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
 </RelativeLayout>

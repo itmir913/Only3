@@ -17,6 +17,8 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -50,8 +52,8 @@ public class AppInfoActivity extends Activity {
 	private ListView mListView = null;
 	private ListAdapter mAdapter = null;
 	
-	SharedPreferences package_All_count, package_list, package_count, setting;
-	SharedPreferences.Editor package_list_Edit, package_All_count_Edit, package_count_Editor;
+	SharedPreferences package_All_count, package_list, package_count, setting, full_lock_appList;
+	SharedPreferences.Editor package_list_Edit, package_All_count_Edit, package_count_Editor, full_lock_appList_editor;
 	
 	View inflater_view;
 	LayoutInflater inflater;
@@ -69,6 +71,9 @@ public class AppInfoActivity extends Activity {
 		package_All_count_Edit = package_All_count.edit();
 		package_count = getSharedPreferences("package_count", 0);
 		package_count_Editor = package_count.edit();
+		
+		full_lock_appList = getSharedPreferences("full_lock_package", 0);
+		full_lock_appList_editor = full_lock_appList.edit();
 		
 		setting = getSharedPreferences("setting", 0);
 		
@@ -97,9 +102,19 @@ public class AppInfoActivity extends Activity {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> av, View view,
 					int position, long id) {
+				String package_name = ((TextView) view.findViewById(R.id.app_package)).getText().toString();
+				
+				if(full_lock_appList.getString(package_name, "").equals(package_name)){
+					full_lock_appList_editor.remove(package_name).commit();
+			    	startTask();
+				}else{
+					addWhiteList(view);
+				}
 				return true;
 			}
 		});
+		
+		Toast.makeText(this, R.string.all_lock_whitelist_text2, Toast.LENGTH_LONG).show();
 	}
 
 	@Override
@@ -144,10 +159,10 @@ public class AppInfoActivity extends Activity {
 		// Background layout
 		public LinearLayout mLayout;
 		
-		// Count layout
-		public LinearLayout mCountLayout;
 		// Count TextView
 		public TextView Count_TextView;
+		// WhiteList TextView
+		public TextView whiteList;
 	}
 
 	/**
@@ -214,9 +229,14 @@ public class AppInfoActivity extends Activity {
 			holder.mName.setText(data.mAppNaem);
 			holder.mPacakge.setText(data.mAppPackge);
 			
+			if(full_lock_appList.getString(data.mAppPackge, "").equals(data.mAppPackge)){
+				holder.whiteList = (TextView) convertView
+						.findViewById(R.id.whiteList);
+				holder.whiteList.setVisibility(View.VISIBLE);
+				holder.mLayout.setBackgroundResource(R.color.Background);
+			}
+			
 			if(package_list.getString(data.mAppPackge, "").equals(data.mAppPackge)){
-				holder.mCountLayout = (LinearLayout) convertView
-						.findViewById(R.id.Count_Layout);
 				holder.Count_TextView = (TextView) convertView
 						.findViewById(R.id.Count_TextView);
 				
@@ -231,10 +251,11 @@ public class AppInfoActivity extends Activity {
 				else
 					holder.mLayout.setBackgroundResource(R.color.Background);
 				
-				holder.mCountLayout.setVisibility(View.VISIBLE);
+				holder.Count_TextView.setVisibility(View.VISIBLE);
 				holder.Count_TextView.setText( String.format(getString(R.string.now_count),
 						now, all ));
 			}
+			
 			
 			return convertView;
 		}
@@ -395,6 +416,9 @@ public class AppInfoActivity extends Activity {
 		((TextView) inflater_view.findViewById(R.id.AppName)).setText( appName );
 		((TextView) inflater_view.findViewById(R.id.PackageName)).setText( packageName );
 		
+		Bitmap bmp = ((BitmapDrawable)((ImageView) v.findViewById(R.id.app_icon)).getDrawable()).getBitmap();
+		((ImageView) inflater_view.findViewById(R.id.AppImage)).setImageBitmap(bmp);
+		
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 		    @Override
@@ -461,6 +485,9 @@ public class AppInfoActivity extends Activity {
 		((TextView) inflater_view.findViewById(R.id.Count_Status)).setText( String.format(getString(R.string.now_count),
 				now, all ));
 		
+		Bitmap bmp = ((BitmapDrawable)((ImageView) v.findViewById(R.id.app_icon)).getDrawable()).getBitmap();
+		((ImageView) inflater_view.findViewById(R.id.AppImage)).setImageBitmap(bmp);
+		
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setPositiveButton(R.string.del, new DialogInterface.OnClickListener() {
 		    @Override
@@ -518,6 +545,47 @@ public class AppInfoActivity extends Activity {
 		    			startTask();
 		    		}
 		    	}
+		        dialog.dismiss();
+		    }
+		});
+		alert.setNegativeButton(R.string.exit, null);
+		alert.setView(inflater_view);
+		alert.show();
+	}
+	
+	public void addWhiteList(View v){
+		appName = ((TextView) v.findViewById(R.id.app_name)).getText().toString();
+		packageName = ((TextView) v.findViewById(R.id.app_package)).getText().toString();
+		
+		inflater_view = inflater.inflate(R.layout.whielist_package, null);
+		
+		if(packageName.equals("lee.whdghks913.only") || packageName.equals("com.android.systemui")){
+			Toast.makeText(this, R.string.me_app, Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		String[] home = getHomeLauncher();
+		for(int i=0 ; i<home.length ; i++ ){
+			if(home[i].equals(packageName)){
+				Toast.makeText(this, R.string.count_launcher, Toast.LENGTH_SHORT).show();
+				break;
+			}
+		}
+		
+		Bitmap bmp = ((BitmapDrawable)((ImageView) v.findViewById(R.id.app_icon)).getDrawable()).getBitmap();
+		
+		((TextView) inflater_view.findViewById(R.id.AppName)).setText( appName );
+		((TextView) inflater_view.findViewById(R.id.PackageName)).setText( packageName );
+		((ImageView) inflater_view.findViewById(R.id.AppImage)).setImageBitmap(bmp);
+		
+		AlertDialog.Builder alert = new AlertDialog.Builder(this);
+		alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+		    @Override
+		    public void onClick(DialogInterface dialog, int which) {
+		    	full_lock_appList_editor.putString(packageName, packageName).commit();
+		    	
+		    	startTask();
+		    	removeView(inflater_view);
 		        dialog.dismiss();
 		    }
 		});
