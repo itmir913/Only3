@@ -214,6 +214,7 @@ Do you want to cancel?</string>
 	<string name="all_lock_alarm_btn_help" >Please select the type of lock</string>
 	<string name="all_lock_alarm_finish" >Alarm Registered</string>
 	<string name="all_lock_alarm_past" >It can not be set in the past</string>
+	<string name="all_lock_alarm_remove" >Cencle reserve lock</string>
 	<string name="am" >AM</string>
 	<string name="pm" >PM</string>
 

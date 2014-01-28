@@ -12,9 +12,7 @@ import lee.whdghks913.only3.fulllock.FullLockService;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -141,7 +139,6 @@ public class MainActivity extends Activity {
     }
     
     public void start_btn(View v){
-        Alarm alarm = new Alarm(this);
         if(isServiceRunningCheck("lee.whdghks913.only3.count.AndroidService")){
             if(setting.getBoolean("Ten_minutes", true)){
                 Toast.makeText(this, R.string.ten, Toast.LENGTH_SHORT).show();
@@ -166,6 +163,7 @@ public class MainActivity extends Activity {
                 startService(new Intent(this, AndroidService.class));
                 startService(new Intent(this, SubService.class));
                 
+                Alarm alarm = new Alarm(this);
                 alarm.setAlarm10M(this);
                 alarm.setAlarmDateChange(this);
                 
@@ -201,13 +199,25 @@ public class MainActivity extends Activity {
     
     public void FullLock_Btn(View v){
     	AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setPositiveButton(R.string.all_lock_alarm_btn_1, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            	ReserveLock();
-                dialog.dismiss();
-            }
-        });
+    	
+    	if(full_lock.getBoolean("Enable", false)){
+    		alert.setPositiveButton(R.string.all_lock_alarm_remove, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                	full_lock_Editor.clear().commit();
+                    dialog.dismiss();
+                }
+            });
+    	}else{
+    		alert.setPositiveButton(R.string.all_lock_alarm_btn_1, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                	ReserveLock();
+                    dialog.dismiss();
+                }
+            });
+    	}
+        
         alert.setNeutralButton(R.string.all_lock_alarm_btn_2, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -287,8 +297,6 @@ public class MainActivity extends Activity {
     }
     
     protected void againReserveLock(TimePicker a, TimePicker b){
-    	// TODO 몇분동안 할건지를 지정 안함
-    	
     	TimePicker afterTime = a;
     	TimePicker lockTime = b;
     	
@@ -331,14 +339,7 @@ public class MainActivity extends Activity {
             	full_lock_Editor.putInt("Minute", minute);
             	full_lock_Editor.putBoolean("Enable", true).commit();
             	
-            	Intent intent_fulllock = new Intent(MainActivity.this, BroadCast.class);
-            	intent_fulllock.setAction("ACTION_START_FULL_LOCK");
-            	
-            	PendingIntent sender_fulllock = PendingIntent.getBroadcast(MainActivity.this, 0, intent_fulllock, 0);
-            	
-            	AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            	am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_fulllock);
-            	
+            	new Alarm(MainActivity.this).setFullLockAlarm(MainActivity.this, calendar.getTimeInMillis());
             	
             	Toast.makeText(MainActivity.this, R.string.all_lock_alarm_finish, Toast.LENGTH_LONG).show();
             	

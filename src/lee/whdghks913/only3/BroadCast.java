@@ -8,7 +8,6 @@ import lee.whdghks913.only3.count.CountCheckService;
 import lee.whdghks913.only3.count.SubService;
 import lee.whdghks913.only3.fulllock.FullLockActivity;
 import lee.whdghks913.only3.fulllock.FullLockService;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -19,7 +18,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Vibrator;
-import android.util.Log;
 import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
@@ -135,7 +133,6 @@ public class BroadCast extends BroadcastReceiver {
 				Notifi_Toast(mContext, FIVE_COUNT);
         
         }else if("ACTION_START_FULL_LOCK".equals(action)){
-			Log.d("¿¹¾à¾Ë¶÷", "¿È");
 			if(full_lock.getBoolean("Enable", false)){
 				setting_Editor.putBoolean("Service", false).commit();
 				mContext.stopService(new Intent(mContext, SubService.class));
