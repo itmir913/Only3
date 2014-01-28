@@ -206,6 +206,7 @@ public class MainActivity extends Activity {
                 public void onClick(DialogInterface dialog, int which) {
                 	full_lock_Editor.clear().commit();
                 	new Alarm(MainActivity.this).cencleFullLockAlarm();
+                	Toast.makeText(MainActivity.this, R.string.all_lock_alarm_remove, Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                 }
             });
