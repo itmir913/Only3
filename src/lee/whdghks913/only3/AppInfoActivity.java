@@ -183,31 +183,27 @@ public class AppInfoActivity extends Activity {
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ViewHolder holder;
 
-			if (convertView == null) {
-				holder = new ViewHolder();
+//			if (convertView == null) {
+			holder = new ViewHolder();
 
-				LayoutInflater inflater = (LayoutInflater) mContext
-						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-				convertView = inflater.inflate(R.layout.list_item_layout, null);
+			LayoutInflater inflater = (LayoutInflater) mContext
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			convertView = inflater.inflate(R.layout.list_item_layout, null);
 
-				holder.mIcon = (ImageView) convertView
-						.findViewById(R.id.app_icon);
-				holder.mName = (TextView) convertView
-						.findViewById(R.id.app_name);
-				holder.mPacakge = (TextView) convertView
-						.findViewById(R.id.app_package);
-				holder.mLayout = (LinearLayout) convertView
-						.findViewById(R.id.layout);
-				holder.mCountLayout = (LinearLayout) convertView
-						.findViewById(R.id.Count_Layout);
-				holder.Count_TextView = (TextView) convertView
-						.findViewById(R.id.Count_TextView);
-				
-				convertView.setTag(holder);
-			}
-			else {
-				holder = (ViewHolder) convertView.getTag();
-			}
+			holder.mIcon = (ImageView) convertView
+					.findViewById(R.id.app_icon);
+			holder.mName = (TextView) convertView
+					.findViewById(R.id.app_name);
+			holder.mPacakge = (TextView) convertView
+					.findViewById(R.id.app_package);
+			holder.mLayout = (LinearLayout) convertView
+					.findViewById(R.id.layout);
+			
+			convertView.setTag(holder);
+//			}
+//			else {
+//				holder = (ViewHolder) convertView.getTag();
+//			}
 			
 			AppInfo data = mListData.get(position);
 
@@ -219,6 +215,11 @@ public class AppInfoActivity extends Activity {
 			holder.mPacakge.setText(data.mAppPackge);
 			
 			if(package_list.getString(data.mAppPackge, "").equals(data.mAppPackge)){
+				holder.mCountLayout = (LinearLayout) convertView
+						.findViewById(R.id.Count_Layout);
+				holder.Count_TextView = (TextView) convertView
+						.findViewById(R.id.Count_TextView);
+				
 				/**
 				 * 2.3 Update
 				 */
@@ -233,9 +234,6 @@ public class AppInfoActivity extends Activity {
 				holder.mCountLayout.setVisibility(View.VISIBLE);
 				holder.Count_TextView.setText( String.format(getString(R.string.now_count),
 						now, all ));
-			}else{
-				holder.mLayout.setBackgroundResource(android.R.color.white);
-				holder.mCountLayout.setVisibility(View.GONE);
 			}
 			
 			return convertView;
@@ -378,7 +376,7 @@ public class AppInfoActivity extends Activity {
 		/**
 		 * 1.2 업데이트 : 세번만 어플은 카운트를 설정할수 없음
 		 */
-		if(packageName.equals("lee.whdghks913.only3") || packageName.equals("com.android.systemui")){
+		if(packageName.equals("lee.whdghks913.only") || packageName.equals("com.android.systemui")){
 			Toast.makeText(this, R.string.me_app, Toast.LENGTH_SHORT).show();
 			return;
 		}
