@@ -27,7 +27,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -288,18 +287,17 @@ public class MainActivity extends Activity {
     }
     
     protected void againReserveLock(TimePicker a, TimePicker b){
+    	// TODO 몇분동안 할건지를 지정 안함
+    	
     	TimePicker afterTime = a;
     	TimePicker lockTime = b;
     	
-    	int hour = afterTime.getCurrentHour();
-    	int minute = afterTime.getCurrentMinute();
-    	
-    	Log.d("hour", ""+hour);
-    	Log.d("minute", ""+minute);
+    	hour = lockTime.getCurrentHour();
+    	minute = lockTime.getCurrentMinute();
     	
     	int amPm;
     	
-    	if(hour >= 12){
+    	if(afterTime.getCurrentHour() >= 12){
     		amPm = R.string.pm;
     	}else{
     		amPm = R.string.am;
@@ -311,7 +309,7 @@ public class MainActivity extends Activity {
         int month = calendar.get(Calendar.MONTH); //이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
         int day = calendar.get(Calendar.DAY_OF_MONTH); //오늘날짜
 		
-        calendar.set(year, month ,day, hour, minute);
+        calendar.set(year, month ,day, afterTime.getCurrentHour(), afterTime.getCurrentMinute());
         
         if(System.currentTimeMillis()>=calendar.getTimeInMillis()){
         	Toast.makeText(this, R.string.all_lock_alarm_past, Toast.LENGTH_SHORT).show();
@@ -329,8 +327,8 @@ public class MainActivity extends Activity {
             	full_lock_Editor.putInt("Year", calendar.get(Calendar.YEAR));
             	full_lock_Editor.putInt("Month", calendar.get(Calendar.MONTH));
             	full_lock_Editor.putInt("Day", calendar.get(Calendar.DAY_OF_MONTH));
-            	full_lock_Editor.putInt("Hour", calendar.get(Calendar.HOUR_OF_DAY));
-            	full_lock_Editor.putInt("Minute", calendar.get(Calendar.MINUTE));
+            	full_lock_Editor.putInt("Hour", hour);
+            	full_lock_Editor.putInt("Minute", minute);
             	full_lock_Editor.putBoolean("Enable", true).commit();
             	
             	Intent intent_fulllock = new Intent(MainActivity.this, BroadCast.class);
