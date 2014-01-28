@@ -205,6 +205,7 @@ public class MainActivity extends Activity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                 	full_lock_Editor.clear().commit();
+                	new Alarm(MainActivity.this).cencleFullLockAlarm();
                     dialog.dismiss();
                 }
             });
