@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Vibrator;
+import android.util.Log;
 import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
@@ -132,8 +133,23 @@ public class BroadCast extends BroadcastReceiver {
         		Notifi_FiveCount(mContext, FIVE_COUNT);
 			if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
 				Notifi_Toast(mContext, FIVE_COUNT);
-        	
-        }else{
+        
+        }else if("ACTION_START_FULL_LOCK".equals(action)){
+			Log.d("¿¹¾à¾Ë¶÷", "¿È");
+			if(full_lock.getBoolean("Enable", false)){
+				setting_Editor.putBoolean("Service", false).commit();
+				mContext.stopService(new Intent(mContext, SubService.class));
+				mContext.stopService(new Intent(mContext, AndroidService.class));
+				
+				mContext.startService(new Intent(mContext, FullLockService.class));
+				
+				Intent i = new Intent(mContext, FullLockActivity.class);
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+						Intent.FLAG_ACTIVITY_CLEAR_TOP |
+						Intent.FLAG_ACTIVITY_SINGLE_TOP );
+				mContext.startActivity(i);
+			}
+		}else{
         	mContext.startService(new Intent(mContext, AndroidService.class));
         	mContext.startService(new Intent(mContext, SubService.class));
         }

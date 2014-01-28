@@ -7,7 +7,6 @@ import java.util.Locale;
 import lee.whdghks913.only3.count.Alarm;
 import lee.whdghks913.only3.count.AndroidService;
 import lee.whdghks913.only3.count.SubService;
-import lee.whdghks913.only3.fulllock.BroadCastFullLock;
 import lee.whdghks913.only3.fulllock.FullLockActivity;
 import lee.whdghks913.only3.fulllock.FullLockService;
 import android.app.Activity;
@@ -202,26 +201,25 @@ public class MainActivity extends Activity {
     }
     
     public void FullLock_Btn(View v){
-//    	AlertDialog.Builder alert = new AlertDialog.Builder(this);
-//        alert.setPositiveButton(R.string.all_lock_alarm_btn_1, new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//            	ReserveLock();
-//                dialog.dismiss();
-//            }
-//        });
-//        alert.setNeutralButton(R.string.all_lock_alarm_btn_2, new OnClickListener() {
-//			@Override
-//			public void onClick(DialogInterface dialog, int which) {
-//				justNowLock();
-//				dialog.dismiss();
-//			}
-//		});
-//        alert.setNegativeButton(R.string.exit, null);
-//        alert.setMessage(R.string.all_lock_alarm_btn_help);
-//        alert.show();
-    	
-    	justNowLock();
+    	AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setPositiveButton(R.string.all_lock_alarm_btn_1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            	ReserveLock();
+                dialog.dismiss();
+            }
+        });
+        alert.setNeutralButton(R.string.all_lock_alarm_btn_2, new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				justNowLock();
+				dialog.dismiss();
+			}
+		});
+        alert.setNegativeButton(R.string.exit, null);
+        alert.setMessage(R.string.all_lock_alarm_btn_help);
+        alert.show();
+//    	justNowLock();
     }
     
     public void justNowLock(){
@@ -315,6 +313,11 @@ public class MainActivity extends Activity {
 		
         calendar.set(year, month ,day, hour, minute);
         
+        if(System.currentTimeMillis()>=calendar.getTimeInMillis()){
+        	Toast.makeText(this, R.string.all_lock_alarm_past, Toast.LENGTH_SHORT).show();
+        	return;
+        }
+        
     	String YYYY = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).format(calendar.getTime());
     	
     	String HHMM = new SimpleDateFormat("hh:mm", Locale.KOREA).format(calendar.getTime());
@@ -330,13 +333,14 @@ public class MainActivity extends Activity {
             	full_lock_Editor.putInt("Minute", calendar.get(Calendar.MINUTE));
             	full_lock_Editor.putBoolean("Enable", true).commit();
             	
-            	Intent intent_fulllock = new Intent(MainActivity.this, BroadCastFullLock.class);
+            	Intent intent_fulllock = new Intent(MainActivity.this, BroadCast.class);
             	intent_fulllock.setAction("ACTION_START_FULL_LOCK");
             	
             	PendingIntent sender_fulllock = PendingIntent.getBroadcast(MainActivity.this, 0, intent_fulllock, 0);
             	
             	AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
             	am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_fulllock);
+            	
             	
             	Toast.makeText(MainActivity.this, R.string.all_lock_alarm_finish, Toast.LENGTH_LONG).show();
             	
