@@ -41,6 +41,9 @@ public class AndroidService extends Service {
 	
 	PowerManager pm;
 	
+	Intent intent_10minute;
+	PendingIntent sender_10minute;
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate() {
@@ -54,6 +57,8 @@ public class AndroidService extends Service {
 		
 		actvityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 		am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+		
+		Alarm();
 		
 		package_count = getSharedPreferences("package_count", 0);
 		package_count_Editor = package_count.edit();
@@ -212,7 +217,7 @@ public class AndroidService extends Service {
 		}else if(pkgName.equals(package_list.getString(pkgName, ""))){
 			if(setting.getInt("Notification", 5)!=0)
 				if(isRunningApp){
-					alarm();
+					alarm_five();
 //					Log.d(setting.getInt("Notification", 5)+"분 체크", "시작");
 				}
 		}
@@ -264,6 +269,10 @@ public class AndroidService extends Service {
 	public void onDestroy() {
 		super.onDestroy();
 		
+		stopForeground(true);
+		isService=false;
+		am.cancel(sender_10minute);
+		
 		restartService();
 	}
 
@@ -283,13 +292,10 @@ public class AndroidService extends Service {
 		if(setting.getBoolean("Service", false)){
 			Intent intent = new Intent(this, BroadCast.class);
 			sendBroadcast(intent);
-		}else{
-			stopForeground(true);
-			isService=false;
 		}
 	}
 	
-	protected void alarm(){
+	protected void alarm_five(){
 	    /**
 		 * 알람 매니저를 위한 코드
 		 */
@@ -314,5 +320,27 @@ public class AndroidService extends Service {
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), setting.getInt("Notification", 5) * 60 * 1000, sender);
         
         isRunningApp = ! isRunningApp;
+	}
+	
+	public void Alarm(){
+		Calendar calendar = Calendar.getInstance();
+		int year = calendar.get(Calendar.YEAR);//올해
+		int month = calendar.get(Calendar.MONTH);//이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
+		int day = calendar.get(Calendar.DAY_OF_MONTH);//오늘날짜
+		int hour = calendar.get(Calendar.HOUR_OF_DAY);//현재시간
+		int minute = calendar.get(Calendar.MINUTE);//현재분
+		
+		intent_10minute = new Intent(this, BroadCast.class);
+		intent_10minute.setAction("ACTION_FALSE_THE_STOP");
+		sender_10minute = PendingIntent.getBroadcast(this, 0, intent_10minute, 0);
+		calendar.set(year, month ,day, hour, minute+10);
+        am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_10minute);
+		
+        
+		Intent intent_DATE = new Intent(this, BroadCast.class);
+		intent_DATE.setAction("ACTION_DATE_CHANGE_BY_MIR");
+		PendingIntent sender_DATE = PendingIntent.getBroadcast(this, 0, intent_DATE, 0);
+        calendar.set(year, month ,day+1, 0, 0);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 24 * 60 * 60 * 1000, sender_DATE);
 	}
 }

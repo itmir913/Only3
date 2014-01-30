@@ -81,6 +81,9 @@ Do you want to cancel?</string>
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
 \n
+\n[3.2] : 2014-01-30
+\n-Count clear error fix
+\n
 \n[3.1] : 2014-01-28
 \n-Reserve Device lock
 \n-etc
@@ -165,7 +168,6 @@ Do you want to cancel?</string>
 \n[1.0] : 2013-10-21
 \n-Applications Release</string>
     <string name="vibrate">Vibrate</string>
-    <string name="back_to_kill">Press again to exit</string>
     <string name="clear_icon_noti">Transparent notification icon</string>
     <string name="preference_backup_restore">Backup <![CDATA[&]]> Restore</string>
     <string name="preference_backup">Backup</string>
@@ -183,9 +185,7 @@ Do you want to cancel?</string>
 	<string name="alertType_notifi" >Notification</string>
 	<string name="appSetting_Text" >[App Advanced Setting]</string>
 	<string name="alertType_Test" >Notification will be displayed in this way</string>
-	<string name="date_changed_by_user" >Count not clear becaues Date changed by User</string>
 	<string name="androidservice" >Only3 Service</string>
-	<string name="countcheckservice" >Count clear check Service</string>
 	<string name="subservice" >SubService</string>
 	<string name="all_lock" >Full\nLock</string>
 	<string name="all_lock_alert_title" >Phone Full Lock</string>

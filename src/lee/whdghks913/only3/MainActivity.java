@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-import lee.whdghks913.only3.count.Alarm;
 import lee.whdghks913.only3.count.AndroidService;
 import lee.whdghks913.only3.count.SubService;
 import lee.whdghks913.only3.fulllock.FullLockActivity;
@@ -12,7 +11,9 @@ import lee.whdghks913.only3.fulllock.FullLockService;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -25,7 +26,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -62,6 +62,9 @@ public class MainActivity extends Activity {
     int kill=0;
     
     int hour, minute;
+    
+    AlarmManager am;
+    PendingIntent sender_fulllock;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +139,10 @@ public class MainActivity extends Activity {
             start_Btn_start();
         }
         
+        am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent_fulllock = new Intent(MainActivity.this, BroadCast.class);
+    	intent_fulllock.setAction("ACTION_START_FULL_LOCK");
+    	sender_fulllock = PendingIntent.getBroadcast(MainActivity.this, 0, intent_fulllock, 0);
     }
     
     public void start_btn(View v){
@@ -161,12 +168,6 @@ public class MainActivity extends Activity {
                 setting_Editor.putBoolean("Service", true).commit();
                 
                 startService(new Intent(this, AndroidService.class));
-                startService(new Intent(this, SubService.class));
-                
-                Alarm alarm = new Alarm(this);
-                alarm.setAlarm10M(this);
-                alarm.setAlarmDateChange(this);
-                
                 start_Btn_start();
             }
         }
@@ -182,9 +183,9 @@ public class MainActivity extends Activity {
         start_Btn.setText(R.string.start);
     }
     
-    public boolean isServiceRunningCheck(String service_Name){
+    public boolean isServiceRunningCheck(String serviceName){
         for (RunningServiceInfo service : ((ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE)).getRunningServices(Integer.MAX_VALUE))
-            if (service_Name.equals(service.service.getClassName()))
+            if (serviceName.equals(service.service.getClassName()))
                 return true;
         return false;
     }
@@ -205,7 +206,7 @@ public class MainActivity extends Activity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                 	full_lock_Editor.clear().commit();
-                	new Alarm(MainActivity.this).cencleFullLockAlarm();
+                	am.cancel(sender_fulllock);
                 	Toast.makeText(MainActivity.this, R.string.all_lock_alarm_remove, Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                 }
@@ -230,7 +231,6 @@ public class MainActivity extends Activity {
         alert.setNegativeButton(R.string.exit, null);
         alert.setMessage(R.string.all_lock_alarm_btn_help);
         alert.show();
-//    	justNowLock();
     }
     
     public void justNowLock(){
@@ -298,10 +298,7 @@ public class MainActivity extends Activity {
         alert.show();
     }
     
-    protected void againReserveLock(TimePicker a, TimePicker b){
-    	TimePicker afterTime = a;
-    	TimePicker lockTime = b;
-    	
+    protected void againReserveLock(TimePicker afterTime, TimePicker lockTime){
     	hour = lockTime.getCurrentHour();
     	minute = lockTime.getCurrentMinute();
     	
@@ -341,7 +338,7 @@ public class MainActivity extends Activity {
             	full_lock_Editor.putInt("Minute", minute);
             	full_lock_Editor.putBoolean("Enable", true).commit();
             	
-            	new Alarm(MainActivity.this).setFullLockAlarm(MainActivity.this, calendar.getTimeInMillis());
+            	am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_fulllock);
             	
             	Toast.makeText(MainActivity.this, R.string.all_lock_alarm_finish, Toast.LENGTH_LONG).show();
             	
@@ -422,8 +419,7 @@ public class MainActivity extends Activity {
          * 어플을 바로 삭제할수 있는 기능 추가
          */
         Uri uri = Uri.fromParts("package", "lee.whdghks913.only3", null);    
-        Intent it = new Intent(Intent.ACTION_DELETE, uri);    
-        startActivity(it);
+        startActivity(new Intent(Intent.ACTION_DELETE, uri));
     }
     
     public void Del_check(){
@@ -436,38 +432,13 @@ public class MainActivity extends Activity {
             public void onClick(DialogInterface dialog, int which) {
                 String Inputpassword = ((EditText) view.findViewById(R.id.password_edittext)).getText().toString();
                 if(Inputpassword.equals(setting.getString("password", ""))){
-//                    return true;
                     intent_Del();
                 }
                 dialog.dismiss();
             }
         });
-        alert.setNegativeButton(R.string.exit, new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
+        alert.setNegativeButton(R.string.exit, null);
         alert.setView(view);
         alert.show();
-    }
-    
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            kill++;
-            if(kill == 2){
-                System.gc();
-                /**
-                 * 2.1 업데이트
-                 * 어플 종료시 서비스가 꺼졌다가 켜지는 버그 수정 (Thanks for Edge)
-                 */
-                finish();
-            }
-            Toast.makeText(getBaseContext(), R.string.back_to_kill, Toast.LENGTH_SHORT).show();
-            
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
     }
 }
