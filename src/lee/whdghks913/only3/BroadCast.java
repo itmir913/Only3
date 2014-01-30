@@ -44,8 +44,8 @@ public class BroadCast extends BroadcastReceiver {
 				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
 						Intent.FLAG_ACTIVITY_CLEAR_TOP |
 						Intent.FLAG_ACTIVITY_SINGLE_TOP );
-				mContext.startActivity(intent);
-				return;
+				mContext.startActivity(i);
+//				return;
 			}
 			
 	        /**
@@ -104,9 +104,9 @@ public class BroadCast extends BroadcastReceiver {
         
         }else if("ACTION_START_FULL_LOCK".equals(action)){
 			if(full_lock.getBoolean("Enable", false)){
-				setting_Editor.putBoolean("Service", false).commit();
-				mContext.stopService(new Intent(mContext, SubService.class));
-				mContext.stopService(new Intent(mContext, AndroidService.class));
+//				setting_Editor.putBoolean("Service", false).commit();
+//				mContext.stopService(new Intent(mContext, SubService.class));
+//				mContext.stopService(new Intent(mContext, AndroidService.class));
 				
 				mContext.startService(new Intent(mContext, FullLockService.class));
 				

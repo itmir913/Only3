@@ -141,8 +141,8 @@ public class MainActivity extends Activity {
         
         am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent_fulllock = new Intent(MainActivity.this, BroadCast.class);
-    	intent_fulllock.setAction("ACTION_START_FULL_LOCK");
-    	sender_fulllock = PendingIntent.getBroadcast(MainActivity.this, 0, intent_fulllock, 0);
+        intent_fulllock.setAction("ACTION_START_FULL_LOCK");
+        sender_fulllock = PendingIntent.getBroadcast(MainActivity.this, 0, intent_fulllock, 0);
     }
     
     public void start_btn(View v){
@@ -199,35 +199,35 @@ public class MainActivity extends Activity {
     }
     
     public void FullLock_Btn(View v){
-    	AlertDialog.Builder alert = new AlertDialog.Builder(this);
-    	
-    	if(full_lock.getBoolean("Enable", false)){
-    		alert.setPositiveButton(R.string.all_lock_alarm_remove, new DialogInterface.OnClickListener() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        
+        if(full_lock.getBoolean("Enable", false)){
+            alert.setPositiveButton(R.string.all_lock_alarm_remove, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                	full_lock_Editor.clear().commit();
-                	am.cancel(sender_fulllock);
-                	Toast.makeText(MainActivity.this, R.string.all_lock_alarm_remove, Toast.LENGTH_SHORT).show();
+                    full_lock_Editor.clear().commit();
+                    am.cancel(sender_fulllock);
+                    Toast.makeText(MainActivity.this, R.string.all_lock_alarm_remove, Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                 }
             });
-    	}else{
-    		alert.setPositiveButton(R.string.all_lock_alarm_btn_1, new DialogInterface.OnClickListener() {
+        }else{
+            alert.setPositiveButton(R.string.all_lock_alarm_btn_1, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                	ReserveLock();
+                    ReserveLock();
                     dialog.dismiss();
                 }
             });
-    	}
+        }
         
         alert.setNeutralButton(R.string.all_lock_alarm_btn_2, new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				justNowLock();
-				dialog.dismiss();
-			}
-		});
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                justNowLock();
+                dialog.dismiss();
+            }
+        });
         alert.setNegativeButton(R.string.exit, null);
         alert.setMessage(R.string.all_lock_alarm_btn_help);
         alert.show();
@@ -248,16 +248,16 @@ public class MainActivity extends Activity {
         alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-            	int hour = timePicker.getCurrentHour();
-            	int minute = timePicker.getCurrentMinute();
-            	
-            	if(hour==0 && minute==0){
-            		Toast.makeText(MainActivity.this, R.string.all_lock_select_error, Toast.LENGTH_SHORT).show();
-            		return;
-            	}
-            	
-            	againFullLockCheck(hour, minute);
-            	
+                int hour = timePicker.getCurrentHour();
+                int minute = timePicker.getCurrentMinute();
+                
+                if(hour==0 && minute==0){
+                    Toast.makeText(MainActivity.this, R.string.all_lock_select_error, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                
+                againFullLockCheck(hour, minute);
+                
                 dialog.dismiss();
             }
         });
@@ -266,7 +266,7 @@ public class MainActivity extends Activity {
     }
     
     public void ReserveLock(){
-    	LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.full_lock_reserve_timeset, null);
         
         final TimePicker afterTime = (TimePicker) view.findViewById(R.id.afterTime);
@@ -281,16 +281,16 @@ public class MainActivity extends Activity {
         alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-            	
-            	int hour = lockTime.getCurrentHour();
-            	int minute = lockTime.getCurrentMinute();
-            	
-            	if(hour==0 && minute==0){
-            		Toast.makeText(MainActivity.this, R.string.all_lock_select_error, Toast.LENGTH_SHORT).show();
-            		return;
-            	}
-            	
-            	againReserveLock(afterTime, lockTime);
+                
+                int hour = lockTime.getCurrentHour();
+                int minute = lockTime.getCurrentMinute();
+                
+                if(hour==0 && minute==0){
+                    Toast.makeText(MainActivity.this, R.string.all_lock_select_error, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                
+                againReserveLock(afterTime, lockTime);
                 dialog.dismiss();
             }
         });
@@ -299,91 +299,91 @@ public class MainActivity extends Activity {
     }
     
     protected void againReserveLock(TimePicker afterTime, TimePicker lockTime){
-    	hour = lockTime.getCurrentHour();
-    	minute = lockTime.getCurrentMinute();
-    	
-    	int amPm;
-    	
-    	if(afterTime.getCurrentHour() >= 12){
-    		amPm = R.string.pm;
-    	}else{
-    		amPm = R.string.am;
-    	}
-    	
-    	final Calendar calendar = Calendar.getInstance();
+        hour = lockTime.getCurrentHour();
+        minute = lockTime.getCurrentMinute();
+        
+        int amPm;
+        
+        if(afterTime.getCurrentHour() >= 12){
+            amPm = R.string.pm;
+        }else{
+            amPm = R.string.am;
+        }
+        
+        final Calendar calendar = Calendar.getInstance();
         
         int year = calendar.get(Calendar.YEAR); //올해
         int month = calendar.get(Calendar.MONTH); //이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
         int day = calendar.get(Calendar.DAY_OF_MONTH); //오늘날짜
-		
+        
         calendar.set(year, month ,day, afterTime.getCurrentHour(), afterTime.getCurrentMinute());
         
         if(System.currentTimeMillis()>=calendar.getTimeInMillis()){
-        	Toast.makeText(this, R.string.all_lock_alarm_past, Toast.LENGTH_SHORT).show();
-        	return;
+            Toast.makeText(this, R.string.all_lock_alarm_past, Toast.LENGTH_SHORT).show();
+            return;
         }
         
-    	String YYYY = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).format(calendar.getTime());
-    	
-    	String HHMM = new SimpleDateFormat("hh:mm", Locale.KOREA).format(calendar.getTime());
-    	
-    	AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        String YYYY = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).format(calendar.getTime());
+        
+        String HHMM = new SimpleDateFormat("hh:mm", Locale.KOREA).format(calendar.getTime());
+        
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-            	full_lock_Editor.putInt("Year", calendar.get(Calendar.YEAR));
-            	full_lock_Editor.putInt("Month", calendar.get(Calendar.MONTH));
-            	full_lock_Editor.putInt("Day", calendar.get(Calendar.DAY_OF_MONTH));
-            	full_lock_Editor.putInt("Hour", hour);
-            	full_lock_Editor.putInt("Minute", minute);
-            	full_lock_Editor.putBoolean("Enable", true).commit();
-            	
-            	am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_fulllock);
-            	
-            	Toast.makeText(MainActivity.this, R.string.all_lock_alarm_finish, Toast.LENGTH_LONG).show();
-            	
+                full_lock_Editor.putInt("Year", calendar.get(Calendar.YEAR));
+                full_lock_Editor.putInt("Month", calendar.get(Calendar.MONTH));
+                full_lock_Editor.putInt("Day", calendar.get(Calendar.DAY_OF_MONTH));
+                full_lock_Editor.putInt("Hour", hour);
+                full_lock_Editor.putInt("Minute", minute);
+                full_lock_Editor.putBoolean("Enable", true).commit();
+                
+                am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender_fulllock);
+                
+                Toast.makeText(MainActivity.this, R.string.all_lock_alarm_finish, Toast.LENGTH_LONG).show();
+                
                 dialog.dismiss();
             }
         });
         alert.setNegativeButton(R.string.exit, null);
         alert.setMessage(String.format(getString(R.string.all_lock_select_check_reserve), lockTime.getCurrentHour(), lockTime.getCurrentMinute(),
-        		YYYY, getString(amPm), HHMM));
+                YYYY, getString(amPm), HHMM));
         alert.show();
     }
     
     protected void againFullLockCheck(int H, int M){
-    	hour = H;
-    	minute = M;
-    	
-    	AlertDialog.Builder alert = new AlertDialog.Builder(this);
-    	alert.setMessage(String.format(getString(R.string.all_lock_select_check), hour, minute));
-    	alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-    		
+        hour = H;
+        minute = M;
+        
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setMessage(String.format(getString(R.string.all_lock_select_check), hour, minute));
+        alert.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            
             @Override
             public void onClick(DialogInterface dialog, int which) {
-            	Calendar calendar = Calendar.getInstance();
-            	
-            	 int year = calendar.get(Calendar.YEAR);//올해
+                Calendar calendar = Calendar.getInstance();
+                
+                 int year = calendar.get(Calendar.YEAR);//올해
                  int month = calendar.get(Calendar.MONTH);//이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
                  int day = calendar.get(Calendar.DAY_OF_MONTH);//오늘날짜
-            	
-            	full_lock_Editor.putInt("Year", year);
-            	full_lock_Editor.putInt("Month", month);
-            	full_lock_Editor.putInt("Day", day);
-            	full_lock_Editor.putInt("Hour", hour);
-            	full_lock_Editor.putInt("Minute", minute);
-            	full_lock_Editor.putBoolean("Enable", true).commit();
-            	
-            	setting_Editor.putBoolean("Service", false).commit();
-            	
-            	stopService(new Intent(MainActivity.this, SubService.class));
-                stopService(new Intent(MainActivity.this, AndroidService.class));
-                start_Btn_stop();
-            	
-            	startService(new Intent(MainActivity.this, FullLockService.class));
-            	startActivity(new Intent(MainActivity.this, FullLockActivity.class));
-            	finish();
-            	
+                 
+                full_lock_Editor.putInt("Year", year);
+                full_lock_Editor.putInt("Month", month);
+                full_lock_Editor.putInt("Day", day);
+                full_lock_Editor.putInt("Hour", hour);
+                full_lock_Editor.putInt("Minute", minute);
+                full_lock_Editor.putBoolean("Enable", true).commit();
+                
+//                setting_Editor.putBoolean("Service", false).commit();
+                
+//                stopService(new Intent(MainActivity.this, SubService.class));
+//                stopService(new Intent(MainActivity.this, AndroidService.class));
+//                start_Btn_stop();
+                
+                startService(new Intent(MainActivity.this, FullLockService.class));
+                startActivity(new Intent(MainActivity.this, FullLockActivity.class));
+                finish();
+                
                 dialog.dismiss();
             }
         });
