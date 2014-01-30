@@ -1,5 +1,6 @@
 package lee.whdghks913.only3.count;
 
+import java.lang.ref.WeakReference;
 import java.util.Calendar;
 import java.util.List;
 
@@ -48,7 +49,6 @@ public class AndroidService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		
 		/**
 		 * 1.5업데이트
 		 * 파워 매니저를 이용하여 화면이 켜졌을때만 작동하도록 설정
@@ -69,54 +69,21 @@ public class AndroidService extends Service {
 		setting = getSharedPreferences("setting", 0);
 		setting_Editor = setting.edit();
 		
-		// 서비스를 포그라운드 상태로 만들어 안드로이드에 의해 꺼지지않는 상태로 만듭니다
-		PendingIntent pendingIndent = PendingIntent.getActivity(this, 1, new Intent(this, MainActivity.class), 0);
+		PendingIntent pendingIndent = PendingIntent.getActivity(this, 1, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
 		Notification noti;
 		if(setting.getBoolean("notification_clear", false))
 			noti = new Notification(R.drawable.clear_icon, getString(R.string.app_name), System.currentTimeMillis());
 		else
 			noti = new Notification(R.drawable.ic_launcher, getString(R.string.app_name), System.currentTimeMillis());
 		noti.setLatestEventInfo(this, getString(R.string.notification_title), getString(R.string.notification_message), pendingIndent);
-		noti.flags = noti.flags|Notification.FLAG_ONGOING_EVENT;
+		noti.flags = Notification.FLAG_ONGOING_EVENT;
 		startForeground(1000, noti);
 	}
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		
-		handler = new Handler(){
-			@Override
-			public void handleMessage(Message msg){
-				if(All_Count<Count){
-					Intent i = new Intent();
-					i.setAction(Intent.ACTION_MAIN);
-					i.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS |
-							Intent.FLAG_ACTIVITY_FORWARD_RESULT |
-							Intent.FLAG_ACTIVITY_NEW_TASK |
-							Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP |
-							Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED );
-					i.addCategory(Intent.CATEGORY_HOME);
-					startActivity(i);
-					
-					Intent intent = new Intent(AndroidService.this, Abort.class);
-					intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-							Intent.FLAG_ACTIVITY_CLEAR_TOP |
-							Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET |
-							Intent.FLAG_ACTIVITY_SINGLE_TOP );
-					startActivity(intent);
-					//getString(R.string.count_much_added), Count, All_Count
-					if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
-						showNotify(true);
-					if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
-						showToast(true);
-				}else{
-					if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
-						showNotify(false);
-					if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
-						showToast(false);
-				}
-			}
-		};
+		handler = new handler(this);
 		
 		Runnable task = new Runnable(){
 			@Override
@@ -139,7 +106,7 @@ public class AndroidService extends Service {
 						Top_Activity();
 					}else{
 						if(setting.getInt("Notification", 5)!=0)
-							if( ! isRunningApp){
+							if( ! isRunningApp ){
 								am.cancel(sender);
 								isRunningApp = ! isRunningApp;
 								/**
@@ -148,7 +115,6 @@ public class AndroidService extends Service {
 								 */
 								last_packageName = "";
 								setting_Editor.remove("FIVE_MINUTE").commit();
-//								Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
 							}
 					}
 				}
@@ -208,18 +174,15 @@ public class AndroidService extends Service {
 			 * 1.1 업데이트 : 5분마다 알림을 띄우는 코드 추가
 			 */
 			if(setting.getInt("Notification", 5)!=0)
-				if( ! isRunningApp){
+				if( ! isRunningApp ){
 					am.cancel(sender);
 					isRunningApp = ! isRunningApp;
 					setting_Editor.remove("FIVE_MINUTE").commit();
-//					Log.d(setting.getInt("Notification", 5)+"분 체크", "종료");
 				}
 		}else if(pkgName.equals(package_list.getString(pkgName, ""))){
 			if(setting.getInt("Notification", 5)!=0)
-				if(isRunningApp){
+				if(isRunningApp)
 					alarm_five();
-//					Log.d(setting.getInt("Notification", 5)+"분 체크", "시작");
-				}
 		}
 		System.gc();
 	}
@@ -244,8 +207,7 @@ public class AndroidService extends Service {
 				noti = new Notification(R.drawable.ic_launcher,
 					String.format( getString(R.string.count_added), Count, All_Count ), System.currentTimeMillis());
 		
-	    noti.flags = Notification.FLAG_ONLY_ALERT_ONCE;
-	    noti.flags = Notification.FLAG_AUTO_CANCEL;
+	    noti.flags = Notification.FLAG_ONLY_ALERT_ONCE | Notification.FLAG_AUTO_CANCEL;
 	    Intent intent = new Intent(AndroidService.this, MainActivity.class);
 	    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	    PendingIntent pendingI = PendingIntent.getActivity(AndroidService.this, 0, intent, 0);
@@ -296,39 +258,30 @@ public class AndroidService extends Service {
 	}
 	
 	protected void alarm_five(){
-	    /**
-		 * 알람 매니저를 위한 코드
-		 */
-		Intent intent = new Intent(this, BroadCast.class);
-		intent.setAction("ACTION_FIVE_MINUTE");
-		
-		/**
-		 * 알람 지정 (어플 사용 x분마다 알림)
-		 */
         Calendar calendar = Calendar.getInstance();
         
-        int year = calendar.get(Calendar.YEAR);//올해
-        int month = calendar.get(Calendar.MONTH);//이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
-        int day = calendar.get(Calendar.DAY_OF_MONTH);//오늘날짜
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);//현재시간
-        int minute = calendar.get(Calendar.MINUTE);//현재분
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
         
+        Intent intent = new Intent(this, BroadCast.class);
+        intent.setAction("ACTION_FIVE_MINUTE");
         sender = PendingIntent.getBroadcast(this, 0, intent, 0);
-        // 매일 0시 0분(24시간제)에 초기화 되도록 설정합니다
         calendar.set(year, month ,day, hour, minute+setting.getInt("Notification", 5));
-        // 24 * 60 * 60 * 1000 : 하루 (밀리초 단위로, 1000이 1초이다)
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), setting.getInt("Notification", 5) * 60 * 1000, sender);
         
         isRunningApp = ! isRunningApp;
 	}
 	
-	public void Alarm(){
+	protected void Alarm(){
 		Calendar calendar = Calendar.getInstance();
-		int year = calendar.get(Calendar.YEAR);//올해
-		int month = calendar.get(Calendar.MONTH);//이번달(10월이면 9를 리턴받는다. calendar는 0월부터 11월까지로 12개의월을 사용)
-		int day = calendar.get(Calendar.DAY_OF_MONTH);//오늘날짜
-		int hour = calendar.get(Calendar.HOUR_OF_DAY);//현재시간
-		int minute = calendar.get(Calendar.MINUTE);//현재분
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH);
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		int hour = calendar.get(Calendar.HOUR_OF_DAY);
+		int minute = calendar.get(Calendar.MINUTE);
 		
 		intent_10minute = new Intent(this, BroadCast.class);
 		intent_10minute.setAction("ACTION_FALSE_THE_STOP");
@@ -342,5 +295,47 @@ public class AndroidService extends Service {
 		PendingIntent sender_DATE = PendingIntent.getBroadcast(this, 0, intent_DATE, 0);
         calendar.set(year, month ,day+1, 0, 0);
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 24 * 60 * 60 * 1000, sender_DATE);
+	}
+	
+	protected class handler extends Handler {
+		private final WeakReference<AndroidService> mActivity;
+
+		protected handler(AndroidService activity) {
+		  mActivity = new WeakReference<AndroidService>(activity);
+		}
+
+		@Override
+		public void handleMessage(Message msg) {
+		    if (mActivity.get() != null) {
+		    	if(All_Count<Count){
+					Intent i = new Intent();
+					i.setAction(Intent.ACTION_MAIN);
+					i.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS |
+							Intent.FLAG_ACTIVITY_FORWARD_RESULT |
+							Intent.FLAG_ACTIVITY_NEW_TASK |
+							Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP |
+							Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED );
+					i.addCategory(Intent.CATEGORY_HOME);
+					startActivity(i);
+					
+					Intent intent = new Intent(AndroidService.this, Abort.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+							Intent.FLAG_ACTIVITY_CLEAR_TOP |
+							Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET |
+							Intent.FLAG_ACTIVITY_SINGLE_TOP );
+					startActivity(intent);
+					
+					if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
+						showNotify(true);
+					if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
+						showToast(true);
+				}else{
+					if(setting.getInt("NotifiType", 0)==0 || setting.getInt("NotifiType", 0)==2)
+						showNotify(false);
+					if(setting.getInt("NotifiType", 0)==1 || setting.getInt("NotifiType", 0)==2)
+						showToast(false);
+				}
+			}
+		}
 	}
 }

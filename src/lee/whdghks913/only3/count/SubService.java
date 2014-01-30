@@ -21,7 +21,10 @@ public class SubService extends Service {
 		
 		pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 		setting = getSharedPreferences("setting", 0);
-		
+	}
+	
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
 		Runnable task = new Runnable(){
 			@Override
 			public void run(){
@@ -49,6 +52,8 @@ public class SubService extends Service {
 		
 		Thread thread = new Thread(task);
 		thread.start();
+		
+		return super.onStartCommand(intent, flags, startId);
 	}
 	
 	@Override
@@ -74,5 +79,4 @@ public class SubService extends Service {
     	        return true;
     	return false;
     }
-	
 }

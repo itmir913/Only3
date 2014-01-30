@@ -1,14 +1,10 @@
 package lee.whdghks913.only3.count;
 
 import lee.whdghks913.only3.R;
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.KeyEvent;
 
-@SuppressLint("InlinedApi")
 public class Abort extends Activity {
 
 	@Override
@@ -27,28 +23,6 @@ public class Abort extends Activity {
 		
 		setContentView(R.layout.activity_abort);
 	}
-	
-	@Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-        	/**
-        	 * 뒤로가기 키를 누르면 홈화면으로 이동합니다
-        	 */
-        	Intent i = new Intent();
-			i.setAction(Intent.ACTION_MAIN);
-			i.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS |
-					Intent.FLAG_ACTIVITY_FORWARD_RESULT |
-					Intent.FLAG_ACTIVITY_NEW_TASK |
-					Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP |
-					Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED );
-			i.addCategory(Intent.CATEGORY_HOME);
-			startActivity(i);
-			
-        	finish();
-        	return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
 
 	@Override
 	protected void onPause() {

@@ -63,7 +63,7 @@ public class FullLockService extends Service {
         calendar.set(year, month, day, calendar.get(Calendar.HOUR_OF_DAY)+hour, calendar.get(Calendar.MINUTE)+minute, second);
         
         finishTime = calendar.getTimeInMillis();
-        remainingSec = ((int)((finishTime - System.currentTimeMillis()) / 1000L));
+        remainingSec = ((int)((finishTime - System.currentTimeMillis()) / 1000));
         
         if((hour==0 && minute==0) || (! full_lock.getBoolean("Enable", false)))
 			stopSelf();
@@ -155,7 +155,6 @@ public class FullLockService extends Service {
 				stopSelf();
 			}
 		};
-		
 		Thread remaining = new Thread(remainingTime);
 		remaining.start();
 		
