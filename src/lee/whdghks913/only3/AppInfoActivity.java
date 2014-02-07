@@ -20,6 +20,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -114,25 +115,30 @@ public class AppInfoActivity extends Activity {
 			}
 		});
 		
-		SwipeDismissListViewTouchListener touchListener =
-                new SwipeDismissListViewTouchListener(mListView,
-                new SwipeDismissListViewTouchListener.DismissCallbacks() {
-                    @Override
-                    public boolean canDismiss(int position) {
-                        return true;
-                    }
+		/**
+		 * public ViewPropertyAnimator animate () Added in API level 12
+		 */
+		if(Build.VERSION.SDK_INT >= 12){
+			SwipeDismissListViewTouchListener touchListener =
+	                new SwipeDismissListViewTouchListener(mListView,
+	                new SwipeDismissListViewTouchListener.DismissCallbacks() {
+	                    @Override
+	                    public boolean canDismiss(int position) {
+	                        return true;
+	                    }
 
-                    @Override
-                    public void onDismiss(ListView listView, int[] reverseSortedPositions) {
-                        for (int position : reverseSortedPositions) {
-                            mAdapter.remove(position);
-                        }
-                        mAdapter.notifyDataSetChanged();
-                    }
-                });
-		
-		mListView.setOnTouchListener(touchListener);
-        mListView.setOnScrollListener(touchListener.makeScrollListener());
+	                    @Override
+	                    public void onDismiss(ListView listView, int[] reverseSortedPositions) {
+	                        for (int position : reverseSortedPositions) {
+	                            mAdapter.remove(position);
+	                        }
+	                        mAdapter.notifyDataSetChanged();
+	                    }
+	                });
+			
+			mListView.setOnTouchListener(touchListener);
+	        mListView.setOnScrollListener(touchListener.makeScrollListener());
+		}
 		
 		Toast.makeText(this, R.string.all_lock_whitelist_text2, Toast.LENGTH_LONG).show();
 	}
