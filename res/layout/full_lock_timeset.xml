@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Background"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/Background" >
+    android:paddingTop="@dimen/activity_vertical_margin" >
 
     <TextView
         android:id="@+id/fullLock_titleText"
@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/all_lock_alert_title"
         android:gravity="center"
+        android:text="@string/all_lock_alert_title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TimePicker
@@ -33,8 +33,8 @@
         android:layout_below="@+id/fullLock_timePicker"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:text="@string/all_lock_alert_message"
-        android:textSize="18sp"
-        android:gravity="center" />
-    
+        android:textSize="18sp" />
+
 </RelativeLayout>
