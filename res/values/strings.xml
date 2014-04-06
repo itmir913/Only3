@@ -56,7 +56,8 @@ Delete the application, Service must be turned off</string>
     <string name="welcome_5">This Icon is Full Lock!
 \nYou can do a full lock (your device)
 \nIf you can not concentrate , please lock your smart phone</string>
-    <string name="next">Only3 Start!</string>
+    <string name="next">Next</string>
+    <string name="startApp">Only3 Start!</string>
     <!-- <string name="count_add_Alert">Maybe, It is dangerous to set system Applications</string> -->
     <string name="device_admin">Only3 Applications to work smoothly must have administrator privileges
 \n\nThis application that was developed by a student is pure, korean country

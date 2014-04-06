@@ -35,12 +35,10 @@
             android:name="lee.whdghks913.only3.count.AndroidService"
             android:enabled="true"
             android:label="@string/androidservice" />
-        
         <service
             android:name="lee.whdghks913.only3.count.SubService"
             android:enabled="true"
             android:label="@string/subservice" />
-        
         <service
             android:name="lee.whdghks913.only3.fulllock.FullLockService"
             android:enabled="true" />
@@ -60,27 +58,37 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-        
-        <!-- 1.1업데이트
-              기기 관리자 권한을 얻습니다 -->
-        
+
+        <!--
+             1.1업데이트
+              기기 관리자 권한을 얻습니다
+        -->
+
         <receiver
             android:name="lee.whdghks913.only3.AdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN" >
             <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/device_admin_policies" />
+
             <intent-filter>
                 <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
 
         <activity android:name="lee.whdghks913.only3.AppInfoActivity" />
-        <activity android:name="lee.whdghks913.only3.count.Abort" android:excludeFromRecents="true" />
+        <activity
+            android:name="lee.whdghks913.only3.count.Abort"
+            android:excludeFromRecents="true" />
         <activity android:name="lee.whdghks913.only3.Setting" />
         <activity android:name="lee.whdghks913.only3.PassWord" />
-        <activity android:name="lee.whdghks913.only3.Welcome" />
-        <activity android:name="lee.whdghks913.only3.fulllock.FullLockActivity" android:excludeFromRecents="true" />
+        <activity android:name="lee.whdghks913.only3.welcome.Welcome" />
+        <activity android:name="lee.whdghks913.only3.welcome.WelcomeMain" />
+        <activity android:name="lee.whdghks913.only3.welcome.WelcomeApplist" />
+        <activity android:name="lee.whdghks913.only3.welcome.WelcomeFulllock" />
+        <activity android:name="lee.whdghks913.only3.welcome.WelcomeSetting" />
+        <activity android:name="lee.whdghks913.only3.fulllock.FullLockActivity"
+            android:excludeFromRecents="true" />
     </application>
 
 </manifest>

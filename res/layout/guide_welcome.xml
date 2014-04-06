@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/How_To_Uninstall"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50sp"
+            android:layout_marginTop="30sp"
             android:background="#00ffffff"
             android:onClick="next"
             android:text="@string/next"

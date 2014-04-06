@@ -8,6 +8,7 @@ import lee.whdghks913.only3.count.AndroidService;
 import lee.whdghks913.only3.count.SubService;
 import lee.whdghks913.only3.fulllock.FullLockActivity;
 import lee.whdghks913.only3.fulllock.FullLockService;
+import lee.whdghks913.only3.welcome.Welcome;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;

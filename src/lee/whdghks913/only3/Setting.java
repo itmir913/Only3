@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import lee.whdghks913.only3.welcome.Welcome;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -31,6 +32,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -66,6 +68,8 @@ public class Setting extends Activity {
 	RadioButton All, toast, Notifi;
 	RadioGroup alertType;
 	
+	Button guide;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -87,6 +91,16 @@ public class Setting extends Activity {
 		All = (RadioButton) findViewById(R.id.All);
 		toast = (RadioButton) findViewById(R.id.Toast);
 		Notifi = (RadioButton) findViewById(R.id.Notifi);
+		
+		guide = (Button) findViewById(R.id.guide);
+		
+		guide.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Setting.this, Welcome.class));
+			}
+		});
 	}
 	
 	@Override
