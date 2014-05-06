@@ -82,6 +82,9 @@
 \n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
 \n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
 \n
+\n[3.3.1] : 2014-05-06
+\n-유저 도움말 추가 (아직까지 한국어만 지원합니다)
+\n
 \n[3.3] : 2014-02-07
 \n-API 11 또는 그 아래버전에서 어플 목록 버그 수정
 \n
@@ -224,6 +227,7 @@
 	<string name="all_lock_alarm_remove" >예약 잠금 취소</string>
 	<string name="am" >오전</string>
 	<string name="pm" >오후</string>
+	<string name="ShowGuide" >도움말 다시보기</string>
 	<string name="guide_main_1" >위 화면은 세번만 어플의 메인 화면입니다
 \n지금부터, 메인 화면에 대한 설명을 시작하겠습니다
 \n\n

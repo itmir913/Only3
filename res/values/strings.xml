@@ -82,6 +82,9 @@ Do you want to cancel?</string>
 \nApplications that obtain Administrator permission, you can not delete in the usual way
 \nPlease click the main screen, click the [Delete] button to delete
 \n
+\n[3.3.1] : 2014-05-06
+\n-Add user guide (Korean only is supported for now)
+\n
 \n[3.3] : 2014-02-07
 \n-(API 11 or down) App List Bug Fix
 \n
@@ -225,5 +228,62 @@ Do you want to cancel?</string>
 	<string name="all_lock_alarm_remove" >Cencle reserve lock</string>
 	<string name="am" >AM</string>
 	<string name="pm" >PM</string>
+	<string name="ShowGuide" >Show Guide</string>
+	<string name="guide_main_1" >위 화면은 세번만 어플의 메인 화면입니다
+\n지금부터, 메인 화면에 대한 설명을 시작하겠습니다
+\n\n
+\n[시작] 버튼을 눌러서 세번만을 작동시킬수 있으며,\n
+\n[어플 목록] 버튼을 눌러 카운트를 측정할 어플을 지정할수도 있습니다\n
+\n[전체 잠금] 버튼은 일정 시간동안 스마트폰을 잠궈주는 역할을 합니다\n
+\n[설정]에는 세번만 어플의 기본 설정이 담겨 있습니다\n
+\n마지막으로 어플을 제거하실때 [제거] 버튼을 이용해서 제거해야만 합니다</string>
+	<string name="guide_setting_1" >어플 체크 딜레이란?\n
+\n세번만은 현재 실행된 어플을 체크합니다
+\n이때 너무 자주 확인을 할 경우 배터리 소모가 빠를 수 있습니다
+\n이를 막기위해 여러분께서 세번만에게 적절한 확인 간격을 정해주세요!
+\n적절한 체크 시간은 약 2초에서 4초 입니다
+\n\n
+\n어플 실행후, 알려주기란?\n
+\n세번만은 사용자가 지정한 어플을 오래동안 사용하는것을 막기위해
+\n사용 시간에 따라 알림으로 알려주는 기능을 가지고 있습니다
+\n원하시는 분에 한에서 알려주기 간격을 설정하시면
+\n설정한 간격마다 여러분께 알려드립니다
+</string>
+	<string name="guide_setting_2" >알림 타입이란?\n
+\n세번만은 다양한 알림 방법을 지원합니다\n
+\n-토스트 알림은 화면 아래에 표시되는 알림으로써, 전체 화면에서 유리합니다\n
+\n-상단바 알림은 기존 세번만 알림 방식으로써, 화면을 가리지 않아 유용합니다</string>
+	<string name="guide_setting_3" >비밀번호 설정 : 세번만을 사용할때 비밀번호를 설정합니다\n
+\n진동 : 알림이 울릴때, 진동도 함께 울립니다\n
+\n투명 상단바 아이콘 : 상단 알림에 나타나는 아이콘을 투명 아이콘으로 변경합니다, 변경을 위해서는 서비스를 중지해야 가능합니다\n
+\n백업/복원 : /sdcard/only3폴더에 현재 설정을 백업/복원 합니다</string>
+	<string name="guide_applist_1" >어플 목록에 들어가시면 현재 설치된 어플의 목록을 확인하실수 있습니다
+\n시스탬 어플을 확인하려면, 메뉴버튼을 누르신다음 "전체 어플"을 누르시면 됩니다
+\n
+\n어플 목록을 한번 터치하시면 카운트를 설정할수 있는 알림이 나타납니다
+\n
+\n아래 "네이버 카페"앱으로 예를 들어 보겠습니다</string>
+	<string name="guide_applist_2" >알림의 가운데 있는 입력 상자에 하루에 제한하고싶은 수를 입력해 주시면 됩니다
+\n3부터 250까지 범위에서 설정이 가능합니다\n
+\n카운트가 초과될경우, 초기화 될때까지 카운트 수정 및 실행이 불가능합니다\n
+\n카운트는 매일 밤 정각에 초기화 되며,
+\n한번 초기화가 이루어 지고 나서부터 12시 전에 휴대폰이 꺼지고 12시가 지나고 나서 전원을 켰을때 초기화가 이루어 집니다
+\n조건 : 한번 이상 초기화가 이루어 져야 합니다
+\n\n[참고] 왜 3 이하는 안되나요??\n
+\n중요한 어플을 선택했을때 카운트를 변경하시기 편하시라고 제한을 두었습니다
+\n\n\n아래는 카운트를 설정하고 나서 모습입니다</string>
+	<string name="guide_applist_3" >카운트를 등록한 어플은 이렇게 배경색이 달라지며, 현재 카운터와 전체 카운터를 확인할 수 있습니다</string>
+	<string name="guide_applist_4" >카운트를 등록한 어플을 터치하면 현재 카운터 정보와, 수정/삭제 버튼이 나타납니다</string>
+	<string name="guide_applist_5" >어플을 길게 터치하면 화이트 리스트에 추가할까요? 라는 알림이 나타납니다
+\n화이트 리스트란? 전체 잠금을 한다음 사용해야 하는 어플이 있을경우 화이트 리스트에 등록해 주세요
+\n전체 잠금 상태라도 리스트에 등록된 어플은 정상 사용이 가능합니다</string>
+	<string name="guide_fulllock_1" >메인 화면에서 [전체 잠금] 버튼을 선택할경우 위와 같은 알림이 나타납니다
+\n\n바로 잠금 : 지금 당장 스마트폰을 잠궈 집중할 수 있도록 도와줍니다
+\n예약 잠금 : 범위는 현재 시간~오늘 정각 까지이며, 설정한 시간이 되면 자동으로 전체 잠금이 활성화 됩니다</string>
+	<string name="guide_fulllock_2" >바로 잠금 버튼을 터치하면 위와 같은 화면이 나타나며, 24시간까지 설정할 수 있습니다
+\n\n주의 : 전원이 꺼지면 남은 시간이 초기화되며 처음부터 시간 측정이 이루어 집니다</string>
+	<string name="guide_fulllock_3" >예약 잠금을 터치하면 위와 같은 화면이 나타나며, 현재 시간부터 정각까지 예약할수 있고,
+\n최대 24시간까지 가능합니다
+\n\n주의 : 전원이 꺼지지 않도록 조심하세요 전원이 꺼지면 남은 시간이 초기화 됩니다</string>
 
 </resources>
