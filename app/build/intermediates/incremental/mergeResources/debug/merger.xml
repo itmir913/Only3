@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\Android\AndroidStudio\Only3\app\src\main\res"><file name="clear_icon" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\clear_icon.png" qualifiers="" type="drawable"/><file name="guide_applist_1" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_applist_1.png" qualifiers="" type="drawable"/><file name="guide_applist_2" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_applist_2.png" qualifiers="" type="drawable"/><file name="guide_applist_3" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_applist_3.png" qualifiers="" type="drawable"/><file name="guide_applist_4" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_applist_4.png" qualifiers="" type="drawable"/><file name="guide_applist_5" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_applist_5.png" qualifiers="" type="drawable"/><file name="guide_fulllock_1" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_fulllock_1.png" qualifiers="" type="drawable"/><file name="guide_fulllock_2" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_fulllock_2.png" qualifiers="" type="drawable"/><file name="guide_fulllock_3" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_fulllock_3.png" qualifiers="" type="drawable"/><file name="guide_main_1" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_main_1.png" qualifiers="" type="drawable"/><file name="guide_setting_1" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_setting_1.png" qualifiers="" type="drawable"/><file name="guide_setting_2" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_setting_2.png" qualifiers="" type="drawable"/><file name="guide_setting_3" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable\guide_setting_3.png" qualifiers="" type="drawable"/><file name="all_lock" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-hdpi\all_lock.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="list" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-hdpi\list.png" qualifiers="hdpi-v4" type="drawable"/><file name="setting" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-hdpi\setting.png" qualifiers="hdpi-v4" type="drawable"/><file name="start" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-hdpi\start.png" qualifiers="hdpi-v4" type="drawable"/><file name="stop" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-hdpi\stop.png" qualifiers="hdpi-v4" type="drawable"/><file name="start" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-land-hdpi\start.png" qualifiers="land-hdpi-v4" type="drawable"/><file name="stop" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-land-hdpi\stop.png" qualifiers="land-hdpi-v4" type="drawable"/><file name="start" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-land-mdpi\start.png" qualifiers="land-mdpi-v4" type="drawable"/><file name="stop" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-land-mdpi\stop.png" qualifiers="land-mdpi-v4" type="drawable"/><file name="start" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-land-xhdpi\start.png" qualifiers="land-xhdpi-v4" type="drawable"/><file name="stop" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-land-xhdpi\stop.png" qualifiers="land-xhdpi-v4" type="drawable"/><file name="start" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-land-xxhdpi\start.png" qualifiers="land-xxhdpi-v4" type="drawable"/><file name="stop" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-land-xxhdpi\stop.png" qualifiers="land-xxhdpi-v4" type="drawable"/><file name="all_lock" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-mdpi\all_lock.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="list" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-mdpi\list.png" qualifiers="mdpi-v4" type="drawable"/><file name="setting" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-mdpi\setting.png" qualifiers="mdpi-v4" type="drawable"/><file name="start" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-mdpi\start.png" qualifiers="mdpi-v4" type="drawable"/><file name="stop" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-mdpi\stop.png" qualifiers="mdpi-v4" type="drawable"/><file name="all_lock" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\all_lock.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_applist_1" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_applist_1.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_applist_2" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_applist_2.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_applist_3" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_applist_3.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_applist_4" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_applist_4.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_applist_5" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_applist_5.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_fulllock_1" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_fulllock_1.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_fulllock_2" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_fulllock_2.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_fulllock_3" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_fulllock_3.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_main_1" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_main_1.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_setting_1" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_setting_1.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_setting_2" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_setting_2.png" qualifiers="xhdpi-v4" type="drawable"/><file name="guide_setting_3" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\guide_setting_3.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="list" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\list.png" qualifiers="xhdpi-v4" type="drawable"/><file name="setting" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\setting.png" qualifiers="xhdpi-v4" type="drawable"/><file name="start" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\start.png" qualifiers="xhdpi-v4" type="drawable"/><file name="stop" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xhdpi\stop.png" qualifiers="xhdpi-v4" type="drawable"/><file name="all_lock" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xxhdpi\all_lock.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xxhdpi\ic_launcher.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="list" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xxhdpi\list.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="setting" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xxhdpi\setting.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="start" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xxhdpi\start.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="stop" path="D:\Android\AndroidStudio\Only3\app\src\main\res\drawable-xxhdpi\stop.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="activity_abort" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\activity_abort.xml" qualifiers="" type="layout"/><file name="activity_app_info" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\activity_app_info.xml" qualifiers="" type="layout"/><file name="activity_main" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="activity_pass_word" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\activity_pass_word.xml" qualifiers="" type="layout"/><file name="activity_pass_word_make" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\activity_pass_word_make.xml" qualifiers="" type="layout"/><file name="activity_setting" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\activity_setting.xml" qualifiers="" type="layout"/><file name="add_package" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\add_package.xml" qualifiers="" type="layout"/><file name="full_lock_reserve_timeset" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\full_lock_reserve_timeset.xml" qualifiers="" type="layout"/><file name="full_lock_show" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\full_lock_show.xml" qualifiers="" type="layout"/><file name="full_lock_timeset" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\full_lock_timeset.xml" qualifiers="" type="layout"/><file name="guide_applist" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\guide_applist.xml" qualifiers="" type="layout"/><file name="guide_fulllock" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\guide_fulllock.xml" qualifiers="" type="layout"/><file name="guide_main" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\guide_main.xml" qualifiers="" type="layout"/><file name="guide_setting" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\guide_setting.xml" qualifiers="" type="layout"/><file name="guide_welcome" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\guide_welcome.xml" qualifiers="" type="layout"/><file name="list_item_layout" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\list_item_layout.xml" qualifiers="" type="layout"/><file name="remove_package" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\remove_package.xml" qualifiers="" type="layout"/><file name="whielist_package" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout\whielist_package.xml" qualifiers="" type="layout"/><file name="activity_main" path="D:\Android\AndroidStudio\Only3\app\src\main\res\layout-land\activity_main.xml" qualifiers="land" type="layout"/><file path="D:\Android\AndroidStudio\Only3\app\src\main\res\values\dimens.xml" qualifiers=""><dimen name="activity_vertical_margin">16dp</dimen><dimen name="activity_horizontal_margin">16dp</dimen></file><file path="D:\Android\AndroidStudio\Only3\app\src\main\res\values\strings.xml" qualifiers=""><string name="enter_password">Enter the your Password, Please</string><string name="count_launcher">This App is Home Launcher
+\nPlease be careful when you set up the count</string><string name="guide_fulllock_1">메인 화면에서 [전체 잠금] 버튼을 선택할경우 위와 같은 알림이 나타납니다
+\n\n바로 잠금 : 지금 당장 스마트폰을 잠궈 집중할 수 있도록 도와줍니다
+\n예약 잠금 : 범위는 현재 시간~오늘 정각 까지이며, 설정한 시간이 되면 자동으로 전체 잠금이 활성화 됩니다</string><string name="guide_fulllock_2">바로 잠금 버튼을 터치하면 위와 같은 화면이 나타나며, 24시간까지 설정할 수 있습니다
+\n\n주의 : 전원이 꺼지면 남은 시간이 초기화되며 처음부터 시간 측정이 이루어 집니다</string><string name="guide_fulllock_3">예약 잠금을 터치하면 위와 같은 화면이 나타나며, 현재 시간부터 정각까지 예약할수 있고,
+\n최대 24시간까지 가능합니다
+\n\n주의 : 전원이 꺼지지 않도록 조심하세요 전원이 꺼지면 남은 시간이 초기화 됩니다</string><string name="all_lock_show_text0">Only3 Device Lock</string><string name="all_lock_show_text1">-- Remaining time --</string><string name="all_lock_show_text2"/><string name="all_lock_show_text3">Please be patient a little more!!</string><string name="pm">PM</string><string name="notification_message">Touch, To Check the Count</string><string name="exit">Exit</string><string name="all_lock_alarm_btn_2">Just lock</string><string name="all_lock_alarm_finish">Alarm Registered</string><string name="stop">Stop</string><string name="all_lock_alarm_btn_1">Reserve lock</string><string name="all_lock_select_check">Are you sure you want to lock really?
+\nYou also will not be any function , including the call / letter when it is locked
+\nIf you have important, Please select when you have completed all
+\n
+\nWhen you press the OK button, you will not be able to use the phone for %1$d:%2$d</string><string name="del">Delete</string><string name="count_add">Count has been registered</string><string name="ok">OK</string><string name="five_minute_setting_TextView_not">You do not notice when the application is run</string><string name="notification_title">Only3 Service Running</string><string name="ten">Does not after 10 minutes
+\nAfter 10 minutes, the end can be</string><string name="Enter_count_message">Do you want to set the number of times to use the application?</string><string name="change_log">[Info]
+\nApplications that obtain Administrator permission, you can not delete in the usual way
+\nPlease click the main screen, click the [Delete] button to delete
+\n
+\n[3.3.1] : 2014-05-06
+\n-Add user guide (Korean only is supported for now)
+\n
+\n[3.3] : 2014-02-07
+\n-(API 11 or down) App List Bug Fix
+\n
+\n[3.2] : 2014-01-30
+\n-Count clear error fix
+\n
+\n[3.1] : 2014-01-28
+\n-Reserve Device lock
+\n-etc
+\n
+\n[3.0] : 2014-01-27
+\n-The application of the new icon
+\n-Add the lock function of the equipment
+\n-Minor patch
+\n
+\n[2.9.1] : 2014-01-27
+\n-Some bug Fix
+\n
+\n[2.9] : 2014-01-25
+\n-Count not clear because Date changed by User
+\n
+\n[2.8] : 2014-01-25
+\n-Count Clear when 12:00 phone not wake up
+\n-Fix Count Clear Bug when service stop
+\n
+\n[2.7] : 2014-01-23
+\n-Bug fixes run list of recent
+\n
+\n[2.6] : 2014-01-22
+\n-Full support for landscape mode
+\n-hdpi, mdpi screen support
+\n-Add Toast notification
+\n-Optimization memory
+\n
+\n[2.5] : 2014-01-21
+\n-When you select the launcher app, display a warning
+\n
+\n[2.4] : 2014-01-21
+\n-vibration setting bug fix
+\n
+\n[2.3] : 2014-01-21
+\n-Limit of count change for 10 minutes
+\n-Limit of change of the count of Exceeded count app
+\n-change the background color of Exceeded count app
+\n
+\n[2.2] : 2014-01-21
+\n-App List UI Change
+\n
+\n[2.1] : 2013-12-16
+\n-Some bug fix
+\n-Memory optimization
+\n
+\n[2.0] : 2013-11-27
+\n-Password Error Fix
+\n
+\n[1.9] : 2013-11-27
+\n-When Screen off, bug fix
+\n
+\n[1.8] : 2013-11-24
+\n-Backup and Restore
+\n
+\n[1.7] : 2013-11-24
+\n-Count Clear Error Fix
+\n
+\n[1.6] : 2013-11-23
+\n-Add transparent notification icon function
+\n
+\n[1.5] : 2013-11-22
+\n-Known bug fixes
+\n-Sources and memory optimization
+\n-Add vibration settings
+\n-In hdpi devices such as Nexus S, Fix inconsistent layout
+\n-kitkat (version 4.4) support
+\n
+\n[1.3] : 2013-10-23
+\n-10 minutes after boot error fix
+\n
+\n[1.2] : 2013-10-22
+\n-Check Only3 application to prevent the counter
+\n
+\n[1.1] : 2013-10-22
+\n-In order to prevent the deletion, administrator privileges acquisition
+\n-Notification every (setting) minutes (add vibration permission)
+\n-Fix initialization error counters every day
+\n-After 10 minutes, you can stop service
+\n-Source optimization
+\n
+\n[1.0] : 2013-10-21
+\n-Applications Release</string><string name="device_admin_disabled">Administrator privileges are turned off</string><string name="preference_backup_complete">Backup Complete!</string><string name="count_is_zero">Count is Zero, Not applied</string><string name="count_250">Count can be set 3~250</string><string name="all_lock_alarm_remove">Cencle reserve lock</string><string name="androidservice">Only3 Service</string><string name="clear_icon_noti">Transparent notification icon</string><string name="preference_not_file">There are no files</string><string name="vibrate">Vibrate</string><string name="menu_all">All App</string><string name="guide_main_1">위 화면은 세번만 어플의 메인 화면입니다
+\n지금부터, 메인 화면에 대한 설명을 시작하겠습니다
+\n\n
+\n[시작] 버튼을 눌러서 세번만을 작동시킬수 있으며,\n
+\n[어플 목록] 버튼을 눌러 카운트를 측정할 어플을 지정할수도 있습니다\n
+\n[전체 잠금] 버튼은 일정 시간동안 스마트폰을 잠궈주는 역할을 합니다\n
+\n[설정]에는 세번만 어플의 기본 설정이 담겨 있습니다\n
+\n마지막으로 어플을 제거하실때 [제거] 버튼을 이용해서 제거해야만 합니다</string><string name="welcome_5">This Icon is Full Lock!
+\nYou can do a full lock (your device)
+\nIf you can not concentrate , please lock your smart phone</string><string name="alertType_all">Toast <![CDATA[&]]> Notification</string><string name="welcome_4">Do you know how to clear the app?
+\n\n
+Applications that obtain Administrator permission, you can not delete in the usual way
+\nPlease click the main screen, click the [Delete] button to delete
+\n\n
+Delete the application, Service must be turned off</string><string name="loading">Loading</string><string name="all_lock_select_check_reserve">Are you sure you want to lock really?
+\nYou also will not be any function , including the call / letter when it is locked
+\nIf you have important, Please select when you have completed all
+\n
+\nWhen you press the OK button,
+\nyou will not be able to use the phone for %1$d:%2$d from %3$s %4$s %5$s</string><string name="welcome_3">This Icon is Setting Button!
+\nYou can see the Delay setting, Password etc
+\nPlease set a password so that someone can not unlock</string><string name="preference_backup_restore">Backup <![CDATA[&]]> Restore</string><string name="welcome_2">This Icon is AppList!
+\nYou can set the count!
+\nand We can set up to 250 count</string><string name="welcome_1">The Only3 applications can help your smart life!!
+\n\nIntuitive UI, fast operation..
+\nNow, I will start the world smart!</string><string name="count_not_fix_ten">Does not after 10 minutes, you can not change the count</string><string name="am">AM</string><string name="alertType_Text">[Notification Type]</string><string name="five_minute">It was after %1$d minutes from using the application</string><string name="next">Next</string><string name="app_name">Only3</string><string name="count_much_added">Count has been exceeded!!! : %1$d/%2$d</string><string name="guide_applist_5">어플을 길게 터치하면 화이트 리스트에 추가할까요? 라는 알림이 나타납니다
+\n화이트 리스트란? 전체 잠금을 한다음 사용해야 하는 어플이 있을경우 화이트 리스트에 등록해 주세요
+\n전체 잠금 상태라도 리스트에 등록된 어플은 정상 사용이 가능합니다</string><string name="guide_applist_1">어플 목록에 들어가시면 현재 설치된 어플의 목록을 확인하실수 있습니다
+\n시스탬 어플을 확인하려면, 메뉴버튼을 누르신다음 "전체 어플"을 누르시면 됩니다
+\n
+\n어플 목록을 한번 터치하시면 카운트를 설정할수 있는 알림이 나타납니다
+\n
+\n아래 "네이버 카페"앱으로 예를 들어 보겠습니다</string><string name="guide_applist_2">알림의 가운데 있는 입력 상자에 하루에 제한하고싶은 수를 입력해 주시면 됩니다
+\n3부터 250까지 범위에서 설정이 가능합니다\n
+\n카운트가 초과될경우, 초기화 될때까지 카운트 수정 및 실행이 불가능합니다\n
+\n카운트는 매일 밤 정각에 초기화 되며,
+\n한번 초기화가 이루어 지고 나서부터 12시 전에 휴대폰이 꺼지고 12시가 지나고 나서 전원을 켰을때 초기화가 이루어 집니다
+\n조건 : 한번 이상 초기화가 이루어 져야 합니다
+\n\n[참고] 왜 3 이하는 안되나요??\n
+\n중요한 어플을 선택했을때 카운트를 변경하시기 편하시라고 제한을 두었습니다
+\n\n\n아래는 카운트를 설정하고 나서 모습입니다</string><string name="guide_applist_3">카운트를 등록한 어플은 이렇게 배경색이 달라지며, 현재 카운터와 전체 카운터를 확인할 수 있습니다</string><string name="guide_applist_4">카운트를 등록한 어플을 터치하면 현재 카운터 정보와, 수정/삭제 버튼이 나타납니다</string><string name="enter_password_ok">Password has been registered</string><string name="delay">App Check Delay : %1$d Second</string><string name="alertType_notifi">Notification</string><string name="menu_download">Download App</string><string name="all_lock_alert_message">Please select the time to lock the phone</string><string name="add">Add</string><string name="list">App\nList</string><string name="count_added">Count was increased : %1$d/%2$d</string><string name="all_lock_alarm_past">It can not be set in the past</string><string name="preference_restore">Restore</string><string name="all_lock">Full\nLock</string><string name="preference_restore_complete">Restore Complete!</string><string name="all_lock_alarm_btn_help">Please select the type of lock</string><string name="all_lock_notifi_message">Device Full Lock</string><string name="ShowGuide">Show Guide</string><string name="subservice">SubService</string><string name="device_admin">Only3 Applications to work smoothly must have administrator privileges
+\n\nThis application that was developed by a student is pure, korean country
+\nQuestions, please mail to whdghks913@naver.com
+\n
+\nIf you set an administrator, The app is not deleted in the usual way
+\nin order to delete, please use the Remove button in the application</string><string name="alertType_toast">Toast</string><string name="Enter_count">Please Enter The Count</string><string name="all_lock_alert_title">Phone Full Lock</string><string name="start">Start</string><string name="appSetting_Text">[App Advanced Setting]</string><string name="blank">You have not entered nothing</string><string name="count_clean_title">Count has been initialized</string><string name="preference_backup">Backup</string><string name="five_minute_setting_TextView">After running the application, the notification every %1$d minutes</string><string name="guide_setting_1">어플 체크 딜레이란?\n
+\n세번만은 현재 실행된 어플을 체크합니다
+\n이때 너무 자주 확인을 할 경우 배터리 소모가 빠를 수 있습니다
+\n이를 막기위해 여러분께서 세번만에게 적절한 확인 간격을 정해주세요!
+\n적절한 체크 시간은 약 2초에서 4초 입니다
+\n\n
+\n어플 실행후, 알려주기란?\n
+\n세번만은 사용자가 지정한 어플을 오래동안 사용하는것을 막기위해
+\n사용 시간에 따라 알림으로 알려주는 기능을 가지고 있습니다
+\n원하시는 분에 한에서 알려주기 간격을 설정하시면
+\n설정한 간격마다 여러분께 알려드립니다
+</string><string name="startApp">Only3 Start!</string><string name="guide_setting_2">알림 타입이란?\n
+\n세번만은 다양한 알림 방법을 지원합니다\n
+\n-토스트 알림은 화면 아래에 표시되는 알림으로써, 전체 화면에서 유리합니다\n
+\n-상단바 알림은 기존 세번만 알림 방식으로써, 화면을 가리지 않아 유용합니다</string><string name="guide_setting_3">비밀번호 설정 : 세번만을 사용할때 비밀번호를 설정합니다\n
+\n진동 : 알림이 울릴때, 진동도 함께 울립니다\n
+\n투명 상단바 아이콘 : 상단 알림에 나타나는 아이콘을 투명 아이콘으로 변경합니다, 변경을 위해서는 서비스를 중지해야 가능합니다\n
+\n백업/복원 : /sdcard/only3폴더에 현재 설정을 백업/복원 합니다</string><string name="abort_1">One day\nthe count has been exceeded</string><string name="alertType_Test">Notification will be displayed in this way</string><string name="MainText_1">Smart habit you are using a smart phone,\nOnly3!</string><string name="all_lock_whitelist_text1">Are you sure you want to whitelist this app?</string><string name="preference_fail">Task Fail</string><string name="all_lock_whitelist_text2">You can set the count, short touch or, \nto set the white list , please long touch</string><string name="all_lock_show_button">App\nStart</string><string name="all_lock_whitelist_text0">It is registered in the white list</string><string name="count_clean_message">A new day began!</string><string name="count_fixed">Count has been fixed</string><string name="Not_Install">Service is Running, Not uninstall</string><string name="count_edit">Count Edit</string><string name="setting">Settings</string><string name="count_not_fix_total">Since the count is exceeded, you can not change the count</string><string name="password">Set PassWord</string><string name="me_app">This app can not be selected</string><string name="now_count">Now: %1$d, All: %2$d</string><string name="madeby">Only3, Version : %1$s
+\nCopyright <![CDATA[ⓒ]]> 2013 whdghks913
+\nAll rights reserved</string><string name="all_lock_alarm_text">↑ Lock Start Time
+\n↓ Device Lock Time</string><string name="all_lock_select_error">You can not select 0 hours 0 minutes</string><string name="device_admin_disabled_warring">If you disable the permission of this application
+\nOnly three applications Can not prevent the delete,
+\nFunction does not work
+\n\n
+Do you want to cancel?</string></file><file path="D:\Android\AndroidStudio\Only3\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style><color name="Background">#FFFFE3A2</color><color name="TotalCount">#FFFF6347</color><style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style></file><file path="D:\Android\AndroidStudio\Only3\app\src\main\res\values-ko\strings.xml" qualifiers="ko"><string name="guide_applist_2">알림의 가운데 있는 입력 상자에 하루에 제한하고싶은 수를 입력해 주시면 됩니다
+\n3부터 250까지 범위에서 설정이 가능합니다\n
+\n카운트가 초과될경우, 초기화 될때까지 카운트 수정 및 실행이 불가능합니다\n
+\n카운트는 매일 밤 정각에 초기화 되며,
+\n한번 초기화가 이루어 지고 나서부터 12시 전에 휴대폰이 꺼지고 12시가 지나고 나서 전원을 켰을때 초기화가 이루어 집니다
+\n조건 : 한번 이상 초기화가 이루어 져야 합니다
+\n\n[참고] 왜 3 이하는 안되나요??\n
+\n중요한 어플을 선택했을때 카운트를 변경하시기 편하시라고 제한을 두었습니다
+\n\n\n아래는 카운트를 설정하고 나서 모습입니다</string><string name="guide_applist_3">카운트를 등록한 어플은 이렇게 배경색이 달라지며, 현재 카운터와 전체 카운터를 확인할 수 있습니다</string><string name="guide_applist_4">카운트를 등록한 어플을 터치하면 현재 카운터 정보와, 수정/삭제 버튼이 나타납니다</string><string name="guide_applist_5">어플을 길게 터치하면 화이트 리스트에 추가할까요? 라는 알림이 나타납니다
+\n화이트 리스트란? 전체 잠금을 한다음 사용해야 하는 어플이 있을경우 화이트 리스트에 등록해 주세요
+\n전체 잠금 상태라도 리스트에 등록된 어플은 정상 사용이 가능합니다</string><string name="all_lock_alarm_btn_1">예약 잠금</string><string name="all_lock_alarm_past">과거로는 설정할수 없습니다</string><string name="next">다음</string><string name="all_lock_alarm_btn_2">바로 잠금</string><string name="MainText_1">스마트폰을 사용하는 똑똑한 습관, 세번만!</string><string name="count_much_added">카운트를 초과했습니다!!! : %1$d/%2$d</string><string name="ShowGuide">도움말 다시보기</string><string name="password">비밀번호 설정</string><string name="alertType_Text">[알림 타입]</string><string name="menu_download">다운로드한 어플</string><string name="stop">종료</string><string name="loading">로딩중</string><string name="device_admin_disabled_warring">이 어플의 권한을 해제하면
+\n세번만 어플의 삭제를 막을수 없으며,
+\n기능이 작동하지 않습니다
+\n\n
+정말로 해제하겠습니까?</string><string name="Not_Install">서비스가 실행중입니다, 제거할수 없습니다</string><string name="preference_backup_complete">백업 완료!</string><string name="add">추가</string><string name="all_lock_alarm_text">↑ 잠금 시작 시간
+\n↓ 잠금 시간</string><string name="exit">취소</string><string name="count_not_fix_ten">10분이 지나지 않아서 카운트를 수정할수 없습니다</string><string name="clear_icon_noti">투명 상단바 아이콘</string><string name="all_lock_whitelist_text2">카운트를 설정하려면 짧게 터치, 화이트 리스트를 설정하려면 길게 터치하세요</string><string name="change_log">[안내]
+\n관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
+\n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
+\n
+\n[3.3.1] : 2014-05-06
+\n-유저 도움말 추가 (아직까지 한국어만 지원합니다)
+\n
+\n[3.3] : 2014-02-07
+\n-API 11 또는 그 아래버전에서 어플 목록 버그 수정
+\n
+\n[3.2] : 2014-01-30
+\n-카운트 초기화 에러 수정
+\n
+\n[3.1] : 2014-01-28
+\n-예약 잠금 지원
+\n-등
+\n
+\n[3.0] : 2014-01-27
+\n-새로운 아이콘 적용
+\n-기기 잠금 기능 추가
+\n-마이너 패치
+\n
+\n[2.9.1] : 2014-01-27
+\n-일부 버그 수정
+\n
+\n[2.9] : 2014-01-25
+\n-사용자에 의해 날짜변경시 카운트 초기화 제한
+\n
+\n[2.8] : 2014-01-25
+\n-12:00에 폰이 꺼져있으면 카운트가 초기화 되지 않는 버그 수정
+\n-서비스 중지후, 카운트 초기화 버그 수정
+\n
+\n[2.7] : 2014-01-23 
+\n최근 실행 목록에서의 버그 수정
+\n
+\n[2.6] : 2014-01-22
+\n-세번만 어플의 가로모드 완벽지원
+\n-hdpi, mdpi기종에서의 이미지 지원 추가
+\n-토스트 알림 추가
+\n-메모리 최적화
+\n
+\n[2.5] : 2014-01-21
+\n-런처 어플 선택시 경고 알림 표시
+\n
+\n[2.4] : 2014-01-21
+\n-진동 설정 버그 수정
+\n
+\n[2.3] : 2014-01-21
+\n-10분동안 카운트 변경 제한
+\n-카운트 초과 어플의 전체 카운트 변경 제한
+\n-카운트 초과 어플의 배경색 변경
+\n
+\n[2.2] :2014-01-21
+\n-어플 선택 리스트 UI 변경
+\n
+\n[2.1] : 2013-12-16
+\n-일부 버그 수정
+\n-메모리 최적화
+\n
+\n[2.0] : 2013-11-27
+\n-비밀번호 오류 수정
+\n
+\n[1.9] : 2013-11-27
+\n-화면 꺼짐 버그 수정
+\n
+\n[1.8] : 2013-11-24
+\n-백업, 복원 지원
+\n
+\n[1.7] : 2013-11-24
+\n-카운트 초기화 오류 픽스
+\n
+\n[1.6] : 2013-11-23
+\n-진행중 투명 아이콘 기능 추가
+\n
+\n[1.5] : 2013-11-22
+\n-알려진 버그 수정
+\n-소스와 메모리 최적화
+\n-진동 설정 추가
+\n-넥서스S와 같은 hdpi기종에서 레이아웃 오류 수정
+\n-킷켓(4.4) 지원
+\n
+\n[1.3] : 2013-10-23
+\n-부팅후 서비스를 종료할때 10분이 지났음에도 불구하고 지나지 않았다고 하는 문제 해결
+\n
+\n[1.2] : 2013-10-22
+\n-세번만 어플의 카운트 지정을 방지합니다
+\n
+\n[1.1] : 2013-10-22
+\n-관리자 권한을 얻어 임의 삭제 방지
+\n-지정된 시간마다 알림을 띄워 사용 시간을 인지할수 있도록 합니다(진동 권한 추가)
+\n-하루마다 카운터가 초기화 되지 않는 오류 수정
+\n-서비스를 실행한후 10분이 지나야만 종료가 가능하게 수정
+\n-소스 최적화
+\n
+\n[1.0] : 2013-10-21
+\n-어플 출시</string><string name="app_name">세번만</string><string name="all_lock_whitelist_text0">화이트 리스트에 등록되어 있습니다</string><string name="device_admin">세번만 어플이 원활하게 동작하기 위해서는
+\n관리자 권한이 필요합니다!
+\n\n이 어플은 학생이 개발한 순수 우리나라 어플입니다
+\n문의 사항은 whdghks913@naver.com으로 메일 주세요
+\n\n관리자 권한을 설정하면 일반 방법으로 삭제되지 않습니다
+\n삭제를 하기 위해서는, 어플내 제거 버튼을 사용해 주세요</string><string name="all_lock_whitelist_text1">이 어플을 화이트 리스트에 등록할까요?</string><string name="all_lock_alarm_btn_help">잠금 유형을 선택하세요</string><string name="five_minute_setting_TextView">어플을 실행한후, %1$d분마다 알려줍니다</string><string name="preference_restore">복원</string><string name="all_lock">전체\n잠금</string><string name="guide_main_1">위 화면은 세번만 어플의 메인 화면입니다
+\n지금부터, 메인 화면에 대한 설명을 시작하겠습니다
+\n\n
+\n[시작] 버튼을 눌러서 세번만을 작동시킬수 있으며,\n
+\n[어플 목록] 버튼을 눌러 카운트를 측정할 어플을 지정할수도 있습니다\n
+\n[전체 잠금] 버튼은 일정 시간동안 스마트폰을 잠궈주는 역할을 합니다\n
+\n[설정]에는 세번만 어플의 기본 설정이 담겨 있습니다\n
+\n마지막으로 어플을 제거하실때 [제거] 버튼을 이용해서 제거해야만 합니다</string><string name="count_250">카운트는 3~250까지 설정할수 있습니다</string><string name="count_is_zero">카운트가 0입니다, 적용되지 않았습니다</string><string name="all_lock_select_check">정말로 휴대폰을 잠그시겠습니까?
+\n잠긴동안 통화/문자를 포함한 어떠한 기능도 할수 없습니다
+\n중요한 일이 있다면 꼭 먼저 하시고 실행하시길 바랍니다
+\n
+\n확인 버튼을 누르면 %1$d시간 %2$d분 동안 폰을 사용할 수 없습니다</string><string name="preference_backup">백업</string><string name="all_lock_alert_title">전체 잠금</string><string name="alertType_all">토스트 알림 <![CDATA[&]]> 상단바 알림</string><string name="count_clean_message">새로운 하루가 시작되었습니다!</string><string name="welcome_1">세번만 어플이 당신의 스마트 생활을 도와드리겠습니다!!!
+\n\n직관적인 UI, 빠른 동작..
+\n이제, 당신의 스마트한 세상이 시작됩니다!</string><string name="welcome_2">이 아이콘은 어플 목록입니다
+\n이 아이콘을 눌러 당신은 카운트를 설정할수 있습니다
+\n카운트는 250까지 설정이 가능합니다</string><string name="welcome_3">이 아이콘은 설정 아이콘 입니다
+\n감시 딜레이, 비밀번호 등이 있습니다
+\n누군가가 잠금을 해제 할 수 없도록 암호를 설정하세요</string><string name="five_minute_setting_TextView_not">어플을 실행해도, 알리지 않습니다</string><string name="all_lock_select_error">0시간 0분은 선택할 수 없습니다</string><string name="notification_message">카운트를 확인하려면 터치하세요</string><string name="welcome_4">어플을 지우는 방법을 아십니까?
+\n\n
+관리자 권한을 얻은 어플은 일반 방법으로 삭제가 불가능 합니다
+\n삭제를 하기 위해서는 메인 화면의 제거 버튼을 누르세요
+\n\n
+어플 삭제는 서비스가 꺼져있을때만 가능합니다</string><string name="all_lock_alert_message">스마트폰을 잠글 시간을 선택하세요</string><string name="welcome_5">이 아이콘은 전체 잠금 아이콘 입니다
+\n당신은 기기 전체를 잠글수 있습니다
+\n만약 집중이 안될경우, 기기 전체를 잠구세요!</string><string name="alertType_Test">알림이 이렇게 나타납니다</string><string name="five_minute">어플을 사용한지 %1$d분이 지났습니다</string><string name="guide_applist_1">어플 목록에 들어가시면 현재 설치된 어플의 목록을 확인하실수 있습니다
+\n시스탬 어플을 확인하려면, 메뉴버튼을 누르신다음 "전체 어플"을 누르시면 됩니다
+\n
+\n어플 목록을 한번 터치하시면 카운트를 설정할수 있는 알림이 나타납니다
+\n
+\n아래 "네이버 카페"앱으로 예를 들어 보겠습니다</string><string name="count_edit">카운트 수정</string><string name="preference_restore_complete">복원 완료!</string><string name="all_lock_show_text3">조금만 더 참아요!!</string><string name="all_lock_show_text2">남았습니다</string><string name="enter_password_ok">비밀번호가 설정되었습니다</string><string name="all_lock_show_text1">스마트폰 잠금이 종료될때 까지</string><string name="am">오전</string><string name="count_added">카운트가 증가하였습니다 : %1$d/%2$d</string><string name="count_clean_title">카운트가 초기화되었습니다</string><string name="del">제거</string><string name="count_not_fix_total">카운트가 초과되었기 때문에 카운트를 수정할수 없습니다</string><string name="count_launcher">이 어플은 홈화면을 담당하는 런처 어플입니다
+\n카운트를 설정하실때 주의하세요</string><string name="enter_password">비밀번호를 입력해 주세요</string><string name="delay">어플 체크 딜레이 : %1$d초</string><string name="alertType_notifi">상단바 알림</string><string name="vibrate">진동</string><string name="list">목록</string><string name="all_lock_show_button">어플\n실행</string><string name="Enter_count">카운트를 입력해 주세요!</string><string name="guide_setting_1">어플 체크 딜레이란?\n
+\n세번만은 현재 실행된 어플을 체크합니다
+\n이때 너무 자주 확인을 할 경우 배터리 소모가 빠를 수 있습니다
+\n이를 막기위해 여러분께서 세번만에게 적절한 확인 간격을 정해주세요!
+\n적절한 체크 시간은 약 2초에서 4초 입니다
+\n\n
+\n어플 실행후, 알려주기란?\n
+\n세번만은 사용자가 지정한 어플을 오래동안 사용하는것을 막기위해
+\n사용 시간에 따라 알림으로 알려주는 기능을 가지고 있습니다
+\n원하시는 분에 한에서 알려주기 간격을 설정하시면
+\n설정한 간격마다 여러분께 알려드립니다
+</string><string name="guide_setting_2">알림 타입이란?\n
+\n세번만은 다양한 알림 방법을 지원합니다\n
+\n-토스트 알림은 화면 아래에 표시되는 알림으로써, 전체 화면에서 유리합니다\n
+\n-상단바 알림은 기존 세번만 알림 방식으로써, 화면을 가리지 않아 유용합니다</string><string name="guide_setting_3">비밀번호 설정 : 세번만을 사용할때 비밀번호를 설정합니다\n
+\n진동 : 알림이 울릴때, 진동도 함께 울립니다\n
+\n투명 상단바 아이콘 : 상단 알림에 나타나는 아이콘을 투명 아이콘으로 변경합니다, 변경을 위해서는 서비스를 중지해야 가능합니다\n
+\n백업/복원 : /sdcard/only3폴더에 현재 설정을 백업/복원 합니다</string><string name="all_lock_notifi_message">기기 잠금 상태</string><string name="pm">오후</string><string name="device_admin_disabled">관리자 권한이 해제되었습니다</string><string name="ten">아직 10분이 경과되지 않았습니다
+\n10분 경과후, 종료가 가능합니다</string><string name="subservice">보조 서비스</string><string name="me_app">이 어플은 선택할수 없습니다</string><string name="appSetting_Text">[어플 세부 설정]</string><string name="startApp">세번만 어플 시작!</string><string name="setting">설정</string><string name="madeby">세번만 , Version : %1$s
+\nCopyright <![CDATA[©]]> 2013 whdghks913
+\nAll rights reserved</string><string name="alertType_toast">토스트 알림</string><string name="preference_backup_restore">백업 <![CDATA[&]]> 복원</string><string name="all_lock_select_check_reserve">정말로 휴대폰을 잠그시겠습니까?
+\n잠긴동안 통화/문자를 포함한 어떠한 기능도 할수 없습니다
+\n중요한 일이 있다면 꼭 먼저 하시고 실행하시길 바랍니다
+\n
+\n확인 버튼을 누르면
+\n%3$s %4$s %5$s부터 %1$d시간 %2$d분 동안 폰을 사용할 수 없습니다</string><string name="preference_fail">작업 실패</string><string name="ok">확인</string><string name="now_count">현재: %1$d, 전체: %2$d</string><string name="all_lock_alarm_finish">예약잠금 등록됨</string><string name="all_lock_alarm_remove">예약 잠금 취소</string><string name="androidservice">세번만 서비스</string><string name="guide_fulllock_3">예약 잠금을 터치하면 위와 같은 화면이 나타나며, 현재 시간부터 정각까지 예약할수 있고,
+\n최대 24시간까지 가능합니다
+\n\n주의 : 전원이 꺼지지 않도록 조심하세요 전원이 꺼지면 남은 시간이 초기화 됩니다</string><string name="guide_fulllock_1">메인 화면에서 [전체 잠금] 버튼을 선택할경우 위와 같은 알림이 나타납니다
+\n\n바로 잠금 : 지금 당장 스마트폰을 잠궈 집중할 수 있도록 도와줍니다
+\n예약 잠금 : 범위는 현재 시간~오늘 정각 까지이며, 설정한 시간이 되면 자동으로 전체 잠금이 활성화 됩니다</string><string name="guide_fulllock_2">바로 잠금 버튼을 터치하면 위와 같은 화면이 나타나며, 24시간까지 설정할 수 있습니다
+\n\n주의 : 전원이 꺼지면 남은 시간이 초기화되며 처음부터 시간 측정이 이루어 집니다</string><string name="Enter_count_message">하루에 어플을 사용할 횟수를 설정하시겠습니까?</string><string name="count_add">카운트가 등록되었습니다</string><string name="notification_title">세번만 어플이 동작중입니다</string><string name="menu_all">전체 어플</string><string name="count_fixed">카운트가 수정되었습니다</string><string name="start">시작</string><string name="preference_not_file">파일이 없습니다</string><string name="blank">아무것도 입력되지 않았습니다</string><string name="abort_1">일일 카운트가\n초과되었습니다</string></file><file path="D:\Android\AndroidStudio\Only3\app\src\main\res\values-sw720dp-land\dimens.xml" qualifiers="sw720dp-land-v13"><dimen name="activity_horizontal_margin">128dp</dimen></file><file path="D:\Android\AndroidStudio\Only3\app\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style></file><file path="D:\Android\AndroidStudio\Only3\app\src\main\res\values-v14\styles.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+    </style></file><file name="device_admin_policies" path="D:\Android\AndroidStudio\Only3\app\src\main\res\xml\device_admin_policies.xml" qualifiers="" type="xml"/></source><source path="D:\Android\AndroidStudio\Only3\app\build\generated\res\rs\debug"/><source path="D:\Android\AndroidStudio\Only3\app\build\generated\res\generated\debug"/></dataSet><dataSet config="debug"><source path="D:\Android\AndroidStudio\Only3\app\src\debug\res"/></dataSet><mergedItems/></merger>

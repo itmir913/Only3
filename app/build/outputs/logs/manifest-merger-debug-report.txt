@@ -1,0 +1,175 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:2:1
+	package
+		ADDED from AndroidManifest.xml:3:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:5:5
+	android:versionCode
+		ADDED from AndroidManifest.xml:4:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
+uses-permission#android.permission.GET_TASKS
+ADDED from AndroidManifest.xml:7:5
+	android:name
+		ADDED from AndroidManifest.xml:7:22
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from AndroidManifest.xml:8:5
+	android:name
+		ADDED from AndroidManifest.xml:8:22
+uses-permission#android.permission.VIBRATE
+ADDED from AndroidManifest.xml:9:5
+	android:name
+		ADDED from AndroidManifest.xml:9:22
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from AndroidManifest.xml:10:5
+	android:name
+		ADDED from AndroidManifest.xml:10:22
+uses-sdk
+ADDED from AndroidManifest.xml:12:5
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:14:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:13:9
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+application
+ADDED from AndroidManifest.xml:16:5
+	android:label
+		ADDED from AndroidManifest.xml:20:9
+	android:allowClearUserData
+		ADDED from AndroidManifest.xml:18:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:17:9
+	android:icon
+		ADDED from AndroidManifest.xml:19:9
+	android:theme
+		ADDED from AndroidManifest.xml:21:9
+activity#lee.whdghks913.only3.MainActivity
+ADDED from AndroidManifest.xml:22:9
+	android:label
+		ADDED from AndroidManifest.xml:26:13
+	android:excludeFromRecents
+		ADDED from AndroidManifest.xml:25:13
+	android:allowClearUserData
+		ADDED from AndroidManifest.xml:24:13
+	android:name
+		ADDED from AndroidManifest.xml:23:13
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:27:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:28:17
+	android:name
+		ADDED from AndroidManifest.xml:28:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:30:17
+	android:name
+		ADDED from AndroidManifest.xml:30:27
+service#lee.whdghks913.only3.count.AndroidService
+ADDED from AndroidManifest.xml:34:9
+	android:enabled
+		ADDED from AndroidManifest.xml:36:13
+	android:label
+		ADDED from AndroidManifest.xml:37:13
+	android:name
+		ADDED from AndroidManifest.xml:35:13
+service#lee.whdghks913.only3.count.SubService
+ADDED from AndroidManifest.xml:38:9
+	android:enabled
+		ADDED from AndroidManifest.xml:40:13
+	android:label
+		ADDED from AndroidManifest.xml:41:13
+	android:name
+		ADDED from AndroidManifest.xml:39:13
+service#lee.whdghks913.only3.fulllock.FullLockService
+ADDED from AndroidManifest.xml:42:9
+	android:enabled
+		ADDED from AndroidManifest.xml:44:13
+	android:name
+		ADDED from AndroidManifest.xml:43:13
+receiver#lee.whdghks913.only3.BroadCast
+ADDED from AndroidManifest.xml:46:9
+	android:enabled
+		ADDED from AndroidManifest.xml:48:13
+	android:permission
+		ADDED from AndroidManifest.xml:49:13
+	android:name
+		ADDED from AndroidManifest.xml:47:13
+intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:50:13
+action#android.intent.action.BOOT_COMPLETED
+ADDED from AndroidManifest.xml:51:17
+	android:name
+		ADDED from AndroidManifest.xml:51:25
+category#android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:58:17
+	android:name
+		ADDED from AndroidManifest.xml:58:27
+receiver#lee.whdghks913.only3.AdminReceiver
+ADDED from AndroidManifest.xml:67:9
+	android:permission
+		ADDED from AndroidManifest.xml:69:13
+	android:name
+		ADDED from AndroidManifest.xml:68:13
+meta-data#android.app.device_admin
+ADDED from AndroidManifest.xml:70:13
+	android:resource
+		ADDED from AndroidManifest.xml:72:17
+	android:name
+		ADDED from AndroidManifest.xml:71:17
+intent-filter#android.app.action.DEVICE_ADMIN_ENABLED
+ADDED from AndroidManifest.xml:74:13
+action#android.app.action.DEVICE_ADMIN_ENABLED
+ADDED from AndroidManifest.xml:75:17
+	android:name
+		ADDED from AndroidManifest.xml:75:25
+activity#lee.whdghks913.only3.AppInfoActivity
+ADDED from AndroidManifest.xml:79:9
+	android:name
+		ADDED from AndroidManifest.xml:79:19
+activity#lee.whdghks913.only3.count.Abort
+ADDED from AndroidManifest.xml:80:9
+	android:excludeFromRecents
+		ADDED from AndroidManifest.xml:82:13
+	android:name
+		ADDED from AndroidManifest.xml:81:13
+activity#lee.whdghks913.only3.Setting
+ADDED from AndroidManifest.xml:83:9
+	android:name
+		ADDED from AndroidManifest.xml:83:19
+activity#lee.whdghks913.only3.PassWord
+ADDED from AndroidManifest.xml:84:9
+	android:name
+		ADDED from AndroidManifest.xml:84:19
+activity#lee.whdghks913.only3.welcome.Welcome
+ADDED from AndroidManifest.xml:85:9
+	android:name
+		ADDED from AndroidManifest.xml:85:19
+activity#lee.whdghks913.only3.welcome.WelcomeMain
+ADDED from AndroidManifest.xml:86:9
+	android:name
+		ADDED from AndroidManifest.xml:86:19
+activity#lee.whdghks913.only3.welcome.WelcomeApplist
+ADDED from AndroidManifest.xml:87:9
+	android:name
+		ADDED from AndroidManifest.xml:87:19
+activity#lee.whdghks913.only3.welcome.WelcomeFulllock
+ADDED from AndroidManifest.xml:88:9
+	android:name
+		ADDED from AndroidManifest.xml:88:19
+activity#lee.whdghks913.only3.welcome.WelcomeSetting
+ADDED from AndroidManifest.xml:89:9
+	android:name
+		ADDED from AndroidManifest.xml:89:19
+activity#lee.whdghks913.only3.fulllock.FullLockActivity
+ADDED from AndroidManifest.xml:90:9
+	android:excludeFromRecents
+		ADDED from AndroidManifest.xml:91:13
+	android:name
+		ADDED from AndroidManifest.xml:90:19
