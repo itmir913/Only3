@@ -264,65 +264,69 @@ public class AppFragment extends Fragment {
 
         @Override
         protected Void doInBackground(Void... params) {
-            /**
-             * 어플리케이션 리스트 작성
-             */
+            try {
+                /**
+                 * 어플리케이션 리스트 작성
+                 */
 
-            List<ResolveInfo> mAppList = mAdapter.getAppList();
-            PackageManager mPackageManager = null;
+                List<ResolveInfo> mAppList = mAdapter.getAppList();
+                PackageManager mPackageManager = null;
 
-            // 어플리스트 불러오기 작업 시작
-            if (mAppList == null) {
+                // 어플리스트 불러오기 작업 시작
+                if (mAppList == null) {
 
-                // 패키지 매니저 취득
-                mPackageManager = getActivity().getPackageManager();
+                    // 패키지 매니저 취득
+                    mPackageManager = getActivity().getPackageManager();
 
-                // 설치된 어플리케이션 취득
-                Intent intent = new Intent(Intent.ACTION_MAIN, null);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
-                mAppList = mPackageManager.queryIntentActivities(intent, 0);
+                    // 설치된 어플리케이션 취득
+                    Intent intent = new Intent(Intent.ACTION_MAIN, null);
+                    intent.addCategory(Intent.CATEGORY_LAUNCHER);
+                    mAppList = mPackageManager.queryIntentActivities(intent, 0);
 //                mAppList = mPackageManager.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES
 //                        | PackageManager.GET_DISABLED_COMPONENTS);
-            }
-
-            // 기존에 있던 데이터 초기화
-            mAdapter.clear();
-
-            String[] mLauncherAppList = Tools.getLauncherApp(getActivity());
-
-            AppInfo addInfo = null;
-
-            for (int i = 0; i < mAppList.size(); i++) {
-
-                ResolveInfo app = mAppList.get(i);
-
-                addInfo = new AppInfo();
-
-                // App Icon
-                addInfo.mIcon = app.loadIcon(mPackageManager);
-                // App Name
-                addInfo.mAppName = app.loadLabel(mPackageManager).toString();
-                // App Package Name
-                addInfo.mAppPackage = app.activityInfo.packageName;
-
-                if (CountTools.isAddedCheck(getActivity(), app.activityInfo.packageName)) {
-                    addInfo.isAdded = true;
                 }
 
-                if ("lee.whdghks913.only3".equals(app.activityInfo.packageName))
-                    continue;
+                // 기존에 있던 데이터 초기화
+                mAdapter.clear();
 
-                for (String launcherApp : mLauncherAppList) {
-                    if (launcherApp.equals(app.activityInfo.packageName)) {
-                        continue;
+                String[] mLauncherAppList = Tools.getLauncherApp(getActivity());
+
+                AppInfo addInfo = null;
+
+                for (int i = 0; i < mAppList.size(); i++) {
+
+                    ResolveInfo app = mAppList.get(i);
+                    addInfo = new AppInfo();
+
+                    // App Icon
+                    addInfo.mIcon = app.loadIcon(mPackageManager);
+                    // App Name
+                    addInfo.mAppName = app.loadLabel(mPackageManager).toString();
+                    // App Package Name
+                    addInfo.mAppPackage = app.activityInfo.packageName;
+
+                    if (CountTools.isAddedCheck(getActivity(), app.activityInfo.packageName)) {
+                        addInfo.isAdded = true;
                     }
+
+                    if ("lee.whdghks913.only3".equals(app.activityInfo.packageName))
+                        continue;
+
+                    for (String launcherApp : mLauncherAppList) {
+                        if (launcherApp.equals(app.activityInfo.packageName)) {
+                            continue;
+                        }
+                    }
+
+                    mAdapter.add(addInfo);
                 }
 
-                mAdapter.add(addInfo);
-            }
+                // 알파벳 이름으로 소트(한글, 영어)
+                mAdapter.sort();
 
-            // 알파벳 이름으로 소트(한글, 영어)
-            mAdapter.sort();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
 
             return null;
         }

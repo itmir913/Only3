@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import lee.whdghks913.only3.R;
+import lee.whdghks913.only3.service.Only3Service;
 import lee.whdghks913.only3.tools.AlarmTools;
 import lee.whdghks913.only3.tools.CountTools;
 import lee.whdghks913.only3.tools.NotificationTools;
@@ -17,11 +18,16 @@ public class Only3BroadCast extends BroadcastReceiver {
     @Override
     public void onReceive(Context mContext, Intent mIntent) {
         String mAction = mIntent.getAction();
+        Preference mPref = new Preference(mContext);
 
         if (Intent.ACTION_BOOT_COMPLETED.equalsIgnoreCase(mAction)) {
             AlarmTools.setDateChangeAlarm(mContext);
+            boolean autoStart = mPref.getBoolean("autoStart", false);
+            if (autoStart) {
+                mContext.startService(new Intent(mContext, Only3Service.class));
+            }
+
         } else if (Intent.ACTION_DATE_CHANGED.equalsIgnoreCase(mAction)) {
-            // TODO 카운트 초기화
             CountTools.resetCurrentCount(mContext);
 
             NotificationTools mNotify = new NotificationTools(mContext);
@@ -33,7 +39,6 @@ public class Only3BroadCast extends BroadcastReceiver {
                     .notify(7777);
 
         } else if ("ACTION_NOTIFY_MINUTE".equalsIgnoreCase(mAction)) {
-            Preference mPref = new Preference(mContext);
             int NotificationType = Tools.StringToInt(mPref.getString("notificationType", "1"));
 
             int appStartNotification = Tools.StringToInt(mPref.getString("appStartNotification", "-1"));
