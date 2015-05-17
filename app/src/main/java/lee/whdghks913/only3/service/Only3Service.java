@@ -197,6 +197,7 @@ public class Only3Service extends Service {
     private void notifyCount(String ticker, String title, String msg) {
         if (NotificationType == 1 || NotificationType == 3) {
             mNotify = new NotificationTools(getApplicationContext());
+            mNotify.cancel(1998);
             mNotify.setTicker(ticker)
                     .setContentTitle(title)
                     .setContentText(msg)

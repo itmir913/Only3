@@ -33,16 +33,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="4dip"
-            android:singleLine="true"
+            android:gravity="center"
             android:text="@string/loading"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <!--<com.gc.materialdesign.views.ButtonFlat
+        <com.gc.materialdesign.views.ButtonFlat
             android:id="@+id/mLoadingRetry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#1E88E5"
-            android:text="@string/loading_retry" />-->
+            android:text="@string/loading_retry" />
 
     </LinearLayout>
 

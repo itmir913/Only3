@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
@@ -24,12 +23,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gc.materialdesign.views.ProgressBarIndeterminate;
+import com.gc.materialdesign.views.ButtonFlat;
 
 import java.util.List;
 
 import lee.whdghks913.only3.R;
+import lee.whdghks913.only3.service.Only3Service;
 import lee.whdghks913.only3.tools.CountTools;
+import lee.whdghks913.only3.tools.ToastTools;
 import lee.whdghks913.only3.tools.Tools;
 
 public class AppFragment extends Fragment {
@@ -80,13 +81,17 @@ public class AppFragment extends Fragment {
             }
         });
 
-//        ButtonFlat mLoadingRetry = (ButtonFlat) mView.findViewById(R.id.mLoadingRetry);
-//        mLoadingRetry.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                setLoadingView(false);
-//            }
-//        });
+        ButtonFlat mLoadingRetry = (ButtonFlat) mView.findViewById(R.id.mLoadingRetry);
+        mLoadingRetry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Tools.getServiceRunning(getActivity())) {
+                    // 서비스 실행중이므로 중지한다.
+                    getActivity().stopService(new Intent(getActivity(), Only3Service.class));
+                    ToastTools.createToast(getActivity(), getString(R.string.info_loading), false);
+                }
+            }
+        });
 
         return mView;
     }
