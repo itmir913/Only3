@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- appCheckDelay -->
+    <string-array name="appCheckDelay">
+        <item>1초</item>
+        <item>2초</item><!-- default -->
+        <item>3초</item>
+        <item>4초</item>
+        <item>5초</item>
+    </string-array>
+
+    <string-array name="appCheckDelayValues">
+        <item>1</item>
+        <item>2</item><!-- default -->
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <!-- appCheckDelay -->
+    <string-array name="appStartNotification">
+        <item>알리지않음</item><!-- default -->
+        <item>앱 실행후 5분마다 알림</item>
+        <item>앱 실행후 10분마다 알림</item>
+        <item>앱 실행후 15분마다 알림</item>
+        <item>앱 실행후 20분마다 알림</item>
+        <item>앱 실행후 25분마다 알림</item>
+        <item>앱 실행후 30분마다 알림</item>
+    </string-array>
+
+    <string-array name="appStartNotificationValues">
+        <item>-1</item><!-- default -->
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
+
+    <!-- NotificationType -->
+    <string-array name="NotificationType">
+        <item>상단바 알림</item><!-- default -->
+        <item>토스트 알림</item>
+        <item>둘 다</item>
+    </string-array>
+
+    <string-array name="NotificationTypeValues">
+        <item>1</item><!-- default -->
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- Backup Restore -->
+    <string-array name="BackupRestore">
+        <item>백업</item>
+        <item>복원</item>
+    </string-array>
+</resources>

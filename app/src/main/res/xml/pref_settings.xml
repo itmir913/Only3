@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="어플 체크 설정">
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/appCheckDelay"
+            android:entryValues="@array/appCheckDelayValues"
+            android:key="appCheckDelay"
+            android:title="어플 체크 딜레이" />
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/appStartNotification"
+            android:entryValues="@array/appStartNotificationValues"
+            android:key="appStartNotification"
+            android:title="어플 실행 알림" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="알림 설정">
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/NotificationType"
+            android:entryValues="@array/NotificationTypeValues"
+            android:key="notificationType"
+            android:title="알림 방식" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="useVibrate"
+            android:summary="상단바에 알림을 띄울때 진동을 사용합니다."
+            android:title="진동" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="useTransparentIcon"
+            android:summary="상단바 아이콘을 투명하게 사용합니다."
+            android:title="투명 상단바 아이콘" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="백업 복원">
+        <Preference
+            android:key="BackupRestore"
+            android:summary="지금 설정을 백업 또는 복원합니다."
+            android:title="백업 복원" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="어플 정보">
+        <Preference
+            android:key="openSource"
+            android:summary="오픈소스 라이센스를 확인합니다"
+            android:title="오픈소스 라이센스" />
+        <Preference
+            android:summary="앱 개발자에게 메일을 보냅니다"
+            android:title="개발자에게 메일 보내기">
+            <intent
+                android:action="android.intent.action.SENDTO"
+                android:data="mailto:whdghks913@naver.com" />
+        </Preference>
+        <Preference
+            android:key="ChangeLog"
+            android:summary="수정 내역을 확인합니다"
+            android:title="수정 내역" />
+        <Preference
+            android:key="appVersion"
+            android:summary="v0.0"
+            android:title="어플 버전" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
