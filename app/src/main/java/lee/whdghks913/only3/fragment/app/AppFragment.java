@@ -16,9 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -81,17 +81,21 @@ public class AppFragment extends Fragment {
             }
         });
 
-        ButtonFlat mLoadingRetry = (ButtonFlat) mView.findViewById(R.id.mLoadingRetry);
-        mLoadingRetry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Tools.getServiceRunning(getActivity())) {
-                    // 서비스 실행중이므로 중지한다.
-                    getActivity().stopService(new Intent(getActivity(), Only3Service.class));
-                    ToastTools.createToast(getActivity(), getString(R.string.info_loading), false);
+        if (Tools.getServiceRunning(getActivity())) {
+            ((LinearLayout) mView.findViewById(R.id.mServiceInfoLayout)).setVisibility(View.VISIBLE);
+
+            ButtonFlat mLoadingRetry = (ButtonFlat) mView.findViewById(R.id.mLoadingRetry);
+            mLoadingRetry.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (Tools.getServiceRunning(getActivity())) {
+                        // 서비스 실행중이므로 중지한다.
+                        getActivity().stopService(new Intent(getActivity(), Only3Service.class));
+                        ToastTools.createToast(getActivity(), getString(R.string.info_loading), false);
+                    }
                 }
-            }
-        });
+            });
+        }
 
         return mView;
     }
@@ -139,13 +143,13 @@ public class AppFragment extends Fragment {
 //        mDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         //adding button click event
-        ((Button) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
+        ((ButtonFlat) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDialog.dismiss();
             }
         });
-        ((Button) mView.findViewById(R.id.mOk)).setOnClickListener(new View.OnClickListener() {
+        ((ButtonFlat) mView.findViewById(R.id.mOk)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int inputCount = Tools.StringToInt(((EditText) mDialog.findViewById(R.id.inputCount)).getText().toString());
@@ -186,13 +190,13 @@ public class AppFragment extends Fragment {
 //        mDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         //adding button click event
-        ((Button) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
+        ((ButtonFlat) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDialog.dismiss();
             }
         });
-        ((Button) mView.findViewById(R.id.mEditCount)).setOnClickListener(new View.OnClickListener() {
+        ((ButtonFlat) mView.findViewById(R.id.mEditCount)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int inputCount = Tools.StringToInt(((EditText) mDialog.findViewById(R.id.inputCount)).getText().toString());
@@ -206,7 +210,7 @@ public class AppFragment extends Fragment {
                 mDialog.dismiss();
             }
         });
-        ((Button) mView.findViewById(R.id.mRemove)).setOnClickListener(new View.OnClickListener() {
+        ((ButtonFlat) mView.findViewById(R.id.mRemove)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CountTools.removePackage(getActivity(), mAppPackage);
@@ -241,7 +245,7 @@ public class AppFragment extends Fragment {
 //        mDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
         //adding button click event
-        ((Button) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
+        ((ButtonFlat) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDialog.dismiss();

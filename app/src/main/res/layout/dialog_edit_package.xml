@@ -62,28 +62,28 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
+        <com.gc.materialdesign.views.ButtonFlat
             android:id="@+id/mCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@android:string/cancel"
-            android:background="@android:color/transparent"
+            android:background="#1E88E5"
             android:layout_gravity="center_horizontal" />
 
-        <Button
+        <com.gc.materialdesign.views.ButtonFlat
             android:id="@+id/mRemove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/remove"
-            android:background="@android:color/transparent"
+            android:background="#1E88E5"
             android:layout_gravity="center_horizontal" />
 
-        <Button
+        <com.gc.materialdesign.views.ButtonFlat
             android:id="@+id/mEditCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_count"
-            android:background="@android:color/transparent"
+            android:background="#1E88E5"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>

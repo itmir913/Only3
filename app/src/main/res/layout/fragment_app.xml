@@ -37,12 +37,31 @@
             android:text="@string/loading"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <com.gc.materialdesign.views.ButtonFlat
-            android:id="@+id/mLoadingRetry"
+        <LinearLayout
+            android:id="@+id/mServiceInfoLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#1E88E5"
-            android:text="@string/loading_retry" />
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dip"
+                android:gravity="center"
+                android:text="@string/loading_info"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <com.gc.materialdesign.views.ButtonFlat
+                android:id="@+id/mLoadingRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#1E88E5"
+                android:text="@string/loading_retry" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
