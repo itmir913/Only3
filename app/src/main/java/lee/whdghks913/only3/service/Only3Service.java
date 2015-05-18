@@ -87,6 +87,7 @@ public class Only3Service extends Service {
                     if (isNotifyAppAlarm) {
                         AlarmTools.cancelStartNotification(getApplicationContext());
                         isNotifyAppAlarm = false;
+                        mPref.remove("ACTION_NOTIFY_MINUTE_REPEAT");
                     }
                 }
 
@@ -237,6 +238,10 @@ public class Only3Service extends Service {
         super.onDestroy();
 
         stopForeground(true);
+        AlarmTools.cancelStartNotification(getApplicationContext());
+        isNotifyAppAlarm = false;
+        RunningActivity.mLastPackageName = null;
+        mPref.remove("ACTION_NOTIFY_MINUTE_REPEAT");
 
         if (mNotify == null)
             mNotify = new NotificationTools(getApplicationContext());

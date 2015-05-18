@@ -22,6 +22,8 @@ public class Only3BroadCast extends BroadcastReceiver {
 
         if (Intent.ACTION_BOOT_COMPLETED.equalsIgnoreCase(mAction)) {
             AlarmTools.setDateChangeAlarm(mContext);
+            CountTools.isCountClear(mContext, true);
+
             boolean autoStart = mPref.getBoolean("autoStart", false);
             if (autoStart) {
                 mContext.startService(new Intent(mContext, Only3Service.class));
@@ -29,6 +31,7 @@ public class Only3BroadCast extends BroadcastReceiver {
 
         } else if (Intent.ACTION_DATE_CHANGED.equalsIgnoreCase(mAction)) {
             CountTools.resetCurrentCount(mContext);
+            CountTools.putCurrentDate(mContext);
 
             NotificationTools mNotify = new NotificationTools(mContext);
             mNotify.setTicker(mContext.getString(R.string.zero_count_title))
@@ -42,7 +45,7 @@ public class Only3BroadCast extends BroadcastReceiver {
             int NotificationType = Tools.StringToInt(mPref.getString("notificationType", "1"));
 
             int appStartNotification = Tools.StringToInt(mPref.getString("appStartNotification", "-1"));
-            int repeatCount = mPref.getInt("ACTION_NOTIFY_MINUTE_REPEAR", 1);
+            int repeatCount = mPref.getInt("ACTION_NOTIFY_MINUTE_REPEAT", 1);
 
             if (NotificationType == 1 || NotificationType == 3) {
                 NotificationTools mNotify = new NotificationTools(mContext);

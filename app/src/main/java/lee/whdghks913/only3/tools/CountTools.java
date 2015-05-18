@@ -2,12 +2,17 @@ package lee.whdghks913.only3.tools;
 
 import android.content.Context;
 
+import java.util.Calendar;
+
+import lee.whdghks913.only3.R;
+
 /**
  * Created by 종환 on 2015-05-17.
  */
 public class CountTools {
     public static final String PREF_PACKAGE_NAME = "PackageName";
     public static final String PREF_PACKAGE_COUNT = "PackageCount";
+    public static final String PREF_COUNT_DATE = "CountDate";
 
     public static final int MinCount = 5;
 
@@ -120,5 +125,69 @@ public class CountTools {
             mCount = new Preference(mContext, PREF_PACKAGE_COUNT);
 
         mCount.clear();
+    }
+
+    public static void putCurrentDate(Context mContext) {
+        Preference mDate = new Preference(mContext, PREF_COUNT_DATE);
+
+        Calendar mCalendar = Calendar.getInstance();
+
+        int year = mCalendar.get(Calendar.YEAR);
+        int month = mCalendar.get(Calendar.MONTH);
+        int day = mCalendar.get(Calendar.DAY_OF_MONTH);
+
+        mDate.putInt("YEAR", year);
+        mDate.putInt("MONTH", month);
+        mDate.putInt("DAY", day);
+    }
+
+    public static Calendar getSavedDateByCalendar(Context mContext) {
+        Preference mDate = new Preference(mContext, PREF_COUNT_DATE);
+
+        Calendar mCalendar = Calendar.getInstance();
+
+        int year = mDate.getInt("YEAR", mCalendar.get(Calendar.YEAR));
+        int month = mDate.getInt("MONTH", mCalendar.get(Calendar.MONTH));
+        int day = mDate.getInt("DAY", mCalendar.get(Calendar.DAY_OF_MONTH));
+
+        mCalendar.set(year, month, day);
+
+        return mCalendar;
+    }
+
+    public static void isCountClear(Context mContext, boolean isNotify) {
+        Preference mDate = new Preference(mContext, PREF_COUNT_DATE);
+
+        Calendar mCalendar = Calendar.getInstance();
+
+        int year = mCalendar.get(Calendar.YEAR);
+        int month = mCalendar.get(Calendar.MONTH);
+        int day = mCalendar.get(Calendar.DAY_OF_MONTH);
+
+        int pref_year = mDate.getInt("YEAR", mCalendar.get(Calendar.YEAR));
+        int pref_month = mDate.getInt("MONTH", mCalendar.get(Calendar.MONTH));
+        int pref_day = mDate.getInt("DAY", mCalendar.get(Calendar.DAY_OF_MONTH));
+
+        if ((year == pref_year) && (month == pref_month) && (day == pref_day)) {
+            // 오늘 날짜와 카운트가 초기화된 날짜가 같음
+
+            return;
+
+        } else {
+            // 오늘 날짜와 카운트가 초기화된 날짜가 다르므로 초기화가 필요함.
+
+            resetCurrentCount(mContext); // 카운트 초기화
+            putCurrentDate(mContext); // 카운트 초기화 날짜를 기록한다.
+
+            if (isNotify) {
+                NotificationTools mNotify = new NotificationTools(mContext);
+                mNotify.setTicker(mContext.getString(R.string.zero_count_title))
+                        .setContentTitle(mContext.getString(R.string.zero_count_title))
+                        .setContentText(mContext.getString(R.string.zero_count_msg))
+                        .setOnGoing(false)
+                        .setDefaults(0)
+                        .notify(7777);
+            }
+        }
     }
 }
