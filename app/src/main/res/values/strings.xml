@@ -42,7 +42,7 @@
     <string name="loading_info">세번만 서비스가 실행중이면 중지해주세요.</string>
     <string name="info_loading">서비스를 중지하고 어플 정보를 로드합니다.</string>
     <string name="loading_retry">서비스 중지후 로드하기</string>
-    <string name="count_string_format">전체 : %1$d, 현재 : %2$d</string>
+    <string name="count_string_format">전체 : %1$d개, 현재 : %2$d개</string>
     <string name="enter_the_count">Count</string>
     <string name="help_min_count">최소 5 이상 입력해주세요.</string>
     <string name="help_exceed_count">카운트가 초과된 어플은 초기화가 될때까지 수정이 불가능 합니다.</string>
@@ -55,7 +55,7 @@
     <string name="Only3ServiceTitle">세번만이 동작중입니다..</string>
     <string name="Only3ServiceMsg">터치하여 메인화면으로 진입하세요!</string>
     <string name="notification_title">카운트가 증가했습니다</string>
-    <string name="notification_msg">총 %1$d, 현재 %2$d개의 카운트가 있습니다.</string>
+    <string name="notification_msg">총 %1$d개, 현재 %2$d개의 카운트가 있습니다.</string>
     <string name="exceed_count_title">카운트가 초과됬습니다!</string>
     <string name="exceed_count_mgs">카운트는 오전 12시 정각에 초기화 됩니다.</string>
     <string name="zero_count_title">카운트가 초기화 되었습니다.</string>
