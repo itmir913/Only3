@@ -164,9 +164,9 @@ public class CountTools {
         int month = mCalendar.get(Calendar.MONTH);
         int day = mCalendar.get(Calendar.DAY_OF_MONTH);
 
-        int pref_year = mDate.getInt("YEAR", mCalendar.get(Calendar.YEAR));
-        int pref_month = mDate.getInt("MONTH", mCalendar.get(Calendar.MONTH));
-        int pref_day = mDate.getInt("DAY", mCalendar.get(Calendar.DAY_OF_MONTH));
+        int pref_year = mDate.getInt("YEAR", 0);
+        int pref_month = mDate.getInt("MONTH", 0);
+        int pref_day = mDate.getInt("DAY", 0);
 
         if ((year == pref_year) && (month == pref_month) && (day == pref_day)) {
             // 오늘 날짜와 카운트가 초기화된 날짜가 같음
