@@ -1,11 +1,8 @@
 package lee.whdghks913.only3.fragment.app;
 
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +17,6 @@ import java.util.List;
 
 import lee.whdghks913.only3.R;
 import lee.whdghks913.only3.tools.CountTools;
-import lee.whdghks913.only3.tools.Tools;
 
 /**
  * Created by whdghks913 on 2015-05-17.
@@ -52,19 +48,23 @@ public class AppInfoAdapter extends BaseAdapter {
         this.mContext = mContext;
     }
 
-    public void add(AppInfo addInfo){
+    public void add(AppInfo addInfo) {
         mListData.add(addInfo);
     }
 
-    public void sort(){
+    public void add(int position, AppInfo addInfo) {
+        mListData.add(position, addInfo);
+    }
+
+    public void sort() {
         Collections.sort(mListData, AppInfo.ALPHA_COMPARATOR);
     }
 
-    public List<ResolveInfo> getAppList(){
+    public List<ResolveInfo> getAppList() {
         return mAppList;
     }
 
-    public void clear(){
+    public void clear() {
         mListData.clear();
     }
 

@@ -70,12 +70,17 @@ public class AppFragment extends Fragment {
                 AppInfo mInfo = mAdapter.getItem(position);
                 boolean isAdded = mInfo.isAdded;
 
+                if (position == 0) {
+                    showEditCountDialog(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage, true);
+                    return;
+                }
+
                 if (isAdded) {
                     boolean isExceed = CountTools.isExceedCount(getActivity(), mInfo.mAppPackage);
                     if (isExceed) {
                         showExceedCountDialog(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage);
                     } else {
-                        showEditCountDialog(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage);
+                        showEditCountDialog(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage, false);
                     }
                 } else {
                     showAddCountDialog(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage);
@@ -157,7 +162,7 @@ public class AppFragment extends Fragment {
         mDialog.show();
     }
 
-    private void showEditCountDialog(final Drawable mIcon, final String mAppName, final String mAppPackage) {
+    private void showEditCountDialog(final Drawable mIcon, final String mAppName, final String mAppPackage, final boolean isAllPackage) {
         AlertDialog.Builder mAlertDialog = new AlertDialog.Builder(getActivity());
 
         View mView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_edit_package, null);
@@ -170,7 +175,10 @@ public class AppFragment extends Fragment {
         AppImage.setImageDrawable(mIcon);
         AppName.setText(mAppName);
         PackageName.setText(mAppPackage);
-        showCurrentCount.setText(String.format(getString(R.string.count_string_format), CountTools.getAllCount(getActivity(), mAppPackage), CountTools.getCurrentCount(getActivity(), mAppPackage)));
+        if (!isAllPackage)
+            showCurrentCount.setText(String.format(getString(R.string.count_string_format), CountTools.getAllCount(getActivity(), mAppPackage), CountTools.getCurrentCount(getActivity(), mAppPackage)));
+        else
+            showCurrentCount.setText(R.string.help_all_package_count);
 
         mAlertDialog.setView(mView);
 
@@ -195,7 +203,11 @@ public class AppFragment extends Fragment {
                     return;
                 }
 
-                CountTools.addPackageAllCount(getActivity(), mAppPackage, inputCount);
+                if (!isAllPackage)
+                    CountTools.addPackageAllCount(getActivity(), mAppPackage, inputCount);
+                else
+                    editAllPackage(inputCount);
+
                 startTask();
                 mDialog.dismiss();
             }
@@ -203,7 +215,11 @@ public class AppFragment extends Fragment {
         ((ButtonFlat) mView.findViewById(R.id.mRemove)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CountTools.removePackage(getActivity(), mAppPackage);
+                if (!isAllPackage)
+                    CountTools.removePackage(getActivity(), mAppPackage);
+                else
+                    removeAllPackage();
+
                 startTask();
                 mDialog.dismiss();
             }
@@ -245,9 +261,34 @@ public class AppFragment extends Fragment {
         mDialog.show();
     }
 
+    private void editAllPackage(int inputCount) {
+        for (int position = 1; position < mAdapter.getCount(); position++) {
+            AppInfo mInfo = mAdapter.getItem(position);
+
+            if (CountTools.isAddedCheck(getActivity(), mInfo.mAppPackage)) {
+                if (CountTools.isExceedCount(getActivity(), mInfo.mAppPackage))
+                    continue;
+                if (CountTools.ifExceedCount(getActivity(), mInfo.mAppPackage, inputCount))
+                    continue;
+            }
+
+            CountTools.addPackageAllCount(getActivity(), mInfo.mAppPackage, inputCount);
+        }
+    }
+
+    private void removeAllPackage() {
+        for (int position = 1; position < mAdapter.getCount(); position++) {
+            AppInfo mInfo = mAdapter.getItem(position);
+            if (CountTools.isExceedCount(getActivity(), mInfo.mAppPackage))
+                continue;
+
+            CountTools.removePackage(getActivity(), mInfo.mAppPackage);
+        }
+    }
+
     /**
      * Start Task that is loading app list
-     *
+     * <p/>
      * http://vo2max.egloos.com/1284495
      */
     private void startTask() {
@@ -329,6 +370,10 @@ public class AppFragment extends Fragment {
 
                     if ("lee.whdghks913.only3".equals(app.activityInfo.packageName))
                         continue;
+                    if ("com.android.contracts".equals(app.activityInfo.packageName))
+                        continue;
+                    if ("com.android.phone".equals(app.activityInfo.packageName))
+                        continue;
 
                     for (String launcherApp : mLauncherAppList) {
                         if (launcherApp.equals(app.activityInfo.packageName)) {
@@ -353,6 +398,14 @@ public class AppFragment extends Fragment {
         protected void onPostExecute(Void result) {
             // 어댑터 새로고침
             mAdapter.notifyDataSetChanged();
+
+            AppInfo mAllCount = new AppInfo();
+            mAllCount.mIcon = getResources().getDrawable(R.drawable.ic_no_app_icon);
+            mAllCount.mAppName = getResources().getString(R.string.all_package_add_count);
+            mAllCount.mAppPackage = "whdghks913";
+            mAllCount.isAdded = false;
+
+            mAdapter.add(0, mAllCount);
 
             // 로딩뷰 숨기기
             setLoadingView(false);

@@ -50,6 +50,10 @@
     <string name="fix_min_count">카운트를 5 미만으로 입력하셨습니다.</string>
     <string name="remove">제거</string>
     <string name="edit_count">카운트 수정</string>
+    <string name="all_package_add_count">전체 어플 일괄 설정</string>
+    <string name="all_package_remove_count">전체 카운트 삭제</string>
+    <string name="all_package_edit_count">전체 카운트 수정</string>
+    <string name="help_all_package_count">전체 어플의 카운트를 일괄 수정 합니다.</string>
 
     <!-- Only3 Service -->
     <string name="Only3ServiceTicker">세번만 작동을 시작합니다.</string>

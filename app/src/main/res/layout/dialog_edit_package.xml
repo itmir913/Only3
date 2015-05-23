@@ -41,8 +41,7 @@
         android:singleLine="true"
         android:layout_marginTop="15dp"
         android:gravity="center"
-        android:layout_gravity="center"
-        android:text="@string/count_string_format" />
+        android:layout_gravity="center" />
 
     <EditText
         android:id="@+id/inputCount"

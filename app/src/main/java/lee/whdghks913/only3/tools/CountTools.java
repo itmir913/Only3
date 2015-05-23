@@ -104,6 +104,20 @@ public class CountTools {
     }
 
     /**
+     * 전체 카운트를 수정할때 카운트를 초과할 경우 true, 현재 카운트가 수정할 카운트보다 아래면 false를 반환합니다.
+     *
+     * @param mContext
+     * @param packageName
+     * @param willEditCount
+     * @return
+     */
+    public static boolean ifExceedCount(Context mContext, String packageName, int willEditCount) {
+        int Count = getCurrentCount(mContext, packageName);
+
+        return (Count > willEditCount);
+    }
+
+    /**
      * 현재 카운트를 하나 추가한후 저장합니다.
      *
      * @param mContext
