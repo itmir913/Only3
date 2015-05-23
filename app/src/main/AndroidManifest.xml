@@ -28,6 +28,11 @@
             android:enabled="true"
             android:label="@string/Only3ServiceName" />
 
+        <service
+            android:name=".service.Only3SubService"
+            android:enabled="true"
+            android:label="@string/Only3SubServiceName" />
+
         <receiver
             android:name=".broadcast.Only3BroadCast"
             android:enabled="true"

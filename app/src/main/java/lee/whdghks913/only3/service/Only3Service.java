@@ -50,12 +50,12 @@ public class Only3Service extends Service {
 
         init();
 
-        mNotify.setTicker(getString(R.string.Only3ServiceTicker))
-                .setContentTitle(getString(R.string.Only3ServiceTitle))
-                .setContentText(getString(R.string.Only3ServiceMsg))
-                .setOnGoing(true);
-
-        startForeground(913, mNotify.build());
+//        mNotify.setTicker(getString(R.string.Only3ServiceTicker))
+//                .setContentTitle(getString(R.string.Only3ServiceTitle))
+//                .setContentText(getString(R.string.Only3ServiceMsg))
+//                .setOnGoing(true);
+//
+//        startForeground(913, mNotify.build());
     }
 
     @Override
@@ -145,7 +145,7 @@ public class Only3Service extends Service {
         }
 
         /**
-         * mLastPackageName와 pkgName가 다르면 저장
+         * mLastPackageName과 pkgName이 다르면 저장
          */
         if (!RunningActivity.mLastPackageName.equals(pkgName)) {
             RunningActivity.mLastPackageName = pkgName;
@@ -206,7 +206,8 @@ public class Only3Service extends Service {
 
     private void notifyCount(String ticker, String title, String msg) {
         if (NotificationType == 1 || NotificationType == 3) {
-            mNotify = new NotificationTools(getApplicationContext());
+            if (mNotify == null)
+                mNotify = new NotificationTools(getApplicationContext());
             mNotify.cancel(1998);
             mNotify.setTicker(ticker)
                     .setContentTitle(title)
@@ -243,19 +244,21 @@ public class Only3Service extends Service {
     @Override
     public void onDestroy() {
         isServiceRun = false;
+        isNotifyAppAlarm = false;
 
         super.onDestroy();
 
-        stopForeground(true);
+//        stopForeground(true);
+
         AlarmTools.cancelStartNotification(getApplicationContext());
-        isNotifyAppAlarm = false;
         RunningActivity.mLastPackageName = null;
+
         mPref.remove("ACTION_NOTIFY_MINUTE_REPEAT");
 
         if (mNotify == null)
             mNotify = new NotificationTools(getApplicationContext());
         mNotify.cancel(1998);
-        mNotify.cancel(913);
+//        mNotify.cancel(913);
     }
 
     @Override

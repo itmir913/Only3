@@ -31,6 +31,7 @@ import java.util.List;
 import lee.whdghks913.only3.R;
 import lee.whdghks913.only3.service.Only3Service;
 import lee.whdghks913.only3.tools.CountTools;
+import lee.whdghks913.only3.tools.ServiceTools;
 import lee.whdghks913.only3.tools.ToastTools;
 import lee.whdghks913.only3.tools.Tools;
 
@@ -82,14 +83,14 @@ public class AppFragment extends Fragment {
             }
         });
 
-        if (Tools.getServiceRunning(getActivity())) {
+        if (ServiceTools.isServiceRunning(getActivity())) {
             ((LinearLayout) mView.findViewById(R.id.mServiceInfoLayout)).setVisibility(View.VISIBLE);
 
             ButtonFlat mLoadingRetry = (ButtonFlat) mView.findViewById(R.id.mLoadingRetry);
             mLoadingRetry.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (Tools.getServiceRunning(getActivity())) {
+                    if (ServiceTools.isServiceRunning(getActivity())) {
                         // 서비스 실행중이므로 중지한다.
                         getActivity().stopService(new Intent(getActivity(), Only3Service.class));
                         ToastTools.createToast(getActivity(), getString(R.string.info_loading), false);

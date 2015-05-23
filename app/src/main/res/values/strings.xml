@@ -5,6 +5,7 @@
 
     <!-- AndroidManifest.xml -->
     <string name="Only3ServiceName">세번만 서비스</string>
+    <string name="Only3SubServiceName">세번만 보조 서비스</string>
 
     <!-- Fragment Name -->
     <string name="fragment_main">메인</string>

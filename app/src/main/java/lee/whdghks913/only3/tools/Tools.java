@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Random;
 
 import lee.whdghks913.only3.service.Only3Service;
+import lee.whdghks913.only3.service.Only3SubService;
 
 public class Tools {
     /**
@@ -29,8 +30,12 @@ public class Tools {
         return false;
     }
 
-    public static boolean getServiceRunning(Context mContext) {
+    public static boolean getOnly3ServiceRunning(Context mContext) {
         return Tools.isServiceRunningCheck(mContext, Only3Service.Only3ServiceName);
+    }
+
+    public static boolean getOnly3SubServiceRunning(Context mContext) {
+        return Tools.isServiceRunningCheck(mContext, Only3SubService.Only3SubServiceName);
     }
 
     public static String[] getLauncherApp(Context mContext) {
