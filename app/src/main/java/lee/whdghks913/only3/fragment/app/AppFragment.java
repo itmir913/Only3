@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -101,25 +102,13 @@ public class AppFragment extends Fragment {
     }
 
     /**
-     * Start Task that is loading app list
+     * AppList Loading Task
      */
-    private void startTask() {
-        new AppTask().execute();
-    }
+    @Override
+    public void onResume() {
+        super.onResume();
 
-    /**
-     * set loading view
-     */
-    private void setLoadingView(boolean isView) {
-        if (isView) {
-            // 화면 로딩뷰 표시
-            mLoadingContainer.setVisibility(View.VISIBLE);
-            mListView.setVisibility(View.GONE);
-        } else {
-            // 화면 어플 리스트 표시
-            mListView.setVisibility(View.VISIBLE);
-            mLoadingContainer.setVisibility(View.GONE);
-        }
+        startTask();
     }
 
     private void showAddCountDialog(final Drawable mIcon, final String mAppName, final String mAppPackage) {
@@ -256,9 +245,33 @@ public class AppFragment extends Fragment {
     }
 
     /**
-     * AppList Loading Task
+     * Start Task that is loading app list
+     *
+     * http://vo2max.egloos.com/1284495
      */
-    private class AppTask extends AsyncTask<Void, Integer, Void> {
+    private void startTask() {
+        if (Build.VERSION.SDK_INT >= 11)
+            new AppListTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        else
+            new AppListTask().execute();
+    }
+
+    /**
+     * set loading view
+     */
+    private void setLoadingView(boolean isView) {
+        if (isView) {
+            // 화면 로딩뷰 표시
+            mLoadingContainer.setVisibility(View.VISIBLE);
+            mListView.setVisibility(View.GONE);
+        } else {
+            // 화면 어플 리스트 표시
+            mListView.setVisibility(View.VISIBLE);
+            mLoadingContainer.setVisibility(View.GONE);
+        }
+    }
+
+    private class AppListTask extends AsyncTask<Void, Integer, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -344,13 +357,6 @@ public class AppFragment extends Fragment {
             setLoadingView(false);
         }
 
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        startTask();
     }
 
     @Override

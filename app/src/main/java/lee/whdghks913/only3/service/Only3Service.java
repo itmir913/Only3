@@ -3,6 +3,7 @@ package lee.whdghks913.only3.service;
 import android.app.Service;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -59,12 +60,20 @@ public class Only3Service extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        new Only3Task().execute();
+        onTask();
 
         return super.onStartCommand(intent, flags, startId);
     }
 
+    private void onTask() {
+        if (Build.VERSION.SDK_INT >= 11)
+            new Only3Task().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        else
+            new Only3Task().execute();
+    }
+
     private class Only3Task extends AsyncTask<Void, Void, Void> {
+
         @Override
         protected void onPreExecute() {
             mDelay = Tools.StringToInt(mPref.getString("appCheckDelay", "2"));

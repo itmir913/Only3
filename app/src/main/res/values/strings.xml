@@ -39,7 +39,7 @@
 
     <!-- AppFragment -->
     <string name="loading">로딩중...</string>
-    <string name="loading_info">세번만 서비스가 실행중이면 중지해주세요.</string>
+    <string name="loading_info">로딩이 오래걸릴경우 아래 버튼을 눌러 서비스를 종료하고 시도해주세요.</string>
     <string name="info_loading">서비스를 중지하고 어플 정보를 로드합니다.</string>
     <string name="loading_retry">서비스 중지후 로드하기</string>
     <string name="count_string_format">전체 : %1$d개, 현재 : %2$d개</string>
