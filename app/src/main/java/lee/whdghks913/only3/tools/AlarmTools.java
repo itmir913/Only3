@@ -10,7 +10,7 @@ import java.util.Calendar;
 import lee.whdghks913.only3.broadcast.Only3BroadCast;
 
 /**
- * Created by 종환 on 2015-05-17.
+ * Created by whdghks913 on 2015-05-17.
  */
 public class AlarmTools {
     public static AlarmManager mAlarmManager;

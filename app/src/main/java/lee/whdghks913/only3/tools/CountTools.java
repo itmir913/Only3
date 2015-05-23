@@ -7,7 +7,7 @@ import java.util.Calendar;
 import lee.whdghks913.only3.R;
 
 /**
- * Created by 종환 on 2015-05-17.
+ * Created by whdghks913 on 2015-05-17.
  */
 public class CountTools {
     public static final String PREF_PACKAGE_NAME = "PackageName";
@@ -90,7 +90,7 @@ public class CountTools {
     }
 
     /**
-     * 현재 카운트가 전체 카운트를 초과했으면 true, 이하라면 false를 반환합니다.
+     * 현재 카운트가 전체 카운트와 같거나 크면 true, 이하라면 false를 반환합니다.
      *
      * @param mContext
      * @param packageName
@@ -100,7 +100,7 @@ public class CountTools {
         int AllCount = getAllCount(mContext, packageName);
         int Count = getCurrentCount(mContext, packageName);
 
-        return (Count > AllCount);
+        return (Count >= AllCount);
     }
 
     /**

@@ -1,19 +1,24 @@
 package lee.whdghks913.only3.service;
 
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.IBinder;
 
 import lee.whdghks913.only3.R;
+import lee.whdghks913.only3.broadcast.LockScreenBroadCast;
 import lee.whdghks913.only3.tools.NotificationTools;
 
 public class Only3SubService extends Service {
     public static final String Only3SubServiceName = "lee.whdghks913.only3.service.Only3SubService";
 
     private NotificationTools mNotify;
+    private BroadcastReceiver mReceiver;
 
     private void init() {
         mNotify = new NotificationTools(getApplicationContext());
+        mReceiver = new LockScreenBroadCast();
     }
 
     @Override
@@ -32,6 +37,14 @@ public class Only3SubService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        if (mReceiver == null)
+            mReceiver = new LockScreenBroadCast();
+
+        IntentFilter mFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+        mFilter.addAction(Intent.ACTION_SCREEN_OFF);
+        mFilter.addAction(Intent.ACTION_USER_PRESENT);
+
+        registerReceiver(mReceiver, mFilter);
 
         return super.onStartCommand(intent, flags, startId);
     }
@@ -46,8 +59,13 @@ public class Only3SubService extends Service {
         super.onDestroy();
 
         stopForeground(true);
-
         mNotify.cancel(913);
+
+        try {
+            unregisterReceiver(mReceiver);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     @Override

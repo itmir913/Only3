@@ -11,7 +11,7 @@ import lee.whdghks913.only3.MainActivity;
 import lee.whdghks913.only3.R;
 
 /**
- * Created by 종환 on 2015-05-11.
+ * Created by whdghks913 on 2015-05-11.
  */
 public class NotificationTools {
     private NotificationManager mNotificationManager;

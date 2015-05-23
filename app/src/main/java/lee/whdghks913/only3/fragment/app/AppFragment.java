@@ -357,26 +357,29 @@ public class AppFragment extends Fragment {
                     ResolveInfo app = mAppList.get(i);
                     addInfo = new AppInfo();
 
+                    String mPackageName = app.activityInfo.packageName;
+
                     // App Icon
                     addInfo.mIcon = app.loadIcon(mPackageManager);
                     // App Name
                     addInfo.mAppName = app.loadLabel(mPackageManager).toString();
                     // App Package Name
-                    addInfo.mAppPackage = app.activityInfo.packageName;
+                    addInfo.mAppPackage = mPackageName;
 
-                    if (CountTools.isAddedCheck(getActivity(), app.activityInfo.packageName)) {
+                    if (CountTools.isAddedCheck(getActivity(), mPackageName)) {
                         addInfo.isAdded = true;
                     }
 
-                    if ("lee.whdghks913.only3".equals(app.activityInfo.packageName))
+                    boolean isOnly3App = "lee.whdghks913.only3".equalsIgnoreCase(mPackageName);
+                    boolean isSystemUI = "com.android.systemui".equalsIgnoreCase(mPackageName);
+                    boolean isPhone = "com.android.phone".equalsIgnoreCase(mPackageName);
+                    boolean isContacts = "com.android.contacts".equalsIgnoreCase(mPackageName);
+                    if (isOnly3App || isSystemUI || isPhone || isContacts) {
                         continue;
-                    if ("com.android.contracts".equals(app.activityInfo.packageName))
-                        continue;
-                    if ("com.android.phone".equals(app.activityInfo.packageName))
-                        continue;
+                    }
 
                     for (String launcherApp : mLauncherAppList) {
-                        if (launcherApp.equals(app.activityInfo.packageName)) {
+                        if (launcherApp.equalsIgnoreCase(mPackageName)) {
                             continue;
                         }
                     }
