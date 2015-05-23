@@ -60,6 +60,19 @@ public class Only3BroadCast extends BroadcastReceiver {
             }
 
             mPref.putInt("ACTION_NOTIFY_MINUTE_REPEAT", ++repeatCount);
+
         }
+//        else if (Intent.ACTION_PACKAGE_ADDED.equalsIgnoreCase(mAction)) {
+//            int newAppCount = CountTools.getNewAppCount(mContext);
+//
+//            if (newAppCount != -1) {
+//                String pkgName = mIntent.getData().getEncodedSchemeSpecificPart();
+//                CountTools.addPackageAllCount(mContext, pkgName, newAppCount);
+//            }
+//
+//        } else if (Intent.ACTION_PACKAGE_REMOVED.equalsIgnoreCase(mAction)) {
+//            String pkgName = mIntent.getData().getEncodedSchemeSpecificPart();
+//            CountTools.removePackage(mContext, pkgName);
+//        }
     }
 }

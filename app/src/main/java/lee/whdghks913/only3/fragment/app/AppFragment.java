@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -74,6 +75,10 @@ public class AppFragment extends Fragment {
                     showEditCountDialog(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage, true);
                     return;
                 }
+//                else if (position == 1) {
+//                    showEditCountDialog(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage, false, true);
+//                    return;
+//                }
 
                 if (isAdded) {
                     boolean isExceed = CountTools.isExceedCount(getActivity(), mInfo.mAppPackage);
@@ -175,9 +180,11 @@ public class AppFragment extends Fragment {
         AppImage.setImageDrawable(mIcon);
         AppName.setText(mAppName);
         PackageName.setText(mAppPackage);
+//        if (isNewApp)
+//            showCurrentCount.setText(R.string.new_app_count_msg);
         if (!isAllPackage)
             showCurrentCount.setText(String.format(getString(R.string.count_string_format), CountTools.getAllCount(getActivity(), mAppPackage), CountTools.getCurrentCount(getActivity(), mAppPackage)));
-        else
+        else if (isAllPackage)
             showCurrentCount.setText(R.string.help_all_package_count);
 
         mAlertDialog.setView(mView);
@@ -203,6 +210,8 @@ public class AppFragment extends Fragment {
                     return;
                 }
 
+//                if (isNewApp)
+//                    CountTools.setNewAppCount(getActivity(), inputCount);
                 if (!isAllPackage)
                     CountTools.addPackageAllCount(getActivity(), mAppPackage, inputCount);
                 else
@@ -215,6 +224,8 @@ public class AppFragment extends Fragment {
         ((ButtonFlat) mView.findViewById(R.id.mRemove)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                if (isNewApp)
+//                    CountTools.removeNewAppCount(getActivity());
                 if (!isAllPackage)
                     CountTools.removePackage(getActivity(), mAppPackage);
                 else
@@ -279,6 +290,7 @@ public class AppFragment extends Fragment {
     private void removeAllPackage() {
         for (int position = 1; position < mAdapter.getCount(); position++) {
             AppInfo mInfo = mAdapter.getItem(position);
+
             if (CountTools.isExceedCount(getActivity(), mInfo.mAppPackage))
                 continue;
 
@@ -288,7 +300,6 @@ public class AppFragment extends Fragment {
 
     /**
      * Start Task that is loading app list
-     * <p/>
      * http://vo2max.egloos.com/1284495
      */
     private void startTask() {
@@ -390,6 +401,33 @@ public class AppFragment extends Fragment {
                 // 알파벳 이름으로 소트(한글, 영어)
                 mAdapter.sort();
 
+                /**
+                 * 전체 어플 일괄 설정 기능 추가
+                 */
+                Resources mRes = getResources();
+                AppInfo mAllCount = new AppInfo();
+                mAllCount.mIcon = mRes.getDrawable(R.drawable.ic_no_app_icon);
+                mAllCount.mAppName = mRes.getString(R.string.all_package_add_count);
+                mAllCount.mAppPackage = mRes.getString(R.string.help_all_package_add_count);
+
+                mAdapter.add(0, mAllCount);
+
+                /**
+                 * 새로 설치되는 어플의 카운트 설정 추가
+                 */
+//                AppInfo mNewAppCount = new AppInfo();
+//                mNewAppCount.mIcon = mRes.getDrawable(R.drawable.ic_no_app_icon);
+//                mNewAppCount.mAppName = mRes.getString(R.string.new_app_count);
+//
+//                int newAppCount = CountTools.getNewAppCount(getActivity());
+//                if (newAppCount != -1) {
+//                    mNewAppCount.mAppPackage = String.format(getString(R.string.new_app_count_format), newAppCount);
+//                } else {
+//                    mNewAppCount.mAppPackage = mRes.getString(R.string.help_new_app_count);
+//                }
+//
+//                mAdapter.add(1, mNewAppCount);
+
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -401,14 +439,6 @@ public class AppFragment extends Fragment {
         protected void onPostExecute(Void result) {
             // 어댑터 새로고침
             mAdapter.notifyDataSetChanged();
-
-            AppInfo mAllCount = new AppInfo();
-            mAllCount.mIcon = getResources().getDrawable(R.drawable.ic_no_app_icon);
-            mAllCount.mAppName = getResources().getString(R.string.all_package_add_count);
-            mAllCount.mAppPackage = "whdghks913";
-            mAllCount.isAdded = false;
-
-            mAdapter.add(0, mAllCount);
 
             // 로딩뷰 숨기기
             setLoadingView(false);

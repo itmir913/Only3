@@ -13,6 +13,7 @@ public class CountTools {
     public static final String PREF_PACKAGE_NAME = "PackageName";
     public static final String PREF_PACKAGE_COUNT = "PackageCount";
     public static final String PREF_COUNT_DATE = "CountDate";
+//    public static final String PREF_NEW_APP_COUNT = "NewAppCount";
 
     public static final int MinCount = 5;
 
@@ -67,13 +68,16 @@ public class CountTools {
      *
      * @param mContext
      * @param packageName
-     * @param Count
+     * @param inputCount
      */
-    public static void addPackageAllCount(Context mContext, String packageName, int Count) {
+    public static void addPackageAllCount(Context mContext, String packageName, int inputCount) {
         if (mName == null)
             mName = new Preference(mContext, PREF_PACKAGE_NAME);
 
-        mName.putInt(packageName, Count);
+        if (inputCount < MinCount)
+            inputCount = MinCount;
+
+        mName.putInt(packageName, inputCount);
     }
 
     /**
@@ -204,4 +208,31 @@ public class CountTools {
             }
         }
     }
+
+    /**
+     * 새로 설치되는 앱의 카운트 관리
+     */
+//    public static void setNewAppCount(Context mContext, int inputCount) {
+//        if (mCount == null)
+//            mCount = new Preference(mContext, PREF_PACKAGE_COUNT);
+//
+//        if (inputCount < MinCount)
+//            inputCount = MinCount;
+//
+//        mCount.putInt(PREF_NEW_APP_COUNT, inputCount);
+//    }
+//
+//    public static void removeNewAppCount(Context mContext) {
+//        if (mCount == null)
+//            mCount = new Preference(mContext, PREF_PACKAGE_COUNT);
+//
+//        mCount.remove(PREF_NEW_APP_COUNT);
+//    }
+//
+//    public static int getNewAppCount(Context mContext) {
+//        if (mCount == null)
+//            mCount = new Preference(mContext, PREF_PACKAGE_COUNT);
+//
+//        return mCount.getInt(PREF_NEW_APP_COUNT, -1);
+//    }
 }

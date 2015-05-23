@@ -163,9 +163,14 @@
     <string name="remove">제거</string>
     <string name="edit_count">카운트 수정</string>
     <string name="all_package_add_count">전체 어플 일괄 설정</string>
+    <string name="help_all_package_add_count">설치된 모든 어플의 카운트를 일괄 변경 합니다.</string>
     <string name="all_package_remove_count">전체 카운트 삭제</string>
     <string name="all_package_edit_count">전체 카운트 수정</string>
     <string name="help_all_package_count">전체 어플의 카운트를 일괄 수정 합니다.</string>
+    <!--<string name="new_app_count">새로운 앱 설치 관리</string>
+    <string name="new_app_count_msg">새로운 앱을 설치했을때 자동으로 카운트를 추가합니다.</string>
+    <string name="new_app_count_format">새로운 앱에 적용되는 카운트 : %1$d</string>
+    <string name="help_new_app_count">새로 설치된 어플에 자동으로 카운트를 추가합니다.</string> -->
 
     <!-- Only3 Service -->
     <string name="Only3ServiceTicker">세번만 작동을 시작합니다.</string>
