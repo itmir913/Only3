@@ -3,6 +3,7 @@ package lee.whdghks913.only3.tools;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.os.Build;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class RunningActivity {
     private static ActivityManager mActivityManager;
     public static String mLastPackageName;
 
+    @Deprecated
     private static ComponentName getData(Context mContext) {
         if (mActivityManager == null)
             mActivityManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
@@ -23,15 +25,25 @@ public class RunningActivity {
         return topActivity;
     }
 
+    @Deprecated
     public static ComponentName getComponentName(Context mContext) {
         return getData(mContext);
     }
 
     public static String getPackageName(Context mContext) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return mActivityManager.getRunningAppProcesses().get(0).processName;
+        }
+
         return getData(mContext).getPackageName();
     }
 
+    @Deprecated
     public static String getClassName(Context mContext) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return mActivityManager.getRunningAppProcesses().get(0).processName;
+        }
+
         return getData(mContext).getClassName();
     }
 }
