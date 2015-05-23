@@ -58,6 +58,8 @@ public class Only3BroadCast extends BroadcastReceiver {
             if (NotificationType == 2 || NotificationType == 3) {
                 ToastTools.createToast(mContext, String.format(mContext.getString(R.string.app_started_minute_msg), appStartNotification * repeatCount), false);
             }
+
+            mPref.putInt("ACTION_NOTIFY_MINUTE_REPEAT", ++repeatCount);
         }
     }
 }
