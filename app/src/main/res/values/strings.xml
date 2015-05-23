@@ -14,7 +14,19 @@
 
     <!-- license -->
     <string name="license_title">오픈소스 라이센스 정보</string>
-    <string name="license_msg">준비중</string>
+    <string name="license_msg">오픈소스 라이센스
+\n
+\n- AppCompat-v7
+\n(android.support.v7)
+\n
+\n- Android-support-v4-PreferenceFragment
+\n(https://github.com/kolavar/android-support-v4-preferencefragment)
+\n
+\n- L-Dialogs
+\n(https://github.com/lewisjdeane/L-Dialogs)
+\n
+\n- MaterialDesign
+\n(https://github.com/navasmdc/MaterialDesignLibrary)</string>
     <string name="MadeBy">세번만
 \nCopyright <![CDATA[ⓒ]]> 2013-2015 whdghks913
 \nAll rights reserved</string>

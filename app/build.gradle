@@ -22,7 +22,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.android.support:cardview-v7:21.+'
     compile project(':library:android-support-v4-preferencefragment')
     compile project(':library:L-Dialogs')
     compile project(':library:MaterialDesign')
