@@ -125,6 +125,17 @@ public class Only3Service extends Service {
         boolean isSystemUI = "com.android.systemui".equals(pkgName);
         if (isOnly3App || isSystemUI) {
             System.gc();
+
+            /**
+             * Only3 앱에서 일정 시간 앱 실행 알림이 뜨지 않도록 작성
+             */
+            if (isNotifyAppAlarm) {
+                AlarmTools.cancelStartNotification(getApplicationContext());
+                mPref.remove("ACTION_NOTIFY_MINUTE_REPEAT");
+
+                isNotifyAppAlarm = false;
+            }
+
             return;
         }
 
@@ -149,6 +160,16 @@ public class Only3Service extends Service {
          */
         if (!RunningActivity.mLastPackageName.equals(pkgName)) {
             RunningActivity.mLastPackageName = pkgName;
+
+            /**
+             * 다른 어플을 실행하면 일정 시간 앱 실행 알림을 종료
+             */
+            if (isNotifyAppAlarm) {
+                AlarmTools.cancelStartNotification(getApplicationContext());
+                mPref.remove("ACTION_NOTIFY_MINUTE_REPEAT");
+
+                isNotifyAppAlarm = false;
+            }
         }
 
         /**
