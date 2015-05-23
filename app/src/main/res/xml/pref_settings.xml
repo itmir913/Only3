@@ -35,7 +35,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="부팅">
         <CheckBoxPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="autoStart"
             android:summary="부팅후 자동으로 세번만을 시작합니다."
             android:title="자동 시작" />

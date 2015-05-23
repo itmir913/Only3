@@ -24,7 +24,7 @@ public class Only3BroadCast extends BroadcastReceiver {
             AlarmTools.setDateChangeAlarm(mContext);
             CountTools.isCountClear(mContext, true);
 
-            boolean autoStart = mPref.getBoolean("autoStart", false);
+            boolean autoStart = mPref.getBoolean("autoStart", true);
             if (autoStart) {
                 mContext.startService(new Intent(mContext, Only3Service.class));
             }
