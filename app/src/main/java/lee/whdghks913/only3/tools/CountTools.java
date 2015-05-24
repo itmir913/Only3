@@ -17,7 +17,7 @@ public class CountTools {
 
     public static final int MinCount = 5;
 
-    public static Preference mName, mCount;
+    private static Preference mName, mCount;
 
     /**
      * 전체 카운트를 얻습니다.

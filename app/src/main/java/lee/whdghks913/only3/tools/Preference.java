@@ -63,6 +63,14 @@ public class Preference {
         mEditor.putString(key, value).commit();
     }
 
+    public long getLong(String key, long defValue) {
+        return mPref.getLong(key, defValue);
+    }
+
+    public void putLong(String key, long value) {
+        mEditor.putLong(key, value).commit();
+    }
+
     public void clear() {
         mEditor.clear().commit();
     }

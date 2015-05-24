@@ -1,25 +1,26 @@
-package lee.whdghks913.only3.service;
+package lee.whdghks913.only3.lock;
 
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 
 import lee.whdghks913.only3.R;
-import lee.whdghks913.only3.broadcast.ScreenBroadCast;
 import lee.whdghks913.only3.tools.NotificationTools;
 import lee.whdghks913.only3.tools.ServiceTools;
 
-public class Only3SubService extends Service {
-    public static final String Only3SubServiceName = "lee.whdghks913.only3.service.Only3SubService";
+public class LockSubService extends Service {
+    public static final String LockSubServiceName = "lee.whdghks913.only3.lock.LockSubService";
 
     private NotificationTools mNotify;
     private BroadcastReceiver mReceiver;
 
     private void init() {
         mNotify = new NotificationTools(getApplicationContext());
-        mReceiver = new ScreenBroadCast();
+        mReceiver = new LockScreenBroadCast();
     }
 
     @Override
@@ -28,18 +29,30 @@ public class Only3SubService extends Service {
 
         init();
 
-        mNotify.setTicker(getString(R.string.Only3ServiceTicker))
-                .setContentTitle(getString(R.string.Only3ServiceTitle))
-                .setContentText(getString(R.string.Only3ServiceMsg))
-                .setOnGoing(true);
+        mNotify.setTicker(getString(R.string.LockServiceTicker))
+                .setContentTitle(getString(R.string.LockServiceTitle))
+                .setContentText(getString(R.string.LockServiceMsg))
+                .setOnGoing(true)
+                .setPendingIntent(PendingIntent.getActivity(getApplicationContext(), Context.MODE_PRIVATE, new Intent(getApplicationContext(), LockActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
 
-        startForeground(913, mNotify.build());
+        startForeground(1234, mNotify.build());
+
+//        ServiceTools.stopSubService(getApplicationContext());
+//        ServiceTools.stopService(getApplicationContext());
+
+        ServiceTools.startLockService(getApplicationContext());
+
+        Intent mIntent = new Intent(getApplicationContext(), LockActivity.class);
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(mIntent);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (mReceiver == null)
-            mReceiver = new ScreenBroadCast();
+            mReceiver = new LockScreenBroadCast();
 
         IntentFilter mFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         mFilter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -60,28 +73,19 @@ public class Only3SubService extends Service {
         super.onDestroy();
 
         stopForeground(true);
-        ServiceTools.stopMainService(getApplicationContext());
+        ServiceTools.stopLockService(getApplicationContext());
 
         if (mNotify == null)
             mNotify = new NotificationTools(getApplicationContext());
-        mNotify.cancel(913);
+        mNotify.cancel(1234);
 
         try {
             if (mReceiver == null)
-                mReceiver = new ScreenBroadCast();
+                mReceiver = new LockScreenBroadCast();
             unregisterReceiver(mReceiver);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-    }
-
-    @Override
-    public void onTaskRemoved(Intent rootIntent) {
-        super.onTaskRemoved(rootIntent);
-    }
 }

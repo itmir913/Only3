@@ -9,14 +9,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 
-import lee.whdghks913.only3.fragment.app.AppFragment;
+import lee.whdghks913.only3.fragment.LockFragment;
 import lee.whdghks913.only3.fragment.MainFragment;
 import lee.whdghks913.only3.fragment.SettingsFragment;
-import lee.whdghks913.only3.tools.Tools;
+import lee.whdghks913.only3.fragment.app.AppFragment;
 
 
 public class MainActivity extends ActionBarActivity {
-    //    ActionBarDrawerToggle mToggle;
+//    ActionBarDrawerToggle mToggle;
 //    DrawerLayout mDrawer;
     Toolbar mToolbar;
 
@@ -61,6 +61,8 @@ public class MainActivity extends ActionBarActivity {
                 case 1:
                     return AppFragment.newInstance();
                 case 2:
+                    return LockFragment.newInstance();
+                case 3:
                     return SettingsFragment.newInstance();
             }
             return null;
@@ -68,8 +70,8 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 4 total pages.
+            return 4;
         }
 
         @Override
@@ -80,6 +82,8 @@ public class MainActivity extends ActionBarActivity {
                 case 1:
                     return getString(R.string.fragment_app);
                 case 2:
+                    return getString(R.string.fragment_lock);
+                case 3:
                     return getString(R.string.fragment_settings);
             }
             return null;

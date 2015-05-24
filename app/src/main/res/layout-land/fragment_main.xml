@@ -25,7 +25,18 @@
         android:layout_marginTop="25dp" />
 
     <com.gc.materialdesign.views.ButtonFloat
-        android:id="@+id/buttonFloat"
+        android:id="@+id/fullLock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/flat_sky_light_blue"
+        materialdesign:animate="true"/>
+
+    <com.gc.materialdesign.views.ButtonFloat
+        android:id="@+id/serviceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

@@ -17,6 +17,7 @@ import java.util.List;
 
 import lee.whdghks913.only3.R;
 import lee.whdghks913.only3.tools.CountTools;
+import lee.whdghks913.only3.tools.LockTools;
 
 /**
  * Created by whdghks913 on 2015-05-17.
@@ -33,6 +34,9 @@ class AppInfoViewHolder {
 
     // Count TextView
     public TextView mCount;
+
+    // White List Icon
+    public ImageView mWhiteListIcon;
 }
 
 public class AppInfoAdapter extends BaseAdapter {
@@ -98,6 +102,7 @@ public class AppInfoAdapter extends BaseAdapter {
             holder.mName = (TextView) convertView.findViewById(R.id.app_name);
             holder.mPackage = (TextView) convertView.findViewById(R.id.app_package);
             holder.mCount = (TextView) convertView.findViewById(R.id.mCount);
+            holder.mWhiteListIcon = (ImageView) convertView.findViewById(R.id.mWhiteListIcon);
 
             convertView.setTag(holder);
         } else {
@@ -132,6 +137,16 @@ public class AppInfoAdapter extends BaseAdapter {
         } else {
             holder.mCount.setVisibility(View.GONE);
             holder.mLayout.setBackgroundColor(mResources.getColor(android.R.color.transparent));
+        }
+
+        if (!LockTools.isPackageWhiteList(mContext, data.mAppPackage)) {
+            // 추가되어 있지 않으면
+            holder.mWhiteListIcon.setImageDrawable(null);
+            holder.mWhiteListIcon.setVisibility(View.GONE);
+        } else {
+            // 추가되어 있으면
+            holder.mWhiteListIcon.setImageResource(R.drawable.ic_lock_open);
+            holder.mWhiteListIcon.setVisibility(View.VISIBLE);
         }
 
         return convertView;

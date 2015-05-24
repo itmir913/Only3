@@ -6,10 +6,14 @@
     <!-- AndroidManifest.xml -->
     <string name="Only3ServiceName">세번만 서비스</string>
     <string name="Only3SubServiceName">세번만 보조 서비스</string>
+    <string name="LockServiceName">세번만 잠금 서비스</string>
+    <string name="LockSubServiceName">세번만 잠금 보조 서비스</string>
+    <string name="title_activity_lock">전체 잠금중</string>
 
     <!-- Fragment Name -->
     <string name="fragment_main">메인</string>
     <string name="fragment_app">어플 설정</string>
+    <string name="fragment_lock">전체 잠금</string>
     <string name="fragment_settings">설정</string>
 
     <!-- license -->
@@ -26,7 +30,14 @@
 \n(https://github.com/lewisjdeane/L-Dialogs)
 \n
 \n- MaterialDesign
-\n(https://github.com/navasmdc/MaterialDesignLibrary)</string>
+\n(https://github.com/navasmdc/MaterialDesignLibrary)
+\n
+\n- DateTimePicker
+\n(https://github.com/flavienlaurent/datetimepicker)
+\n
+\n- Icons
+\nic_lock_open.png
+\n(Android SDK Path)/platforms/android-21/data/res/drawable-xhdpi/ic_lock_open_wht_24dp.png</string>
     <string name="MadeBy">세번만
 \nCopyright <![CDATA[ⓒ]]> 2013-2015 whdghks913
 \nAll rights reserved</string>
@@ -169,6 +180,8 @@
     <string name="all_package_remove_count">전체 카운트 삭제</string>
     <string name="all_package_edit_count">전체 카운트 수정</string>
     <string name="help_all_package_count">전체 어플의 카운트를 일괄 수정 합니다.</string>
+    <string name="whiteList_dialog_add">화이트리스트에 이 앱을 추가할까요?</string>
+    <string name="whiteList_dialog_remove">화이트리스트에서 이 앱을 제거할까요?</string>
     <!--<string name="new_app_count">새로운 앱 설치 관리</string>
     <string name="new_app_count_msg">새로운 앱을 설치했을때 자동으로 카운트를 추가합니다.</string>
     <string name="new_app_count_format">새로운 앱에 적용되는 카운트 : %1$d</string>
@@ -186,5 +199,20 @@
     <string name="zero_count_msg">오늘도 세번만과 함께!</string>
     <string name="app_started_minute_title">설정한 시간 이상 어플을 실행중입니다..</string>
     <string name="app_started_minute_msg">어플을 실행한지 %1$d분이 되었습니다.</string>
+
+    <!-- LockFragment -->
+    <string name="lockFragment_main_help">일정 시간동안 스마트폰을 잠궈줍니다.
+\n\n잠금 시간동안 사용하실 어플이 있다면 왼쪽으로 스와이프한다음
+\n필요한 어플을 2초이상 눌러 화이트 리스트에 추가해주세요!</string>
+    <string name="not_allow_past_time_set">지금보다 과거로는 설정할 수 없습니다.</string>
+    <string name="not_allow_time_set_than_start_time">시작 시간보다 이전으로는 설정할 수 없습니다.</string>
+
+    <!-- Lock -->
+    <string name="LockServiceTicker">세번만 전체잠금 시작</string>
+    <string name="LockServiceTitle">세번만 전체잠금 동작중..</string>
+    <string name="LockServiceMsg">터치하여 잠금 해제 시간을 확인합니다.</string>
+    <string name="LockActivity_main_1">세번만 전체잠금중입니다...</string>
+    <string name="LockActivity_main_2">전체잠금은 %1$s에 해제됩니다.</string>
+    <string name="LockActivity_if">해제 시간을 초과한경우</string>
 
 </resources>

@@ -34,7 +34,7 @@
         android:layout_centerHorizontal="true" />
 
     <com.gc.materialdesign.views.ButtonFloat
-        android:id="@+id/buttonFloat"
+        android:id="@+id/serviceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

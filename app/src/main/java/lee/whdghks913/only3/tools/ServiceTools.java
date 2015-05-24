@@ -3,6 +3,8 @@ package lee.whdghks913.only3.tools;
 import android.content.Context;
 import android.content.Intent;
 
+import lee.whdghks913.only3.lock.LockService;
+import lee.whdghks913.only3.lock.LockSubService;
 import lee.whdghks913.only3.service.Only3Service;
 import lee.whdghks913.only3.service.Only3SubService;
 
@@ -49,6 +51,32 @@ public class ServiceTools {
 
     public static boolean isServiceRunning(Context mContext) {
         return (Tools.getOnly3ServiceRunning(mContext) && Tools.getOnly3SubServiceRunning(mContext));
+    }
+
+    public static void startLockService(Context mContext) {
+        if (!Tools.isServiceRunningCheck(mContext, LockService.LockServiceName)) {
+            mContext.startService(new Intent(mContext, LockService.class));
+        }
+    }
+
+    public static void stopLockService(Context mContext) {
+        if (Tools.isServiceRunningCheck(mContext, LockService.LockServiceName)) {
+            mContext.stopService(new Intent(mContext, LockService.class));
+        }
+    }
+
+    public static void startLockSubService(Context mContext) {
+        if (!Tools.isServiceRunningCheck(mContext, LockSubService.LockSubServiceName)) {
+            mContext.startService(new Intent(mContext, LockSubService.class));
+            LockTools.putLockStarted(mContext, true);
+        }
+    }
+
+    public static void stopLockSubService(Context mContext) {
+        if (Tools.isServiceRunningCheck(mContext, LockSubService.LockSubServiceName)) {
+            mContext.stopService(new Intent(mContext, LockSubService.class));
+            LockTools.removeLockStarted(mContext);
+        }
     }
 
 }

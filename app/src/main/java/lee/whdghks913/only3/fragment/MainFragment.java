@@ -13,7 +13,7 @@ import lee.whdghks913.only3.R;
 import lee.whdghks913.only3.tools.ServiceTools;
 
 public class MainFragment extends Fragment {
-    ButtonFloat mButton;
+    ButtonFloat serviceButton;
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -38,25 +38,25 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         View mView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        mButton = (ButtonFloat) mView.findViewById(R.id.buttonFloat);
+        serviceButton = (ButtonFloat) mView.findViewById(R.id.serviceButton);
         if (ServiceTools.isServiceRunning(getActivity())) {
             // 서비스 실행중
-            mButton.setDrawableIcon(getResources().getDrawable(android.R.drawable.ic_media_pause));
+            serviceButton.setDrawableIcon(getResources().getDrawable(android.R.drawable.ic_media_pause));
         } else {
-            mButton.setDrawableIcon(getResources().getDrawable(android.R.drawable.ic_media_play));
+            serviceButton.setDrawableIcon(getResources().getDrawable(android.R.drawable.ic_media_play));
         }
 
-        mButton.setOnClickListener(new View.OnClickListener() {
+        serviceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ServiceTools.isServiceRunning(getActivity())) {
                     // 서비스 실행중이므로 정지해야 함
                     ServiceTools.stopService(getActivity());
-                    mButton.setDrawableIcon(getResources().getDrawable(android.R.drawable.ic_media_play));
+                    serviceButton.setDrawableIcon(getResources().getDrawable(android.R.drawable.ic_media_play));
                 } else {
                     // 서비스 실행이 안되어 있으므로 실행해야 함
                     ServiceTools.startService(getActivity());
-                    mButton.setDrawableIcon(getResources().getDrawable(android.R.drawable.ic_media_pause));
+                    serviceButton.setDrawableIcon(getResources().getDrawable(android.R.drawable.ic_media_pause));
                 }
             }
         });

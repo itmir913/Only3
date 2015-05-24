@@ -43,4 +43,11 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/mWhiteListIcon"
+        android:layout_width="@android:dimen/app_icon_size"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
 </LinearLayout>

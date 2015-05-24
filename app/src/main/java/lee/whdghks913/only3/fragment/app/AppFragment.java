@@ -30,6 +30,7 @@ import java.util.List;
 
 import lee.whdghks913.only3.R;
 import lee.whdghks913.only3.tools.CountTools;
+import lee.whdghks913.only3.tools.LockTools;
 import lee.whdghks913.only3.tools.Tools;
 
 public class AppFragment extends Fragment {
@@ -91,6 +92,18 @@ public class AppFragment extends Fragment {
                 } else {
                     showAddCountDialog(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage);
                 }
+            }
+        });
+
+        mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                AppInfo mInfo = mAdapter.getItem(position);
+                String packageName = mInfo.mAppPackage;
+
+                showWhiteList(mInfo.mIcon, mInfo.mAppName, mInfo.mAppPackage, LockTools.isPackageWhiteList(getActivity(), packageName));
+
+                return true;
             }
         });
 
@@ -294,6 +307,57 @@ public class AppFragment extends Fragment {
 
             CountTools.removePackage(getActivity(), mInfo.mAppPackage);
         }
+    }
+
+    private void showWhiteList(final Drawable mIcon, final String mAppName, final String mAppPackage, final boolean isAdded) {
+        AlertDialog.Builder mAlertDialog = new AlertDialog.Builder(getActivity());
+
+        View mView = mInflater.inflate(R.layout.dialog_white_list, null);
+
+        ((ImageView) mView.findViewById(R.id.AppImage)).setImageDrawable(mIcon);
+        ((TextView) mView.findViewById(R.id.AppName)).setText(mAppName);
+        ((TextView) mView.findViewById(R.id.PackageName)).setText(mAppPackage);
+        TextView help_white_list = (TextView) mView.findViewById(R.id.help_white_list);
+
+        if (!isAdded) {
+            // 추가되어 있지 않으면 추가 안내 문구 표시
+            help_white_list.setText(R.string.whiteList_dialog_add);
+        } else {
+            // 추가되어 있으면 삭제 안내 문구 표시
+            help_white_list.setText(R.string.whiteList_dialog_remove);
+        }
+
+        mAlertDialog.setView(mView);
+
+        final Dialog mDialog = mAlertDialog.create();
+        mDialog.setCanceledOnTouchOutside(false);
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        mDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        ((ButtonFlat) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
+        ((ButtonFlat) mView.findViewById(R.id.mOk)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isAdded) {
+                    // 추가되어 있지 않으면 추가
+                    LockTools.addWhiteList(getActivity(), mAppPackage);
+                } else {
+                    // 추가되어 있으면 삭제
+                    LockTools.removeWhiteList(getActivity(), mAppPackage);
+                }
+
+                startTask();
+
+                mDialog.dismiss();
+            }
+        });
+
+        mDialog.show();
     }
 
     /**

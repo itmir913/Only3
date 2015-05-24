@@ -8,7 +8,6 @@ import android.content.Intent;
 import java.util.Calendar;
 
 import lee.whdghks913.only3.broadcast.Only3BroadCast;
-import lee.whdghks913.only3.tools.Only3;
 
 /**
  * Created by whdghks913 on 2015-05-17.
@@ -69,5 +68,40 @@ public class AlarmTools {
         }
 
         mAlarmManager.cancel(mStartNotification);
+    }
+
+    public static void setLockService(Context mContext, Calendar mCalendar) {
+        if (mAlarmManager == null)
+            mAlarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+
+        int year = mCalendar.get(Calendar.YEAR);
+        int month = mCalendar.get(Calendar.MONTH);
+        int day = mCalendar.get(Calendar.DAY_OF_MONTH);
+        int hour = mCalendar.get(Calendar.HOUR_OF_DAY);
+        int minute = mCalendar.get(Calendar.MINUTE);
+
+        Intent mIntent = new Intent(mContext, Only3BroadCast.class);
+        mIntent.setAction(Only3.ACTION_START_LOCK_SERVICE);
+        PendingIntent mLockService = PendingIntent.getBroadcast(mContext, 0, mIntent, 0);
+        mCalendar.set(year, month, day, hour, minute);
+        mAlarmManager.set(AlarmManager.RTC_WAKEUP, mCalendar.getTimeInMillis(), mLockService);
+
+        setFinishLockService(mContext);
+    }
+
+    public static void setFinishLockService(Context mContext) {
+        if (mAlarmManager == null)
+            mAlarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+
+        long finishTime = LockTools.getFinishTime(mContext);
+
+        Calendar mCalendar = Calendar.getInstance();
+        if (finishTime != -1L)
+            mCalendar.setTimeInMillis(finishTime);
+
+        Intent mIntent = new Intent(mContext, Only3BroadCast.class);
+        mIntent.setAction(Only3.ACTION_STOP_LOCK_SERVICE);
+        PendingIntent mLockService = PendingIntent.getBroadcast(mContext, 0, mIntent, 0);
+        mAlarmManager.set(AlarmManager.RTC_WAKEUP, mCalendar.getTimeInMillis(), mLockService);
     }
 }

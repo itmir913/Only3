@@ -8,9 +8,11 @@ import lee.whdghks913.only3.R;
 import lee.whdghks913.only3.service.Only3Service;
 import lee.whdghks913.only3.tools.AlarmTools;
 import lee.whdghks913.only3.tools.CountTools;
+import lee.whdghks913.only3.tools.LockTools;
 import lee.whdghks913.only3.tools.NotificationTools;
 import lee.whdghks913.only3.tools.Only3;
 import lee.whdghks913.only3.tools.Preference;
+import lee.whdghks913.only3.tools.ServiceTools;
 import lee.whdghks913.only3.tools.ToastTools;
 import lee.whdghks913.only3.tools.Tools;
 
@@ -25,9 +27,20 @@ public class Only3BroadCast extends BroadcastReceiver {
             AlarmTools.setDateChangeAlarm(mContext);
             CountTools.isCountClear(mContext, true);
 
-            boolean autoStart = mPref.getBoolean("autoStart", true);
-            if (autoStart) {
-                mContext.startService(new Intent(mContext, Only3Service.class));
+            boolean lockService = LockTools.getLockStarted(mContext);
+            if (lockService) {
+                long finishTime = LockTools.getFinishTime(mContext);
+                long currentTime = System.currentTimeMillis();
+
+                if (currentTime < finishTime) {
+                    ServiceTools.startLockSubService(mContext);
+                }
+
+            } else {
+                boolean autoStart = mPref.getBoolean("autoStart", true);
+                if (autoStart) {
+                    mContext.startService(new Intent(mContext, Only3Service.class));
+                }
             }
 
         } else if (Intent.ACTION_DATE_CHANGED.equalsIgnoreCase(mAction)) {
@@ -62,6 +75,14 @@ public class Only3BroadCast extends BroadcastReceiver {
 
             mPref.putInt(Only3.ACTION_NOTIFY_MINUTE_REPEAT, ++repeatCount);
 
+        } else if (Only3.ACTION_START_LOCK_SERVICE.equalsIgnoreCase(mAction)) {
+            long finishTime = LockTools.getFinishTime(mContext);
+            if (finishTime != -1L) {
+                ServiceTools.startLockSubService(mContext);
+            }
+        } else if (Only3.ACTION_STOP_LOCK_SERVICE.equalsIgnoreCase(mAction)) {
+            LockTools.removeFinishTime(mContext);
+            ServiceTools.stopLockSubService(mContext);
         }
 //        else if (Intent.ACTION_PACKAGE_ADDED.equalsIgnoreCase(mAction)) {
 //            int newAppCount = CountTools.getNewAppCount(mContext);

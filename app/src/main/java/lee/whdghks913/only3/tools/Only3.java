@@ -10,6 +10,9 @@ public class Only3 {
     public static final String ACTION_NOTIFY_MINUTE = "ACTION_NOTIFY_MINUTE";
     public static final String ACTION_NOTIFY_MINUTE_REPEAT = "ACTION_NOTIFY_MINUTE_REPEAT";
 
+    public static final String ACTION_START_LOCK_SERVICE = "ACTION_START_LOCK_SERVICE";
+    public static final String ACTION_STOP_LOCK_SERVICE = "ACTION_STOP_LOCK_SERVICE";
+
     /**
      * Service Boolean
      */
