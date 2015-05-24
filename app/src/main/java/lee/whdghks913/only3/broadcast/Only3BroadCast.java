@@ -34,13 +34,14 @@ public class Only3BroadCast extends BroadcastReceiver {
 
                 if (currentTime < finishTime) {
                     ServiceTools.startLockSubService(mContext);
+                } else {
+                    LockTools.removeLockStarted(mContext);
                 }
+            }
 
-            } else {
-                boolean autoStart = mPref.getBoolean("autoStart", true);
-                if (autoStart) {
-                    mContext.startService(new Intent(mContext, Only3Service.class));
-                }
+            boolean autoStart = mPref.getBoolean("autoStart", true);
+            if (autoStart) {
+                mContext.startService(new Intent(mContext, Only3Service.class));
             }
 
         } else if (Intent.ACTION_DATE_CHANGED.equalsIgnoreCase(mAction)) {

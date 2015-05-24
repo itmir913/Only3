@@ -30,6 +30,7 @@ import java.util.List;
 import lee.whdghks913.only3.R;
 import lee.whdghks913.only3.tools.CountTools;
 import lee.whdghks913.only3.tools.LockTools;
+import lee.whdghks913.only3.tools.ToastTools;
 import lee.whdghks913.only3.tools.Tools;
 
 public class AppFragment extends Fragment {
