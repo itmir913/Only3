@@ -10,7 +10,7 @@ public class LockTools {
     public static final String PREF_LOCK_FINISH_TIME = "FinishTime";
     public static final String PREF_LOCK_STARTED_TIME = "Started";
 
-    public static final String TimeFormat = "yyyy년 MM월 dd일 hh시 mm분";
+    public static final String TimeFormat = "yyyy년 MM월 dd일 HH시 mm분";
 
     private static Preference mWhiteList;
 

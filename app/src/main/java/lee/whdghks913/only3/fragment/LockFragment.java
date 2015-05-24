@@ -1,13 +1,11 @@
 package lee.whdghks913.only3.fragment;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.fourmob.datetimepicker.date.DatePickerDialog;
 import com.gc.materialdesign.views.ButtonFlat;
@@ -19,7 +17,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import lee.whdghks913.only3.R;
-import lee.whdghks913.only3.lock.LockActivity;
 import lee.whdghks913.only3.tools.AlarmTools;
 import lee.whdghks913.only3.tools.LockTools;
 
@@ -67,7 +64,7 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
             @Override
             public void onClick(View v) {
                 if (isPastCalendar(mStart) || isPastCalendar(mFinish) || (mFinish.getTimeInMillis() < mStart.getTimeInMillis())) {
-                    Toast.makeText(getActivity(), "잠금을 시작할 수 없습니다.", Toast.LENGTH_SHORT).show();
+                    ToastTools.createToast(getActivity(), "잠금을 시작할 수 없습니다.", false);
                     return;
                 }
 
@@ -144,7 +141,7 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
             mStart.set(Calendar.MINUTE, minute);
 
             if (isPastCalendar(mStart)) {
-                Toast.makeText(getActivity(), R.string.not_allow_past_time_set, Toast.LENGTH_SHORT).show();
+				ToastTools.createToast(getActivity(), R.string.not_allow_past_time_set, false);
                 mStart = Calendar.getInstance();
             }
 
@@ -155,10 +152,10 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
             mFinish.set(Calendar.MINUTE, minute);
 
             if (isPastCalendar(mFinish)) {
-                Toast.makeText(getActivity(), R.string.not_allow_past_time_set, Toast.LENGTH_SHORT).show();
+				ToastTools.createToast(getActivity(), R.string.not_allow_past_time_set, false);
                 mFinish = Calendar.getInstance();
             } else if (mFinish.getTimeInMillis() < mStart.getTimeInMillis()) {
-                Toast.makeText(getActivity(), R.string.not_allow_time_set_than_start_time, Toast.LENGTH_SHORT).show();
+				ToastTools.createToast(getActivity(), R.string.not_allow_time_set_than_start_time, false);
                 mFinish = Calendar.getInstance();
             }
 

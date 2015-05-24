@@ -9,7 +9,6 @@ import android.os.Environment;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.support.v4.preference.PreferenceFragment;
-import android.widget.Toast;
 
 import java.io.File;
 
@@ -112,26 +111,26 @@ public class SettingsFragment extends PreferenceFragment {
                             if (!folder.exists()) folder.mkdirs();
 
                             if (lee.whdghks913.only3.tools.Preference.saveSharedPreferencesToFile(getActivity(), new File(Path + "lee.whdghks913.only3_preferences.pref"), "lee.whdghks913.only3_preferences")) {
-                                Toast.makeText(getActivity(), R.string.preference_backup_complete, Toast.LENGTH_LONG).show();
+                                ToastTools.createToast(getActivity(), R.string.preference_backup_complete, true);
                             } else {
-                                Toast.makeText(getActivity(), R.string.preference_backup_fail, Toast.LENGTH_LONG).show();
+								ToastTools.createToast(getActivity(), R.string.preference_backup_fail, true);
                             }
                         }
                         // Restore
                         else if (position == 1) {
 
                             if (!new File(Path).exists()) {
-                                Toast.makeText(getActivity(), R.string.preference_restore_fail, Toast.LENGTH_LONG).show();
+								ToastTools.createToast(getActivity(), R.string.preference_restore_fail, true);
                                 return;
                             }
 
                             if (lee.whdghks913.only3.tools.Preference.loadSharedPreferencesFromFile(getActivity(), new File(Path + "lee.whdghks913.only3_preferences.pref"), "lee.whdghks913.only3_preferences")) {
-                                Toast.makeText(getActivity(), R.string.preference_restore_complete, Toast.LENGTH_LONG).show();
+                                ToastTools.createToast(getActivity(), R.string.preference_restore_complete, true);
 
                                 startActivity(new Intent(getActivity(), MainActivity.class));
                                 getActivity().finish();
                             } else {
-                                Toast.makeText(getActivity(), R.string.preference_restore_fail, Toast.LENGTH_LONG).show();
+								ToastTools.createToast(getActivity(), R.string.preference_restore_fail, true);
                             }
                         }
                     }

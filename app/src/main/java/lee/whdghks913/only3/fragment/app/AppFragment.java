@@ -22,7 +22,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.gc.materialdesign.views.ButtonFlat;
 
@@ -166,7 +165,7 @@ public class AppFragment extends Fragment {
             public void onClick(View v) {
                 int inputCount = Tools.StringToInt(((EditText) mDialog.findViewById(R.id.inputCount)).getText().toString());
                 if (inputCount < CountTools.MinCount) {
-                    Toast.makeText(getActivity(), R.string.fix_min_count, Toast.LENGTH_SHORT).show();
+					ToastTools.createToast(getActivity(), R.string.fix_min_count, false);
                     return;
                 }
 
@@ -219,7 +218,7 @@ public class AppFragment extends Fragment {
             public void onClick(View v) {
                 int inputCount = Tools.StringToInt(inputCountEditText.getText().toString());
                 if (inputCount < CountTools.MinCount) {
-                    Toast.makeText(getActivity(), R.string.fix_min_count, Toast.LENGTH_SHORT).show();
+					ToastTools.createToast(getActivity(), R.string.fix_min_count, false);
                     return;
                 }
 
