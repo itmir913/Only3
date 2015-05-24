@@ -104,4 +104,21 @@ public class AlarmTools {
         PendingIntent mLockService = PendingIntent.getBroadcast(mContext, 0, mIntent, 0);
         mAlarmManager.set(AlarmManager.RTC_WAKEUP, mCalendar.getTimeInMillis(), mLockService);
     }
+
+    public static void cancelLockService(Context mContext) {
+        if (mAlarmManager == null)
+            mAlarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
+
+        Intent mStartIntent = new Intent(mContext, Only3BroadCast.class);
+        mStartIntent.setAction(Only3.ACTION_START_LOCK_SERVICE);
+        PendingIntent mLockStartService = PendingIntent.getBroadcast(mContext, 0, mStartIntent, 0);
+
+        mAlarmManager.cancel(mLockStartService);
+
+        Intent mFinishIntent = new Intent(mContext, Only3BroadCast.class);
+        mFinishIntent.setAction(Only3.ACTION_STOP_LOCK_SERVICE);
+        PendingIntent mLockFinishService = PendingIntent.getBroadcast(mContext, 0, mFinishIntent, 0);
+
+        mAlarmManager.cancel(mLockFinishService);
+    }
 }

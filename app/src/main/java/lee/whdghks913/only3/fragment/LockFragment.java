@@ -1,11 +1,17 @@
 package lee.whdghks913.only3.fragment;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.TextView;
 
 import com.fourmob.datetimepicker.date.DatePickerDialog;
 import com.gc.materialdesign.views.ButtonFlat;
@@ -36,6 +42,8 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
 
     SimpleDateFormat mDateFormat;
 
+    LayoutInflater mInflater;
+
     public static LockFragment newInstance() {
         return new LockFragment();
     }
@@ -59,21 +67,23 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
         mFinish = Calendar.getInstance();
 
         mDateFormat = new SimpleDateFormat(LockTools.TimeFormat);
+        mInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         mLockStartButton = (ButtonRectangle) mView.findViewById(R.id.mLockStartButton);
         mLockStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isPastCalendar(mStart) || isPastCalendar(mFinish) || (mFinish.getTimeInMillis() < mStart.getTimeInMillis())) {
-                    ToastTools.createToast(getActivity(), "잠금을 시작할 수 없습니다.", false);
+                if (LockTools.isSetAlarm(getActivity())) {
+                    showUnLockDialog();
                     return;
                 }
 
-                LockTools.putFinishTime(getActivity(), mFinish.getTimeInMillis());
+                if (isPastCalendar(mStart) || isPastCalendar(mFinish) || (mFinish.getTimeInMillis() < mStart.getTimeInMillis())) {
+                    ToastTools.createToast(getActivity(), R.string.do_not_start_full_lock, false);
+                    return;
+                }
 
-                AlarmTools.setLockService(getActivity(), mStart);
-//                getActivity().startActivity(new Intent(getActivity(), LockActivity.class));
-                getActivity().finish();
+                showLockDialog();
             }
         });
 
@@ -119,6 +129,78 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
         return mView;
     }
 
+    private void showLockDialog() {
+        AlertDialog.Builder mAlertDialog = new AlertDialog.Builder(getActivity());
+
+        View mView = mInflater.inflate(R.layout.dialog_warn, null);
+
+        ((TextView) mView.findViewById(R.id.mMainText1)).setText(Html.fromHtml(getString(R.string.LockActivity_warn_1)));
+        ((TextView) mView.findViewById(R.id.mMainText2)).setText(Html.fromHtml(getString(R.string.LockActivity_warn_2)));
+
+        mAlertDialog.setView(mView);
+
+        final Dialog mDialog = mAlertDialog.create();
+        mDialog.setCanceledOnTouchOutside(false);
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        mDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        ((ButtonFlat) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
+        ((ButtonFlat) mView.findViewById(R.id.mOk)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LockTools.putFinishTime(getActivity(), mFinish.getTimeInMillis());
+
+                AlarmTools.setLockService(getActivity(), mStart);
+                getActivity().finish();
+
+                mDialog.dismiss();
+            }
+        });
+
+        mDialog.show();
+    }
+
+    private void showUnLockDialog() {
+        AlertDialog.Builder mAlertDialog = new AlertDialog.Builder(getActivity());
+
+        View mView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_info, null);
+
+        ((TextView) mView.findViewById(R.id.mMainText)).setText(Html.fromHtml(getString(R.string.LockActivity_info)));
+
+        mAlertDialog.setView(mView);
+
+        final Dialog mDialog = mAlertDialog.create();
+        mDialog.setCanceledOnTouchOutside(false);
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        mDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        ((ButtonFlat) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
+        ((ButtonFlat) mView.findViewById(R.id.mOk)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlarmTools.cancelLockService(getActivity());
+                LockTools.removeFinishTime(getActivity());
+                LockTools.removeLockStarted(getActivity());
+
+                alarmCheck();
+
+                mDialog.dismiss();
+            }
+        });
+
+        mDialog.show();
+    }
+
     @Override
     public void onDateSet(DatePickerDialog datePickerDialog, int year, int month, int day, int type) {
         if (type == startLockType) {
@@ -142,7 +224,7 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
             mStart.set(Calendar.MINUTE, minute);
 
             if (isPastCalendar(mStart)) {
-				ToastTools.createToast(getActivity(), R.string.not_allow_past_time_set, false);
+                ToastTools.createToast(getActivity(), R.string.not_allow_past_time_set, false);
                 mStart = Calendar.getInstance();
             }
 
@@ -153,10 +235,10 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
             mFinish.set(Calendar.MINUTE, minute);
 
             if (isPastCalendar(mFinish)) {
-				ToastTools.createToast(getActivity(), R.string.not_allow_past_time_set, false);
+                ToastTools.createToast(getActivity(), R.string.not_allow_past_time_set, false);
                 mFinish = Calendar.getInstance();
             } else if (mFinish.getTimeInMillis() < mStart.getTimeInMillis()) {
-				ToastTools.createToast(getActivity(), R.string.not_allow_time_set_than_start_time, false);
+                ToastTools.createToast(getActivity(), R.string.not_allow_time_set_than_start_time, false);
                 mFinish = Calendar.getInstance();
             }
 
@@ -188,6 +270,16 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
     @Override
     public void onResume() {
         super.onResume();
+
+        alarmCheck();
+    }
+
+    private void alarmCheck() {
+        boolean isSet = LockTools.isSetAlarm(getActivity());
+
+        startLockTime.setEnabled(!isSet);
+        finishLockTime.setEnabled(!isSet);
+        nowTime.setEnabled(!isSet);
     }
 
 }

@@ -77,8 +77,7 @@ public class Only3BroadCast extends BroadcastReceiver {
             mPref.putInt(Only3.ACTION_NOTIFY_MINUTE_REPEAT, ++repeatCount);
 
         } else if (Only3.ACTION_START_LOCK_SERVICE.equalsIgnoreCase(mAction)) {
-            long finishTime = LockTools.getFinishTime(mContext);
-            if (finishTime != -1L) {
+            if (LockTools.isSetAlarm(mContext)) {
                 ServiceTools.startLockSubService(mContext);
             }
         } else if (Only3.ACTION_STOP_LOCK_SERVICE.equalsIgnoreCase(mAction)) {

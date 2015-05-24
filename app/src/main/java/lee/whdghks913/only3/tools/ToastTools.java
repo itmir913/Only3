@@ -16,8 +16,8 @@ public class ToastTools {
 
     public static void createToast(Context mContext, int mText, boolean isLong) {
         if (isLong)
-            Toast.makeText(mContext, mContext.getString(mText), Toast.LENGTH_LONG).show();
+            Toast.makeText(mContext, mText, Toast.LENGTH_LONG).show();
         else
-            Toast.makeText(mContext, mContext.getString(mText), Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, mText, Toast.LENGTH_SHORT).show();
     }
 }

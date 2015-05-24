@@ -57,7 +57,7 @@ public class LockTools {
     }
 
     /**
-     * FinishTime
+     * FinishTime이 저장됨
      *
      * @param mContext
      * @param finishTime
@@ -78,9 +78,26 @@ public class LockTools {
         init(mContext);
 
         mWhiteList.remove(LockTools.PREF_LOCK_FINISH_TIME);
+        removeLockStarted(mContext);
     }
 
+    /**
+     * 전체잠금 등록이 되어 있으면 true, 안되어 있으면 false 반환
+     *
+     * @param mContext
+     * @return
+     */
+    public static boolean isSetAlarm(Context mContext){
+        long finishTime = getFinishTime(mContext);
+        return (finishTime != -1L);
+    }
 
+    /**
+     * LockSubService가 실행되면 true가 저장됨
+     *
+     * @param mContext
+     * @param started
+     */
     public static void putLockStarted(Context mContext, boolean started) {
         init(mContext);
 
