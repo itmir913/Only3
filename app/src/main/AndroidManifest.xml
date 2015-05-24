@@ -64,6 +64,7 @@
 
         <activity
             android:name=".lock.LockActivity"
+            android:excludeFromRecents="true"
             android:label="@string/title_activity_lock" >
         </activity>
     </application>

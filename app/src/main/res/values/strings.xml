@@ -47,7 +47,11 @@
     <!-- ChangeLog -->
     <string name="ChangeLog_title">수정 내역</string>
     <string name="ChangeLog_msg">
-\nv4.0 - 2015-05
+\nv4.1 - 2015-05-25
+\n- 전체 잠금 기능 지원
+\n- 일부 버그 수정
+\n
+\nv4.0 - 2015-05-24
 \n- Material Design
 \n- 전체 어플 카운트 일괄 설정 기능 추가
 \n- 잠금해제후 카운트 측정 시작

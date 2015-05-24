@@ -8,8 +8,8 @@ android {
         applicationId "lee.whdghks913.only3"
         minSdkVersion 8
         targetSdkVersion 21
-        versionCode 34
-        versionName "v4.0"
+        versionCode 35
+        versionName "v4.1"
     }
     buildTypes {
         release {
