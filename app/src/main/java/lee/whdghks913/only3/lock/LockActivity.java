@@ -55,10 +55,7 @@ public class LockActivity extends ActionBarActivity {
         mIf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                long finishTime = LockTools.getFinishTime(getApplicationContext());
-                long currentTime = System.currentTimeMillis();
-
-                if (currentTime >= finishTime) {
+                if (isFinish()) {
                     ServiceTools.stopLockSubService(getApplicationContext());
                     ServiceTools.stopLockService(getApplicationContext());
 
@@ -73,9 +70,30 @@ public class LockActivity extends ActionBarActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            return false;
+            return isFinish();
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        if (isFinish()) {
+            ServiceTools.stopLockSubService(getApplicationContext());
+            ServiceTools.stopLockService(getApplicationContext());
+
+            LockTools.removeFinishTime(getApplicationContext());
+
+            finish();
+        }
+    }
+
+    private boolean isFinish(){
+        long finishTime = LockTools.getFinishTime(getApplicationContext());
+        long currentTime = System.currentTimeMillis();
+
+        return (currentTime >= finishTime);
     }
 
 }

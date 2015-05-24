@@ -41,7 +41,7 @@ public class Only3BroadCast extends BroadcastReceiver {
 
             boolean autoStart = mPref.getBoolean("autoStart", true);
             if (autoStart) {
-                mContext.startService(new Intent(mContext, Only3Service.class));
+                ServiceTools.startService(mContext);
             }
 
         } else if (Intent.ACTION_DATE_CHANGED.equalsIgnoreCase(mAction)) {
