@@ -8,6 +8,7 @@ import android.content.Intent;
 import java.util.Calendar;
 
 import lee.whdghks913.only3.broadcast.Only3BroadCast;
+import lee.whdghks913.only3.tools.Only3;
 
 /**
  * Created by whdghks913 on 2015-05-17.
@@ -52,7 +53,7 @@ public class AlarmTools {
             return;
 
         Intent mIntent = new Intent(mContext, Only3BroadCast.class);
-        mIntent.setAction("ACTION_NOTIFY_MINUTE");
+        mIntent.setAction(Only3.ACTION_NOTIFY_MINUTE);
         mStartNotification = PendingIntent.getBroadcast(mContext, 0, mIntent, 0);
         mCalendar.set(year, month, day, hour, minute + notifyMinute);
         mAlarmManager.setRepeating(AlarmManager.RTC_WAKEUP, mCalendar.getTimeInMillis(), notifyMinute * 60 * 1000, mStartNotification);
@@ -63,7 +64,7 @@ public class AlarmTools {
             mAlarmManager = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
         if (mStartNotification == null) {
             Intent mIntent = new Intent(mContext, Only3BroadCast.class);
-            mIntent.setAction("ACTION_NOTIFY_MINUTE");
+            mIntent.setAction(Only3.ACTION_NOTIFY_MINUTE);
             mStartNotification = PendingIntent.getBroadcast(mContext, 0, mIntent, 0);
         }
 

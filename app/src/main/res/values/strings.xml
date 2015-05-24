@@ -140,6 +140,8 @@
 \n사용해주셔서 감사합니다!
 \n\n왼쪽으로 스와이프하여 세부 설정을 확인하세요.
 \n설정 완료후, 오른쪽 아래에 있는 버튼을 터치하여 세번만을 작동시켜주세요!</string>
+    <string name="help_main_how_to_land">스마트폰 어플 실행 횟수를 측정하는 세번만!
+\n사용해주셔서 감사합니다!</string>
 
     <!-- Backup Restore -->
     <string name="BackupAndRestore">백업 <![CDATA[&]]> 복원</string>

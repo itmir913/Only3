@@ -93,21 +93,24 @@ public class AppFragment extends Fragment {
             }
         });
 
-        if (ServiceTools.isServiceRunning(getActivity())) {
-            ((LinearLayout) mView.findViewById(R.id.mServiceInfoLayout)).setVisibility(View.VISIBLE);
-
-            ButtonFlat mLoadingRetry = (ButtonFlat) mView.findViewById(R.id.mLoadingRetry);
-            mLoadingRetry.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (ServiceTools.isServiceRunning(getActivity())) {
-                        // 서비스 실행중이므로 중지한다.
-                        getActivity().stopService(new Intent(getActivity(), Only3Service.class));
-                        ToastTools.createToast(getActivity(), getString(R.string.info_loading), false);
-                    }
-                }
-            });
-        }
+        /**
+         * 서비스 실행과 어플 목록 로딩 실패가 연관이 없으므로 관련 코드 삭제
+         */
+//        if (ServiceTools.isServiceRunning(getActivity())) {
+//            ((LinearLayout) mView.findViewById(R.id.mServiceInfoLayout)).setVisibility(View.VISIBLE);
+//
+//            ButtonFlat mLoadingRetry = (ButtonFlat) mView.findViewById(R.id.mLoadingRetry);
+//            mLoadingRetry.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    if (ServiceTools.isServiceRunning(getActivity())) {
+//                        // 서비스 실행중이므로 중지한다.
+//                        getActivity().stopService(new Intent(getActivity(), Only3Service.class));
+//                        ToastTools.createToast(getActivity(), getString(R.string.info_loading), false);
+//                    }
+//                }
+//            });
+//        }
 
         return mView;
     }

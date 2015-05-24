@@ -128,7 +128,7 @@ public class Only3Service extends Service {
              */
             if (Only3.isNotifyAppAlarm) {
                 AlarmTools.cancelStartNotification(getApplicationContext());
-                mPref.remove("ACTION_NOTIFY_MINUTE_REPEAT");
+                mPref.remove(Only3.ACTION_NOTIFY_MINUTE_REPEAT);
 
                 Only3.isNotifyAppAlarm = false;
             }
@@ -163,7 +163,7 @@ public class Only3Service extends Service {
              */
             if (Only3.isNotifyAppAlarm) {
                 AlarmTools.cancelStartNotification(getApplicationContext());
-                mPref.remove("ACTION_NOTIFY_MINUTE_REPEAT");
+                mPref.remove(Only3.ACTION_NOTIFY_MINUTE_REPEAT);
 
                 Only3.isNotifyAppAlarm = false;
             }
@@ -271,7 +271,7 @@ public class Only3Service extends Service {
 
         if (Only3.isNotifyAppAlarm) {
             AlarmTools.cancelStartNotification(getApplicationContext());
-            mPref.remove("ACTION_NOTIFY_MINUTE_REPEAT");
+            mPref.remove(Only3.ACTION_NOTIFY_MINUTE_REPEAT);
             Only3.isNotifyAppAlarm = false;
         }
 

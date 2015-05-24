@@ -9,6 +9,7 @@ import lee.whdghks913.only3.service.Only3Service;
 import lee.whdghks913.only3.tools.AlarmTools;
 import lee.whdghks913.only3.tools.CountTools;
 import lee.whdghks913.only3.tools.NotificationTools;
+import lee.whdghks913.only3.tools.Only3;
 import lee.whdghks913.only3.tools.Preference;
 import lee.whdghks913.only3.tools.ToastTools;
 import lee.whdghks913.only3.tools.Tools;
@@ -41,11 +42,11 @@ public class Only3BroadCast extends BroadcastReceiver {
                     .setDefaults(0)
                     .notify(7777);
 
-        } else if ("ACTION_NOTIFY_MINUTE".equalsIgnoreCase(mAction)) {
+        } else if (Only3.ACTION_NOTIFY_MINUTE.equalsIgnoreCase(mAction)) {
             int NotificationType = Tools.StringToInt(mPref.getString("notificationType", "1"));
 
             int appStartNotification = Tools.StringToInt(mPref.getString("appStartNotification", "-1"));
-            int repeatCount = mPref.getInt("ACTION_NOTIFY_MINUTE_REPEAT", 1);
+            int repeatCount = mPref.getInt(Only3.ACTION_NOTIFY_MINUTE_REPEAT, 1);
 
             if (NotificationType == 1 || NotificationType == 3) {
                 NotificationTools mNotify = new NotificationTools(mContext);
@@ -59,7 +60,7 @@ public class Only3BroadCast extends BroadcastReceiver {
                 ToastTools.createToast(mContext, String.format(mContext.getString(R.string.app_started_minute_msg), appStartNotification * repeatCount), false);
             }
 
-            mPref.putInt("ACTION_NOTIFY_MINUTE_REPEAT", ++repeatCount);
+            mPref.putInt(Only3.ACTION_NOTIFY_MINUTE_REPEAT, ++repeatCount);
 
         }
 //        else if (Intent.ACTION_PACKAGE_ADDED.equalsIgnoreCase(mAction)) {

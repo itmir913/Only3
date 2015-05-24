@@ -37,7 +37,7 @@ public class LockScreenBroadCast extends BroadcastReceiver {
 
             if (Only3.isNotifyAppAlarm) {
                 AlarmTools.cancelStartNotification(mContext);
-                new Preference(mContext).remove("ACTION_NOTIFY_MINUTE_REPEAT");
+                new Preference(mContext).remove(Only3.ACTION_NOTIFY_MINUTE_REPEAT);
                 Only3.isNotifyAppAlarm = false;
             }
         }
