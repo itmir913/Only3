@@ -32,18 +32,18 @@ public class RunningActivity {
 
     public static String getPackageName(Context mContext) {
         // http://stackoverflow.com/questions/28066231/how-to-gettopactivity-name-or-get-current-running-application-package-name-in-lo
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            return mActivityManager.getRunningAppProcesses().get(0).processName;
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            return mActivityManager.getRunningAppProcesses().get(0).processName;
+//        }
 
         return getData(mContext).getPackageName();
     }
 
     @Deprecated
     public static String getClassName(Context mContext) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            return mActivityManager.getRunningAppProcesses().get(0).processName;
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            return mActivityManager.getRunningAppProcesses().get(0).processName;
+//        }
 
         return getData(mContext).getClassName();
     }
