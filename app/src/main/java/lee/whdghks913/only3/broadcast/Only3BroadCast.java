@@ -82,6 +82,7 @@ public class Only3BroadCast extends BroadcastReceiver {
             }
         } else if (Only3.ACTION_STOP_LOCK_SERVICE.equalsIgnoreCase(mAction)) {
             LockTools.removeFinishTime(mContext);
+            LockTools.removeLockStarted(mContext);
             ServiceTools.stopLockSubService(mContext);
         }
 //        else if (Intent.ACTION_PACKAGE_ADDED.equalsIgnoreCase(mAction)) {

@@ -55,7 +55,7 @@ public class LockService extends Service {
         protected Void doInBackground(Void... params) {
             do {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(700);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -78,13 +78,13 @@ public class LockService extends Service {
         String pkgName = RunningActivity.getPackageName(getApplicationContext());
 
         /**
-         * SystemUI 어플은 패스
+         * 일부 필수 어플은 패스
          */
-        boolean isSystemUI = "com.android.systemui".equalsIgnoreCase(pkgName);
+//        boolean isSystemUI = "com.android.systemui".equalsIgnoreCase(pkgName);
         boolean isPhone = "com.android.phone".equalsIgnoreCase(pkgName);
         boolean isContacts = "com.android.contacts".equalsIgnoreCase(pkgName);
         boolean isSMS = "com.android.mms".equalsIgnoreCase(pkgName);
-        if (isSystemUI || isPhone || isContacts || isSMS) {
+        if (isPhone || isContacts || isSMS) {
             System.gc();
             return;
         }
@@ -97,13 +97,13 @@ public class LockService extends Service {
             return;
 
         /**
-         * 런처 앱이면 패스
+         * 런처 앱이라도 패스 안함
          */
-        String[] mLauncherAppList = Tools.getLauncherApp(getApplicationContext());
-        for (String launcherPackageName : mLauncherAppList) {
-            if (launcherPackageName.equalsIgnoreCase(pkgName))
-                return;
-        }
+//        String[] mLauncherAppList = Tools.getLauncherApp(getApplicationContext());
+//        for (String launcherPackageName : mLauncherAppList) {
+//            if (launcherPackageName.equalsIgnoreCase(pkgName))
+//                return;
+//        }
 
         startLockActivity();
     }

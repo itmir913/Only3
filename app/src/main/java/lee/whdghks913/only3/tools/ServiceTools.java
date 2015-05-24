@@ -76,6 +76,7 @@ public class ServiceTools {
         if (Tools.isServiceRunningCheck(mContext, LockSubService.LockSubServiceName)) {
             mContext.stopService(new Intent(mContext, LockSubService.class));
             LockTools.removeLockStarted(mContext);
+            LockTools.removeFinishTime(mContext);
         }
     }
 
