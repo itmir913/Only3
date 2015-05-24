@@ -20,7 +20,6 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,16 +29,15 @@ import com.gc.materialdesign.views.ButtonFlat;
 import java.util.List;
 
 import lee.whdghks913.only3.R;
-import lee.whdghks913.only3.service.Only3Service;
 import lee.whdghks913.only3.tools.CountTools;
-import lee.whdghks913.only3.tools.ServiceTools;
-import lee.whdghks913.only3.tools.ToastTools;
 import lee.whdghks913.only3.tools.Tools;
 
 public class AppFragment extends Fragment {
     ListView mListView;
     AppInfoAdapter mAdapter;
     View mLoadingContainer;
+
+    LayoutInflater mInflater;
 
     public static AppFragment newInstance() {
         return new AppFragment();
@@ -59,8 +57,11 @@ public class AppFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View mView = inflater.inflate(R.layout.fragment_app, container, false);
+
         mLoadingContainer = mView.findViewById(R.id.loading_container);
         mListView = (ListView) mView.findViewById(R.id.mListView);
+
+        mInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         mAdapter = new AppInfoAdapter(getActivity());
         mListView.setAdapter(mAdapter);
@@ -128,15 +129,11 @@ public class AppFragment extends Fragment {
     private void showAddCountDialog(final Drawable mIcon, final String mAppName, final String mAppPackage) {
         AlertDialog.Builder mAlertDialog = new AlertDialog.Builder(getActivity());
 
-        View mView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_add_package, null);
+        View mView = mInflater.inflate(R.layout.dialog_add_package, null);
 
-        ImageView AppImage = (ImageView) mView.findViewById(R.id.AppImage);
-        TextView AppName = (TextView) mView.findViewById(R.id.AppName);
-        TextView PackageName = (TextView) mView.findViewById(R.id.PackageName);
-
-        AppImage.setImageDrawable(mIcon);
-        AppName.setText(mAppName);
-        PackageName.setText(mAppPackage);
+        ((ImageView) mView.findViewById(R.id.AppImage)).setImageDrawable(mIcon);
+        ((TextView) mView.findViewById(R.id.AppName)).setText(mAppName);
+        ((TextView) mView.findViewById(R.id.PackageName)).setText(mAppPackage);
 
         mAlertDialog.setView(mView);
 
@@ -145,7 +142,6 @@ public class AppFragment extends Fragment {
         mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        mDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
-        //adding button click event
         ((ButtonFlat) mView.findViewById(R.id.mCancel)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,7 +158,9 @@ public class AppFragment extends Fragment {
                 }
 
                 CountTools.addPackageAllCount(getActivity(), mAppPackage, inputCount);
+
                 startTask();
+
                 mDialog.dismiss();
             }
         });
@@ -173,16 +171,15 @@ public class AppFragment extends Fragment {
     private void showEditCountDialog(final Drawable mIcon, final String mAppName, final String mAppPackage, final boolean isAllPackage) {
         AlertDialog.Builder mAlertDialog = new AlertDialog.Builder(getActivity());
 
-        View mView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_edit_package, null);
+        View mView = mInflater.inflate(R.layout.dialog_edit_package, null);
 
-        ImageView AppImage = (ImageView) mView.findViewById(R.id.AppImage);
-        TextView AppName = (TextView) mView.findViewById(R.id.AppName);
-        TextView PackageName = (TextView) mView.findViewById(R.id.PackageName);
+        final EditText inputCountEditText = (EditText) mView.findViewById(R.id.inputCount);
         TextView showCurrentCount = (TextView) mView.findViewById(R.id.showCurrentCount);
 
-        AppImage.setImageDrawable(mIcon);
-        AppName.setText(mAppName);
-        PackageName.setText(mAppPackage);
+        ((ImageView) mView.findViewById(R.id.AppImage)).setImageDrawable(mIcon);
+        ((TextView) mView.findViewById(R.id.AppName)).setText(mAppName);
+        ((TextView) mView.findViewById(R.id.PackageName)).setText(mAppPackage);
+
 //        if (isNewApp)
 //            showCurrentCount.setText(R.string.new_app_count_msg);
         if (!isAllPackage)
@@ -207,7 +204,7 @@ public class AppFragment extends Fragment {
         ((ButtonFlat) mView.findViewById(R.id.mEditCount)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int inputCount = Tools.StringToInt(((EditText) mDialog.findViewById(R.id.inputCount)).getText().toString());
+                int inputCount = Tools.StringToInt(inputCountEditText.getText().toString());
                 if (inputCount < CountTools.MinCount) {
                     Toast.makeText(getActivity(), R.string.fix_min_count, Toast.LENGTH_SHORT).show();
                     return;
@@ -221,6 +218,7 @@ public class AppFragment extends Fragment {
                     editAllPackage(inputCount);
 
                 startTask();
+
                 mDialog.dismiss();
             }
         });
@@ -235,6 +233,7 @@ public class AppFragment extends Fragment {
                     removeAllPackage();
 
                 startTask();
+
                 mDialog.dismiss();
             }
         });
@@ -245,17 +244,13 @@ public class AppFragment extends Fragment {
     private void showExceedCountDialog(final Drawable mIcon, final String mAppName, final String mAppPackage) {
         AlertDialog.Builder mAlertDialog = new AlertDialog.Builder(getActivity());
 
-        View mView = ((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_exceed_package, null);
+        View mView = mInflater.inflate(R.layout.dialog_exceed_package, null);
 
-        ImageView AppImage = (ImageView) mView.findViewById(R.id.AppImage);
-        TextView AppName = (TextView) mView.findViewById(R.id.AppName);
-        TextView PackageName = (TextView) mView.findViewById(R.id.PackageName);
-        TextView showCurrentCount = (TextView) mView.findViewById(R.id.showCurrentCount);
 
-        AppImage.setImageDrawable(mIcon);
-        AppName.setText(mAppName);
-        PackageName.setText(mAppPackage);
-        showCurrentCount.setText(String.format(getString(R.string.count_string_format), CountTools.getAllCount(getActivity(), mAppPackage), CountTools.getCurrentCount(getActivity(), mAppPackage)));
+        ((ImageView) mView.findViewById(R.id.AppImage)).setImageDrawable(mIcon);
+        ((TextView) mView.findViewById(R.id.AppName)).setText(mAppName);
+        ((TextView) mView.findViewById(R.id.PackageName)).setText(mAppPackage);
+        ((TextView) mView.findViewById(R.id.showCurrentCount)).setText(String.format(getString(R.string.count_string_format), CountTools.getAllCount(getActivity(), mAppPackage), CountTools.getCurrentCount(getActivity(), mAppPackage)));
 
         mAlertDialog.setView(mView);
 
@@ -306,7 +301,7 @@ public class AppFragment extends Fragment {
      * http://vo2max.egloos.com/1284495
      */
     private void startTask() {
-        if (Build.VERSION.SDK_INT >= 11)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
             new AppListTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
         else
             new AppListTask().execute();

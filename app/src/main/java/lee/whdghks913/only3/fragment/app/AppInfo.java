@@ -1,6 +1,5 @@
 package lee.whdghks913.only3.fragment.app;
 
-import android.content.pm.ApplicationInfo;
 import android.graphics.drawable.Drawable;
 
 import java.text.Collator;
@@ -10,11 +9,11 @@ import java.util.Comparator;
  * Created by whdghks913 on 2015-05-17.
  */
 public class AppInfo {
-    public static interface AppFilter {
-        public void init();
-
-        public boolean filterApp(ApplicationInfo info);
-    }
+//    public static interface AppFilter {
+//        public void init();
+//
+//        public boolean filterApp(ApplicationInfo info);
+//    }
 
     // 아이콘
     public Drawable mIcon = null;
