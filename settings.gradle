@@ -1,1 +1,1 @@
-include ':app', ':library:android-support-v4-preferencefragment', ':library:L-Dialogs', ':library:MaterialDesign'
+include ':app', ':library:android-support-v4-preferencefragment', ':library:L-Dialogs', ':library:MaterialDesign', ':library:DateTimePicker'

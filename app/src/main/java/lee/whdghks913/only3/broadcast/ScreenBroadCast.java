@@ -10,7 +10,7 @@ import lee.whdghks913.only3.tools.Preference;
 import lee.whdghks913.only3.tools.RunningActivity;
 import lee.whdghks913.only3.tools.ServiceTools;
 
-public class LockScreenBroadCast extends BroadcastReceiver {
+public class ScreenBroadCast extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context mContext, Intent mIntent) {

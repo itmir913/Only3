@@ -25,4 +25,5 @@ dependencies {
     compile project(':library:android-support-v4-preferencefragment')
     compile project(':library:L-Dialogs')
     compile project(':library:MaterialDesign')
+    compile project(':library:DateTimePicker')
 }
