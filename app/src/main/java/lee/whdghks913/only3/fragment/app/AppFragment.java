@@ -98,6 +98,10 @@ public class AppFragment extends Fragment {
         mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    return false;
+                }
+
                 AppInfo mInfo = mAdapter.getItem(position);
                 String packageName = mInfo.mAppPackage;
 
@@ -166,7 +170,7 @@ public class AppFragment extends Fragment {
             public void onClick(View v) {
                 int inputCount = Tools.StringToInt(((EditText) mDialog.findViewById(R.id.inputCount)).getText().toString());
                 if (inputCount < CountTools.MinCount) {
-					ToastTools.createToast(getActivity(), R.string.fix_min_count, false);
+                    ToastTools.createToast(getActivity(), R.string.fix_min_count, false);
                     return;
                 }
 
@@ -219,7 +223,7 @@ public class AppFragment extends Fragment {
             public void onClick(View v) {
                 int inputCount = Tools.StringToInt(inputCountEditText.getText().toString());
                 if (inputCount < CountTools.MinCount) {
-					ToastTools.createToast(getActivity(), R.string.fix_min_count, false);
+                    ToastTools.createToast(getActivity(), R.string.fix_min_count, false);
                     return;
                 }
 
@@ -425,6 +429,7 @@ public class AppFragment extends Fragment {
 
                 AppInfo addInfo = null;
 
+                mAppList:
                 for (int i = 0; i < mAppList.size(); i++) {
 
                     ResolveInfo app = mAppList.get(i);
@@ -453,7 +458,7 @@ public class AppFragment extends Fragment {
 
                     for (String launcherApp : mLauncherAppList) {
                         if (launcherApp.equalsIgnoreCase(mPackageName)) {
-                            continue;
+                            continue mAppList;
                         }
                     }
 

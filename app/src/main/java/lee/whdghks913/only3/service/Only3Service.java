@@ -179,6 +179,14 @@ public class Only3Service extends Service {
         }
 
         /**
+         * 런처 앱일경우 패스
+         */
+        for (String mLauncher : CountTools.getLauncherAppList(getApplicationContext())) {
+            if (mLauncher.equalsIgnoreCase(pkgName))
+                continue;
+        }
+
+        /**
          * 카운트가 초과되지 않았으면
          */
         boolean isExceedCount = CountTools.isExceedCount(getApplicationContext(), pkgName);

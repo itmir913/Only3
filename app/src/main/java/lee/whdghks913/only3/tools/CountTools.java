@@ -19,6 +19,8 @@ public class CountTools {
 
     private static Preference mName, mCount;
 
+    private static String[] mLauncherAppList;
+
     /**
      * 전체 카운트를 얻습니다.
      * 저장되어 있지 않을경우 -1을 반환합니다.
@@ -207,6 +209,15 @@ public class CountTools {
                         .notify(7777);
             }
         }
+    }
+
+    /**
+     * 런처앱 리스트 관리
+     */
+    public static String[] getLauncherAppList(Context mContext) {
+        if (mLauncherAppList == null)
+            mLauncherAppList = Tools.getLauncherApp(mContext);
+        return mLauncherAppList;
     }
 
     /**
