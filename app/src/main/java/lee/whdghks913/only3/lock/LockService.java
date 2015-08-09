@@ -13,13 +13,15 @@ import lee.whdghks913.only3.tools.Tools;
 
 public class LockService extends Service {
     public static final String LockServiceName = "lee.whdghks913.only3.lock.LockService";
+    public static String[] mLauncherAppList;
 
-    private Preference mPref;
+    private static Preference mWhiteList;
 
     private boolean isLockService;
 
     private void init() {
-        mPref = new Preference(getApplicationContext());
+        if (mWhiteList == null) mWhiteList = new Preference(getApplicationContext(), LockTools.PREF_LOCK_WHITE_LIST);
+        if (mLauncherAppList == null) mLauncherAppList = Tools.getLauncherApp(getApplicationContext());
         isLockService = true;
     }
 
@@ -32,6 +34,7 @@ public class LockService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        init();
         onTask();
 
         return super.onStartCommand(intent, flags, startId);
@@ -84,26 +87,26 @@ public class LockService extends Service {
         boolean isPhone = "com.android.phone".equalsIgnoreCase(pkgName);
         boolean isContacts = "com.android.contacts".equalsIgnoreCase(pkgName);
         boolean isSMS = "com.android.mms".equalsIgnoreCase(pkgName);
-        if (isPhone || isContacts || isSMS) {
-            System.gc();
+        boolean isOnly3 = "lee.whdghks913.only3".equalsIgnoreCase(pkgName);
+        if (isPhone || isContacts || isSMS || isOnly3) {
             return;
         }
 
         /**
          * 화이트 리스트에 등록된 앱이면 패스
          */
-        boolean isWhiteApp = LockTools.isPackageWhiteList(getApplicationContext(), pkgName);
-        if (isWhiteApp)
+        boolean isWhiteApp = mWhiteList.getBoolean(pkgName, false);
+        if (isWhiteApp) {
             return;
+        }
 
         /**
-         * 런처 앱이라도 패스 안함
+         * 런처 앱이면 패스
          */
-//        String[] mLauncherAppList = Tools.getLauncherApp(getApplicationContext());
-//        for (String launcherPackageName : mLauncherAppList) {
-//            if (launcherPackageName.equalsIgnoreCase(pkgName))
-//                return;
-//        }
+        for (String launcherPackageName : mLauncherAppList) {
+            if (launcherPackageName.equalsIgnoreCase(pkgName))
+                return;
+        }
 
         startLockActivity();
     }
