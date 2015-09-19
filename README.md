@@ -8,4 +8,4 @@
 
 ### How to send me ###
 
-* [Blog](https://itmir.tistory.com)
+* [Blog](http://itmir.tistory.com)
