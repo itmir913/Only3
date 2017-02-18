@@ -98,7 +98,7 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
 
                 DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(LockFragment.this, mCalendar.get(Calendar.YEAR), mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH), false, startLockType);
                 datePickerDialog.setVibrate(true);
-                datePickerDialog.setYearRange(2015, 2016);
+                datePickerDialog.setYearRange(2015, 2020);
                 datePickerDialog.setCloseOnSingleTapDay(false);
                 datePickerDialog.show(getActivity().getSupportFragmentManager(), DATE_PICKER_TAG);
             }
@@ -111,7 +111,7 @@ public class LockFragment extends Fragment implements DatePickerDialog.OnDateSet
 
                 DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(LockFragment.this, mCalendar.get(Calendar.YEAR), mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH), false, finishLockType);
                 datePickerDialog.setVibrate(true);
-                datePickerDialog.setYearRange(2015, 2016);
+                datePickerDialog.setYearRange(2015, 2020);
                 datePickerDialog.setCloseOnSingleTapDay(false);
                 datePickerDialog.show(getActivity().getSupportFragmentManager(), DATE_PICKER_TAG);
             }
